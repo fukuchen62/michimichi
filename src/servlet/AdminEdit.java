@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,7 +15,7 @@ import javax.servlet.http.HttpSession;
 
 import beans.Account;
 import beans.LoginUser;
-import dao.AccountDAO;
+import dao.M_accountsDAO;
 
 /**
  * Servlet implementation class AccountEdit
@@ -72,10 +71,10 @@ public class AdminEdit extends HttpServlet {
 
 		//データを読み込む処理
 //		M_accountsDAO accountDAO = new M_accountsDAO();
-		AccountDAO accountDAO = new AccountDAO();
+		M_accountsDAO M_accountsDAO = new M_accountsDAO();
 		if(user_id > 0) {
 			//指定したuser_idで該当アカウントを読み込む
-			Account account = accountDAO.findByUserid(user_id);
+			Account account = M_accountsDAO.findByUserid(user_id);
 
 			if(account != null) {
 				request.setAttribute("account", account);
@@ -87,13 +86,13 @@ public class AdminEdit extends HttpServlet {
 		}else if(user_id == 0){
 
 			//全アカウントを読み込み
-			List<Account> accountList = accountDAO.findAll();
-			//リクエストスコープにaccountListを保存する
-			if(accountList != null) {
-				request.setAttribute("accountList", accountList);
-			}else {
-				request.setAttribute("errorMsg", "アカウント一覧を読み込むにエラーが発生しました。");
-			}
+//			List<Account> accountList = M_accountsDAO.findAll();
+//			//リクエストスコープにaccountListを保存する
+//			if(accountList != null) {
+//				request.setAttribute("accountList", accountList);
+//			}else {
+//				request.setAttribute("errorMsg", "アカウント一覧を読み込むにエラーが発生しました。");
+//			}
 			forward = "/WEB-INF/jsp/accountList.jsp";
 		}
 
@@ -134,7 +133,7 @@ public class AdminEdit extends HttpServlet {
 		}
 
 //		M_accountsDAO accountDAO = new M_accountsDAO();
-		AccountDAO accountDAO = new AccountDAO();
+		M_accountsDAO M_accountsDAO = new M_accountsDAO();
 		Account account;
 
 		//入力されたアカウントデータを取得してaccountに代入する
@@ -160,26 +159,26 @@ public class AdminEdit extends HttpServlet {
 
 		//新規アカウント挿入
 		if(fnc == 1) {
-
-			//データベースに挿入する
-			boolean bret = accountDAO.insert(account);
-			if(bret == false) {
-				request.setAttribute("errorMsg", "アカウントの新規挿入にエラーが発生しました");
-				request.setAttribute("account", account);
-				forward = "/WEB-INF/jsp/accountEdit.jsp";
-
-			}else {
-				//データベースからすべてのアカウントを読み込む
-				List<Account> accountList = accountDAO.findAll();
-				request.setAttribute("accountList", accountList);
-				forward = "/WEB-INF/jsp/accountList.jsp";
-			}
+//
+//			//データベースに挿入する
+//			boolean bret = M_accountsDAO.insert(account);
+//			if(bret == false) {
+//				request.setAttribute("errorMsg", "アカウントの新規挿入にエラーが発生しました");
+//				request.setAttribute("account", account);
+//				forward = "/WEB-INF/jsp/accountEdit.jsp";
+//
+//			}else {
+//				//データベースからすべてのアカウントを読み込む
+//				List<Account> accountList = M_accountsDAO.findAll();
+//				request.setAttribute("accountList", accountList);
+//				forward = "/WEB-INF/jsp/accountList.jsp";
+//			}
 
 			//更新
 		}else if(fnc == 2){
 
 			//データベースに挿入する
-			boolean bret = accountDAO.update(account);
+			boolean bret = M_accountsDAO.update(account);
 			if(bret == false) {
 				request.setAttribute("errorMsg", "アカウントの更新にエラーが発生しました");
 				request.setAttribute("account", account);
@@ -187,8 +186,8 @@ public class AdminEdit extends HttpServlet {
 
 			}else {
 				//データベースからすべてのアカウントを読み込む
-				List<Account> accountList = accountDAO.findAll();
-				request.setAttribute("accountList", accountList);
+//				List<Account> accountList = M_accountsDAO.findAll();
+//				request.setAttribute("accountList", accountList);
 				forward = "/WEB-INF/jsp/accountList.jsp";
 			}
 
@@ -196,18 +195,18 @@ public class AdminEdit extends HttpServlet {
 		}else if(fnc == 3){
 			if(user_id > 0) {
 				//指定したuser_idで該当アカウントを読み込む
-				boolean bret = accountDAO.delete(user_id);
+				boolean bret = M_accountsDAO.delete(user_id);
 
 				if(bret == false) {
 					request.setAttribute("errorMsg", "アカウントを削除する時にエラーが発生しました。");
 					//該当データを読み込む
-					account = accountDAO.findByUserid(user_id);
+					account = M_accountsDAO.findByUserid(user_id);
 					request.setAttribute("account", account);
 					forward = "/WEB-INF/jsp/accountEdit.jsp";
 				}else{
 					//データベースからすべてのアカウントを読み込む
-					List<Account> accountList = accountDAO.findAll();
-					request.setAttribute("accountList", accountList);
+//					List<Account> accountList = accountDAO.findAll();
+//					request.setAttribute("accountList", accountList);
 					forward = "/WEB-INF/jsp/accountList.jsp";
 				}
 			}

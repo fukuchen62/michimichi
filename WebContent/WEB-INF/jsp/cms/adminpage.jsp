@@ -3,9 +3,9 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
-<c:import url="layout/template-back.jsp">
+<c:import url="../layout/template_back.jsp">
 
-	<c:param name="title" value="My page" />
+	<c:param name="title" value="Admin page" />
 	<c:param name="keywords" value="徳島 Coffee" />
 	<c:param name="description" value="description。description" />
 	<c:param name="mycss" value="" />
@@ -17,19 +17,19 @@
 		<div id="wrap">
 			<p id="login">
 				<c:out value="${loginUser.login_id }" />
-				さまオンライン中 <a href="/cafeshop/Logout">ログアウト</a>
+				さまオンライン中 <a href="/michimichi/Logout">ログアウト</a>
 			</p>
 
 			<section>
 				<h1>マイページ</h1>
 				<div id="opbtns">
-					<a href="/cafeshop/CtrlForCms?pge_id=1">つぶやき</a> <a
-						href="/cafeshop/CtrlForCms?pge_id=2">記事管理</a> <a
-						href="/cafeshop/CtrlForCms?pge_id=3">メニュー管理</a> <a
-						href="/cafeshop/CtrlForCms?pge_id=4">アカウント管理</a>
+					<a href="/michimichi/CtrlForCms?pge_id=18">コメント管理</a> <a
+						href="/michimichi/CtrlForCms?pge_id=14">道の駅管理</a> <a
+						href="/michimichi/CtrlForCms?pge_id=16">特集管理</a> <a
+						href="/michimichi/CtrlForCms?pge_id=20">アカウント管理</a>
 				</div>
 			</section>
-			<section>
+			<%--<section>
 				<h2>お知らせ</h2>
 				<table class="entryForm">
 					<tr>
@@ -48,8 +48,7 @@
 						</tr>
 					</c:forEach>
 				</table>
-			</section>
-
+			</section>--%>
 		</div>
 
 	</c:param>

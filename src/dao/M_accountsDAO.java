@@ -1,4 +1,3 @@
-
 package dao;
 
 import java.sql.Connection;
@@ -11,15 +10,14 @@ import java.util.Date;
 import java.util.List;
 
 import beans.Account;
-import beans.AccountEdit;
 import model.DbConnection;
-import servlet.Admin;
+
 
 public class M_accountsDAO {
 
-	public Admin findByUserid(int userid){
+	public Account findByUserid(int userid){
 
-		Admin account = null;
+		Account account = null;
 
 		//データベースに接続
 		Connection conn = null;
@@ -93,7 +91,7 @@ public class M_accountsDAO {
 	}
 
 
-	public List<AccountEdit> findAll(){
+	public List<Account> findAll(){
 
 		String sql = "";
 
@@ -102,7 +100,7 @@ public class M_accountsDAO {
 		conn = DbConnection.conn;
 		if(conn == null) return null;
 
-		List<AccountEdit> userList = new ArrayList<AccountEdit>();
+		List<Account> userList = new ArrayList<Account>();
 
 		try {
 			//SQL文
@@ -132,7 +130,7 @@ public class M_accountsDAO {
 				Date createtime = rs.getTimestamp("createtime");
 
 				//accountインスタンスを生成
-				AccountEdit account =  new AccountEdit(
+				Account account =  new Account(
 						user_id,
 						login_id,
 						pass,
@@ -170,7 +168,7 @@ public class M_accountsDAO {
 	 * @param account
 	 * @return
 	 */
-	public boolean insert(AccountEdit account) {
+	public boolean insert(Account account) {
 
 		String sql = "";
 

@@ -28,7 +28,7 @@
 		</p>
 
 		<p>
-			<a href="/michimichi/CtrlFroCms">つぶやき投稿・閲覧へ</a>
+			<a href="/michimichi/CtrlFroCms"></a>
 		</p>
 
 		<%
@@ -38,7 +38,7 @@
 			ログインに失敗しました。<br>再度ログインしてください。
 		</p>
 		<p>
-			<a href="/michimichi/">TOPへ</a>
+			<a href="/michimichi/CtrlForCms?pge_id=10">TOPへ</a>
 		</p>
 		<%
 			}

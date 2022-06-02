@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <link href="/tsubuyaki/css/style.css" rel="stylesheet" media="all">
-<title>どこつぶ</title>
+<title>Admin Logout</title>
 </head>
 <body>
 	<h1>管理者ログアウト</h1>

@@ -12,14 +12,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="/cafeshop/css/style-cms.css" rel="stylesheet" media="all">
-<title>どこつぶ アカウント管理</title>
+<link href="/michimichi/css/style-cms.css" rel="stylesheet" media="all">
+<title>管理者アカウント管理</title>
 
 </head>
 <body>
 	<div id="wrap">
 		<p id="login">
-			<%=loginUser.getLogin_id()%>さまオンライン中 <a href="/cafeshop/Logout">ログアウト</a>
+			<%=loginUser.getLogin_id()%>さまオンライン中
+			 <a href="/michimichi/Logout">ログアウト</a>
 		</p>
 		<jsp:include page="../layout/header_back.jsp" />
 
@@ -35,11 +36,11 @@
 			} else {
 		%>
 
-		<form action="/cafeshop/Main" method="post">
+		<form action="/michimichi/Main" method="post">
 
 			<p class="btn">
 				<input class="btns btn-send" type="button" value="新規登録"
-					onClick="location.href='/cafeshop/AccountEdit?fnc=1'">
+					onClick="location.href='/michimichi/AccountEdit?fnc=1'">
 			</p>
 
 			<%
@@ -61,7 +62,8 @@
 				<tr>
 					<td align="center"><%=account.getUser_id()%></td>
 					<td><a
-						href="/cafeshop/AccountEdit?user_id=<%=account.getUser_id()%>"><%=account.getName()%></a></td>
+						href="/michimichi/AccountEdit?user_id=<%=account.getUser_id()%>">
+						<%=account.getName()%></a></td>
 					<td align="center"><%=account.genderlist[account.getGender()]%></td>
 					<td align="center"><%=account.getBirthday()%></td>
 					<td><%=account.getTel()%></td>
@@ -82,7 +84,7 @@
 		<br>
 		<hr>
 		<div id="opbtns">
-			<a href="/cafeshop/CtrlForCms?pge_id=0">マイページ</a>
+			<a href="/michimichi/CtrlForCms?pge_id=0">管理者ページ</a>
 		</div>
 	</div>
 	<jsp:include page="../layout/footer_back.jsp" />

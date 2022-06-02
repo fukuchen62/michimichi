@@ -12,7 +12,6 @@ import javax.servlet.http.HttpSession;
 
 import beans.LoginUser;
 
-
 /**
  * Servlet implementation class Main
  */
@@ -31,15 +30,15 @@ public class CtrlForCms extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
 		//ログインしている状態を確認する
 		HttpSession session = request.getSession();
 		LoginUser loginUser = (LoginUser) session.getAttribute("loginUser");
 		//ログインではない状態の場合は、ログイン画面へ
 		if (loginUser == null) {
-			RequestDispatcher dispatcher =
-					request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
 			dispatcher.forward(request, response);
 		}
 
@@ -63,121 +62,188 @@ public class CtrlForCms extends HttpServlet {
 		// リクエストスコープに保存
 		request.setAttribute("pge_id", pge_id);
 
+
+
 		//リクエストスコープに各ページ用情報保存、フォワード先を設定
-		if (pge_id==0) {
-			//My page
-			forward = movetoMypage(request);
-		} else if (pge_id==1) {
-			//つぶやき
-			forward = movetoMutter(request);
-		} else if (pge_id==2) {
-			//記事一覧
-			forward = movetoPostList(request);
-		} else if (pge_id==3) {
-			//menu一覧
-			forward = movetoMenuList(request);
-		} else if (pge_id==4) {
-			//アカウント一覧
-			forward = movetoAccoutList();
-		}else {
-			//My page
-			forward = movetoMypage(request);
+		if (pge_id == 13) {
+
+			forward = movetoAdminpage(request);
+
+		}
+
+		else if (pge_id == 11) {
+			forward = movetoLoginResult(request);
+		}
+
+		else if (pge_id == 12) {
+			forward = movetoLogout(request);
+		}
+
+		else if (pge_id == 14) {
+			forward = movetoStationList(request);
+		}
+
+		else if (pge_id == 15) {
+			forward = movetoStationEdit();
+		}
+
+		else if (pge_id == 16) {
+			forward = movetoFeatureEdit();
+		}
+
+		else if (pge_id == 17) {
+			forward = movetoFeatureList();
+		}
+
+		else if (pge_id == 18) {
+			forward = movetoCommentEdit();
+		}
+
+		else if (pge_id == 19) {
+			forward = movetoCommentList();
+		}
+
+		else if (pge_id == 20) {
+			forward = movetoAdminList();
+		}
+
+		else if (pge_id == 21) {
+			forward = movetoAdminEdit();
+		}
+
+		else {
+			forward = movetoAdminpage(request);
 		}
 
 		//メイン画面にフォーワード
-		RequestDispatcher dispatcher =
-				request.getRequestDispatcher(forward);
+		RequestDispatcher dispatcher = request.getRequestDispatcher(forward);
 		dispatcher.forward(request, response);
 
 	}
 
 	/**
+	 * @param comment
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response, Object comment)
+			throws ServletException, IOException {
 
 		//リクエストパラメータの取得
 		//		request.setCharacterEncoding("UTF-8");
 		String text = request.getParameter("text");
 
 		//入力値チェック
-		if (text != null && text.length()!=0 ) {
+		if (text != null && text.length() != 0) {
 
 			//セッションスコープに保存されたユーザー情報を取得
 			HttpSession session = request.getSession();
 			LoginUser loginUser = (LoginUser) session.getAttribute("loginUser");
 
-			//つぶやきのインスタンスを生成する
-//			Mutter mutter = new Mutter(loginUser.getLogin_id(),text);
+			//コメントのインスタンスを生成する
+			//			Comment mutter = new Comment(loginUser.getLogin_id(), text);
 
-			//つぶやきのインスタンスをテーブルに追加する
-//			PostMutterLogic postMutterLogic = new PostMutterLogic();
-//			postMutterLogic.execute(mutter);
+			//コメントのインスタンスをテーブルに追加する
+			//			CommentListLogic CommentListLogic = new CommentListLogic();
+			//			CommentListLogic.execute(comment);
 
-		}else {
+		} else {
 			//エラーメッセージをリクエストスコープに保存
 			request.setAttribute("errorMsg", "つぶやきが入力されていません");
 		}
 
-		//つぶやきリストを取得
-//		GetMutterListLogic getMutterListLogic =
-//				new GetMutterListLogic();
-//		List<Mutter> mutterList = getMutterListLogic.execute();
-
-		//リクエストスコープに保存
-//		request.setAttribute("mutterList", mutterList);
+		//		//コメントリストを取得
+		//		CommentListLogic getCommentListLogic = new CommentListLogic();
+		//		List<Comment> commentList = CommentListLogic.execute();
+		//
+		//		//リクエストスコープに保存
+		//		request.setAttribute("commentList", comment);
 
 		//メイン画面にフォワード
-		RequestDispatcher dispatcher =
-				request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
 		dispatcher.forward(request, response);
 	}
 
-	private String movetoMenuList(HttpServletRequest request) {
-		// フォーワード先 "
-		String forward = "MenuEdit?menu_id=0";
+	private String movetoAdminpage(HttpServletRequest request) {
+
+		String forward = "Web-INF/jsp/cms/adminpage.jsp";
 		return forward;
 	}
 
-	private String movetoPostList(HttpServletRequest request) {
-		// フォーワード先 "
-		String forward = "PostEdit?post_id=0";
+	private String movetoLoginResult(HttpServletRequest request) {
+		String forward = "Web-INF/jsp/cms/login_reult.jsp";
 		return forward;
 	}
 
-	private String movetoAccoutList() {
-		// フォーワード先 "
-		String forward = "AccountEdit?user_id=0";
+	private String movetoLogout(HttpServletRequest request) {
+		String forward = "Web-INF/jsp/cms/logout.jsp";
+		return forward;
+	}
+
+	private String movetoStationList(HttpServletRequest request) {
+		String forward = "Web-INF/jsp/cms/station_list.jsp";
+		return forward;
+	}
+
+	private String movetoStationEdit() {
+		String forward = "Web-INF/jsp/cms/station_edit.jsp";
+		return forward;
+	}
+
+	private String movetoFeatureEdit() {
+		String forward = "Web-INF/jsp/cms/feature_edit.jsp";
+		return forward;
+	}
+
+	private String movetoFeatureList() {
+		String forward = "Web-INF/jsp/cms/feature_list.jsp";
+		return forward;
+	}
+
+	private String movetoCommentEdit() {
+		String forward = "Web-INF/jsp/cms/comment_edit.jsp";
+		return forward;
+	}
+
+	private String movetoCommentList() {
+		String forward = "Web-INF/jsp/cms/comment_list.jsp";
+		return forward;
+	}
+
+	private String movetoAdminList() {
+		String forward = "Web-INF/jsp/cms/admin_list.jsp";
+		return forward;
+	}
+
+	private String movetoAdminEdit() {
+		String forward = "Web-INF/jsp/cms/admin_edit.jsp";
 		return forward;
 	}
 
 	private String movetoMutter(HttpServletRequest request) {
-		//つぶやきリストを取得
-//		GetMutterListLogic getMutterListLogic =
-//				new GetMutterListLogic();
-//		List<Mutter> mutterList = getMutterListLogic.execute();
+		//コメントリストを取得
+		//		CommentListLogic getCommentListLogic = new CommentListLogic();
+		//		List<Comment> commentList = getCommentListLogic.execute();
 
 		//リクエストスコープに保存
-//		request.setAttribute("mutterList", mutterList);
+		//		request.setAttribute("commentList", commentList);
 
 		// フォーワード先 "
-		String forward = "/WEB-INF/jsp/mutter.jsp";
+		String forward = "/WEB-INF/jsp/comment.jsp";
 		return forward;
 
 	}
 
-	private String movetoMypage(HttpServletRequest request) {
+	private String movetofeatureListpage(HttpServletRequest request) {
 		// 記事一覧を取得する
-//		PostsLogic postslogic = new PostsLogic();
-//		List<Posts> postList =  postslogic.getAllPosts(0);
+		//		FeatureLogic featurelogic = new FeatureLogic();
+		//		List<Feature> featureList = featurelogic.getAllfeature(0);
 
 		//リクエストスコープに保存
-//		request.setAttribute("postList", postList);
+		//		request.setAttribute("featureList", featurelogic);
 
 		// フォーワード先 "
-		String forward = "/WEB-INF/jsp/mypage.jsp";
+		String forward = "/WEB-INF/jsp/adminpage.jsp";
 		return forward;
 	}
-
 
 }

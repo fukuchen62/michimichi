@@ -12,7 +12,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="/cafeshop/css/style-cms.css" rel="stylesheet" media="all">
+<link href="/michimichi/css/style-cms.css" rel="stylesheet" media="all">
 
 <title>アカウント管理</title>
 
@@ -53,7 +53,8 @@
 <body>
 	<div id="wrap">
 		<p id="login">
-			<%=loginUser.getLogin_id()%>さまオンライン中 <a href="/michimichi/Logout">ログアウト</a>
+			<%=loginUser.getLogin_id()%>さまオンライン中
+			<a href="/michimichi/Logout">ログアウト</a>
 		</p>
 
 		<jsp:include page="../layout/header_back.jsp" />
@@ -79,7 +80,7 @@
 		%>
 
 		<!-- 編集 -->
-		<form name="inputForm" action="/cafeshop/AccountEdit" method="post">
+		<form name="inputForm" action="/michimichi/AccountEdit" method="post">
 			<%
 				if (account != null) {
 			%>
@@ -230,8 +231,8 @@
 		<br>
 		<hr>
 		<div id="opbtns">
-			<a href="/cafeshop/CtrlForCms?pge_id=0">マイページ</a> <a
-				href="/cafeshop/CtrlForCms?pge_id=4">アカウント一覧</a>
+			<a href="/michimichi/CtrlForCms?pge_id=13">管理者ページ</a> <a
+				href="/michimichi/CtrlForCms?pge_id=20">アカウント一覧</a>
 		</div>
 	</div>
 	<jsp:include page="../layout/footer_back.jsp" />
