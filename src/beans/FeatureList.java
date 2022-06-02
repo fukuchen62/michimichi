@@ -23,27 +23,27 @@ public class FeatureList implements Serializable {
 
 	}
 
-	public int getId() {
+	public int getFeature_id() {
 		return feature_id;
 	}
 
-	public void setId(int feature_id) {
+	public void setFeature_id(int feature_id) {
 		this.feature_id = feature_id;
 	}
 
-	public String getName() {
+	public String getFeature_name() {
 		return feature_name;
 	}
 
-	public void setName(String feature_name) {
+	public void setFeature_name(String feature_name) {
 		this.feature_name = feature_name;
 	}
 
-	public String getPhotoPass() {
+	public String getMain_photo_path() {
 		return main_photo_path;
 	}
 
-	public void setPhotoPass(String main_photo_path) {
+	public void setMain_photo_path(String main_photo_path) {
 		this.main_photo_path = main_photo_path;
 	}
 
@@ -63,5 +63,47 @@ public class FeatureList implements Serializable {
 		this.feature_list = feature_list;
 	}
 
+//	public int getId() {
+//		return feature_id;
+//	}
+//
+//	public void setId(int feature_id) {
+//		this.feature_id = feature_id;
+//	}
+//
+//	public String getName() {
+//		return feature_name;
+//	}
+//
+//	public void setName(String feature_name) {
+//		this.feature_name = feature_name;
+//	}
+//
+//	public String getPhotoPass() {
+//		return main_photo_path;
+//	}
+//
+//	public void setPhotoPass(String main_photo_path) {
+//		this.main_photo_path = main_photo_path;
+//	}
+//
+//	public String getAlt() {
+//		return alt;
+//	}
+//
+//	public void setAlt(String alt) {
+//		this.alt = alt;
+//	}
+//
+//	public String getFeature_list() {
+//		return feature_list;
+//	}
+//
+//	public void setFeature_list(String feature_list) {
+//		this.feature_list = feature_list;
+//	}
+//
+	
+	
 
 }
