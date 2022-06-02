@@ -12,7 +12,7 @@ public class FeatureLogic {
 		//DAOオブジェクト生成
 		T_featuresDAO dao = new T_featuresDAO();
 		//DBから全レコードを取得する
-		List<Feature> FList = dao.findAll(showflag,con_id);
+		List<Feature> FList = dao.getFeature(showflag,con_id);
 		return FList;
 	}
 }

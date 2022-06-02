@@ -3,10 +3,9 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
-<c:import url="layout/template.jsp">
+<c:import url="../layout/template.jsp">
 
 	<c:param name="title" value="特集記事（仮）" />
-	<!-- <c:param name="keywords" value="徳島,Coffee,Cafe Leaf" /> -->
 	<c:param name="description" value="description。description" />
 	<c:param name="mycss" value="" />
 	<c:param name="mycss2" value="" />

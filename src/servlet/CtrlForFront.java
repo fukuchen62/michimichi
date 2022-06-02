@@ -39,23 +39,16 @@ public class CtrlForFront extends HttpServlet {
 		//リクエストパラメータを取得する
 		//ページ番号
 		String para1 = request.getParameter("pge_id");
-		//そのページのコンテンツ番号
-		String para2 = request.getParameter("con_id");
 		String forward = "";
 		int pge_id = 0;
-		int con_id = 0;
 
 		//入力値チェック
 		if (para1 != null && para1.length() != 0) {
 			pge_id = Integer.parseInt(para1);
 		}
-		if (para2 != null && para2.length() != 0) {
-			con_id = Integer.parseInt(para2);
-		}
 
 		// リクエストスコープに保存
 		request.setAttribute("pge_id", pge_id);
-		request.setAttribute("con_id", con_id);
 
 		//リクエストスコープに各ページ用情報保存、フォワード先を設定
 		if (pge_id==1) {
@@ -134,6 +127,19 @@ public class CtrlForFront extends HttpServlet {
 //		request.setAttribute("postslist", postslist);
 //		request.setAttribute("menulist", menulist);
 
+		//ランダム表記の制御
+		//カテゴリー検索表示
+		int category_random = (int) (Math.random()*6)+1;
+		//特集一覧（PC3，SP4）
+		int future_random = (int) (Math.random()*4)+1;
+		//特集一覧表示画像
+		int futureImg_random = (int) (Math.random()*3)+1;
+
+		// リクエストスコープに保存
+		request.setAttribute("category_random", category_random);
+		request.setAttribute("future_random", future_random);
+		request.setAttribute("futureImg_random", futureImg_random);
+
 		// フォーワード先
 		String forward = "WEB-INF/jsp/front/top.jsp";
 		return forward;
@@ -150,11 +156,11 @@ public class CtrlForFront extends HttpServlet {
 
 	private String movetoFeatureTop(HttpServletRequest request) {
 		//一覧に表示するものだけ（DAOへの命令の大元）
-		final int SHOWFALG = 1;
+		final int SHOWFLAG = 1;
 
 		// 特集記事一覧を取得する
 		FeatureListLogic featureListLogic = new FeatureListLogic();
-		List<FeatureList> FLList =  featureListLogic.getAllFeatureList(SHOWFALG);
+		List<FeatureList> FLList =  featureListLogic.getAllFeatureList(SHOWFLAG);
 
 		// リクエストスコープに保存
 		request.setAttribute("FLList", FLList);

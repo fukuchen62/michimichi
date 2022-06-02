@@ -8,16 +8,18 @@ public class FeatureList implements Serializable {
 	private String feature_name;
 	private String main_photo_path;
 	private String alt;
+	private String feature_list;
 
 	//コンストラクタの定義
 	public FeatureList(){}
 
-	public FeatureList(int feature_id, String feature_name, String main_photo_path, String alt){
+	public FeatureList(int feature_id, String feature_name, String main_photo_path, String alt,String feature_list){
 
 		this.feature_id = feature_id;
 		this.feature_name = feature_name;
 		this.main_photo_path = main_photo_path;
 		this.alt = alt;
+		this.feature_list = feature_list;
 
 	}
 
@@ -51,6 +53,14 @@ public class FeatureList implements Serializable {
 
 	public void setAlt(String alt) {
 		this.alt = alt;
+	}
+
+	public String getFeature_list() {
+		return feature_list;
+	}
+
+	public void setFeature_list(String feature_list) {
+		this.feature_list = feature_list;
 	}
 
 

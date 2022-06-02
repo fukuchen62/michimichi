@@ -10,6 +10,7 @@ public class Feature implements Serializable{
 		private String feature_name;
 		private String main_photo_path;
 		private String alt;
+		private String feature_list;
 		private String content;
 
 		//m_feature_typesから
@@ -25,7 +26,7 @@ public class Feature implements Serializable{
 		//コンストラクタの定義
 		public Feature(){}
 
-		public Feature(int feature_id, String feature_name, String main_photo_path, String alt, String content,
+		public Feature(int feature_id, String feature_name, String main_photo_path, String alt, String feature_list, String content,
 				int feature_type_id,String feature_type_name,String photo_path1,String alt1,
 				String photo_path2,String alt2,String photo_path3,String alt3){
 
@@ -33,6 +34,7 @@ public class Feature implements Serializable{
 			this.feature_name = feature_name;
 			this.main_photo_path = main_photo_path;
 			this.alt = alt;
+			this.setFeature_list(feature_list);
 			this.content = content;
 
 			this.feature_type_id = feature_type_id;
@@ -75,6 +77,14 @@ public class Feature implements Serializable{
 
 		public void setAlt(String alt) {
 			this.alt = alt;
+		}
+
+		public String getFeature_list() {
+			return feature_list;
+		}
+
+		public void setFeature_list(String feature_list) {
+			this.feature_list = feature_list;
 		}
 
 		public String getContent() {
@@ -148,6 +158,8 @@ public class Feature implements Serializable{
 		public void setAlt3(String alt3) {
 			this.alt3 = alt3;
 		}
+
+
 
 
 

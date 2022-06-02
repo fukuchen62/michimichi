@@ -17,7 +17,7 @@ public class T_featuresDAO {
 	/*********
 	 * 特集一覧、出力用のメソッド
 	 *********/
-	public List<FeatureList> findAll(int showflag) {
+	public List<FeatureList> getFeatureList(int showflag) {
 
 		List<FeatureList> FLList = new ArrayList<>();
 
@@ -40,6 +40,7 @@ public class T_featuresDAO {
 					+ " ORDER BY"
 					+ " feature_id DESC";
 
+			//SQLを送信
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			//pStmt.setInt(一番目の？,代入するもの)
@@ -54,8 +55,15 @@ public class T_featuresDAO {
 				String feature_name = rs.getString("feature_name");
 				String main_photo_path = rs.getString("main_photo_path");
 				String alt = rs.getString("alt");
+//				String feature_list = rs.getString("feature_list");
 
-				FeatureList feature = new FeatureList(feature_id, feature_name, main_photo_path, alt);
+				FeatureList feature = new FeatureList(
+						feature_id,
+						feature_name,
+						main_photo_path,
+						alt,
+						"feature_list");
+
 				FLList.add(feature);
 			}
 
@@ -76,7 +84,7 @@ public class T_featuresDAO {
 	 * 特集個別、出力用のメソッド
 	 *********/
 
-	public List<Feature> findAll(int showflag,int con_id) {
+	public List<Feature> getFeature(int showflag,int con_id) {
 
 		List<Feature> FList = new ArrayList<>();
 
@@ -115,6 +123,7 @@ public class T_featuresDAO {
 				String feature_name = rs.getString("feature_name");
 				String main_photo_path = rs.getString("main_photo_path");
 				String alt = rs.getString("alt");
+				String feature_list = rs.getString("feature_list");
 				String content = rs.getString("content");
 
 				int feature_type_id = rs.getInt("feature_type_id");
@@ -126,7 +135,7 @@ public class T_featuresDAO {
 				String photo_path3 = rs.getString("photo_path3");
 				String alt3 = rs.getString("alt3");
 
-				Feature feature = new Feature(feature_id, feature_name, main_photo_path, alt,content,
+				Feature feature = new Feature(feature_id, feature_name, main_photo_path, alt,feature_list,content,
 						feature_type_id,feature_type_name,photo_path1,alt1,photo_path2,alt2,photo_path3,alt3);
 				FList.add(feature);
 			}

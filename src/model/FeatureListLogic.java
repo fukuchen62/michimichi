@@ -26,7 +26,7 @@ public class FeatureListLogic {
 		//DAOオブジェクト生成
 		T_featuresDAO dao = new T_featuresDAO();
 		//DBから全レコードを取得する
-		List<FeatureList> FLList = dao.findAll(showflag);
+		List<FeatureList> FLList = dao.getFeatureList(showflag);
 		return FLList;
 	}
 

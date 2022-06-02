@@ -6,7 +6,6 @@
 <c:import url="../layout/template.jsp">
 
 	<c:param name="title" value="特集記事一覧（仮）" />
-	<!-- <c:param name="keywords" value="徳島,Coffee,Cafe Leaf" /> -->
 	<c:param name="description" value="description。description" />
 	<c:param name="mycss" value="" />
 	<c:param name="mycss2" value="" />
@@ -20,10 +19,10 @@
 			</h2>
 			<ul class="pc-grid-col3 menu-list">
 				<c:forEach var="list" items="${FLList}" end="5">
-					<li class="col"><img src="${list.main_photo_path}"
-						alt="${list.alt}">
-						<p class="menu-text">${list.feature_name}<br>
-						<a href="/CtrlForFront?pge_id=9&con_id=${list.feature_id}">こっちじゃよ</a>
+					<li class="col"><img src="test" alt="${list.alt}">
+						<p class="menu-text">eeeeeeeeeeee<br>
+						dddddddddddddddddddd<br>
+						<a href="/CtrlForFront?pge_id=9&con_id=111">こっちじゃよ</a>
 						</p></li>
 				</c:forEach>
 
