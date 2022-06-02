@@ -22,7 +22,7 @@
 					<li class="col"><img src="${list.main_photo_path}" alt="${list.alt}">
 						<p class="menu-text">${list.feature_name}<br>
 						${list.feature_list}<br>
-						<a href="/CtrlForFront?pge_id=9&con_id=${list.feature_id}">こっちじゃよ</a>
+						<a href="/CtrlForFront?pge_id=9&con_id=111">こっちじゃよ</a>
 						</p></li>
 				</c:forEach>
 
