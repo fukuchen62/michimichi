@@ -12,9 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import beans.Feature;
 import beans.FeatureList;
+import beans.Station;
 import model.FeatureListLogic;
 import model.FeatureLogic;
-
+import model.StationListLogic;
 
 /**
  * Servlet implementation class CtrlForFront
@@ -35,7 +36,8 @@ public class CtrlForFront extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		//リクエストパラメータを取得する
 		//ページ番号
 		String para1 = request.getParameter("pge_id");
@@ -51,34 +53,34 @@ public class CtrlForFront extends HttpServlet {
 		request.setAttribute("pge_id", pge_id);
 
 		//リクエストスコープに各ページ用情報保存、フォワード先を設定
-		if (pge_id==1) {
+		if (pge_id == 1) {
 			//トップページ
 			forward = movetoTop(request);
-		} else if (pge_id==2) {
+		} else if (pge_id == 2) {
 			//カテゴリー検索ページ
 			forward = movetoSearch(request);
-		} else if (pge_id==3) {
+		} else if (pge_id == 3) {
 			//記事一覧ページ
 			forward = movetoFeatureTop(request);
-		} else if (pge_id==4) {
+		} else if (pge_id == 4) {
 			//記事個別ページ
 			forward = movetoFeature(request);
-		} else if (pge_id==5) {
+		} else if (pge_id == 5) {
 			//お問い合わせページ
 			forward = movetoInquiry(request);
-		} else if (pge_id==6) {
+		} else if (pge_id == 6) {
 			//お問い合わせ内容確認ページ
 			forward = movetoInquiryConfirm(request);
-		} else if (pge_id==7) {
+		} else if (pge_id == 7) {
 			//お問い合わせ送信結果ページ
 			forward = movetoInquiryResult(request);
-		} else if (pge_id==8) {
+		} else if (pge_id == 8) {
 			//このHPについてページ
 			forward = movetoWhitePaper(request);
-		} else if (pge_id==9) {
+		} else if (pge_id == 9) {
 			//道の駅個別ページ
 			forward = movetoStationTemp(request);
-		}  else if (pge_id==10) {
+		} else if (pge_id == 10) {
 			//管理者ログインページ
 			forward = movetoLogin();
 		} else {
@@ -88,21 +90,19 @@ public class CtrlForFront extends HttpServlet {
 		}
 
 		//メイン画面にフォーワード
-		RequestDispatcher dispatcher =
-				request.getRequestDispatcher(forward);
+		RequestDispatcher dispatcher = request.getRequestDispatcher(forward);
 		dispatcher.forward(request, response);
 	}
 
-//	private String movetoMenu(HttpServletRequest request) {
-//		// TODO 自動生成されたメソッド・スタブ
-//		return null;
-//	}
-//
-//	private String movetoConcept(HttpServletRequest request) {
-//		// TODO 自動生成されたメソッド・スタブ
-//		return null;
-//	}
-
+	//	private String movetoMenu(HttpServletRequest request) {
+	//		// TODO 自動生成されたメソッド・スタブ
+	//		return null;
+	//	}
+	//
+	//	private String movetoConcept(HttpServletRequest request) {
+	//		// TODO 自動生成されたメソッド・スタブ
+	//		return null;
+	//	}
 
 	/**
 	 * トップページフォワード前処理
@@ -111,35 +111,48 @@ public class CtrlForFront extends HttpServlet {
 	 */
 	//TOPページ
 	private String movetoTop(HttpServletRequest request) {
-//		final int SHOWFALG = 1; //一覧に表示するものだけ
+		final int SHOWFALG = 1; //一覧に表示するものだけ
 
 		// 記事一覧を取得する
-//		PostsLogic postslogic = new PostsLogic();
-//		List<Posts> postslist =  postslogic.getAllPosts(SHOWFALG);
-//		System.out.println("movetoTop:");
+		//		PostsLogic postslogic = new PostsLogic();
+		//		List<Posts> postslist =  postslogic.getAllPosts(SHOWFALG);
+		//		System.out.println("movetoTop:");
 
 		// メニュー一覧を取得する
-//		MenuLogic menulogic = new MenuLogic();
-//		List<Menu> menulist = menulogic.getAllMenu(SHOWFALG);
+		//		MenuLogic menulogic = new MenuLogic();
+		//		List<Menu> menulist = menulogic.getAllMenu(SHOWFALG);
 
-//		System.out.print(menulist.get(0));
+		//		System.out.print(menulist.get(0));
 
 		// リクエストスコープに保存
-//		request.setAttribute("postslist", postslist);
-//		request.setAttribute("menulist", menulist);
+		//		request.setAttribute("postslist", postslist);
+		//		request.setAttribute("menulist", menulist);
 
 		//ランダム表記の制御
-		//カテゴリー検索表示
-		int category_random = (int) (Math.random()*6)+1;
-		//特集一覧（PC3，SP4）
-		int future_random = (int) (Math.random()*4)+1;
-		//特集一覧表示画像
-		int futureImg_random = (int) (Math.random()*3)+1;
+		//カテゴリー検索の道の駅個別リンク表示
+//		Integer[] station_random = new Integer[5];
+//		for(int i =0; i<5; i++) {
+//			int num = (int) (Math.random() * 18) + 1;
+//			station_random[i] = num;
+//		}
+//
+//
+//		//特集一覧（PC3，SP4）
+//		int future_random = (int) (Math.random() * 4) + 1;
+//		//特集一覧表示画像
+//		int futureImg_random = (int) (Math.random() * 3) + 1;
+//
+//		// リクエストスコープに保存
+//		request.setAttribute("station_random", station_random);
+//		request.setAttribute("future_random", future_random);
+//		request.setAttribute("futureImg_random", futureImg_random);
 
-		// リクエストスコープに保存
-		request.setAttribute("category_random", category_random);
-		request.setAttribute("future_random", future_random);
-		request.setAttribute("futureImg_random", futureImg_random);
+		// 検索sectionの道の駅個別リンクを取得する
+		StationListLogic stationListLogic = new StationListLogic();
+		List<Station> TSList = stationListLogic.getAllTopStaionList(SHOWFALG);
+
+			// リクエストスコープに保存
+			request.setAttribute("TSList", TSList);
 
 		// フォーワード先
 		String forward = "WEB-INF/jsp/front/top.jsp";
@@ -148,7 +161,6 @@ public class CtrlForFront extends HttpServlet {
 
 	//カテゴリー検索ページ
 	private String movetoSearch(HttpServletRequest request) {
-
 
 		// フォーワード先
 		String forward = "WEB-INF/jsp/front/search.jsp";
@@ -163,7 +175,7 @@ public class CtrlForFront extends HttpServlet {
 
 		// 特集記事一覧を取得する
 		FeatureListLogic featureListLogic = new FeatureListLogic();
-		List<FeatureList> FLList =  featureListLogic.getAllFeatureList(SHOWFLAG);
+		List<FeatureList> FLList = featureListLogic.getAllFeatureList(SHOWFLAG);
 
 		// リクエストスコープに保存
 		request.setAttribute("FLList", FLList);
@@ -196,10 +208,16 @@ public class CtrlForFront extends HttpServlet {
 
 		// 特集個別記事の内容を取得する
 		FeatureLogic featureLogic = new FeatureLogic();
-		List<Feature> FList =  featureLogic.getAllFeature(SHOWFALG,CONID);
+		List<Feature> FList = featureLogic.getAllFeature(SHOWFALG, CONID);
 
 		// リクエストスコープに保存
 		request.setAttribute("FList", FList);
+
+		//titleを保存
+		String title = FList.get(0).getFeature_name();
+
+		// リクエストスコープに保存
+		request.setAttribute("title", title);
 
 		// フォーワード先
 		forward = "WEB-INF/jsp/front/feature.jsp";
@@ -210,7 +228,6 @@ public class CtrlForFront extends HttpServlet {
 	//お問い合わせフォーム
 	private String movetoInquiry(HttpServletRequest request) {
 
-
 		// フォーワード先
 		String forward = "WEB-INF/jsp/front/inquiry.jsp";
 		return forward;
@@ -220,7 +237,6 @@ public class CtrlForFront extends HttpServlet {
 	//お問い合わせ確認ページ
 	private String movetoInquiryConfirm(HttpServletRequest request) {
 
-
 		// フォーワード先
 		String forward = "WEB-INF/jsp/front/inquiry_confirm.jsp";
 		return forward;
@@ -229,7 +245,6 @@ public class CtrlForFront extends HttpServlet {
 
 	//お問い合わせ結果ページ
 	private String movetoInquiryResult(HttpServletRequest request) {
-
 
 		// フォーワード先
 		String forward = "WEB-INF/jsp/front/inquiry_result.jsp";
