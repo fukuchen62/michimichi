@@ -31,40 +31,50 @@ public class Login extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
 		//リクエストパラメータの取得
-//		request.setCharacterEncoding("UTF-8");
+		//		request.setCharacterEncoding("UTF-8");
 
 		String login_id = request.getParameter("login_id");
-		String pass = request.getParameter("pass");
+		String password = request.getParameter("password");
 
 		//LoginUserインスタンスの生成
-		LoginUser login = new LoginUser(login_id,pass);
+		LoginUser login = new LoginUser(login_id, password);
 
 		//ログイン
 		LoginLogic loginLogic = new LoginLogic();
 		LoginUser loginUser = loginLogic.execute(login);
 
-		if(loginUser!=null) {
-			HttpSession session = request.getSession();
-			session.setAttribute("loginUser",loginUser);
-			response.sendRedirect("/michimichi/CtrlForCms?pge_id=0");
-		}else {
+		HttpSession session = request.getSession();
 
-			String forward = "/WEB-INF/jsp/loginResult.jsp";
-			RequestDispatcher dispatcher =
-					request.getRequestDispatcher(forward);
+		String forward = "";
+		if (loginUser != null) {
+
+			//			session.setAttribute("loginUser",loginUser);
+			//			response.sendRedirect("/michimichi/CtrlForCms?pge_id=13");
+
+			forward = "/WEB-INF/jsp/cms/adminpage.jsp";
+			RequestDispatcher dispatcher = request.getRequestDispatcher(forward);
+			dispatcher.forward(request, response);
+
+		} else {
+
+			session.removeAttribute("loginUser");
+
+			forward = "/WEB-INF/jsp/cms/login_result.jsp";
+			RequestDispatcher dispatcher = request.getRequestDispatcher(forward);
 			dispatcher.forward(request, response);
 		}
 	}
-//テスト
 
 }

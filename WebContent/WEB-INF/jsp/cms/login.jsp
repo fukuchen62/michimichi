@@ -3,7 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
-<c:import url="layout/template_back.jsp">
+<c:import url="../layout/template_back.jsp">
 
 	<c:param name="title" value="ログイン" />
 	<c:param name="keywords" value="徳島 Coffee" />
@@ -14,7 +14,7 @@
 			<div id="main">
 				<h1>管理者ログイン</h1>
 				<div id="login">
-					<form action="/michimichi/Login" method="post">
+					<form action="Login" method="post">
 						<p>
 							ユーザー名：<input type="text" name="login_id">
 						</p>

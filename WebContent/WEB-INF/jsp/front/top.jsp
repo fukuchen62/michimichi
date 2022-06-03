@@ -18,6 +18,8 @@
 		<a href="CtrlForFront?pge_id=1">TOP</a>
 		<a href="CtrlForFront?pge_id=3">記事一覧</a>
 		<a href="CtrlForFront?pge_id=4&con_id=1">記事個別＿ID1</a>
+		<a href="CtrlForFront?pge_id=10">管理ログインページ</a>
+		<a href="CtrlForCms?pge_id=13">マイページ</a>
 
 		 <main id="contents" class="contents">
 			<div class="container">

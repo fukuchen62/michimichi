@@ -53,7 +53,7 @@ public class T_featuresDAO {
 			while (rs.next()) {
 				int feature_id = rs.getInt("feature_id");
 				String feature_name = rs.getString("feature_name");
-				String main_photo_path = rs.getString("main_photo_path");
+				String main_photo_path = DAOConstant.UPLOADS_TOPIC + rs.getString("main_photo_path");
 				String alt = rs.getString("alt");
 //				String feature_list = rs.getString("feature_list");
 

@@ -6,6 +6,12 @@ package dao;
  * null扱いのデータ表現などの揺れを吸収するためのUtilクラス
  */
 public class DAOConstant {
+
+	public final static String UPLOADS_MICHIEKI = "uploads/michieki/"; //道の駅の画像フォルダ
+	public final static String UPLOADS_OTHERS = "uploads/others/"; //その他の画像フォルダ
+	public final static String UPLOADS_PICTOGRAM = "uploads/pictogram/"; //ピクトグラムの画像フォルダ
+	public final static String UPLOADS_TOPIC = "uploads/topic/"; //特集の画像フォルダ
+
 	public static final String NULL = "-";
 	public static final String NULL2 = "－";
 

@@ -192,10 +192,10 @@ public class CtrlForFront extends HttpServlet {
 
 		// 特集個別記事の内容を取得する
 		FeatureLogic featureLogic = new FeatureLogic();
-		List<Feature> FLList =  featureLogic.getAllFeature(SHOWFALG,CONID);
+		List<Feature> FList =  featureLogic.getAllFeature(SHOWFALG,CONID);
 
 		// リクエストスコープに保存
-		request.setAttribute("FLList", FLList);
+		request.setAttribute("FList", FList);
 
 		// フォーワード先
 		forward = "WEB-INF/jsp/front/feature.jsp";
@@ -238,9 +238,20 @@ public class CtrlForFront extends HttpServlet {
 	}
 
 	private String movetoStationTemp(HttpServletRequest request) {
+		String para2 = request.getParameter("con_id");
+		String forward = "";
+		int con_id = 0;
+
+		//入力値チェック
+		if (para2 != null && para2.length() != 0) {
+			con_id = Integer.parseInt(para2);
+		}
+
+		// リクエストスコープに保存
+		request.setAttribute("con_id", con_id);
 
 		// フォーワード先
-		String forward = "WEB-INF/jsp/front/station_temp.jsp";
+		forward = "WEB-INF/jsp/front/station_temp.jsp";
 		return forward;
 
 	}

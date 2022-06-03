@@ -34,7 +34,7 @@ public class Feature implements Serializable{
 			this.feature_name = feature_name;
 			this.main_photo_path = main_photo_path;
 			this.alt = alt;
-			this.setFeature_list(feature_list);
+			this.feature_list = feature_list;
 			this.content = content;
 
 			this.feature_type_id = feature_type_id;

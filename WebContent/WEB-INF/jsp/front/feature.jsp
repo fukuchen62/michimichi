@@ -4,21 +4,24 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <c:import url="../layout/template.jsp">
+	<c:forEach var="item" items="${FList}">
 
-	<c:param name="title" value="特集記事（仮）" />
-	<c:param name="description" value="description。description" />
-	<c:param name="mycss" value="" />
-	<c:param name="mycss2" value="" />
-	<c:param name="myjs" value="" />
+		<c:param name="title" value="aaa" />
+		<c:param name="description" value="description。description" />
+		<c:param name="mycss" value="" />
+		<c:param name="mycss2" value="" />
+		<c:param name="myjs" value="" />
 
-	<c:param name="content">
+		<c:param name="content">
 
-		<section id="menu" class="section">
-			<h2 class="list">
-				特集記事ですわよ～～～！
-			</h2>
+			<section id="menu" class="section">
+				<h2 class="list">
+					特集一覧じゃよ～～～
+				</h2>
+				<c:out value="${item}" />
 
-		</section>
+			</section>
 
-	</c:param>
+		</c:param>
+	</c:forEach>
 </c:import>
