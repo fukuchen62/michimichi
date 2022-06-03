@@ -55,14 +55,14 @@ public class T_featuresDAO {
 				String feature_name = rs.getString("feature_name");
 				String main_photo_path = DAOConstant.UPLOADS_TOPIC + rs.getString("main_photo_path");
 				String alt = rs.getString("alt");
-//				String feature_list = rs.getString("feature_list");
+				String feature_list = rs.getString("feature_list");
 
 				FeatureList feature = new FeatureList(
 						feature_id,
 						feature_name,
 						main_photo_path,
 						alt,
-						"feature_list");
+						feature_list);
 
 				FLList.add(feature);
 			}
@@ -100,12 +100,27 @@ public class T_featuresDAO {
 		try {
 
 			//SELECT文を準備
-			//show_flagで表示になっている指定されたIDのものを降順で抽出する。
-			sql = "SELECT * "
-					+ " FROM t_features INNER JOIN m_feature_types "
-					+ " ON t_features.feature_id = m_feature_types.feature_id"
-					+ " WHERE show_flag = ?"
-					+ " AND feature_id = ?";
+			//show_flagで表示になっている指定されたIDのものを抽出する。
+			//ASは教科書p56
+			sql = "SELECT"
+					 + "a.feature_id,"
+					 + "a.feature_name,"
+					 + "a.main_photo_path,"
+					 + "a.alt,"
+					 + "a.feature_list,"
+					 + "a.content,"
+					 + "b.feature_type_id,"
+					 + "b.feature_type_name,"
+					 + "b.photo_path1,"
+					 + "b.alt1,"
+					 + "b.photo_path2,"
+					 + "b.alt2,"
+					 + "b.photo_path3,"
+					 + "b.alt3"
+					 + "FROM t_features as a INNER JOIN m_feature_types as b"
+					 + "ON a.feature_type_id = b.feature_type_id"
+					 + "WHERE a.show_flag = 1"
+					 + "AND a.feature_id = 1";
 
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);

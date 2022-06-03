@@ -5,8 +5,10 @@
 
 <c:import url="../layout/template.jsp">
 
-	<c:param name="title" value="特集記事一覧（仮）" />
-	<c:param name="description" value="description。description" />
+	<c:param name="title" value="特集一覧　―　みちのえき～未知の駅～" />
+	<c:param name="description" value="徳島の18ヶ所の道の駅と周辺スポットの紹介サイトです。
+徳島の大自然、グルメ、観光名所など一歩踏み込んだ、
+知られざる未知のスポットをご紹介します。" />
 	<c:param name="mycss" value="" />
 	<c:param name="mycss2" value="" />
 	<c:param name="myjs" value="" />

@@ -109,6 +109,7 @@ public class CtrlForFront extends HttpServlet {
 	 *
 	 * @return フォワード用パス
 	 */
+	//TOPページ
 	private String movetoTop(HttpServletRequest request) {
 //		final int SHOWFALG = 1; //一覧に表示するものだけ
 
@@ -145,6 +146,7 @@ public class CtrlForFront extends HttpServlet {
 		return forward;
 	}
 
+	//カテゴリー検索ページ
 	private String movetoSearch(HttpServletRequest request) {
 
 
@@ -154,6 +156,7 @@ public class CtrlForFront extends HttpServlet {
 
 	}
 
+	//特集一覧ページ
 	private String movetoFeatureTop(HttpServletRequest request) {
 		//一覧に表示するものだけ（DAOへの命令の大元）
 		final int SHOWFLAG = 1;
@@ -171,6 +174,7 @@ public class CtrlForFront extends HttpServlet {
 
 	}
 
+	//特集個別ページ
 	private String movetoFeature(HttpServletRequest request) {
 		//リクエストパラメータを取得する
 		//コンテンツ番号
@@ -202,6 +206,8 @@ public class CtrlForFront extends HttpServlet {
 		return forward;
 
 	}
+
+	//お問い合わせフォーム
 	private String movetoInquiry(HttpServletRequest request) {
 
 
@@ -211,6 +217,7 @@ public class CtrlForFront extends HttpServlet {
 
 	}
 
+	//お問い合わせ確認ページ
 	private String movetoInquiryConfirm(HttpServletRequest request) {
 
 
@@ -220,6 +227,7 @@ public class CtrlForFront extends HttpServlet {
 
 	}
 
+	//お問い合わせ結果ページ
 	private String movetoInquiryResult(HttpServletRequest request) {
 
 
@@ -229,6 +237,7 @@ public class CtrlForFront extends HttpServlet {
 
 	}
 
+	//このHPについてページ
 	private String movetoWhitePaper(HttpServletRequest request) {
 
 		// フォーワード先
@@ -237,6 +246,7 @@ public class CtrlForFront extends HttpServlet {
 
 	}
 
+	//道の駅個別ページ
 	private String movetoStationTemp(HttpServletRequest request) {
 		String para2 = request.getParameter("con_id");
 		String forward = "";
@@ -256,6 +266,7 @@ public class CtrlForFront extends HttpServlet {
 
 	}
 
+	//管理者ログインページ
 	private String movetoLogin() {
 		// フォーワード先 "
 		String forward = "WEB-INF/jsp/cms/login.jsp";
