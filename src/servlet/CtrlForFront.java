@@ -16,6 +16,7 @@ import beans.Station;
 import model.FeatureListLogic;
 import model.FeatureLogic;
 import model.StationListLogic;
+import model.StationLogic;
 
 /**
  * Servlet implementation class CtrlForFront
@@ -111,41 +112,8 @@ public class CtrlForFront extends HttpServlet {
 	 */
 	//TOPページ
 	private String movetoTop(HttpServletRequest request) {
-		final int SHOWFALG = 1; //一覧に表示するものだけ
-
-		// 記事一覧を取得する
-		//		PostsLogic postslogic = new PostsLogic();
-		//		List<Posts> postslist =  postslogic.getAllPosts(SHOWFALG);
-		//		System.out.println("movetoTop:");
-
-		// メニュー一覧を取得する
-		//		MenuLogic menulogic = new MenuLogic();
-		//		List<Menu> menulist = menulogic.getAllMenu(SHOWFALG);
-
-		//		System.out.print(menulist.get(0));
-
-		// リクエストスコープに保存
-		//		request.setAttribute("postslist", postslist);
-		//		request.setAttribute("menulist", menulist);
-
-		//ランダム表記の制御
-		//カテゴリー検索の道の駅個別リンク表示
-//		Integer[] station_random = new Integer[5];
-//		for(int i =0; i<5; i++) {
-//			int num = (int) (Math.random() * 18) + 1;
-//			station_random[i] = num;
-//		}
-//
-//
-//		//特集一覧（PC3，SP4）
-//		int future_random = (int) (Math.random() * 4) + 1;
-//		//特集一覧表示画像
-//		int futureImg_random = (int) (Math.random() * 3) + 1;
-//
-//		// リクエストスコープに保存
-//		request.setAttribute("station_random", station_random);
-//		request.setAttribute("future_random", future_random);
-//		request.setAttribute("futureImg_random", futureImg_random);
+		//一覧に表示するものだけ
+		final int SHOWFALG = 1;
 
 		// 検索sectionの道の駅個別リンクを取得する
 		StationListLogic stationListLogic = new StationListLogic();
@@ -153,6 +121,25 @@ public class CtrlForFront extends HttpServlet {
 
 			// リクエストスコープに保存
 			request.setAttribute("TSList", TSList);
+
+		// 特集記事一覧を取得する
+		FeatureListLogic featureListLogic = new FeatureListLogic();
+		List<Feature> TLList = featureListLogic.getAllTopFeature(SHOWFALG);
+
+			// リクエストスコープに保存
+			request.setAttribute("TLList", TLList);
+
+		//ランダム表記の制御
+		//特集一覧（PC3，SP4）表示画像
+		Integer[] featureImg_random = new Integer[2];
+		for(int i =0; i<2; i++) {
+			int num = (int) (Math.random() * 3) + 1;
+			featureImg_random[i] = num;
+		}
+
+			// リクエストスコープに保存
+			request.setAttribute("featureImg_random", featureImg_random);
+
 
 		// フォーワード先
 		String forward = "WEB-INF/jsp/front/top.jsp";
@@ -272,8 +259,19 @@ public class CtrlForFront extends HttpServlet {
 			con_id = Integer.parseInt(para2);
 		}
 
+			// リクエストスコープに保存
+			request.setAttribute("con_id", con_id);
+
+		//一覧に表示するものだけ（DAOへの命令の大元）
+		final int SHOWFALG = 1;
+		int CONID = con_id;
+
+		// 特集個別記事の内容を取得する
+		StationLogic stationLogic = new StationLogic();
+		List<Station> StationList = stationLogic.getAllStation(SHOWFALG, CONID);
+
 		// リクエストスコープに保存
-		request.setAttribute("con_id", con_id);
+		request.setAttribute("StationList", StationList);
 
 		// フォーワード先
 		forward = "WEB-INF/jsp/front/station_temp.jsp";

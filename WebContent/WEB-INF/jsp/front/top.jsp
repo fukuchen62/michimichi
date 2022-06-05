@@ -17,33 +17,37 @@
 	<c:param name="content">
 
 		<a href="CtrlForFront?pge_id=1">TOP</a>
-		<a href="CtrlForFront?pge_id=4&con_id=1">記事個別＿ID1</a>
 		<a href="CtrlForFront?pge_id=10">管理ログインページ</a>
 		<a href="CtrlForCms?pge_id=13">マイページ</a>
-		<br/>
-		<br/>
-
 		<br/>
 				<section id="menu" class="section">
 			<h2 class="list">検索関係</h2>
 			<ul class="pc-grid-col3 menu-list">
 				<c:forEach var="list" items="${TSList}" end="5">
 					<li class="col"><img src="${list.photo_thum_path1}" alt="${list.alt1}">
-						<p class="menu-text">${list.feature_name}<br>
-						${list.michinoeki_name}<br>
+						<p class="menu-text">${list.michinoeki_name}<br>
 						<a href="CtrlForFront?pge_id=9&con_id=${list.michinoeki_id}">こっちじゃよ</a>
 						</p></li>
 				</c:forEach>
-
 			</ul>
 		</section>
-		<br/>
 		<a href="CtrlForFront?pge_id=2">検索へ</a>
 		<br/>
 		<br/>
-		<h2>特集</h2>
-		<br/>
-		<br/>
+		<section id="menu" class="section">
+			<h2 class="list">特集</h2>
+			<ul class="pc-grid-col3 menu-list">
+				<c:set var="itemType" value="${featureImg_random}" />
+				<c:forEach var="list" items="${TLList}" end="2">
+					<c:set var="itemType" value="${featureImg_random}" />
+					<li class="col">
+						<p class="menu-text">
+						<a href="CtrlForFront?pge_id=9&con_id=${list.feature_id}"><img src="${list.photo_path1}" alt="${list.alt1}"></a><br>
+						${list.feature_name}<br>
+						</p></li>
+				</c:forEach>
+			</ul>
+		</section>
 		<a href="CtrlForFront?pge_id=3">記事一覧</a>
 
 	</c:param>

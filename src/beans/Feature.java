@@ -49,6 +49,24 @@ public class Feature implements Serializable{
 			this.alt3 = alt3;
 		}
 
+		//TOP個別リンクランダム用
+		public Feature(int feature_id, String feature_name,
+				int feature_type_id,String feature_type_name,String photo_path1,String alt1,
+				String photo_path2,String alt2,String photo_path3,String alt3){
+
+			this.feature_id = feature_id;
+			this.feature_name = feature_name;
+
+			this.feature_type_id = feature_type_id;
+			this.feature_type_name = feature_type_name;
+			this.photo_path1 = photo_path1;
+			this.alt1 = alt1;
+			this.photo_path2 = photo_path2;
+			this.alt2 = alt2;
+			this.photo_path3 = photo_path3;
+			this.alt3 = alt3;
+		}
+
 		public int getFeature_id() {
 			return feature_id;
 		}

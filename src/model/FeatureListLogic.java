@@ -2,6 +2,7 @@ package model;
 
 import java.util.List;
 
+import beans.Feature;
 import beans.FeatureList;
 import dao.T_featuresDAO;
 
@@ -28,6 +29,15 @@ public class FeatureListLogic {
 		//DBから全レコードを取得する
 		List<FeatureList> FLList = dao.getFeatureList(showflag);
 		return FLList;
+	}
+
+	//TOP特集個別リンクを取得する
+	public List<Feature> getAllTopFeature(int showflag){
+		//DAOオブジェクト生成
+		T_featuresDAO dao = new T_featuresDAO();
+		//DBから全レコードを取得する
+		List<Feature> TLList = dao.getTopFeature(showflag);
+		return TLList;
 	}
 
 }
