@@ -1,0 +1,81 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import beans.Search;
+import model.DbConnection;
+
+public class SearchDAO {
+	//エリアIDのみの検索
+	public List<Search> findAll(int[] search_area_id) {
+
+		List<Search> SearchList = new ArrayList<>();
+
+		String sql = "";
+
+		//データベースに接続
+		Connection conn = null;
+		conn = DbConnection.conn;
+		if (conn == null)
+			return null;
+
+		try {
+			//SELECT文作成
+			sql += "SELECT michinoeki_id,M_ROAD_STATIONS.AREA_ID,michinoeki_name,alt1,photo_path1 ";
+			sql += "FROM M_ROAD_STATIONS INNER JOIN M_AREAS ON M_ROAD_STATIONS.AREA_ID  = M_AREAS.AREA_ID ";
+			sql += "WHERE ";
+			sql += "M_ROAD_STATIONS.AREA_ID=?";
+			//複数のエリアIDが選択された場合
+			if(search_area_id.length>=2) {
+				for(int i=1;i<search_area_id.length;i++) {
+					sql += " OR M_ROAD_STATIONS.AREA_ID=?";
+				}
+			}
+
+			//SQL命令を準備する
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+			//ここで一個目
+			pStmt.setInt(1, search_area_id[0]);
+			//複数のエリアIDが選択された場合
+			if(search_area_id.length>=2) {
+				//二個目以降のエリアID
+				for(int i=1;i<search_area_id.length;i++) {
+					pStmt.setInt(i+1, search_area_id[i]);
+				}
+			}
+			//SQL命令を発行する
+			ResultSet rs = pStmt.executeQuery();
+			//読み込んだレコードを処理する
+			while (rs.next()) {
+				int michinoeki_id = rs.getInt("michinoeki_id");
+				int area_id = rs.getInt("area_id");
+				//int tages_id = rs.getInt("tages_id");
+				String michinoeki_name = rs.getString("michinoeki_name");
+				String alt1 = rs.getString("alt1");
+				//String photo_path=rs.getString("photo_path");
+				String photo_path1 = DAOConstant.UPLOADS_MICHIEKI + rs.getString("photo_path1");
+				//String icon_path1 = DAOConstant.UPLOADS_PICTOGRAM + rs.getString("icon_path1");
+				//String icon_path2 = DAOConstant.UPLOADS_PICTOGRAM + rs.getString("icon_path2");
+
+				//Searchインスタンス
+//				Search Search = new Search(michinoeki_id, area_id, facilities_id, tages_id, michinoeki_name,
+//						photo_path1, alt, icon_path1, icon_path2);
+				Search Search = new Search(michinoeki_id, area_id, michinoeki_name,photo_path1, alt1);
+				SearchList.add(Search);
+			}
+
+		} catch (SQLException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+			return null;
+		}
+
+		return SearchList;
+
+	}
+}
