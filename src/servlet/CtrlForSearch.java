@@ -47,22 +47,21 @@ public class CtrlForSearch extends HttpServlet {
 		}
 
 		//施設取得
-		String[] checkedFacilities=request.getParameterValues("facility");
-		int[] facilities =new int[checkedFacilities.length];
-		for(int i=0;i<checkedFacilities.length;i++) {
-			facilities[i]=Integer.parseInt(checkedFacilities[i]);
-		}
+//		String[] checkedFacilities=request.getParameterValues("facility");
+//		int[] facilities =new int[checkedFacilities.length];
+//		for(int i=0;i<checkedFacilities.length;i++) {
+//			facilities[i]=Integer.parseInt(checkedFacilities[i]);
+//		}
 
 		//オブジェクト生成
 		SearchLogic searchLogic = new SearchLogic();
 
 		List<Search> searchList=new ArrayList<>();
-
 		//検索結果を読み込み
 		//エリアIDのみの検索の場合
 			 searchList= searchLogic.getSearchList(areas);
 		//施設IDのみの検索の場合
-			 //searchList=searchLogic.getSearchList(facilities);
+		// searchList=searchLogic.getSearchList(facilities);
 		//エリアIDと施設IDを使った検索の場合
 
 		if (searchList != null) {

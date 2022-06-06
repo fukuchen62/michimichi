@@ -128,3 +128,4 @@ public class Search implements Serializable {
 //		this.icon_path2 = icon_path2;
 //	}
 }
+

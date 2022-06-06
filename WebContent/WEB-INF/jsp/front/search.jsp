@@ -6,12 +6,9 @@
 
 <c:import url="../layout/template.jsp">
 
-	<c:param name="title" value="カテゴリー検索　―　みちのえき～未知の駅～" />
+	<c:param name="title" value="Cafe Leaf　美しい" />
 	<c:param name="keywords" value="徳島,Coffee,Cafe Leaf" />
-	<c:param name="description"
-		value="徳島の18ヶ所の道の駅と周辺スポットの紹介サイトです。
-徳島の大自然、グルメ、観光名所など一歩踏み込んだ、
-知られざる未知のスポットをご紹介します。" />
+	<c:param name="description" value="description。description" />
 	<c:param name="mycss" value="test.css" />
 	<c:param name="mycss2" value="" />
 	<c:param name="myjs" value="" />
@@ -22,37 +19,62 @@
 		<a href="CtrlForFront?pge_id=3">記事一覧</a>
 		<a href="CtrlForFront?pge_id=4&con_id=1">記事個別＿ID1</a>
 
-		<main id="contents" class="contents">
-			<form action="/michimichi/CtrlForSearch" method="get">
-				<h2>地域</h2>
-				<label> <input type="checkbox" name="area" value="1">東部
-				</label> <label> <input type="checkbox" name="area" value="2">西部
-				</label><label> <input type="checkbox" name="area" value="3">南部
-				</label>
-				<h2>施設</h2>
-				<label> <input type="checkbox" name="facility" value="1">食事処
-				</label><label> <input type="checkbox" name="facility" value="2">ショップ
-				</label><label> <input type="checkbox" name="facility" value="3">介助犬
-				</label><label> <input type="checkbox" name="facility" value="4">wifi
-				</label><label> <input type="checkbox" name="facility" value="5">障害者向けトイレ
-				</label><label> <input type="checkbox" name="facility" value="6">オムツ台
-				</label><label> <input type="checkbox" name="facility" value="7">障害者用駐車場
-				</label><label> <input type="checkbox" name="facility" value="8">ガソリンスタンド
-				</label><label> <input type="checkbox" name="facility" value="9">EVスタンド
-				</label><label> <input type="checkbox" name="facility" value="10">観光案内
-				</label><label> <input type="checkbox" name="facility" value="11">温泉
-				</label>
-				<h2>周辺施設</h2>
-				<label> <input type="checkbox" name="facility" value="12">コンビニ
-				</label><label> <input type="checkbox" name="facility" value="13">ドラッグストア
-				</label><label> <input type="checkbox" name="facility" value="14">ガソリンスタンド
-				</label><label> <input type="checkbox" name="facility" value="15">病院
-				</label><label> <input type="checkbox" name="facility" value="16">最寄りの駅
-				</label><label> <input type="checkbox" name="facility" value="17">体験施設
-				</label><label> <input type="checkbox" name="facility" value="18">温泉
-				</label><label> <input type="checkbox" name="facility" value="19">宿泊施設
-				</label> <br> <input type="submit" value="送信"><br>
-			</form>
+		 <main id="contents" class="contents">
+				<form action="/michimichi/CtrlForSearch" method="get">
+	<h2>地域</h2>
+	<label>
+		<input type="checkbox" name="area" value="1">東部
+	</label>
+	<label>
+		<input type="checkbox" name="area" value="2">西部
+	</label><label>
+		<input type="checkbox" name="area" value="3">南部
+	</label>
+	<h2>施設</h2>
+	<label>
+		<input type="checkbox" name="facility" value="1">食事処
+	</label><label>
+		<input type="checkbox" name="facility" value="2">ショップ
+	</label><label>
+		<input type="checkbox" name="facility" value="3">介助犬
+	</label><label>
+		<input type="checkbox" name="facility" value="4">wifi
+	</label><label>
+		<input type="checkbox" name="facility" value="5">障害者向けトイレ
+	</label><label>
+		<input type="checkbox" name="facility" value="6">オムツ台
+	</label><label>
+		<input type="checkbox" name="facility" value="7">障害者用駐車場
+	</label><label>
+		<input type="checkbox" name="facility" value="8">ガソリンスタンド
+	</label><label>
+		<input type="checkbox" name="facility" value="9">EVスタンド
+	</label><label>
+		<input type="checkbox" name="facility" value="10">観光案内
+	</label><label>
+		<input type="checkbox" name="facility" value="11">温泉
+	</label>
+	<h2>周辺施設</h2>
+	<label>
+		<input type="checkbox" name="facility" value="12">コンビニ
+	</label><label>
+		<input type="checkbox" name="facility" value="13">ドラッグストア
+	</label><label>
+		<input type="checkbox" name="facility" value="14">ガソリンスタンド
+	</label><label>
+		<input type="checkbox" name="facility" value="15">病院
+	</label><label>
+		<input type="checkbox" name="facility" value="16">最寄りの駅
+	</label><label>
+		<input type="checkbox" name="facility" value="17">体験施設
+	</label><label>
+		<input type="checkbox" name="facility" value="18">温泉
+	</label><label>
+		<input type="checkbox" name="facility" value="19">宿泊施設
+	</label>
+	<br>
+	<input type="submit"value="送信">
+	</form>
 		</main>
 		<!-- main -->
 
