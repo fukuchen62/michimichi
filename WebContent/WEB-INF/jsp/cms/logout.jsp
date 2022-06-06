@@ -6,11 +6,15 @@
 <head>
 <meta charset="UTF-8">
 <link href="/tsubuyaki/css/style.css" rel="stylesheet" media="all">
-<title>Admin Logout</title>
+<title>AdminPage Logout</title>
 </head>
 <body>
 	<h1>管理者ログアウト</h1>
 	<p>ログアウトしました</p>
-	<a href="/michimichi">TOPへ</a>
+
+<!--
+トップ画面→ログイン画面のパスを使用
+-->
+	<a href="CtrlForFront?pge_id=10">ログイン画面に戻る</a>
 </body>
 </html>

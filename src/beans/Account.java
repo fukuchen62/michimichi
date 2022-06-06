@@ -7,7 +7,7 @@ public class Account implements Serializable{
 
 	private int user_id;		//ユーザーID（テーブル自動生成）
 	private String login_id;	//ログインID
-	private String pass;		//パスワード
+	private String password;	//パスワード
 	private String name;		//ユーザー名
 	private Date birthday;		//お誕生日：yyyy-mm-dd
 	private int gender;			//性別：1=男　2=女　3=不明
@@ -30,7 +30,7 @@ public class Account implements Serializable{
 	 */
 	public Account(String login_id, String pass) {
 		this.login_id = login_id;
-		this.pass = pass;
+		this.password = pass;
 	}
 
 	/**
@@ -39,7 +39,7 @@ public class Account implements Serializable{
 	public Account(
 			int user_id,
 			String login_id,
-			String pass,
+			String password,
 			String name,
 			Date birthday,
 			int gender,
@@ -51,7 +51,7 @@ public class Account implements Serializable{
 			) {
 		this.user_id = user_id;
 		this.login_id = login_id;
-		this.pass = pass;
+		this.password = password;
 		this.name = name;
 		this.birthday = birthday;
 		this.gender = gender;
@@ -84,12 +84,12 @@ public class Account implements Serializable{
 
 
 	public String getPass() {
-		return pass;
+		return password;
 	}
 
 
 	public void setPass(String pass) {
-		this.pass = pass;
+		this.password = pass;
 	}
 
 

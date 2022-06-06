@@ -38,7 +38,7 @@ public class CtrlForCms extends HttpServlet {
 		LoginUser loginUser = (LoginUser) session.getAttribute("loginUser");
 		//ログインではない状態の場合は、ログイン画面へ
 		if (loginUser == null) {
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/login");
 			dispatcher.forward(request, response);
 		}
 
@@ -63,12 +63,15 @@ public class CtrlForCms extends HttpServlet {
 		request.setAttribute("pge_id", pge_id);
 
 
-
 		//リクエストスコープに各ページ用情報保存、フォワード先を設定
 		if (pge_id == 13) {
 
 			forward = movetoAdminpage(request);
 
+		}
+
+		else if (pge_id == 10) {
+			forward = movetoLogin(request);
 		}
 
 		else if (pge_id == 11) {
@@ -158,82 +161,112 @@ public class CtrlForCms extends HttpServlet {
 		//		//リクエストスコープに保存
 		//		request.setAttribute("commentList", comment);
 
-		//メイン画面にフォワード
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
+		//トップ画面にフォワード
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/front/top.jsp");
 		dispatcher.forward(request, response);
 	}
 
 	private String movetoAdminpage(HttpServletRequest request) {
 
-		String forward = "Web-INF/jsp/cms/adminpage.jsp";
+		String forward = "WEB-INF/jsp/cms/adminpage.jsp";
+		return forward;
+	}
+
+	private String movetoLogin(HttpServletRequest request) {
+
+		String forward = "WEB-INF/jsp/cms/login.jsp";
 		return forward;
 	}
 
 	private String movetoLoginResult(HttpServletRequest request) {
-		String forward = "Web-INF/jsp/cms/login_reult.jsp";
+		String forward = "WEB-INF/jsp/cms/login_reult.jsp";
 		return forward;
 	}
 
 	private String movetoLogout(HttpServletRequest request) {
-		String forward = "Web-INF/jsp/cms/logout.jsp";
+
+		String forward = "WEB-INF/jsp/cms/logout.jsp";
 		return forward;
 	}
 
 	private String movetoStationList(HttpServletRequest request) {
-		String forward = "Web-INF/jsp/cms/station_list.jsp";
+		String forward = "WEB-INF/jsp/cms/station_list.jsp";
 		return forward;
 	}
 
 	private String movetoStationEdit() {
-		String forward = "Web-INF/jsp/cms/station_edit.jsp";
+		String forward = "WEB-INF/jsp/cms/station_edit.jsp";
 		return forward;
 	}
 
 	private String movetoFeatureEdit() {
-		String forward = "Web-INF/jsp/cms/feature_edit.jsp";
+		String forward = "WEB-INF/jsp/cms/feature_edit.jsp";
 		return forward;
 	}
 
 	private String movetoFeatureList() {
-		String forward = "Web-INF/jsp/cms/feature_list.jsp";
+		// 記事一覧を取得する
+//				FeatureList featurelist = new FeatureList();
+//				List<Feature> featureList = featurelist.getAllfeature(0);
+//
+		//リクエストスコープに保存
+//				request.setAttribute("featureList", featureList);
+
+		String forward = "WEB-INF/jsp/cms/feature_list.jsp";
 		return forward;
 	}
 
 	private String movetoCommentEdit() {
-		String forward = "Web-INF/jsp/cms/comment_edit.jsp";
+		String forward = "WEB-INF/jsp/cms/comment_edit.jsp";
 		return forward;
 	}
 
 	private String movetoCommentList() {
-		String forward = "Web-INF/jsp/cms/comment_list.jsp";
+		//		//コメントリストを取得
+		//		CommentListLogic getCommentListLogic = new CommentListLogic();
+		//		List<Comment> commentList = getCommentListLogic.execute();
+		//
+		//		//リクエストスコープに保存
+		//		request.setAttribute("commentList", commentList);
+
+
+		String forward = "WEB-INF/jsp/cms/comment_list.jsp";
 		return forward;
 	}
 
 	private String movetoAdminList() {
-		String forward = "Web-INF/jsp/cms/admin_list.jsp";
+		String forward = "WEB-INF/jsp/cms/admin_list.jsp";
 		return forward;
 	}
 
 	private String movetoAdminEdit() {
-		String forward = "Web-INF/jsp/cms/admin_edit.jsp";
+		String forward = "WEB-INF/jsp/cms/admin_edit.jsp";
 		return forward;
 	}
 
-	private String movetoMutter(HttpServletRequest request) {
-		//コメントリストを取得
-		//		CommentListLogic getCommentListLogic = new CommentListLogic();
-		//		List<Comment> commentList = getCommentListLogic.execute();
 
-		//リクエストスコープに保存
-		//		request.setAttribute("commentList", commentList);
 
-		// フォーワード先 "
-		String forward = "/WEB-INF/jsp/comment.jsp";
-		return forward;
 
-	}
 
-	private String movetofeatureListpage(HttpServletRequest request) {
+
+
+
+
+	//	private String movetoMutter(HttpServletRequest request) {
+	//		コメントリストを取得
+	//				CommentListLogic getCommentListLogic = new CommentListLogic();
+	//				List<Comment> commentList = getCommentListLogic.execute();
+	//
+	//リクエストスコープに保存
+	//				request.setAttribute("commentList", commentList);
+	//
+	//	 フォーワード先 "
+	//		String forward = "/WEB-INF/jsp/comment.jsp";
+	//		return forward;
+
+	//}
+
+	//private String movetofeatureListpage(HttpServletRequest request) {
 		// 記事一覧を取得する
 		//		FeatureLogic featurelogic = new FeatureLogic();
 		//		List<Feature> featureList = featurelogic.getAllfeature(0);
@@ -242,8 +275,8 @@ public class CtrlForCms extends HttpServlet {
 		//		request.setAttribute("featureList", featurelogic);
 
 		// フォーワード先 "
-		String forward = "/WEB-INF/jsp/adminpage.jsp";
-		return forward;
-	}
+//		String forward = "/WEB-INF/jsp/adminpage.jsp";
+//		return forward;
+//	}
 
 }

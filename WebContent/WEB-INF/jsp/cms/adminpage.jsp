@@ -5,8 +5,8 @@
 
 <c:import url="../layout/template_back.jsp">
 
-	<c:param name="title" value="Admin page" />
-	<c:param name="keywords" value="徳島 Coffee" />
+	<c:param name="title" value="管理ページ" />
+	<c:param name="keywords" value="" />
 	<c:param name="description" value="description。description" />
 	<c:param name="mycss" value="" />
 	<c:param name="mycss2" value="" />
@@ -17,19 +17,19 @@
 		<div id="wrap">
 			<p id="login">
 				<c:out value="${loginUser.login_id }" />
-				さまオンライン中 <a href="/michimichi/Logout">ログアウト</a>
+				様ログイン中 <a href="/michimichi/Logout">ログアウト</a>
 			</p>
 
 			<section>
-				<h1>マイページ</h1>
+				<h1>管理者ページ</h1>
 				<div id="opbtns">
-					<a href="/michimichi/CtrlForCms?pge_id=18">コメント管理</a> <a
-						href="/michimichi/CtrlForCms?pge_id=14">道の駅管理</a> <a
-						href="/michimichi/CtrlForCms?pge_id=16">特集管理</a> <a
-						href="/michimichi/CtrlForCms?pge_id=20">アカウント管理</a>
+					<a href="/michimichi/CtrlForCms?pge_id=18">コメント管理</a>
+					<a href="/michimichi/CtrlForCms?pge_id=14">道の駅管理</a>
+					<a href="/michimichi/CtrlForCms?pge_id=16">特集管理</a>
+					<a href="/michimichi/CtrlForCms?pge_id=20">アカウント管理</a>
 				</div>
 			</section>
-			<%--<section>
+			<%-- <section>
 				<h2>お知らせ</h2>
 				<table class="entryForm">
 					<tr>
@@ -48,7 +48,7 @@
 						</tr>
 					</c:forEach>
 				</table>
-			</section>--%>
+			</section> --%>
 		</div>
 
 	</c:param>

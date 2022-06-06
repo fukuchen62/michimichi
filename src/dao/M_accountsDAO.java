@@ -119,7 +119,7 @@ public class M_accountsDAO {
 				//Accountのデータを取得
 				int user_id = rs.getInt("user_id");
 				String login_id = rs.getString("login_id");
-				String pass = rs.getString("pass");
+				String password = rs.getString("pass");
 				String name = rs.getString("name");
 				Date birthday = rs.getDate("birthday");
 				int gender = rs.getInt("gender");
@@ -133,7 +133,7 @@ public class M_accountsDAO {
 				Account account =  new Account(
 						user_id,
 						login_id,
-						pass,
+						password,
 						name,
 						birthday,
 						gender,

@@ -84,7 +84,7 @@
 		<br>
 		<hr>
 		<div id="opbtns">
-			<a href="/michimichi/CtrlForCms?pge_id=0">管理者ページ</a>
+			<a href="/michimichi/CtrlForCms?pge_id=13">管理者ページ</a>
 		</div>
 	</div>
 	<jsp:include page="../layout/footer_back.jsp" />

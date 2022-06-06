@@ -16,7 +16,6 @@ import beans.Station;
 import model.FeatureListLogic;
 import model.FeatureLogic;
 import model.StationListLogic;
-import model.StationLogic;
 
 /**
  * Servlet implementation class CtrlForFront
@@ -263,15 +262,15 @@ public class CtrlForFront extends HttpServlet {
 			request.setAttribute("con_id", con_id);
 
 		//一覧に表示するものだけ（DAOへの命令の大元）
-		final int SHOWFALG = 1;
-		int CONID = con_id;
+//		final int SHOWFALG = 1;
+//		int CONID = con_id;
 
-		// 特集個別記事の内容を取得する
-		StationLogic stationLogic = new StationLogic();
-		List<Station> StationList = stationLogic.getAllStation(SHOWFALG, CONID);
+		 //特集個別記事の内容を取得する
+//		StationLogic stationLogic = new StationLogic();
+//		List<Station> StationList = stationLogic.getAllStation(SHOWFALG, CONID);
 
 		// リクエストスコープに保存
-		request.setAttribute("StationList", StationList);
+//		request.setAttribute("StationList", StationList);
 
 		// フォーワード先
 		forward = "WEB-INF/jsp/front/station_temp.jsp";

@@ -51,7 +51,7 @@ public class Login extends HttpServlet {
 		//LoginUserインスタンスの生成
 		LoginUser login = new LoginUser(login_id, password);
 
-		//ログイン
+		//ログイン処理
 		LoginLogic loginLogic = new LoginLogic();
 		LoginUser loginUser = loginLogic.execute(login);
 
@@ -60,8 +60,8 @@ public class Login extends HttpServlet {
 		String forward = "";
 		if (loginUser != null) {
 
-			//			session.setAttribute("loginUser",loginUser);
-			//			response.sendRedirect("/michimichi/CtrlForCms?pge_id=13");
+//			session.setAttribute("loginUser", loginUser);
+//			response.sendRedirect("/michimichi/CtrlForCms?pge_id=13");
 
 			forward = "/WEB-INF/jsp/cms/adminpage.jsp";
 			RequestDispatcher dispatcher = request.getRequestDispatcher(forward);

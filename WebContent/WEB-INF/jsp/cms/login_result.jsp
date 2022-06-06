@@ -10,7 +10,7 @@
 <head>
 <meta charset="UTF-8">
 <link href="/michimichi/css/style-cms.css" rel="stylesheet" media="all">
-<title>Login</title>
+<title>LoginResult</title>
 </head>
 <body>
 	<div id="wrap">
@@ -28,7 +28,7 @@
 		</p>
 
 		<p>
-			<a href="/michimichi/CtrlFroCms"></a>
+			<a href="/michimichi/CtrlForCms"></a>
 		</p>
 
 		<%
@@ -38,7 +38,7 @@
 			ログインに失敗しました。<br>再度ログインしてください。
 		</p>
 		<p>
-			<a href="/michimichi/CtrlForCms?pge_id=10">TOPへ</a>
+			<a href="/michimichi/CtrlForCms?pge_id=10">LoginTOPへ</a>
 		</p>
 		<%
 			}

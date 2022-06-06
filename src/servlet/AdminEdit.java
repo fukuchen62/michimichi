@@ -43,7 +43,7 @@ public class AdminEdit extends HttpServlet {
 
 		if(loginUser == null) {
 			//ログイン画面へリダイレクト
-			response.sendRedirect("/cafeshop/CtrlForCms");
+			response.sendRedirect("/michimichi/CtrlForCms");
 		}
 
 		String forward = "";
@@ -138,7 +138,7 @@ public class AdminEdit extends HttpServlet {
 
 		//入力されたアカウントデータを取得してaccountに代入する
 		String login_id = request.getParameter("login_id");
-		String pass = request.getParameter("pass");
+		String pass = request.getParameter("password");
 		String name = request.getParameter("name");
 
 		//お誕生日処理

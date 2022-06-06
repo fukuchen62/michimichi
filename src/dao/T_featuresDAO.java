@@ -50,22 +50,22 @@ public class T_featuresDAO {
 			ResultSet rs = pStmt.executeQuery();
 
 			//結果表に格納されたレコードの内容をFeatureListインスタンスに設定し、ArrayListインスタンスに追加
-			while (rs.next()) {
-				int feature_id = rs.getInt("feature_id");
-				String feature_name = rs.getString("feature_name");
-				String main_photo_path = DAOConstant.UPLOADS_TOPIC + rs.getString("main_photo_path");
-				String alt = rs.getString("alt");
-				String feature_list = rs.getString("feature_list");
-
-				FeatureList feature = new FeatureList(
-						feature_id,
-						feature_name,
-						main_photo_path,
-						alt,
-						feature_list);
-
-				FLList.add(feature);
-			}
+//			while (rs.next()) {
+//				int feature_id = rs.getInt("feature_id");
+//				String feature_name = rs.getString("feature_name");
+//				String main_photo_path = DAOConstant.UPLOADS_TOPIC + rs.getString("main_photo_path");
+//				String alt = rs.getString("alt");
+//				String feature_list = rs.getString("feature_list");
+//
+//				FeatureList feature = new FeatureList(
+//						feature_type_id,
+//						feature_name,
+//						main_photo_path,
+//						alt,
+//						feature_list);
+//ここコメントアウト
+//				FLList.add(feature);
+//			}
 
 		} catch (SQLException e) {
 			// 自動生成された catch ブロック
