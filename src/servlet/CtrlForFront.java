@@ -16,6 +16,7 @@ import beans.Station;
 import model.FeatureListLogic;
 import model.FeatureLogic;
 import model.StationListLogic;
+import model.StationLogic;
 
 /**
  * Servlet implementation class CtrlForFront
@@ -262,15 +263,29 @@ public class CtrlForFront extends HttpServlet {
 			request.setAttribute("con_id", con_id);
 
 		//一覧に表示するものだけ（DAOへの命令の大元）
-//		final int SHOWFALG = 1;
-//		int CONID = con_id;
+		final int SHOWFALG = 1;
+		int CONID = con_id;
 
-		 //特集個別記事の内容を取得する
-//		StationLogic stationLogic = new StationLogic();
-//		List<Station> StationList = stationLogic.getAllStation(SHOWFALG, CONID);
+		// 特集個別記事の内容を取得する
+		StationLogic stationLogic = new StationLogic();
+		List<Station> StationList = stationLogic.getAllStation(SHOWFALG, CONID);
+		List<Station> RecommendsList = stationLogic.getAllRecommends(SHOWFALG, CONID);
+		List<Station> SpotList = stationLogic.getAllSpots(SHOWFALG, CONID);
+		List<Station> FacilityList = stationLogic.getAllFacilities(SHOWFALG, CONID);
 
-		// リクエストスコープに保存
-//		request.setAttribute("StationList", StationList);
+			// リクエストスコープに保存
+			request.setAttribute("StationList", StationList);
+			request.setAttribute("RecommendsList", RecommendsList);
+			request.setAttribute("SpotList", SpotList);
+			request.setAttribute("FacilityList", FacilityList);
+
+		//titleとdescriptionを保存
+		String title = StationList.get(0).getMichinoeki_name();
+		String description = StationList.get(0).getExplanation();
+
+			// リクエストスコープに保存
+			request.setAttribute("title", title);
+			request.setAttribute("description", description);
 
 		// フォーワード先
 		forward = "WEB-INF/jsp/front/station_temp.jsp";

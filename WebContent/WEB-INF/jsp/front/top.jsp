@@ -42,7 +42,21 @@
 					<c:set var="itemType" value="${featureImg_random}" />
 					<li class="col">
 						<p class="menu-text">
-						<a href="CtrlForFront?pge_id=9&con_id=${list.feature_id}"><img src="${list.photo_path1}" alt="${list.alt1}"></a><br>
+						<a href="CtrlForFront?pge_id=4&con_id=${list.feature_id}">
+
+						<%
+							//0,1,2の乱数を作成
+							int select = (int) Math.random() * 3;
+						%>
+
+						<% if(select == 0) {%>
+							<img src="${list.photo_path1}" alt="${list.alt1}"></a>
+						<% }else if(select == 1) {%>
+							<img src="${list.photo_path2}" alt="${list.alt2}">
+						<% }else {%>
+							<img src="${list.photo_path3}" alt="${list.alt3}">
+						<% }%>
+						<br>
 						${list.feature_name}<br>
 						</p></li>
 				</c:forEach>

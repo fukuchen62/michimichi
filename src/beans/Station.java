@@ -41,9 +41,9 @@ public class Station {
 	private String feature2_alt;
 	private String feature2_overview;
 
-	private int feature_bunner1;
-	private int feature_bunner2;
-	private int feature_bunner3;
+	private int feature_banner1;
+	private int feature_banner2;
+	private int feature_banner3;
 
 	//m_recommendsから（おすすめマスター）
 	private int recommend_id;
@@ -62,10 +62,10 @@ public class Station {
 	private String spot_photo_path3;
 	private String spot_alt3;
 	private String spot_overview;
-	private String spot_adress;
+	private String spot_address;
 	private String spot_url;
 
-	//m_tages
+	//m_tages（タグマスター）
 	private int tages_id;
 	private String category_name;
 	private String tages_photo_path;
@@ -73,10 +73,13 @@ public class Station {
 	private String icon_path1;
 	private String icon_path2;
 
+	//m_facilities（道の駅の施設、周辺施設マスター）
+	private int facilities_id;
+	private boolean status;
+
 	//t_good_recordsから（いいねテーブル）
 	private int good_id;
 	private String user_ip_address;
-
 
 
 	//コンストラクタの定義
@@ -88,10 +91,9 @@ public class Station {
 		this.michinoeki_name = michinoeki_name;
 		this.photo_thum_path1 = photo_thum_path1;
 		this.alt1 = alt1;
-
 	}
 
-
+	//道の駅個別　基本情報
 	public Station(
 			//m_road_stationsから（道の駅マスター）
 			int michinoeki_id, String michinoeki_name, String photo_path1, String photo_thum_path1, String alt1, String photo_path2, String photo_thum_path2, String alt2, String photo_path3, String photo_thum_path3, String alt3, String photo_path4, String photo_thum_path4, String alt4, String explanation,
@@ -104,18 +106,8 @@ public class Station {
 
 			 String feature1_photo_path, String feature1_alt, String feature1_overview, String feature2_photo_path, String feature2_alt, String feature2_overview,
 
-			 int feature_bunner1, int feature_bunner2, int feature_bunner3,
-
-			//m_recommendsから（おすすめマスター）
-			 int recommend_id, String recommend_name, String recommend_photo_path, String recommend_alt, String recommed_overview,
-
-			//m_spotsから（周辺スポットマスター）
-			 int spot_id, String spot_name, String spot_photo_path1, String spot_alt1, String spot_photo_path2, String spot_alt2, String spot_photo_path3, String spot_alt3, String spot_overview, String spot_adress, String spot_url,
-
-			//m_tages
-			 int tages_id, String category_name, String tages_photo_path, String tages_alt, String icon_path1, String icon_path2
-
-			 ){
+			 int feature_banner1, int feature_banner2, int feature_banner3
+			){
 
 		//m_road_stationsから（道の駅マスター）
 		this.michinoeki_id = michinoeki_id;
@@ -155,9 +147,16 @@ public class Station {
 		this.feature2_alt = feature2_alt;
 		this.feature2_overview = feature2_overview;
 
-		this.feature_bunner1 = feature_bunner1;
-		this.feature_bunner2 = feature_bunner2;
-		this.feature_bunner3 = feature_bunner3;
+		this.feature_banner1 = feature_banner1;
+		this.feature_banner2 = feature_banner2;
+		this.feature_banner3 = feature_banner3;
+
+	}
+
+	//おすすめ管理用
+	public Station(
+			//m_recommendsから（おすすめマスター）
+			 int recommend_id, String recommend_name, String recommend_photo_path, String recommend_alt, String recommed_overview){
 
 		//m_recommendsから（おすすめマスター）
 		this.recommend_id = recommend_id;
@@ -166,6 +165,13 @@ public class Station {
 		this.recommend_alt = recommend_alt;
 		this.recommed_overview = recommed_overview;
 
+	}
+
+	//周辺スポット管理用
+	public Station(
+			 int spot_id, String spot_name, String spot_photo_path1, String spot_alt1, String spot_photo_path2, String spot_alt2, String spot_photo_path3, String spot_alt3, String spot_overview, String spot_address, String spot_url
+
+			 ){
 		//m_spotsから（周辺スポットマスター）
 		this.spot_id = spot_id;
 		this.spot_name = spot_name;
@@ -176,9 +182,15 @@ public class Station {
 		this.spot_photo_path3 = spot_photo_path3;
 		this.spot_alt3 = spot_alt3;
 		this.spot_overview = spot_overview;
-		this.spot_adress = spot_adress;
+		this.spot_address = spot_address;
 		this.spot_url = spot_url;
 
+	}
+
+
+	//タグ（Facility）管理用
+	public Station(int tages_id, String category_name, String tages_photo_path, String tages_alt, String icon_path1, String icon_path2,
+					int facilities_id, boolean status){
 		//m_tages
 		this.tages_id = tages_id;
 		this.category_name = category_name;
@@ -187,8 +199,11 @@ public class Station {
 		this.icon_path1 = icon_path1;
 		this.icon_path2 = icon_path2;
 
-
+		//m_facilities
+		this.facilities_id = facilities_id;
+		this.status = status;
 	}
+
 
 	public int getMichinoeki_id() {
 		return michinoeki_id;
@@ -447,27 +462,27 @@ public class Station {
 	}
 
 	public int getFeature_bunner1() {
-		return feature_bunner1;
+		return feature_banner1;
 	}
 
-	public void setFeature_bunner1(int feature_bunner1) {
-		this.feature_bunner1 = feature_bunner1;
+	public void setFeature_bunner1(int feature_banner1) {
+		this.feature_banner1 = feature_banner1;
 	}
 
 	public int getFeature_bunner2() {
-		return feature_bunner2;
+		return feature_banner2;
 	}
 
-	public void setFeature_bunner2(int feature_bunner2) {
-		this.feature_bunner2 = feature_bunner2;
+	public void setFeature_bunner2(int feature_banner2) {
+		this.feature_banner2 = feature_banner2;
 	}
 
 	public int getFeature_bunner3() {
-		return feature_bunner3;
+		return feature_banner3;
 	}
 
-	public void setFeature_bunner3(int feature_bunner3) {
-		this.feature_bunner3 = feature_bunner3;
+	public void setFeature_bunner3(int feature_banner3) {
+		this.feature_banner3 = feature_banner3;
 	}
 
 	public int getRecommend_id() {
@@ -583,11 +598,11 @@ public class Station {
 	}
 
 	public String getSpot_adress() {
-		return spot_adress;
+		return spot_address;
 	}
 
-	public void setSpot_adress(String spot_adress) {
-		this.spot_adress = spot_adress;
+	public void setSpot_adress(String spot_address) {
+		this.spot_address = spot_address;
 	}
 
 	public String getSpot_url() {
@@ -644,6 +659,22 @@ public class Station {
 
 	public void setIcon_path2(String icon_path2) {
 		this.icon_path2 = icon_path2;
+	}
+
+	public int getFacilities_id() {
+		return facilities_id;
+	}
+
+	public void setFacilities_id(int facilities_id) {
+		this.facilities_id = facilities_id;
+	}
+
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
 	}
 
 	public int getGood_id() {
