@@ -57,6 +57,7 @@ public class CtrlForSearch extends HttpServlet {
 		SearchLogic searchLogic = new SearchLogic();
 
 		List<Search> searchList=new ArrayList<>();
+
 		//検索結果を読み込み
 		//エリアIDのみの検索の場合
 			 searchList= searchLogic.getSearchList(areas);
