@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import beans.Feature;
-import beans.FeatureList;
 import beans.Station;
 import model.FeatureListLogic;
 import model.FeatureLogic;
@@ -162,7 +161,7 @@ public class CtrlForFront extends HttpServlet {
 
 		// 特集記事一覧を取得する
 		FeatureListLogic featureListLogic = new FeatureListLogic();
-		List<FeatureList> FLList = featureListLogic.getAllFeatureList(SHOWFLAG);
+		List<Feature> FLList = featureListLogic.getAllFeatureList(SHOWFLAG);
 
 		// リクエストスコープに保存
 		request.setAttribute("FLList", FLList);
@@ -268,16 +267,19 @@ public class CtrlForFront extends HttpServlet {
 
 		// 特集個別記事の内容を取得する
 		StationLogic stationLogic = new StationLogic();
+		FeatureListLogic featureListLogic = new FeatureListLogic();
 		List<Station> StationList = stationLogic.getAllStation(SHOWFALG, CONID);
 		List<Station> RecommendsList = stationLogic.getAllRecommends(SHOWFALG, CONID);
 		List<Station> SpotList = stationLogic.getAllSpots(SHOWFALG, CONID);
 		List<Station> FacilityList = stationLogic.getAllFacilities(SHOWFALG, CONID);
+		List<Feature> SFList = featureListLogic.getAllStationFeature(SHOWFALG);
 
 			// リクエストスコープに保存
 			request.setAttribute("StationList", StationList);
 			request.setAttribute("RecommendsList", RecommendsList);
 			request.setAttribute("SpotList", SpotList);
 			request.setAttribute("FacilityList", FacilityList);
+			request.setAttribute("SFList", SFList);
 
 		//titleとdescriptionを保存
 		String title = StationList.get(0).getMichinoeki_name();

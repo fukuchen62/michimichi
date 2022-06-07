@@ -51,11 +51,11 @@ public class M_spotsDAO {
 			while (rs.next()) {
 				int spot_id = rs.getInt("spot_id");
 				String spot_name = rs.getString("spot_name");
-				String spot_photo_path1 = DAOConstant.UPLOADS_MICHIEKI + rs.getString("photo_thum_path1");
+				String spot_photo_path1 = DAOConstant.UPLOADS_MICHIEKI + rs.getString("photo_path1");
 				String spot_alt1 = rs.getString("alt1");
-				String spot_photo_path2 = DAOConstant.UPLOADS_MICHIEKI + rs.getString("photo_thum_path2");
+				String spot_photo_path2 = DAOConstant.UPLOADS_MICHIEKI + rs.getString("photo_path2");
 				String spot_alt2 = rs.getString("alt2");
-				String spot_photo_path3 = DAOConstant.UPLOADS_MICHIEKI + rs.getString("photo_thum_path3");
+				String spot_photo_path3 = DAOConstant.UPLOADS_MICHIEKI + rs.getString("photo_path3");
 				String spot_alt3 = rs.getString("alt3");
 				String spot_overview = rs.getString("overview");
 				String spot_address = rs.getString("address");

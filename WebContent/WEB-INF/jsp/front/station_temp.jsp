@@ -15,16 +15,15 @@
 		<c:param name="myjs" value="" />
 
 		<c:param name="content">
-
 		        <!-- introduction -->
 		        <section id="introduction">
+		         	<c:forEach var="sta" items="${StationList}" >
 		            <h2>
 		                <!-- <img src="img/temp/station_h2_pc1.svg" srcset="img/temp/station_h2_tab.svg 1024w,
 		                img/temp/station_h2_pc2.svg 1350w,
 		                img/temp/station_h2_pc1.svg 1920w" alt="intro_h2"> -->
-		                <span>道の駅　どなり</span>
+		                <span>道の駅　${sta.michinoeki_name}</span>
 		            </h2>
-
 		            <!-- コンテンツ枠 -->
 		            <div class="container">
 		                <div class="wrap">
@@ -35,29 +34,29 @@
 		                            <div id="slider-v" class="slider-pro">
 		                                <div class="sp-slides">
 		                                    <div class="sp-slide">
-		                                        <img class="sp-image" src="${item.photo_path1}" alt="${item.alt1}">
+		                                        <img class="sp-image" src="${sta.photo_path1}" alt="${sta.alt1}">
 		                                    </div>
 		                                    <div class="sp-slide">
-		                                        <img class="sp-image" src="${item.photo_path2}" alt="${item.alt2}">
+		                                        <img class="sp-image" src="${sta.photo_path2}" alt="${sta.alt2}">
 		                                    </div>
 		                                    <div class="sp-slide">
-		                                        <img class="sp-image" src="${item.photo_path3}" alt="${item.alt3}">
+		                                        <img class="sp-image" src="${sta.photo_path3}" alt="${sta.alt3}">
 		                                    </div>
 		                                    <div class="sp-slide">
-		                                        <img class="sp-image" src="${item.photo_path4}" alt="${item.alt4}">
+		                                        <img class="sp-image" src="${sta.photo_path4}" alt="${sta.alt4}">
 		                                    </div>
 		                                </div>
 
 		                                <div class="sp-thumbnails">
-		                                    <img class="sp-thumbnail" src="${item.photo_thum_path1}" alt="${item.alt1}">
-		                                    <img class="sp-thumbnail" src="${item.photo_thum_path2}" alt="${item.alt2}">
-		                                    <img class="sp-thumbnail" src="${item.photo_thum_path3}" alt="${item.alt3}">
-		                                    <img class="sp-thumbnail" src="${item.photo_thum_path4}" alt="${item.alt4}">
+		                                    <img class="sp-thumbnail" src="${sta.photo_thum_path1}" alt="${sta.alt1}">
+		                                    <img class="sp-thumbnail" src="${sta.photo_thum_path2}" alt="${sta.alt2}">
+		                                    <img class="sp-thumbnail" src="${sta.photo_thum_path3}" alt="${sta.alt3}">
+		                                    <img class="sp-thumbnail" src="${sta.photo_thum_path4}" alt="${sta.alt4}">
 		                                </div>
 		                            </div>
 
 		                            <figcaption class="station-desc intro-desc">
-		                                ${item.explanation}
+		                                ${sta.explanation}
 
 		                            </figcaption>
 		                        </figure>
@@ -113,10 +112,12 @@
 		                    </div>
 		                </div>
 		            </div>
+		            </c:forEach>
 		        </section>
 
 		        <!-- pick-up -->
 		        <section id="pick-up">
+		        <c:forEach var="sta" items="${StationList}" >
 		            <h2>
 		                <span>特色</span>
 		            </h2>
@@ -125,18 +126,16 @@
 		                <div class="wrap">
 		                    <div class="pc">
 		                        <figure class="flexC">
-		                            <img class="img" src="img/station/donari/pickup/pickup01.jpg" alt="pick-up_01">
+		                            <img class="img" src="${sta.feature1_photo_path}" alt="${sta.feature1_alt}">
 		                            <figcaption class="station-desc pickup-desc">
-		                                大たらいの上に鳥居や賽銭箱、見たことある妖怪も鎮座している不思議空間！<br>
-		                                なんとお賽銭はpaypay対応！
+										${sta.feature1_overview}
 		                            </figcaption>
 		                        </figure>
 
 		                        <figure class="flexC">
-		                            <img class="img" src="img/station/donari/pickup/pickup02.jpg" alt="pick-up_02">
+		                            <img class="img" src="${sta.feature2_photo_path}" alt="${sta.feature2_alt}">
 		                            <figcaption class="station-desc pickup-desc">
-		                                道の駅前道路に植えられた桜が春になると満開に！<br>
-		                                道路向かいには川が流れていて、花見に最適！
+		                                ${sta.feature2_overview}
 		                            </figcaption>
 		                        </figure>
 		                    </div>
@@ -145,22 +144,18 @@
 		                        <figure>
 		                            <div class="slider">
 		                                <div class="slide-01 parent">
-		                                    <img class="img" src="img/station/donari/pickup/pickup01.jpg" alt="">
+		                                    <img class="img" src="${sta.feature1_photo_path}" alt="${sta.feature1_alt}">
 		                                    <!-- テキスト表示枠 -->
 		                                    <figcaption class="station-desc pickup-desc">
-		                                        大たらいの上に鳥居や賽銭箱<br>
-		                                        見たことある妖怪も鎮座している不思議空間！<br>
-		                                        なんとお賽銭はpaypay対応！
+		                                        ${sta.feature1_overview}
 		                                    </figcaption>
 		                                </div>
 
 		                                <div class="slide-02 parent">
-		                                    <img class="img" src="img/station/donari/pickup/pickup02.jpg" alt="">
+		                                    <img class="img" src="${sta.feature2_photo_path}" alt="${sta.feature2_alt}">
 		                                    <!-- テキスト表示枠 -->
 		                                    <figcaption class="station-desc pickup-desc">
-		                                        道の駅前道路に植えられた桜が<br>
-		                                        春になると満開に！<br>
-		                                        道路向かいには川が流れていて、花見に最適！
+		                                        ${sta.feature2_overview}
 		                                    </figcaption>
 		                                </div>
 		                            </div>
@@ -169,10 +164,12 @@
 		                    </div>
 		                </div>
 		            </div>
+		            </c:forEach>
 		        </section>
 
 		        <!-- recommend -->
 		        <section id="recommend">
+
 		            <h2>
 		                <span>オススメ</span>
 		            </h2>
@@ -181,32 +178,18 @@
 		                <div class="wrap">
 
 		                    <!-- pc表示 -->
+
 		                    <div class="pc">
+		                    	<c:forEach var="rec" items="${RecommendsList}" end = 2 >
 		                        <div class="upper-row">
 		                            <figure class="flexC">
-		                                <img class="img" src="img/station/donari/recommend/recom01.jpg" alt="recommend_01">
+		                                <img class="img" src="${rec.recommend_photo_path }" alt="${rec.recommend_alt}">
 		                                <figcaption class="station-desc recommend-desc">
-		                                    衝撃のうまさ！！<br>
-		                                    奇跡のコラボ
-		                                </figcaption>
-		                            </figure>
-
-		                            <figure class="flexC">
-		                                <img class="img" src="img/station/donari/recommend/recom02.jpg" alt="recommend_02">
-		                                <figcaption class="station-desc recommend-desc">
-		                                    焼き目香ばし<br>
-		                                    カリっともちもち
-		                                </figcaption>
-		                            </figure>
-
-		                            <figure class="flexC">
-		                                <img class="img" src="img/station/donari/recommend/recom03.jpg" alt="recommend_03">
-		                                <figcaption class="station-desc recommend-desc">
-		                                    自家製で！<br>
-		                                    作れるたらいうどん
+		                                    ${rec.recommed_overview }
 		                                </figcaption>
 		                            </figure>
 		                        </div>
+
 
 		                        <!-- <div class="lower-row">
 		                            <figure class="flexC">
@@ -230,13 +213,17 @@
 		                                </figcaption>
 		                            </figure>
 		                        </div> -->
+		                        </c:forEach>
 		                    </div>
+
 
 		                    <!-- sp表示 -->
+
 		                    <div class="sp">
 		                        <ul>
+		                        	<c:forEach var="rec" items="${RecommendsList}" end = 3>
 		                            <li class="commodity">
-		                                パンケーキうどん
+		                                ${rec.recommend_name }
 		                                <i class="btn-plus">
 		                                    <i></i>
 		                                    <i></i>
@@ -244,53 +231,19 @@
 		                            </li>
 		                            <figure class="commodity-box">
 		                                <div class="flexR">
-		                                    <img class="img" src="img/station/donari/recommend/recom01.jpg" alt="recommend01">
+		                                    <img class="img" src="${rec.recommend_photo_path }" alt="${rec.recommend_alt }">
 		                                    <figcaption class="station-desc recommend-desc">
-		                                        パンケーキうどん<br><br>
-		                                        衝撃のうまさ！！<br>
-		                                        奇跡のコラボ
+		                                        ${rec.recommed_overview }
 		                                    </figcaption>
 		                                </div>
 		                            </figure>
-
-		                            <li class="commodity">
-		                                団子の卯月屋
-		                                <i class="btn-plus">
-		                                    <i></i>
-		                                    <i></i>
-		                                </i>
-		                            </li>
-		                            <figure class="commodity-box">
-		                                <div class="flexR">
-		                                    <img class="img" src="img/station/donari/recommend/recom02.jpg" alt="recommend02">
-		                                    <figcaption class="station-desc recommend-desc">
-		                                        団子の卯月屋<br><br>
-		                                        焼き目香ばしカリっともちもち
-		                                    </figcaption>
-		                                </div>
-		                            </figure>
-
-		                            <li class="commodity">
-		                                たらいうどんとたらい買える
-		                                <i class="btn-plus">
-		                                    <i></i>
-		                                    <i></i>
-		                                </i>
-		                            </li>
-		                            <figure class="commodity-box">
-		                                <div class="flexR">
-		                                    <img class="img" src="img/station/donari/recommend/recom03.jpg" alt="recommend03">
-		                                    <figcaption class="station-desc recommend-desc">
-		                                        たらいうどんと<br>たらい買える<br><br>
-		                                        自家製で！<br>
-		                                        作れるたらいうどん
-		                                    </figcaption>
-		                                </div>
-		                            </figure>
+		                            </c:forEach>
 		                        </ul>
 		                    </div>
+
 		                </div>
 		            </div>
+
 		        </section>
 
 		        <!-- spot -->
@@ -302,12 +255,12 @@
 		            <div class="container">
 		                <div class="pc">
 		                    <div class="spot-wrap">
-
+							<c:forEach var="spo" items="${SpotList}" end = 2>
 		                        <!-- spot-01 -->
 		                        <figure class="spot-box spot-box-01 flexC">
-		                            <img src="img/station/donari/spot/spot01.jpg" alt="spot_01">
+		                            <img src="${spo.spot_photo_path1} }" alt="${spo.spot_alt1}">
 		                            <figcaption class="station-desc spot-desc center">
-		                                土柱
+		                                ${spo.spot_name}
 		                            </figcaption>
 		                        </figure>
 		                        <!-- modal-01 -->
@@ -315,139 +268,46 @@
 		                            <div class="spot-modal-info">
 		                                <div class="flexC">
 		                                    <div class="spot-modal-img flexR between">
-		                                        <img src="img/station/donari/spot/spot02.jpg" alt="modal_01">
-		                                        <img src="img/station/donari/spot/spot03.jpg" alt="modal_02">
+		                                        <img src="${spo.spot_photo_path2}" alt="${spo.spot_alt2}">
+		                                        <img src="${spo.spot_photo_path3}" alt="${spo.spot_alt3}">
 		                                    </div>
 		                                    <span class="spot-modal-text1">
-		                                        名称：土柱
+		                                        名称：${spo.spot_name}
 		                                    </span>
 		                                    <span class="spot-modal-text2">
-		                                        住所：〒771-1705 徳島県阿波市阿波町北山５４０
+		                                        住所：${spo.spot_address}
 		                                    </span>
 		                                    <span class="spot-modal-text3">
 		                                        URL:
-		                                        <a href="https://www.awanavi.jp/spot/20320.html" target="_blank" rel="noopener noreferrer">
-		                                            https://www.awanavi.jp/spot/20320.html
+		                                        <a href="${spo.spot_url}" target="_blank" rel="noopener noreferrer">
+		                                            ${spo.spot_url}
 		                                        </a>
 		                                    </span>
 		                                    <span class="spot-modal-text4">
-		                                        世界三大土柱がひとつ<br>
-		                                        太古の昔より土や砂礫が堆積した土地が隆起し、雨水の浸食によって削られ、<br>
-		                                        長い年月をかけて形造られた大地の芸術。
+		                                        ${spo.spot_overview}
 		                                    </span>
 		                                </div>
 		                            </div>
 		                        </div>
-
-		                        <!-- spot-02 -->
-		                        <figure class="spot-box spot-box-02 flexC">
-		                            <img src="img/station/donari/spot/spot04.jpg" alt="spot_02">
-		                            <figcaption class="station-desc spot-desc center">
-		                                たらいうどん新見屋
-		                            </figcaption>
-		                        </figure>
-		                        <!-- modal-02 -->
-		                        <div class="spot-modal">
-		                            <div class="spot-modal-info">
-		                                <div class="flexC">
-		                                    <div class="spot-modal-img flexR between">
-		                                        <img src="img/station/donari/spot/spot05.jpg" alt="modal_01">
-		                                        <img src="img/station/donari/spot/spot06.jpg" alt="modal_02">
-		                                    </div>
-		                                    <span class="spot-modal-text1">
-		                                        名称：たらいうどん新見屋
-		                                    </span>
-		                                    <span class="spot-modal-text2">
-		                                        住所：〒771-1508 徳島県阿波市土成町宮川内上畑１００−１
-		                                    </span>
-		                                    <span class="spot-modal-text3">
-		                                        URL：
-		                                        <a href="https://www.awa-kankou.jp/odekake/niimiya/" target="_blank" rel="noopener noreferrer">
-		                                            https://www.awa-kankou.jp/odekake/niimiya/
-		                                        </a>
-		                                    </span>
-		                                    <span class="spot-modal-text4">
-		                                        阿波市名物たらいうどん<br>
-		                                        いりこ、昆布、かつお節など十数種類のだし素材を使った味わい深い秘伝のつゆ。<br>
-		                                        つゆと麺の相性が抜群！
-		                                    </span>
-		                                </div>
-		                            </div>
-		                        </div>
-
-		                        <!-- spot-03 -->
-		                        <figure class="spot-box spot-box-03 flexC pc">
-		                            <img src="img/station/donari/spot/spot07.jpg" alt="spot_03">
-		                            <figcaption class="station-desc spot-desc center">
-		                                御所温泉
-		                            </figcaption>
-		                        </figure>
-		                        <!-- modal-03 -->
-		                        <div class="spot-modal">
-		                            <div class="spot-modal-info">
-		                                <div class="flexC">
-		                                    <div class="spot-modal-img flexR between">
-		                                        <img src="img/station/donari/spot/spot08.jpg" alt="modal_01">
-		                                        <img src="img/station/donari/spot/spot09.jpg" alt="modal_02">
-		                                    </div>
-		                                    <span class="spot-modal-text1">
-		                                        名称：御所温泉
-		                                    </span>
-		                                    <span class="spot-modal-text2">
-		                                        住所：〒771-1507 徳島県阿波市土成町吉田梨木原１
-		                                    </span>
-		                                    <span class="spot-modal-text3">
-		                                        URL：
-		                                        <a href="https://goshonosato.com/" target="_blank" rel="noopener noreferrer">
-		                                            https://goshonosato.com/
-		                                        </a>
-		                                    </span>
-		                                    <span class="spot-modal-text4">
-		                                        阿讃の麓に湧く極上湯<br>
-		                                        阿讃の山々に抱かれるようにひろがる、
-		                                        土御門上皇ゆかりの地に湧き出た極上の天然温泉。
-		                                    </span>
-		                                </div>
-		                            </div>
-		                        </div>
+	                        </c:forEach>
 		                    </div>
 		                </div>
 
 		                <div class="sp">
 		                    <figure>
 		                        <div class="slider">
+		                        	<c:forEach var="spo" items="${SpotList}" end = 3>
 		                            <div class="flexC">
-		                                <img class="img" src="img/station/donari/spot/spot01.jpg" alt="spot01">
+		                                <img src="${spo.spot_photo_path1} }" alt="${spo.spot_alt1}">
 		                                <figcaption class="station-desc spot-desc">
-		                                    世界三大土柱がひとつ<br>
-		                                    <br>
-		                                    太古の昔より土や砂礫が堆積した土地が隆起し、雨水の浸食によって削られ、長い年月をかけて形造られた大地の芸術。
+		                                    ${spo.spot_overview}
 		                                </figcaption>
 		                            </div>
-
-		                            <div class="flexC">
-		                                <img class="img" src="img/station/donari/spot/spot04.jpg" alt="spot01">
-		                                <figcaption class="station-desc spot-desc">
-		                                    阿波市名物たらいうどん<br>
-		                                    <br>
-		                                    いりこ、昆布、かつお節など十数種類のだし素材を使った味わい深い秘伝のつゆ。<br>
-		                                    つゆと麺の相性が抜群！
-
-		                                </figcaption>
-		                            </div>
-
-		                            <div class="flexC">
-		                                <img class="img" src="img/station/donari/spot/spot07.jpg" alt="spot01">
-		                                <figcaption class="station-desc spot-desc">
-		                                    阿讃の麓に湧く極上湯<br>
-		                                    <br>
-		                                    阿讃の山々に抱かれるようにひろがる、
-		                                    土御門上皇ゆかりの地に湧き出た極上の天然温泉。
-		                                </figcaption>
-		                            </div>
+		                           </c:forEach>
 		                        </div>
 		                    </figure>
 		                </div>
+	                </div>
 		        </section>
 
 		        <!-- feature -->
@@ -455,13 +315,15 @@
 		            <h2>
 		                <span>特集リンク</span>
 		            </h2>
-
+					<c:forEach var="sta" items="${StationList}" >
 		            <div class="container">
 		                <div class="wrap">
-		                    <a href="CtrlForFront?pge_id=9&con_id=${list.feature_banner1}"><img src="" alt="feature_01"></a>
-		                    <a href="CtrlForFront?pge_id=9&con_id=${list.feature_banner2}"><img src="" alt="feature_02"></a>
-		                    <a href="CtrlForFront?pge_id=9&con_id=${list.feature_banner3}" class="pc"><img src="" alt="feature_03"></a>
+		                    <a href="CtrlForFront?pge_id=4&con_id=${sta.feature_banner1}"><img src="" alt="feature_01"></a>
+		                    <a href="CtrlForFront?pge_id=4&con_id=${sta.feature_banner2}"><img src="" alt="feature_02"></a>
+		                    <a href="CtrlForFront?pge_id=4&con_id=${sta.feature_banner3}" class="pc"><img src="" alt="feature_03"></a>
 		                </div>
+	                </div>
+	                </c:forEach>
 		        </section>
 
 		        <!-- information -->
@@ -469,48 +331,48 @@
 		            <h2>
 		                <span>施設案内</span>
 		            </h2>
-
+					<c:forEach var="sta" items="${StationList}" >
 		            <div class="container">
 		                <div class="wrap">
 		                    <div class="info">
 		                        <table>
 		                            <tr>
 		                                <th>道の駅名</th>
-		                                <td class="name">${item.michinoeki_name}</td>
+		                                <td class="name">${sta.michinoeki_name}</td>
 		                            </tr>
 		                            <tr>
 		                                <th>所在地</th>
 		                                <td class="postal-code">
-		                                    ${item.post_code} ${item.address}
+		                                    ${sta.post_code} ${sta.address}
 		                                </td>
 		                            </tr>
 		                            <tr>
 		                                <th>TEL</th>
 		                                <td class="tel">
-		                                    ${item.tel}
+		                                    ${sta.tel}
 		                                </td>
 		                            </tr>
 		                            <tr>
 		                                <th>駐車場</th>
 		                                <td class="parking">
-		                                    ${item.parking}
+		                                    ${sta.parking}
 		                                </td>
 		                            </tr>
 		                            <tr>
 		                                <th>営業時間</th>
-		                                <td class="business-hour">${item.service_time}</td>
+		                                <td class="business-hour">${sta.service_time}</td>
 		                            </tr>
 		                            <tr>
 		                                <th>定休日</th>
 		                                <td class="regular-holiday">
-		                                    ${item.closed}
+		                                    ${sta.closed}
 		                                </td>
 		                            </tr>
 		                            <tr>
 		                                <th>HP</th>
 		                                <td class="url">
-		                                    <a href="${item.url}" target="_blank" rel="noopener noreferrer">
-		                                        ${item.url}
+		                                    <a href="${sta.url}" target="_blank" rel="noopener noreferrer">
+		                                        ${sta.url}
 		                                    </a>
 		                                </td>
 		                            </tr>
@@ -549,26 +411,27 @@
 		                            <table class="info-more">
 		                                <tr>
 		                                    <th>ガソリンスタンド</th>
-		                                    <td class="gas-stand">${item.gas_station}</td>
+		                                    <td class="gas-stand">${sta.gas_station}</td>
 		                                </tr>
 		                                <tr>
 		                                    <th>病院</th>
-		                                    <td class="hospital">${item.hospital}</td>
+		                                    <td class="hospital">${sta.hospital}</td>
 		                                </tr>
 		                                <tr>
 		                                    <th>最寄り駅/バス停</th>
-		                                    <td class="station">${item.near_station}</td>
+		                                    <td class="station">${sta.near_station}</td>
 		                                </tr>
 		                            </table>
 		                        </table>
 
 		                        <div class="flexR">
-		                            ${item.iframe_src}
+		                            ${sta.iframe_src}
 		                            <p class="attention">※2022年5月現在<br>今後変更の可能性があります</p>
 		                            <input class="btn-more" type="button" value="周辺施設">
 		                        </div>
 		                    </div>
 		                </div>
+		                </c:forEach>
 		        </section>
 
 		        <section id="map">

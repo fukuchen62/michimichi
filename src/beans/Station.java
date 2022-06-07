@@ -167,6 +167,18 @@ public class Station {
 
 	}
 
+	//特集リンク管理用
+	public Station(
+			//m_road_stationsから（道の駅マスター）
+			 int feature_banner1, int feature_banner2, int feature_banner3
+			 ) {
+		//m_road_stationsから（道の駅マスター）
+		this.feature_banner1 = feature_banner1;
+		this.feature_banner2 = feature_banner2;
+		this.feature_banner3 = feature_banner3;
+	}
+
+
 	//周辺スポット管理用
 	public Station(
 			 int spot_id, String spot_name, String spot_photo_path1, String spot_alt1, String spot_photo_path2, String spot_alt2, String spot_photo_path3, String spot_alt3, String spot_overview, String spot_address, String spot_url

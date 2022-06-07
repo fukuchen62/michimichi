@@ -17,9 +17,9 @@ public class T_featuresDAO {
 	/*********
 	 * 特集一覧、出力用のメソッド
 	 *********/
-	public List<FeatureList> getFeatureList(int showflag) {
+	public List<Feature> getFeatureList(int showflag) {
 
-		List<FeatureList> FLList = new ArrayList<>();
+		List<Feature> FLList = new ArrayList<>();
 
 		String sql = "";
 
@@ -50,22 +50,22 @@ public class T_featuresDAO {
 			ResultSet rs = pStmt.executeQuery();
 
 			//結果表に格納されたレコードの内容をFeatureListインスタンスに設定し、ArrayListインスタンスに追加
-//			while (rs.next()) {
-//				int feature_id = rs.getInt("feature_id");
-//				String feature_name = rs.getString("feature_name");
-//				String main_photo_path = DAOConstant.UPLOADS_TOPIC + rs.getString("main_photo_path");
-//				String alt = rs.getString("alt");
-//				String feature_list = rs.getString("feature_list");
-//
-//				FeatureList feature = new FeatureList(
-//						feature_type_id,
-//						feature_name,
-//						main_photo_path,
-//						alt,
-//						feature_list);
-//ここコメントアウト
-//				FLList.add(feature);
-//			}
+			while (rs.next()) {
+				int feature_id = rs.getInt("feature_id");
+				String feature_name = rs.getString("feature_name");
+				String main_photo_path = DAOConstant.UPLOADS_TOPIC + rs.getString("main_photo_path");
+				String alt = rs.getString("alt");
+				String feature_list = rs.getString("feature_list");
+
+				Feature feature = new Feature(
+						feature_id,
+						feature_name,
+						main_photo_path,
+						alt,
+						feature_list);
+
+				FLList.add(feature);
+			}
 
 		} catch (SQLException e) {
 			// 自動生成された catch ブロック
@@ -83,8 +83,6 @@ public class T_featuresDAO {
 	/*********
 	 * 特集個別、出力用のメソッド
 	 *********/
-
-
 
 	public List<Feature> getFeature(int showflag,int con_id) {
 
@@ -251,6 +249,69 @@ public class T_featuresDAO {
 
 	}
 
+	/*********
+	 * TOP特集個別リンク、出力用のメソッド
+	 *********/
+	public List<Feature> getStationFeature(int showflag) {
+
+		List<Feature> SFList = new ArrayList<>();
+
+		String sql = "";
+
+		//データベースに接続
+		Connection conn = null;
+		conn = DbConnection.conn;
+		if (conn == null)
+			return null;
+
+		//BDへ接続
+		try {
+
+			//SELECT文を準備
+			//show_flagで表示になっているものを、降順で抽出する。
+			sql = "SELECT * "
+					+ " FROM t_features "
+					+ " WHERE show_flag = ?"
+					+ " ORDER BY"
+					+ " feature_id DESC";
+
+			//SQLを送信
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			//pStmt.setInt(一番目の？,代入するもの)
+			pStmt.setInt(1, showflag);
+
+			//SELECTを実行し、結果表を取得
+			ResultSet rs = pStmt.executeQuery();
+
+			//結果表に格納されたレコードの内容をFeatureListインスタンスに設定し、ArrayListインスタンスに追加
+			while (rs.next()) {
+				int feature_id = rs.getInt("feature_id");
+				String feature_name = rs.getString("feature_name");
+				String main_photo_path = DAOConstant.UPLOADS_TOPIC + rs.getString("main_photo_path");
+				String alt = rs.getString("alt");
+
+				Feature feature = new Feature(
+						feature_id,
+						feature_name,
+						main_photo_path,
+						alt);
+
+				SFList.add(feature);
+			}
+
+		} catch (SQLException e) {
+			// 自動生成された catch ブロック
+			e.printStackTrace();
+			return null;
+
+		} finally {
+			//データベース切断
+
+		}
+		return SFList;
+
+	}
 
 	/*********
 	 * 特集個別、追加のメソッド

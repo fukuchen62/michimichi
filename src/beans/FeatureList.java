@@ -17,6 +17,7 @@ public class FeatureList implements Serializable {
 	//コンストラクタの定義
 	public FeatureList(){}
 
+	//TOP特集個別リンク　TLList
 	public FeatureList(int feature_type_id, String feature_type_name, String main_photo_path, String alt,String feature_list, String alt2, String alt3, String alt1, String photo_path2, String photo_path3, String photo_path1){
 
 		this.feature_type_id = feature_type_id;
@@ -30,6 +31,8 @@ public class FeatureList implements Serializable {
 		this.feature_list = feature_list;
 
 	}
+
+
 
 	public int getFeature_id() {
 		return feature_type_id;

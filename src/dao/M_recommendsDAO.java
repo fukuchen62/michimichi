@@ -53,7 +53,7 @@ public class M_recommendsDAO {
 			while (rs.next()) {
 				int recommend_id = rs.getInt("recommend_id");
 				String recommend_name = rs.getString("recommend_name");
-				String recommend_photo_path = DAOConstant.UPLOADS_MICHIEKI + rs.getString("photo_thum_path1");
+				String recommend_photo_path = DAOConstant.UPLOADS_MICHIEKI + rs.getString("photo_path");
 				String recommend_alt = rs.getString("alt");
 				String recommed_overview = rs.getString("recommed_overview");
 

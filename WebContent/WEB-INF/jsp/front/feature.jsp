@@ -20,7 +20,7 @@
 			<section id="menu" class="section">
 
 				<h2 class="list">
-					特集一覧じゃよ～～～
+					特集個別じゃよ～～～
 				</h2>
 				${item.feature_name}
 
