@@ -6,7 +6,7 @@
 <c:import url="../layout/template.jsp">
 
 
-		<c:param name="title" value="${title}　―　みちのえき～未知の駅～" />
+		<c:param name="title" value="${feature.title}　―　みちのえき～未知の駅～" />
 
 		<c:param name="description" value="徳島の18ヶ所の道の駅と周辺スポットの紹介サイトです。
 											徳島の大自然、グルメ、観光名所など一歩踏み込んだ、
@@ -16,16 +16,15 @@
 		<c:param name="myjs" value="" />
 
 		<c:param name="content">
-		<c:forEach var="item" items="${FList}">
+
 			<section id="menu" class="section">
 
 				<h2 class="list">
 					特集個別じゃよ～～～
 				</h2>
-				${item.feature_name}
+				${feature.feature_name}
 
 			</section>
-		</c:forEach>
 		</c:param>
 
 

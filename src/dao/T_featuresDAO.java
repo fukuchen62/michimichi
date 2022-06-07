@@ -84,9 +84,9 @@ public class T_featuresDAO {
 	 * 特集個別、出力用のメソッド
 	 *********/
 
-	public List<Feature> getFeature(int showflag,int con_id) {
+	public Feature getFeature(int con_id) {
 
-		List<Feature> FList = new ArrayList<>();
+		Feature feature = null;
 
 		String sql = "";
 
@@ -120,21 +120,19 @@ public class T_featuresDAO {
 					 + "b.alt3 "
 					 + "FROM t_features as a INNER JOIN m_feature_types as b "
 					 + "ON a.feature_type_id = b.feature_type_id "
-					 + "WHERE a.show_flag = ? "
-					 + "AND a.feature_id = ?";
+					 + "WHERE a.feature_id = ?";
 
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			//pStmt.setInt(n番目の？,代入するもの)
-			pStmt.setInt(1, showflag);
-			pStmt.setInt(2, con_id);
+			pStmt.setInt(1, con_id);
 
 			//SELECTを実行し、結果表を取得
 			ResultSet rs = pStmt.executeQuery();
 
 			//結果表に格納されたレコードの内容をFeatureListインスタンスに設定し、ArrayListインスタンスに追加
-			while (rs.next()) {
+			if (rs.next()) {
 				int feature_id = rs.getInt("feature_id");
 				String feature_name = rs.getString("feature_name");
 				String main_photo_path = DAOConstant.UPLOADS_TOPIC + rs.getString("main_photo_path");
@@ -152,9 +150,8 @@ public class T_featuresDAO {
 				String photo_path3 = DAOConstant.UPLOADS_TOPIC + rs.getString("photo_path3");
 				String alt3 = rs.getString("alt3");
 
-				Feature feature = new Feature(feature_id, feature_name, main_photo_path, alt,feature_list,content,content_css,
+				feature = new Feature(feature_id, feature_name, main_photo_path, alt,feature_list,content,content_css,
 						feature_type_id,feature_type_name,photo_path1,alt1,photo_path2,alt2,photo_path3,alt3);
-				FList.add(feature);
 			}
 
 		} catch (SQLException e) {
@@ -166,7 +163,7 @@ public class T_featuresDAO {
 			//データベース切断
 
 		}
-		return FList;
+		return feature;
 
 	}
 

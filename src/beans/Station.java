@@ -167,18 +167,6 @@ public class Station {
 
 	}
 
-	//特集リンク管理用
-	public Station(
-			//m_road_stationsから（道の駅マスター）
-			 int feature_banner1, int feature_banner2, int feature_banner3
-			 ) {
-		//m_road_stationsから（道の駅マスター）
-		this.feature_banner1 = feature_banner1;
-		this.feature_banner2 = feature_banner2;
-		this.feature_banner3 = feature_banner3;
-	}
-
-
 	//周辺スポット管理用
 	public Station(
 			 int spot_id, String spot_name, String spot_photo_path1, String spot_alt1, String spot_photo_path2, String spot_alt2, String spot_photo_path3, String spot_alt3, String spot_overview, String spot_address, String spot_url
@@ -215,7 +203,6 @@ public class Station {
 		this.facilities_id = facilities_id;
 		this.status = status;
 	}
-
 
 	public int getMichinoeki_id() {
 		return michinoeki_id;
@@ -473,27 +460,27 @@ public class Station {
 		this.feature2_overview = feature2_overview;
 	}
 
-	public int getFeature_bunner1() {
+	public int getFeature_banner1() {
 		return feature_banner1;
 	}
 
-	public void setFeature_bunner1(int feature_banner1) {
+	public void setFeature_banner1(int feature_banner1) {
 		this.feature_banner1 = feature_banner1;
 	}
 
-	public int getFeature_bunner2() {
+	public int getFeature_banner2() {
 		return feature_banner2;
 	}
 
-	public void setFeature_bunner2(int feature_banner2) {
+	public void setFeature_banner2(int feature_banner2) {
 		this.feature_banner2 = feature_banner2;
 	}
 
-	public int getFeature_bunner3() {
+	public int getFeature_banner3() {
 		return feature_banner3;
 	}
 
-	public void setFeature_bunner3(int feature_banner3) {
+	public void setFeature_banner3(int feature_banner3) {
 		this.feature_banner3 = feature_banner3;
 	}
 
@@ -609,11 +596,11 @@ public class Station {
 		this.spot_overview = spot_overview;
 	}
 
-	public String getSpot_adress() {
+	public String getSpot_address() {
 		return spot_address;
 	}
 
-	public void setSpot_adress(String spot_address) {
+	public void setSpot_address(String spot_address) {
 		this.spot_address = spot_address;
 	}
 
@@ -704,7 +691,5 @@ public class Station {
 	public void setUser_ip_address(String user_ip_address) {
 		this.user_ip_address = user_ip_address;
 	}
-
-
 
 }

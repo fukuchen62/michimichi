@@ -189,21 +189,14 @@ public class CtrlForFront extends HttpServlet {
 		request.setAttribute("con_id", con_id);
 
 		//一覧に表示するものだけ（DAOへの命令の大元）
-		final int SHOWFALG = 1;
 		int CONID = con_id;
 
 		// 特集個別記事の内容を取得する
 		FeatureLogic featureLogic = new FeatureLogic();
-		List<Feature> FList = featureLogic.getAllFeature(SHOWFALG, CONID);
+		Feature feature = featureLogic.getFeature(CONID);
 
 		// リクエストスコープに保存
-		request.setAttribute("FList", FList);
-
-		//titleを保存
-		String title = FList.get(0).getFeature_name();
-
-		// リクエストスコープに保存
-		request.setAttribute("title", title);
+		request.setAttribute("feature", feature);
 
 		// フォーワード先
 		forward = "WEB-INF/jsp/front/feature.jsp";
@@ -268,26 +261,46 @@ public class CtrlForFront extends HttpServlet {
 		// 特集個別記事の内容を取得する
 		StationLogic stationLogic = new StationLogic();
 		FeatureListLogic featureListLogic = new FeatureListLogic();
+
 		List<Station> StationList = stationLogic.getAllStation(SHOWFALG, CONID);
+
 		List<Station> RecommendsList = stationLogic.getAllRecommends(SHOWFALG, CONID);
+
 		List<Station> SpotList = stationLogic.getAllSpots(SHOWFALG, CONID);
+
 		List<Station> FacilityList = stationLogic.getAllFacilities(SHOWFALG, CONID);
+
+		//特集記事一覧
 		List<Feature> SFList = featureListLogic.getAllStationFeature(SHOWFALG);
 
-			// リクエストスコープに保存
-			request.setAttribute("StationList", StationList);
-			request.setAttribute("RecommendsList", RecommendsList);
-			request.setAttribute("SpotList", SpotList);
-			request.setAttribute("FacilityList", FacilityList);
-			request.setAttribute("SFList", SFList);
+		// リクエストスコープに保存
+		request.setAttribute("StationList", StationList);
+		request.setAttribute("RecommendsList", RecommendsList);
+		request.setAttribute("SpotList", SpotList);
+		request.setAttribute("FacilityList", FacilityList);
 
-		//titleとdescriptionを保存
+		request.setAttribute("SFList", SFList);
+
+
+
+		//titleとdescriptionを取得
 		String title = StationList.get(0).getMichinoeki_name();
 		String description = StationList.get(0).getExplanation();
 
 			// リクエストスコープに保存
 			request.setAttribute("title", title);
 			request.setAttribute("description", description);
+
+
+		//道の駅の特集個別リンクのID取得
+		Integer featureLink1 = StationList.get(0).getFeature_banner1();
+		Integer featureLink2 = StationList.get(0).getFeature_banner2();
+		Integer featureLink3 = StationList.get(0).getFeature_banner3();
+
+			// リクエストスコープに保存
+			request.setAttribute("featureLink1", featureLink1);
+			request.setAttribute("featureLink2", featureLink2);
+			request.setAttribute("featureLink3", featureLink3);
 
 		// フォーワード先
 		forward = "WEB-INF/jsp/front/station_temp.jsp";

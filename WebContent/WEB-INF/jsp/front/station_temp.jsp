@@ -117,7 +117,7 @@
 
 		        <!-- pick-up -->
 		        <section id="pick-up">
-		        <c:forEach var="sta" items="${StationList}" >
+		        	<c:forEach var="sta" items="${StationList}" >
 		            <h2>
 		                <span>特色</span>
 		            </h2>
@@ -180,7 +180,7 @@
 		                    <!-- pc表示 -->
 
 		                    <div class="pc">
-		                    	<c:forEach var="rec" items="${RecommendsList}" end = 2 >
+		                    	<c:forEach var="rec" items="${RecommendsList}" end = "2" >
 		                        <div class="upper-row">
 		                            <figure class="flexC">
 		                                <img class="img" src="${rec.recommend_photo_path }" alt="${rec.recommend_alt}">
@@ -190,29 +190,6 @@
 		                            </figure>
 		                        </div>
 
-
-		                        <!-- <div class="lower-row">
-		                            <figure class="flexC">
-		                                <img class="img" src="" alt="recommend_04">
-		                                <figcaption class="station-description">
-		                                    セールスコピー
-		                                </figcaption>
-		                            </figure>
-
-		                            <figure class="flexC">
-		                                <img class="img" src="" alt="recommend_05">
-		                                <figcaption class="station-description">
-		                                    セールスコピー
-		                                </figcaption>
-		                            </figure>
-
-		                            <figure class="flexC">
-		                                <img class="img" src="" alt="recommend_06">
-		                                <figcaption class="station-description">
-		                                    セールスコピー
-		                                </figcaption>
-		                            </figure>
-		                        </div> -->
 		                        </c:forEach>
 		                    </div>
 
@@ -221,7 +198,7 @@
 
 		                    <div class="sp">
 		                        <ul>
-		                        	<c:forEach var="rec" items="${RecommendsList}" end = 3>
+		                        	<c:forEach var="rec" items="${RecommendsList}" end = "3">
 		                            <li class="commodity">
 		                                ${rec.recommend_name }
 		                                <i class="btn-plus">
@@ -255,7 +232,7 @@
 		            <div class="container">
 		                <div class="pc">
 		                    <div class="spot-wrap">
-							<c:forEach var="spo" items="${SpotList}" end = 2>
+							<c:forEach var="spo" items="${SpotList}" end = "2">
 		                        <!-- spot-01 -->
 		                        <figure class="spot-box spot-box-01 flexC">
 		                            <img src="${spo.spot_photo_path1} }" alt="${spo.spot_alt1}">
@@ -296,7 +273,7 @@
 		                <div class="sp">
 		                    <figure>
 		                        <div class="slider">
-		                        	<c:forEach var="spo" items="${SpotList}" end = 3>
+		                        	<c:forEach var="spo" items="${SpotList}" end = "3">
 		                            <div class="flexC">
 		                                <img src="${spo.spot_photo_path1} }" alt="${spo.spot_alt1}">
 		                                <figcaption class="station-desc spot-desc">
@@ -311,20 +288,38 @@
 		        </section>
 
 		        <!-- feature -->
+
+
 		        <section id="feature">
 		            <h2>
 		                <span>特集リンク</span>
 		            </h2>
-					<c:forEach var="sta" items="${StationList}" >
+
+		            <%
+		            int id1 = (int) request.getAttribute("featureLink1");
+		            int id2 = (int) request.getAttribute("featureLink2");
+		            int id3 = (int) request.getAttribute("featureLink3");
+
+
+		    		/* SFList.get(0).getFeature_id();
+		    		SFList.get(0).getMain_photo_path();
+		    		SFList.get(0).getAlt();
+		    		 */
+
+		             if(id1 != 0){
+		            	 //SFList.get(id1).getFeature_name();
+
+		             }
+		            %>
 		            <div class="container">
 		                <div class="wrap">
-		                    <a href="CtrlForFront?pge_id=4&con_id=${sta.feature_banner1}"><img src="" alt="feature_01"></a>
-		                    <a href="CtrlForFront?pge_id=4&con_id=${sta.feature_banner2}"><img src="" alt="feature_02"></a>
-		                    <a href="CtrlForFront?pge_id=4&con_id=${sta.feature_banner3}" class="pc"><img src="" alt="feature_03"></a>
+		                    <a href="CtrlForFront?pge_id=4&con_id=${SFList.get(0).feature_id}"><img src="" alt="feature_01"></a>
+		                    <a href="CtrlForFront?pge_id=4&con_id="><img src="" alt="feature_02"></a>
+		                    <a href="CtrlForFront?pge_id=4&con_id=" class="pc"><img src="" alt="feature_03"></a>
 		                </div>
 	                </div>
-	                </c:forEach>
 		        </section>
+
 
 		        <!-- information -->
 		        <section id="information">
@@ -436,7 +431,7 @@
 
 		        <section id="map">
 		            <div class="container">
-		                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13209.578912092118!2d134.4743706!3d34.1362421!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5c853bde9aaf461e!2z6YGT44Gu6aeFIOOBhOOBn-OBrg!5e0!3m2!1sja!2sjp!4v1653057573454!5m2!1sja!2sjp" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		                ${StationList.get(0).iframe_src}
 		            </div>
 		        </section>
 
