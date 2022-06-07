@@ -80,11 +80,22 @@
 								<th width="20">記事の種別ID</th>
 								<td width="80%"><select name="type">
 										<option value="1"
-											<c:if test="${feature.type == 1}"><c:out value="selected"/></c:if>>1:お知らせ</option>
+											<c:if test="${feature.type == 1}"><c:out value="selected"/></c:if>>1:温泉</option>
 										<option value="2"
-											<c:if test="${feature.type == 2}"><c:out value="selected"/></c:if>>2:イベント</option>
+											<c:if test="${feature.type == 2}"><c:out value="selected"/></c:if>>2:お土産</option>
 										<option value="3"
-											<c:if test="${feature.type == 3}"><c:out value="selected"/></c:if>>3:その他</option>
+											<c:if test="${feature.type == 3}"><c:out value="selected"/></c:if>>3:スイーツ特集</option>
+										<option value="4"
+											<c:if test="${feature.type == 4}"><c:out value="selected"/></c:if>>4:くるくるなると</option>
+										<option value="5"
+											<c:if test="${feature.type == 5}"><c:out value="selected"/></c:if>>5:周辺グルメ</option>
+										<option value="6"
+											<c:if test="${feature.type == 6}"><c:out value="selected"/></c:if>>6:道の駅gourmet</option>
+										<option value="7"
+											<c:if test="${feature.type == 7}"><c:out value="selected"/></c:if>>7:観光名所</option>
+										<option value="8"
+											<c:if test="${feature.type == 8}"><c:out value="selected"/></c:if>>7:SDGs</option>
+
 								</select></td>
 							</tr>
 							<tr>
@@ -104,24 +115,24 @@
 							</tr>
 							<tr>
 								<th width="20%">画像のURL1</th>
-								<td width="80%"><input type="text" name="img_path1"
-									value="${post.img_path1}" size="50"></td>
+								<td width="80%"><input type="text" name="photo_path1"
+									value="${post.photo_path1}" size="50"></td>
 							</tr>
 							<tr>
 								<th width="20%">画像のURL2</th>
-								<td width="80%"><input type="text" name="img_path2"
-									value="${post.img_path2}" size="50"></td>
+								<td width="80%"><input type="text" name="photo_path2"
+									value="${post.photo_path2}" size="50"></td>
 							</tr>
 							<tr>
 								<th width="20%">画像のURL3</th>
-								<td width="80%"><input type="text" name="img_path3"
-									value="${post.img_path3}" size="50"></td>
+								<td width="80%"><input type="text" name="photo_path3"
+									value="${post.photo_path3}" size="50"></td>
 							</tr>
-							<tr>
+							<%-- 	<tr>
 								<th width="20%">画像のURL4</th>
 								<td width="80%"><input type="text" name="img_path4"
 									value="${post.img_path4}" size="50"></td>
-							</tr>
+							</tr> --%>
 
 							<tr>
 								<th width="20%">表示</th>
@@ -188,29 +199,31 @@
 							</tr>
 							<tr>
 								<th width="20%">画像のURL1</th>
-								<td width="80%"><input type="text" name="img_path1"
+								<td width="80%"><input type="text" name="photo_path1"
 									value="" size="50"></td>
 							</tr>
 							<tr>
 								<th width="20%">画像のURL2</th>
-								<td width="80%"><input type="text" name="img_path2"
+								<td width="80%"><input type="text" name="photo_path2"
 									value="" size="50"></td>
 							</tr>
 							<tr>
 								<th width="20%">画像のURL3</th>
-								<td width="80%"><input type="text" name="img_path3"
+								<td width="80%"><input type="text" name="photo_path3"
 									value="" size="50"></td>
 							</tr>
-							<tr>
+							<!-- <tr>
 								<th width="20%">画像のURL4</th>
 								<td width="80%"><input type="text" name="img_path4"
 									value="" size="50"></td>
-							</tr>
+							</tr> -->
 
 							<tr>
 								<th width="20%">表示</th>
-								<td width="80%"><input type="radio" name="show_flag"
-									value="1" checked>表示 <input type="radio"
+								<td width="80%">
+								<input type="radio" name="show_flag"
+									value="1" checked>表示
+									<input type="radio"
 									name="show_flag" value="0">非表示</td>
 							</tr>
 

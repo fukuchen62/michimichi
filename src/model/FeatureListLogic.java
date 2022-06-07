@@ -23,7 +23,7 @@ public class FeatureListLogic {
 	}
 
 	//すべての記事をID降順で取得する
-	public List<Feature> getAllFeatureList(int showflag){
+	public static List<Feature> getAllFeatureList(int showflag){
 		//DAOオブジェクト生成
 		T_featuresDAO dao = new T_featuresDAO();
 		//DBから全レコードを取得する

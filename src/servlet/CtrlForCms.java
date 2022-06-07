@@ -132,7 +132,7 @@ public class CtrlForCms extends HttpServlet {
 			throws ServletException, IOException {
 
 		//リクエストパラメータの取得
-		//		request.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8");
 		String text = request.getParameter("text");
 
 		//入力値チェック
@@ -206,11 +206,11 @@ public class CtrlForCms extends HttpServlet {
 
 	private String movetoFeatureList() {
 		// 記事一覧を取得する
-//				FeatureList featurelist = new FeatureList();
-//				List<Feature> featureList = featurelist.getAllfeature(0);
-//
+//				FeatureListLogic featurelistLogic = new FeatureListLogic();
+//				List<FeatureList> FLList = FeatureListLogic.getAllFeature(0);
+
 		//リクエストスコープに保存
-//				request.setAttribute("featureList", featureList);
+//				request.setAttribute("FLList", FLList);
 
 		String forward = "WEB-INF/jsp/cms/feature_list.jsp";
 		return forward;

@@ -321,4 +321,29 @@ public class T_featuresDAO {
 		return false;
 	}
 
+	public boolean insert(Feature feature) {
+		// TODO 自動生成されたメソッド・スタブ
+		return false;
+	}
+
+	public Feature findByFeatures(int id) {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
+
+	public boolean update(int id, int showflag) {
+		// TODO 自動生成されたメソッド・スタブ
+		return false;
+	}
+
+	public boolean update(Feature feature) {
+		// TODO 自動生成されたメソッド・スタブ
+		return false;
+	}
+
+	public boolean delete(int id) {
+		// TODO 自動生成されたメソッド・スタブ
+		return false;
+	}
+
 }

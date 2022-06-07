@@ -25,7 +25,7 @@
 				<div id="opbtns">
 					<a href="/michimichi/CtrlForCms?pge_id=18">コメント管理</a>
 					<a href="/michimichi/CtrlForCms?pge_id=14">道の駅管理</a>
-					<a href="/michimichi/CtrlForCms?pge_id=16">特集管理</a>
+					<a href="/michimichi/CtrlForCms?pge_id=17">特集管理</a>
 					<a href="/michimichi/CtrlForCms?pge_id=20">アカウント管理</a>
 				</div>
 			</section>
