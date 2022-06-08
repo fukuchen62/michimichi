@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import beans.Station;
+import beans.Facilities;
 import model.DbConnection;
 
 public class M_facilitiesDAO {
@@ -16,9 +16,9 @@ public class M_facilitiesDAO {
 	/*********
 	 * 道の駅個別 タグ情報、出力用メソッド
 	 *********/
-	public List<Station> getFacilities(int showflag, int con_id) {
+	public List<Facilities> getFacilities(int showflag, int con_id) {
 
-		List<Station> FacilityList = new ArrayList<>();
+		List<Facilities> FacilityList = new ArrayList<>();
 
 		String sql = "";
 
@@ -61,17 +61,17 @@ public class M_facilitiesDAO {
 				String icon_path1 = DAOConstant.UPLOADS_PICTOGRAM + rs.getString("icon_path1");
 				String icon_path2 = DAOConstant.UPLOADS_PICTOGRAM + rs.getString("icon_path2");
 
-				Station Facility = new Station(
+				Facilities facility = new Facilities(
 						tages_id,
-						category_name,
 						tages_photo_path,
+						category_name,
 						tages_alt,
 						icon_path1,
 						icon_path2,
 						facilities_id,
 						status);
 
-				FacilityList.add(Facility);
+				FacilityList.add(facility);
 			}
 
 		} catch (SQLException e) {

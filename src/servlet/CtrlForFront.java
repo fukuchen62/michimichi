@@ -10,8 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import beans.Facilities;
 import beans.Feature;
 import beans.Station;
+import model.FacilitiesLogic;
 import model.FeatureListLogic;
 import model.FeatureLogic;
 import model.StationListLogic;
@@ -250,15 +252,20 @@ public class CtrlForFront extends HttpServlet {
 
 		// 特集個別記事の内容を取得する
 		StationLogic stationLogic = new StationLogic();
+		FacilitiesLogic facilitiesLogic = new FacilitiesLogic();
 		FeatureListLogic featureListLogic = new FeatureListLogic();
 
-		Station station= stationLogic.getStationById(CONID);
+		//道の駅IDで抽出した基本情報
+		Station station = stationLogic.getStationById(CONID);
 
+		//おススメsection
 		List<Station> RecommendsList = stationLogic.getRecommends(SHOWFALG, CONID);
 
+		//周辺スポットsection
 		List<Station> SpotList = stationLogic.getSpots(SHOWFALG, CONID);
 
-		List<Station> FacilityList = stationLogic.getFacilities(SHOWFALG, CONID);
+		//道の駅・周辺スポットの施設（タグ）情報
+		List<Facilities> FacilityList = facilitiesLogic.getFacilities(SHOWFALG, CONID);
 
 		//特集記事一覧
 		List<Feature> SFList = featureListLogic.getStationFeature(SHOWFALG);
@@ -268,7 +275,6 @@ public class CtrlForFront extends HttpServlet {
 			request.setAttribute("RecommendsList", RecommendsList);
 			request.setAttribute("SpotList", SpotList);
 			request.setAttribute("FacilityList", FacilityList);
-
 			request.setAttribute("SFList", SFList);
 
 

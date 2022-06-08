@@ -3,7 +3,6 @@ package model;
 import java.util.List;
 
 import beans.Station;
-import dao.M_facilitiesDAO;
 import dao.M_recommendsDAO;
 import dao.M_road_stationsDAO;
 import dao.M_spotsDAO;
@@ -37,13 +36,5 @@ public class StationLogic {
 		return SpotList;
 	}
 
-	//指定された道の駅IDのタグ情報を表示する
-	public List<Station> getFacilities(int showflag, int con_id) {
-		//DAOオブジェクト生成
-		M_facilitiesDAO dao = new M_facilitiesDAO();
-		//DBから全レコードを取得する
-		List<Station> FacilityList = dao.getFacilities(showflag,con_id);
-		return FacilityList;
-	}
 
 }

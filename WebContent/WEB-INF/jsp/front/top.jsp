@@ -60,46 +60,56 @@
                 <span>特集</span>
             </h2>
 
-            <div class="grid-pickup grid wrap">
-				<c:forEach var="list" items="${TLList}" end="2">
-					<div class="items">
-						<c:set var="itemType" value="${featureImg_random}" />
-						<a href="CtrlForFront?pge_id=4&con_id=${list.feature_id}">
+            <div class="pc">
+                <div class="grid-pickup grid wrap">
+                    <c:forEach var="list" items="${TLList}" end="2">
+                        <div class="items">
+                            <c:set var="itemType" value="${featureImg_random}" />
+                            <a href="CtrlForFront?pge_id=4&con_id=${list.feature_id}">
 
-							<%
-								//0,1,2の乱数を作成
-								int select = (int) Math.random() * 3;
-							%>
+                                <%
+                                    //0,1,2の乱数を作成
+                                    int select = (int) Math.random() * 3;
+                                %>
 
-							<% if(select == 0) {%>
-								<img src="${list.photo_path1}" alt="${list.alt1}">
-							<% }else if(select == 1) {%>
-								<img src="${list.photo_path2}" alt="${list.alt2}">
-							<% }else {%>
-								<img src="${list.photo_path3}" alt="${list.alt3}">
-							<% }%>
-						</a>
-						<p class="center">${list.feature_name}</p>
-					</div>
-				</c:forEach>
-                <div class="items">
-                    <img src="img/dammy/donari.jpg" alt="pickup_01">
-                    <p class="center">道の駅グルメ</p>
+                                <% if(select == 0) {%>
+                                    <img src="${list.photo_path1}" alt="${list.alt1}">
+                                <% }else if(select == 1) {%>
+                                    <img src="${list.photo_path2}" alt="${list.alt2}">
+                                <% }else {%>
+                                    <img src="${list.photo_path3}" alt="${list.alt3}">
+                                <% }%>
+                            </a>
+                            <p class="center">${list.feature_name}</p>
+                        </div>
+                    </c:forEach>
                 </div>
+                <!-- grid-pickup end -->
+            </div>
 
-                <div class="items">
-                    <img src="img/dammy/hiwasa.jpg" alt="pickup_02">
-                    <p class="center">SDGs</p>
-                </div>
+            <div class="sp">
+                <div class="grid-pickup grid wrap">
+                    <c:forEach var="list" items="${TLList}" end="3">
+                        <div class="items">
+                            <c:set var="itemType" value="${featureImg_random}" />
+                            <a href="CtrlForFront?pge_id=4&con_id=${list.feature_id}">
 
-                <div class="items">
-                    <img src="img/dammy/momijigawa.jpg" alt="pickup_03">
-                    <p class="center">温泉</p>
-                </div>
+                                <%
+                                    //0,1,2の乱数を作成
+                                    int select = (int) Math.random() * 3;
+                                %>
 
-                <div class="items sp">
-                    <img src="img/dammy/sadamitsu.jpg" alt="pickup_04">
-                    <p class="center">観光名所</p>
+                                <% if(select == 0) {%>
+                                    <img src="${list.photo_path1}" alt="${list.alt1}">
+                                <% }else if(select == 1) {%>
+                                    <img src="${list.photo_path2}" alt="${list.alt2}">
+                                <% }else {%>
+                                    <img src="${list.photo_path3}" alt="${list.alt3}">
+                                <% }%>
+                            </a>
+                            <p class="center">${list.feature_name}</p>
+                        </div>
+                    </c:forEach>
                 </div>
                 <!-- grid-pickup end -->
             </div>
