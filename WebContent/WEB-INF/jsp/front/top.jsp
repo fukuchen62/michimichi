@@ -194,6 +194,7 @@
             </a>
         </div>
     </section>
+    <a href="CtrlForFront?pge_id=10">管理者ログイン</a>
 
 	</c:param>
 </c:import>
