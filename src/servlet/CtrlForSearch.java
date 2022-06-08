@@ -37,32 +37,60 @@ public class CtrlForSearch extends HttpServlet {
 
 		//フォワード先
 		String forward = "";
+		//エリアID
+		String[] checkedAreas = null;
+		int[] areas;
 
-		//リクエスト取得
-		//エリア取得
-		String[] checkedAreas = request.getParameterValues("area");
-		int[] areas=new int[checkedAreas.length];
-		for(int i=0;i<checkedAreas.length;i++) {
-			areas[i]=Integer.parseInt(checkedAreas[i]);
-		}
-
-		//施設取得
-//		String[] checkedFacilities=request.getParameterValues("facility");
-//		int[] facilities =new int[checkedFacilities.length];
-//		for(int i=0;i<checkedFacilities.length;i++) {
-//			facilities[i]=Integer.parseInt(checkedFacilities[i]);
-//		}
+		//
+		String[] checkedFacilities=null;
+		int[] facilities;
 
 		//オブジェクト生成
 		SearchLogic searchLogic = new SearchLogic();
 
-		List<Search> searchList=new ArrayList<>();
-		//検索結果を読み込み
+		List<Search> searchList = new ArrayList<>();
+
 		//エリアIDのみの検索の場合
-			 searchList= searchLogic.getSearchList(areas);
+		if (request.getParameterValues("area") != null && request.getParameterValues("facility") == null) {
+			checkedAreas = request.getParameterValues("area");//リクエストからエリアID取得
+			areas = new int[checkedAreas.length];
+			for (int i = 0; i < checkedAreas.length; i++) {
+				areas[i] = Integer.parseInt(checkedAreas[i]);
+			}
+			//検索結果を読み込み
+			searchList = searchLogic.getSearchList(areas);
+		}
+
 		//施設IDのみの検索の場合
-		// searchList=searchLogic.getSearchList(facilities);
+		if (request.getParameterValues("area") == null && request.getParameterValues("facility") != null) {
+			checkedFacilities = request.getParameterValues("facility");//リクエストから施設ID取得
+			facilities= new int[checkedFacilities.length];
+			for (int i = 0; i < checkedFacilities.length; i++) {
+				facilities[i] = Integer.parseInt(checkedFacilities[i]);
+			}
+			//検索結果を読み込み
+			searchList = searchLogic.getSearchList(facilities);
+		}
+
 		//エリアIDと施設IDを使った検索の場合
+		if (request.getParameterValues("area") != null && request.getParameterValues("facility") != null) {
+			checkedAreas = request.getParameterValues("area");//リクエストからエリアID取得
+			areas = new int[checkedAreas.length];
+			for (int i = 0; i < checkedAreas.length; i++) {
+				areas[i] = Integer.parseInt(checkedAreas[i]);
+			}
+
+			checkedFacilities = request.getParameterValues("facility");//リクエストから施設ID取得
+			facilities= new int[checkedFacilities.length];
+			for (int i = 0; i < checkedFacilities.length; i++) {
+				facilities[i] = Integer.parseInt(checkedFacilities[i]);
+			}
+
+			//検索結果を読み込み
+			searchList = searchLogic.getSearchAllList(areas,facilities);
+		}
+		//エリアIDと施設ID どっちもない場合
+		//何もしない
 
 		if (searchList != null) {
 			//リクエストスコープに結果を保存
@@ -71,19 +99,10 @@ public class CtrlForSearch extends HttpServlet {
 
 		//検索画面に表示
 		//forward = "/WEB-INF/jsp/front/search.jsp";
+
 		//テスト画面に移動
 		forward = "/WEB-INF/jsp/front/sample.jsp";
 
-		//テスト用：チェックボタンの値を取得しているのか確認。
-		//		response.setContentType("text/html; charset=UTF-8");
-		//        PrintWriter out = response.getWriter();
-		//        out.println("<html><head></head><body>");
-		//        out.print("<p>チェックした値は");
-		//        for (String area : checkedAreas) {
-		//            out.print("[" + area + "]");
-		//        }
-		//        out.println("です。</p>");
-		//        out.println("</body></html>");
 		RequestDispatcher dispatcher = request.getRequestDispatcher(forward);
 		dispatcher.forward(request, response);
 	}
