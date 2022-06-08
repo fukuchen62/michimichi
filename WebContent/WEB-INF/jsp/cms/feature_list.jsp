@@ -3,7 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
-<c:import url="layout/template-back.jsp">
+<c:import url="../layout/template-back.jsp">
 
 	<c:param name="title" value="特集記事一覧" />
 	<c:param name="keywords" value="" />

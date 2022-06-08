@@ -5,6 +5,6 @@
 <footer id="footer" class="footer">
 	<a href="/michimichi/CtrlForCms?pge_id=10">ログインページへ</a> <br>
 	<p id="copyright">
-		<small>Copyright Cafe Leaf All Rights Reserved. </small>
+		<small> </small>
 	</p>
 </footer>

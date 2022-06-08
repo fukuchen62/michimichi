@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,7 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import beans.Feature;
 import beans.LoginUser;
+import model.FeatureLogic;
 
 /**
  * Servlet implementation class Main
@@ -36,6 +39,7 @@ public class CtrlForCms extends HttpServlet {
 		//ログインしている状態を確認する
 		HttpSession session = request.getSession();
 		LoginUser loginUser = (LoginUser) session.getAttribute("loginUser");
+
 		//ログインではない状態の場合は、ログイン画面へ
 		if (loginUser == null) {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/login");
@@ -94,9 +98,9 @@ public class CtrlForCms extends HttpServlet {
 			forward = movetoFeatureEdit();
 		}
 
-//		else if (pge_id == 17) {（まだできてないからコメントアウト）
-//			forward = movetoFeatureList(request);
-//		}
+		else if (pge_id == 17) {
+			forward = movetoFeatureList(request);
+		}
 
 		else if (pge_id == 18) {
 			forward = movetoCommentEdit();
@@ -143,18 +147,18 @@ public class CtrlForCms extends HttpServlet {
 			LoginUser loginUser = (LoginUser) session.getAttribute("loginUser");
 
 			//コメントのインスタンスを生成する
-			//			Comment mutter = new Comment(loginUser.getLogin_id(), text);
+//						Comment mutter = new Comment(loginUser.getLogin_id(), text);
 
 			//コメントのインスタンスをテーブルに追加する
-			//			CommentListLogic CommentListLogic = new CommentListLogic();
-			//			CommentListLogic.execute(comment);
+//						CommentListLogic CommentListLogic = new CommentListLogic();
+//						CommentListLogic.execute(comment);
 
 		} else {
 			//エラーメッセージをリクエストスコープに保存
 			request.setAttribute("errorMsg", "つぶやきが入力されていません");
 		}
 
-		//		//コメントリストを取得
+		//		コメントリストを取得
 		//		CommentListLogic getCommentListLogic = new CommentListLogic();
 		//		List<Comment> commentList = CommentListLogic.execute();
 		//
@@ -204,17 +208,17 @@ public class CtrlForCms extends HttpServlet {
 		return forward;
 	}
 
-//	private String movetoFeatureList(HttpServletRequest request) {（まだできてないからコメントアウト）
-//		// 記事一覧を取得する
-//		FeatureLogic featurelogic = new FeatureLogic();
-//		List<FeatureLogic> FeatureList =  featurelogic.getFeatureList(0);
-//
-//		//リクエストスコープに保存
-//		request.setAttribute("FeatureList", FeatureList);
-//
-//		String forward = "WEB-INF/jsp/cms/feature_list.jsp";
-//		return forward;
-//	}
+	private String movetoFeatureList(HttpServletRequest request) {
+		// 記事一覧を取得する
+		FeatureLogic featurelogic = new FeatureLogic();
+		List<Feature> FeatureList =  featurelogic.getFeatureList(0);
+
+		//リクエストスコープに保存
+		request.setAttribute("FeatureList", FeatureList);
+
+		String forward = "WEB-INF/jsp/cms/feature_list.jsp";
+		return forward;
+	}
 
 	private String movetoCommentEdit() {
 		String forward = "WEB-INF/jsp/cms/comment_edit.jsp";
