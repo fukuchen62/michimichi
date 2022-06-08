@@ -1,6 +1,7 @@
 package model;
 
 import beans.Feature;
+import beans.FeatureList;
 import dao.T_featuresDAO;
 
 public class FeatureLogic {
@@ -14,11 +15,7 @@ public class FeatureLogic {
 		return feature;
 	}
 
-	/**
-	 * feature_idによる指定記事を取得
-	 * @param id
-	 * @return
-	 */
+	//feature_idによる特定記事を取得
 	public Feature getMenuById(int id){
 		//DAOオブジェクト生成
 		T_featuresDAO dao = new T_featuresDAO();
@@ -27,40 +24,27 @@ public class FeatureLogic {
 		return feature;
 	}
 
-	/**
-	 * 特集新規登録
-	 * @param post
-	 * @return
-	 */
-	public boolean createFeature(Feature feature) {
-		T_featuresDAO dao = new T_featuresDAO();
-		if(dao.insert(feature) != false) {
-			return true;
-		}else {
-			return false;
-		}
-	}
+	//新規特集記事の作成(まだできてないからコメントアウト)
+//		public boolean createPost(Feature feature) {
+//			T_featuresDAO dao = new T_featuresDAO();
+//			if(dao.insert(feature) != false) {
+//				return true;
+//			}else {
+//				return false;
+//			}
+//		}
 
-	/**
-	 * 特集の内容を更新
-	 * @param menu
-	 * @return
-	 */
-	public boolean updateFeature(Feature feature) {
-		T_featuresDAO dao = new T_featuresDAO();
-		if(dao.update(feature) != false) {
-			return true;
-		}else {
-			return false;
+	//記事内容の更新
+		public boolean updatePost(FeatureList feature) {
+			T_featuresDAO dao = new T_featuresDAO();
+			if (dao.update(feature) != false) {
+				return true;
+			} else {
+				return false;
+			}
 		}
-	}
 
-	/**
-	 * 指定の特集の表示・非表示処理
-	 * @param id
-	 * @param showflag
-	 * @return
-	 */
+	//指定の特集の表示・非表示処理
 	public boolean updateFeature(int id,int showflag) {
 		T_featuresDAO dao = new T_featuresDAO();
 		if(dao.update(id,showflag) != false) {
@@ -70,17 +54,13 @@ public class FeatureLogic {
 		}
 	}
 
-	/**
-	 * 指定の特集を削除
-	 * @param id
-	 * @return
-	 */
-	public boolean deleteMenu(int id) {
-		T_featuresDAO dao = new T_featuresDAO();
-		if(dao.delete(id) != false) {
-			return true;
-		}else {
-			return false;
+	//特集内容の削除
+		public boolean deletePost(int id) {
+			T_featuresDAO dao = new T_featuresDAO();
+			if (dao.delete(id) != false) {
+				return true;
+			} else {
+				return false;
+			}
 		}
-	}
 }

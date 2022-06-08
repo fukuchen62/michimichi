@@ -74,7 +74,8 @@
 				<p id="modal-detail">modal-detailmodal-detailmodal-detail</p>
 
 				<div id="sendform">
-					<form id="modal-input" action="/michimichi/FeatureEdit" method="get">
+					<form id="modal-input" action="/michimichi/FeatureEdit"
+						method="get">
 						<input type="hidden" name="post_id" id="post_id"> <input
 							type="hidden" name="showflag" id="showflag"> <input
 							type="hidden" name="fnc" id="fnc"> <input type="submit"

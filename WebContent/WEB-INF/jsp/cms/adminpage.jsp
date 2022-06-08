@@ -26,6 +26,7 @@
 					<a href="/michimichi/CtrlForCms?pge_id=18">コメント管理</a>
 					<a href="/michimichi/CtrlForCms?pge_id=14">道の駅管理</a>
 					<a href="/michimichi/CtrlForCms?pge_id=17">特集管理</a>
+					<!--特集一覧表示→特集新規・編集-->
 					<a href="/michimichi/CtrlForCms?pge_id=20">アカウント管理</a>
 				</div>
 			</section>

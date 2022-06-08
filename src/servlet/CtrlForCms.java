@@ -94,9 +94,9 @@ public class CtrlForCms extends HttpServlet {
 			forward = movetoFeatureEdit();
 		}
 
-		else if (pge_id == 17) {
-			forward = movetoFeatureList();
-		}
+//		else if (pge_id == 17) {（まだできてないからコメントアウト）
+//			forward = movetoFeatureList(request);
+//		}
 
 		else if (pge_id == 18) {
 			forward = movetoCommentEdit();
@@ -204,17 +204,17 @@ public class CtrlForCms extends HttpServlet {
 		return forward;
 	}
 
-	private String movetoFeatureList() {
-		// 記事一覧を取得する
-//				FeatureListLogic featurelistLogic = new FeatureListLogic();
-//				List<FeatureList> FLList = FeatureListLogic.getAllFeature(0);
-
-		//リクエストスコープに保存
-//				request.setAttribute("FLList", FLList);
-
-		String forward = "WEB-INF/jsp/cms/feature_list.jsp";
-		return forward;
-	}
+//	private String movetoFeatureList(HttpServletRequest request) {（まだできてないからコメントアウト）
+//		// 記事一覧を取得する
+//		FeatureLogic featurelogic = new FeatureLogic();
+//		List<FeatureLogic> FeatureList =  featurelogic.getFeatureList(0);
+//
+//		//リクエストスコープに保存
+//		request.setAttribute("FeatureList", FeatureList);
+//
+//		String forward = "WEB-INF/jsp/cms/feature_list.jsp";
+//		return forward;
+//	}
 
 	private String movetoCommentEdit() {
 		String forward = "WEB-INF/jsp/cms/comment_edit.jsp";
