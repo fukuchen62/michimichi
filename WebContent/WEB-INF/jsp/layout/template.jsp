@@ -17,9 +17,24 @@
 <!-- TITLE -->
 <title>${param.title}</title>
 
+<!-- font M PLUS Rounded 1c & Quicksand-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
+
+<!-- icon font -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+
 <!-- CSS -->
-<link href="<c:url value='css/base.css'/>" rel="stylesheet">
-<link href="<c:url value='css/modaldlg.css'/>" rel="stylesheet">
+<link href="<c:url value='css/reset.css'/>" rel="stylesheet">
+<link href="<c:url value='css/format.css'/>" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/footer.css">
 
 <!-- 独自のCSS -->
 <c:if test="${!empty param.mycss}">
@@ -33,11 +48,17 @@
 </c:if>
 
 <!-- JS LINK -->
-<script src="<c:url value="js/vendor/jquery-3.3.1.min.js" />"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
+
 
 <!-- ローカルJS -->
 <%-- js/script.jsは、～より下部で読み込む必要があるため、 --%>
 <script src="<c:url value="js/script.js" />"></script>
+<script src="js/header.js"></script>
+<script src="js/footer.js"></script>
 
 <!-- 独自のJS -->
 <c:if test="${!empty param.myjs}">
@@ -57,8 +78,8 @@
 
 </head>
 <body>
+	<jsp:include page="key_visual.jsp" />
 	<jsp:include page="header_top.jsp" />
-	<jsp:include page="navigation.jsp" />
 	<div class="container">${param.content}</div>
 	<jsp:include page="footer_top.jsp" />
 </body>

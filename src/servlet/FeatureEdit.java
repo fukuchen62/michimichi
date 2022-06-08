@@ -221,7 +221,7 @@ public class FeatureEdit extends HttpServlet {
 
 					}else {
 						//データベースからすべての記事を読み込む
-						List<Feature> featureList = FeatureListLogic.getAllFeatureList(showflag);
+						List<Feature> featureList = featureListLogic.getFeatureList(showflag);
 						request.setAttribute("featureList", featureList);
 						forward = "/WEB-INF/jsp/featureList.jsp";
 					}

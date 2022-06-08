@@ -15,9 +15,9 @@ public class M_road_stationsDAO {
 	/*********
 	 * 道の駅個別ページ、出力用のメソッド
 	 *********/
-	public List<Station> getStation(int showflag, int con_id) {
+	public Station getStationById(int con_id) {
 
-		List<Station> StationList = new ArrayList<>();
+		Station station = null;
 
 		String sql = "";
 
@@ -34,15 +34,13 @@ public class M_road_stationsDAO {
 			//show_flagで表示になっている指定IDの一覧を取得する。
 			sql = "SELECT * "
 					+ " FROM M_road_stations "
-					+ " WHERE show_flag = ?"
-					+ " AND michinoeki_id = ?";
+					+ " WHERE michinoeki_id = ?";
 
 			//SQLを送信
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			//pStmt.setInt(一番目の？,代入するもの)
-			pStmt.setInt(1, showflag);
-			pStmt.setInt(2, con_id);
+			pStmt.setInt(1, con_id);
 
 			//SELECTを実行し、結果表を取得
 			ResultSet rs = pStmt.executeQuery();
@@ -90,7 +88,7 @@ public class M_road_stationsDAO {
 				int feature_banner2 = rs.getInt("feature_banner2");
 				int feature_banner3 = rs.getInt("feature_banner3");
 
-				Station Station = new Station(
+				station = new Station(
 						michinoeki_id,
 						michinoeki_name,
 						photo_path1,
@@ -131,8 +129,6 @@ public class M_road_stationsDAO {
 						feature_banner1,
 						feature_banner2,
 						feature_banner3);
-
-				StationList.add(Station);
 			}
 
 		} catch (SQLException e) {
@@ -144,7 +140,7 @@ public class M_road_stationsDAO {
 			//データベース切断
 
 		}
-		return StationList;
+		return station;
 
 	}
 

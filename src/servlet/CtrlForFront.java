@@ -94,16 +94,6 @@ public class CtrlForFront extends HttpServlet {
 		dispatcher.forward(request, response);
 	}
 
-	//	private String movetoMenu(HttpServletRequest request) {
-	//		// TODO 自動生成されたメソッド・スタブ
-	//		return null;
-	//	}
-	//
-	//	private String movetoConcept(HttpServletRequest request) {
-	//		// TODO 自動生成されたメソッド・スタブ
-	//		return null;
-	//	}
-
 	/**
 	 * トップページフォワード前処理
 	 *
@@ -116,14 +106,14 @@ public class CtrlForFront extends HttpServlet {
 
 		// 検索sectionの道の駅個別リンクを取得する
 		StationListLogic stationListLogic = new StationListLogic();
-		List<Station> TSList = stationListLogic.getAllTopStaionList(SHOWFALG);
+		List<Station> TSList = stationListLogic.getTopStaionList(SHOWFALG);
 
 			// リクエストスコープに保存
 			request.setAttribute("TSList", TSList);
 
 		// 特集記事一覧を取得する
 		FeatureListLogic featureListLogic = new FeatureListLogic();
-		List<Feature> TLList = featureListLogic.getAllTopFeature(SHOWFALG);
+		List<Feature> TLList = featureListLogic.getTopFeature(SHOWFALG);
 
 			// リクエストスコープに保存
 			request.setAttribute("TLList", TLList);
@@ -161,7 +151,7 @@ public class CtrlForFront extends HttpServlet {
 
 		// 特集記事一覧を取得する
 		FeatureListLogic featureListLogic = new FeatureListLogic();
-		List<Feature> FLList = featureListLogic.getAllFeatureList(SHOWFLAG);
+		List<Feature> FLList = featureListLogic.getFeatureList(SHOWFLAG);
 
 		// リクエストスコープに保存
 		request.setAttribute("FLList", FLList);
@@ -262,40 +252,30 @@ public class CtrlForFront extends HttpServlet {
 		StationLogic stationLogic = new StationLogic();
 		FeatureListLogic featureListLogic = new FeatureListLogic();
 
-		List<Station> StationList = stationLogic.getAllStation(SHOWFALG, CONID);
+		Station station= stationLogic.getStationById(CONID);
 
-		List<Station> RecommendsList = stationLogic.getAllRecommends(SHOWFALG, CONID);
+		List<Station> RecommendsList = stationLogic.getRecommends(SHOWFALG, CONID);
 
-		List<Station> SpotList = stationLogic.getAllSpots(SHOWFALG, CONID);
+		List<Station> SpotList = stationLogic.getSpots(SHOWFALG, CONID);
 
-		List<Station> FacilityList = stationLogic.getAllFacilities(SHOWFALG, CONID);
+		List<Station> FacilityList = stationLogic.getFacilities(SHOWFALG, CONID);
 
 		//特集記事一覧
-		List<Feature> SFList = featureListLogic.getAllStationFeature(SHOWFALG);
-
-		// リクエストスコープに保存
-		request.setAttribute("StationList", StationList);
-		request.setAttribute("RecommendsList", RecommendsList);
-		request.setAttribute("SpotList", SpotList);
-		request.setAttribute("FacilityList", FacilityList);
-
-		request.setAttribute("SFList", SFList);
-
-
-
-		//titleとdescriptionを取得
-		String title = StationList.get(0).getMichinoeki_name();
-		String description = StationList.get(0).getExplanation();
+		List<Feature> SFList = featureListLogic.getStationFeature(SHOWFALG);
 
 			// リクエストスコープに保存
-			request.setAttribute("title", title);
-			request.setAttribute("description", description);
+			request.setAttribute("station", station);
+			request.setAttribute("RecommendsList", RecommendsList);
+			request.setAttribute("SpotList", SpotList);
+			request.setAttribute("FacilityList", FacilityList);
+
+			request.setAttribute("SFList", SFList);
 
 
 		//道の駅の特集個別リンクのID取得
-		Integer featureLink1 = StationList.get(0).getFeature_banner1();
-		Integer featureLink2 = StationList.get(0).getFeature_banner2();
-		Integer featureLink3 = StationList.get(0).getFeature_banner3();
+		Integer featureLink1 = station.getFeature_banner1();
+		Integer featureLink2 = station.getFeature_banner2();
+		Integer featureLink3 = station.getFeature_banner3();
 
 			// リクエストスコープに保存
 			request.setAttribute("featureLink1", featureLink1);

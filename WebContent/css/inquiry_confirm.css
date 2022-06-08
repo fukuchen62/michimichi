@@ -1,0 +1,124 @@
+@charset "UTF-8";
+.flexR {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.flexC {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.around {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+/***********************************************************
+
+***********************************************************/
+#inquiry-confirm .container {
+  width: 40%;
+  min-width: 512px;
+}
+
+#inquiry-confirm .container h3 {
+  margin-top: 180px;
+}
+
+#inquiry-confirm .container .confirm-wrap {
+  margin-top: 80px;
+}
+
+#inquiry-confirm .container .confirm-wrap table {
+  border-spacing: 0;
+}
+
+#inquiry-confirm .container .confirm-wrap th,
+#inquiry-confirm .container .confirm-wrap td {
+  padding: 20px 30px;
+  border-bottom: 1px solid #777;
+}
+
+#inquiry-confirm .container .confirm-wrap th {
+  width: 30%;
+  white-space: nowrap;
+}
+
+#inquiry-confirm .container .confirm-wrap td {
+  width: 70%;
+}
+
+#inquiry-confirm .container .btn {
+  width: 70%;
+  margin: 60px auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#inquiry-confirm .container .btn .btn-return,
+#inquiry-confirm .container .btn .btn-submit {
+  width: 200px;
+  height: 50px;
+  padding: 5px 15px;
+  border-color: #777;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+#inquiry-confirm .container .btn .btn-return:hover:hover,
+#inquiry-confirm .container .btn .btn-submit:hover:hover {
+  background-color: #aaa;
+  color: #fafeff;
+  cursor: pointer;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+#inquiry-confirm .container .btn .btn-submit {
+  margin-left: 80px;
+}
+
+/***********************************************************
+ ～@768px
+***********************************************************/
+@media screen and (max-width: 768px) {
+  #inquiry-confirm .container {
+    width: 70%;
+    min-width: 400px;
+  }
+  #inquiry-confirm .container .confirm-wrap {
+    margin-top: 60px;
+  }
+}
+
+/***********************************************************
+ ～@540px
+***********************************************************/
+@media screen and (max-width: 540px) {
+  #inquiry-confirm .container {
+    width: 90%;
+    min-width: 400px;
+  }
+  #inquiry-confirm .container .confirm-wrap {
+    margin-top: 40px;
+  }
+}
+/*# sourceMappingURL=inquiry_confirm.css.map */

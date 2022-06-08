@@ -1,0 +1,202 @@
+@charset "UTF-8";
+h2 {
+  color: #444;
+  margin-bottom: 40px;
+}
+
+/*===================================================
+ topView
+===================================================*/
+#topView {
+  margin-top: 20px;
+}
+
+#topView .container60 {
+  border: 1px solid #444;
+  border-radius: 5px;
+}
+
+#topView .topView {
+  width: 100%;
+  height: 250px;
+  line-height: 1.3rem;
+  position: relative;
+}
+
+#topView .topView .topView-img {
+  position: absolute;
+  right: 3%;
+  top: 50%;
+  -webkit-transform: translate(0, -45%);
+          transform: translate(0, -45%);
+  z-index: 1;
+}
+
+#topView .topView .hp {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: absolute;
+  top: 25%;
+  left: 5%;
+  color: white;
+  text-shadow: 2px 2px 2px #888, -2px 2px 2px #888, 2px -2px 2px #888, -2px -2px 2px #888, 5px 7px 3px #888;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 64px;
+  font-weight: bold;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+#topView .topView .site {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding-left: 40px;
+  position: absolute;
+  bottom: 20%;
+  left: 20%;
+  text-shadow: 5px 7px 3px #888;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 48px;
+  font-weight: bold;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.whitepaper {
+  height: 200px;
+}
+
+.whitepaper .whitepaper-text {
+  color: #444;
+  font-size: 20px;
+  line-height: 1.8rem;
+}
+
+#disclaimer {
+  position: fixed;
+  bottom: 0;
+  left: 20%;
+}
+
+#disclaimer .disclaimer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#disclaimer .disclaimer span {
+  color: blue;
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+#disclaimer .disclaimer span:hover {
+  cursor: pointer;
+}
+
+#disclaimer .disclaimer span + span {
+  margin-left: 10vw;
+}
+
+.disclaimer-modal,
+.sponsorship-modal {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  display: none;
+  z-index: 200;
+}
+
+.disclaimer-modal .modal-text,
+.sponsorship-modal .modal-text {
+  padding: 50px;
+  background-color: #fafeff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.disclaimer-modal .modal-text::before, .disclaimer-modal .modal-text::after,
+.sponsorship-modal .modal-text::before,
+.sponsorship-modal .modal-text::after {
+  content: "";
+  width: 20px;
+  height: 2px;
+  background-color: #444;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  z-index: 20;
+}
+
+.disclaimer-modal .modal-text::before,
+.sponsorship-modal .modal-text::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.disclaimer-modal .modal-text::after,
+.sponsorship-modal .modal-text::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+/***************************************************************
+ ～@1024px
+***************************************************************/
+@media screen and (max-width: 1024px) {
+  #topView .topView {
+    height: 225px;
+  }
+  #topView .topView .topView-img {
+    height: 175px;
+  }
+  #topView .topView .hp {
+    left: 5%;
+    font-size: 48px;
+  }
+  #topView .topView .site {
+    left: 5%;
+    font-size: 36px;
+  }
+}
+
+/***************************************************************
+ ～@768px
+***************************************************************/
+@media screen and (max-width: 768px) {
+  #topView .topView {
+    height: 200px;
+  }
+  #topView .topView .topView-img {
+    height: 150px;
+  }
+  #topView .topView .hp {
+    left: 5%;
+    font-size: 36px;
+  }
+  #topView .topView .site {
+    left: 7%;
+    font-size: 30px;
+  }
+}
+/*# sourceMappingURL=white_paper.css.map */

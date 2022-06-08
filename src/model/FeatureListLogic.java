@@ -23,7 +23,7 @@ public class FeatureListLogic {
 	}
 
 	//すべての記事をID降順で取得する
-	public static List<Feature> getAllFeatureList(int showflag){
+	public List<Feature> getFeatureList(int showflag){
 		//DAOオブジェクト生成
 		T_featuresDAO dao = new T_featuresDAO();
 		//DBから全レコードを取得する
@@ -32,7 +32,7 @@ public class FeatureListLogic {
 	}
 
 	//TOP特集個別リンクを取得する
-	public List<Feature> getAllTopFeature(int showflag){
+	public List<Feature> getTopFeature(int showflag){
 		//DAOオブジェクト生成
 		T_featuresDAO dao = new T_featuresDAO();
 		//DBから全レコードを取得する
@@ -41,7 +41,7 @@ public class FeatureListLogic {
 	}
 
 	//道の駅ページの特集個別リンクを取得する
-	public List<Feature> getAllStationFeature(int showflag){
+	public List<Feature> getStationFeature(int showflag){
 		//DAOオブジェクト生成
 		T_featuresDAO dao = new T_featuresDAO();
 		//DBから全レコードを取得する
