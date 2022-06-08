@@ -3,7 +3,6 @@ package model;
 import java.util.List;
 
 import beans.Feature;
-import beans.FeatureList;
 import dao.T_featuresDAO;
 
 public class FeatureLogic {
@@ -46,7 +45,7 @@ public class FeatureLogic {
 	}
 
 	//記事内容の編集
-	public boolean updatePost(FeatureList feature) {
+	public boolean updateFeature(Feature feature) {
 		T_featuresDAO dao = new T_featuresDAO();
 		if (dao.update(feature) != false) {
 			return true;

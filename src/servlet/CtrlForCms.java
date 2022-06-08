@@ -44,6 +44,7 @@ public class CtrlForCms extends HttpServlet {
 		if (loginUser == null) {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/login");
 			dispatcher.forward(request, response);
+			return;
 		}
 
 		//リクエストパラメータを取得する
@@ -65,7 +66,6 @@ public class CtrlForCms extends HttpServlet {
 
 		// リクエストスコープに保存
 		request.setAttribute("pge_id", pge_id);
-
 
 		//リクエストスコープに各ページ用情報保存、フォワード先を設定
 		if (pge_id == 13) {
@@ -99,7 +99,16 @@ public class CtrlForCms extends HttpServlet {
 		}
 
 		else if (pge_id == 17) {
-			forward = movetoFeatureList(request);
+			// 記事一覧を取得する
+//			FeatureLogic featurelogic = new FeatureLogic();
+//			List<Feature> FeatureList = featurelogic.getFeatureList(1);
+//
+//			//リクエストスコープに保存
+//			request.setAttribute("FeatureList", FeatureList);
+//			forward = "WEB-INF/jsp/cms/adminpage.jsp";
+			forward = movetoLogin(request);
+			//		String forward = "WEB-INF/jsp/cms/feature_list.jsp";
+//			forward = movetoFeatureList(request);
 		}
 
 		else if (pge_id == 18) {
@@ -121,6 +130,9 @@ public class CtrlForCms extends HttpServlet {
 		else {
 			forward = movetoAdminpage(request);
 		}
+
+		System.out.println("pge_id:" + pge_id);
+		System.out.println("forward:" + forward);
 
 		//メイン画面にフォーワード
 		RequestDispatcher dispatcher = request.getRequestDispatcher(forward);
@@ -147,11 +159,11 @@ public class CtrlForCms extends HttpServlet {
 			LoginUser loginUser = (LoginUser) session.getAttribute("loginUser");
 
 			//コメントのインスタンスを生成する
-//						Comment mutter = new Comment(loginUser.getLogin_id(), text);
+			//						Comment mutter = new Comment(loginUser.getLogin_id(), text);
 
 			//コメントのインスタンスをテーブルに追加する
-//						CommentListLogic CommentListLogic = new CommentListLogic();
-//						CommentListLogic.execute(comment);
+			//						CommentListLogic CommentListLogic = new CommentListLogic();
+			//						CommentListLogic.execute(comment);
 
 		} else {
 			//エラーメッセージをリクエストスコープに保存
@@ -168,6 +180,7 @@ public class CtrlForCms extends HttpServlet {
 		//トップ画面にフォワード
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/front/top.jsp");
 		dispatcher.forward(request, response);
+
 	}
 
 	private String movetoAdminpage(HttpServletRequest request) {
@@ -211,12 +224,13 @@ public class CtrlForCms extends HttpServlet {
 	private String movetoFeatureList(HttpServletRequest request) {
 		// 記事一覧を取得する
 		FeatureLogic featurelogic = new FeatureLogic();
-		List<Feature> FeatureList =  featurelogic.getFeatureList(0);
+		List<Feature> FeatureList = featurelogic.getFeatureList(1);
 
 		//リクエストスコープに保存
 		request.setAttribute("FeatureList", FeatureList);
+		String forward = "WEB-INF/jsp/cms/adminpage.jsp";
+		//		String forward = "WEB-INF/jsp/cms/feature_list.jsp";
 
-		String forward = "WEB-INF/jsp/cms/feature_list.jsp";
 		return forward;
 	}
 
@@ -233,7 +247,6 @@ public class CtrlForCms extends HttpServlet {
 		//		//リクエストスコープに保存
 		//		request.setAttribute("commentList", commentList);
 
-
 		String forward = "WEB-INF/jsp/cms/comment_list.jsp";
 		return forward;
 	}
@@ -247,14 +260,6 @@ public class CtrlForCms extends HttpServlet {
 		String forward = "WEB-INF/jsp/cms/admin_edit.jsp";
 		return forward;
 	}
-
-
-
-
-
-
-
-
 
 	//	private String movetoMutter(HttpServletRequest request) {
 	//		コメントリストを取得
@@ -271,16 +276,16 @@ public class CtrlForCms extends HttpServlet {
 	//}
 
 	//private String movetofeatureListpage(HttpServletRequest request) {
-		// 記事一覧を取得する
-		//		FeatureLogic featurelogic = new FeatureLogic();
-		//		List<Feature> featureList = featurelogic.getAllfeature(0);
+	// 記事一覧を取得する
+	//		FeatureLogic featurelogic = new FeatureLogic();
+	//		List<Feature> featureList = featurelogic.getAllfeature(0);
 
-		//リクエストスコープに保存
-		//		request.setAttribute("featureList", featurelogic);
+	//リクエストスコープに保存
+	//		request.setAttribute("featureList", featurelogic);
 
-		// フォーワード先 "
-//		String forward = "/WEB-INF/jsp/adminpage.jsp";
-//		return forward;
-//	}
+	// フォーワード先 "
+	//		String forward = "/WEB-INF/jsp/adminpage.jsp";
+	//		return forward;
+	//	}
 
 }

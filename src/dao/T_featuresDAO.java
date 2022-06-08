@@ -328,11 +328,22 @@ public class T_featuresDAO {
 		return null;
 	}
 
+	/**
+	 * 表示と非表示のアップデータ
+	 * @param id
+	 * @param showflag
+	 * @return
+	 */
 	public boolean update(int id, int showflag) {
 		// TODO 自動生成されたメソッド・スタブ
 		return false;
 	}
 
+	/**
+	 * 特集記事の変更処理
+	 * @param feature
+	 * @return
+	 */
 	public boolean update(Feature feature) {
 		// TODO 自動生成されたメソッド・スタブ
 		return false;

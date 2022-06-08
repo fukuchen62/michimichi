@@ -30,7 +30,6 @@ public class FeatureListLogic {
 		return FLList;
 	}
 
-
 	//TOP特集個別リンクを取得する
 	public List<Feature> getTopFeature(int showflag) {
 		//DAOオブジェクト生成
@@ -39,7 +38,6 @@ public class FeatureListLogic {
 		List<Feature> TLList = dao.getTopFeature(showflag);
 		return TLList;
 	}
-
 
 	//道の駅ページの特集個別リンクを取得する
 	public List<Feature> getStationFeature(int showflag) {
@@ -51,49 +49,47 @@ public class FeatureListLogic {
 	}
 
 	//新規特集記事の作成
-			public boolean createFeatureList(Feature feature) {
-				T_featuresDAO dao = new T_featuresDAO();
-				if(dao.insert(feature) != false) {
-					return true;
-				}else {
-					return false;
-				}
-			}
-
-		//記事内容の更新
-			public boolean updateFeatureList(FeatureList featurelist) {
-				T_featuresDAO dao = new T_featuresDAO();
-				if (dao.update(featurelist) != false) {
-					return true;
-				} else {
-					return false;
-				}
-			}
-
-		//指定の特集の表示・非表示処理
-		public boolean updateFeature(int id,int showflag) {
-			T_featuresDAO dao = new T_featuresDAO();
-			if(dao.update(id,showflag) != false) {
-				return true;
-			}else {
-				return false;
-			}
+	public boolean createFeatureList(Feature feature) {
+		T_featuresDAO dao = new T_featuresDAO();
+		if (dao.insert(feature) != false) {
+			return true;
+		} else {
+			return false;
 		}
-
-		//特集内容の削除
-//			public boolean deleteFeatureList(int id) {
-//				T_featuresDAO dao = new T_featuresDAO();
-//				if (dao.delete(id) != false) {
-//					return true;
-//				} else {
-//					return false;
-//				}
-//			}
-//
-//				return null;
-//}
 	}
 
+	//記事内容の更新
+	public boolean updateFeature(Feature feature) {
+		T_featuresDAO dao = new T_featuresDAO();
+		if (dao.update(feature) != false) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 
+	//指定の特集の表示・非表示処理
+	public boolean updateFeature(int id, int showflag) {
+		T_featuresDAO dao = new T_featuresDAO();
+		if (dao.update(id, showflag) != false) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 
+	public Feature getFeatureById(int feature_id) {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
 
+	//特集内容の削除
+	public boolean deleteFeatureList(int id) {
+		T_featuresDAO dao = new T_featuresDAO();
+		if (dao.delete(id) != false) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+}
