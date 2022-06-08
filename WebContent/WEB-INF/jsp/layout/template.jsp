@@ -33,7 +33,7 @@
 <link href="<c:url value='css/reset.css'/>" rel="stylesheet">
 <link href="<c:url value='css/format.css'/>" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/header_alt.css">
 <link rel="stylesheet" href="css/footer.css">
 
 <!-- 独自のCSS -->
@@ -78,9 +78,8 @@
 
 </head>
 <body>
-	<jsp:include page="key_visual.jsp" />
-	<jsp:include page="header_top.jsp" />
+	<jsp:include page="header_front.jsp" />
 	<div class="container">${param.content}</div>
-	<jsp:include page="footer_top.jsp" />
+	<jsp:include page="footer_front.jsp" />
 </body>
 </html>

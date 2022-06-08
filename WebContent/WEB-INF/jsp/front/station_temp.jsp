@@ -359,17 +359,17 @@
 								<th>設備</th>
 								<td class="facility">
 									<div class="pictogram">
-										<c:forEach var="list" items="${FacilityList}" begin="0" end="9">
+										<c:forEach var="list" items="${FacilityList}" begin="0" end="10">
 											<div class="pict-parent">
 												<c:choose>
 													<c:when test="${list.status}">
-														<img src="${list.icon_path1}" alt="${list.alt}">
+														<img src="${list.icon_path1}" alt="${list.tages_alt}">
 													</c:when>
 													<c:otherwise>
-														<img src="${list.icon_path2}" alt="${list.alt}">
+														<img src="${list.icon_path2}" alt="${list.tages_alt}">
 													</c:otherwise>
 												</c:choose>
-												<span class="pict-child">category_name</span>
+												<span class="pict-child">${list.category_name}</span>
 											</div>
 										</c:forEach>
 
@@ -380,17 +380,17 @@
 								<th>周辺施設</th>
 								<td class="around-facility">
 									<div class="pictogram">
-										<c:forEach var="list" items="${FacilityList}" begin="10" end="18">
+										<c:forEach var="list" items="${FacilityList}" begin="11" end="18">
 											<div class="pict-parent">
 												<c:choose>
 													<c:when test="${list.status}">
-														<img src="${list.icon_path1}" alt="${list.alt}">
+														<img src="${list.icon_path1}" alt="${list.tages_alt}">
 													</c:when>
 													<c:otherwise>
-														<img src="${list.icon_path2}" alt="${list.alt}">
+														<img src="${list.icon_path2}" alt="${list.tages_alt}">
 													</c:otherwise>
 												</c:choose>
-												<span class="pict-child">category_name</span>
+												<span class="pict-child">${list.category_name}</span>
 											</div>
 										</c:forEach>
 

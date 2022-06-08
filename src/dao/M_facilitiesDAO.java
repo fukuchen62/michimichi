@@ -51,9 +51,6 @@ public class M_facilitiesDAO {
 
 			//結果表に格納されたレコードの内容をFeatureListインスタンスに設定し、ArrayListインスタンスに追加
 			while (rs.next()) {
-				int facilities_id = rs.getInt("facilities_id");
-				boolean status = rs.getBoolean("status");
-
 				int tages_id = rs.getInt("tages_id");
 				String category_name = rs.getString("category_name");
 				String tages_photo_path = DAOConstant.UPLOADS_MICHIEKI + rs.getString("photo_path");
@@ -61,10 +58,13 @@ public class M_facilitiesDAO {
 				String icon_path1 = DAOConstant.UPLOADS_PICTOGRAM + rs.getString("icon_path1");
 				String icon_path2 = DAOConstant.UPLOADS_PICTOGRAM + rs.getString("icon_path2");
 
+				int facilities_id = rs.getInt("facilities_id");
+				boolean status = rs.getBoolean("status");
+
 				Facilities facility = new Facilities(
 						tages_id,
-						tages_photo_path,
 						category_name,
+						tages_photo_path,
 						tages_alt,
 						icon_path1,
 						icon_path2,
