@@ -34,7 +34,7 @@
 // -->
 </script>
 
-<c:import url="layout/template-back.jsp">
+<c:import url="../layout/template_back.jsp">
 
 	<c:param name="title" value="記事作成" />
 	<c:param name="keywords" value="" />
@@ -77,25 +77,18 @@
 							value="${feature.feature_type_id}">
 						<table class="entryForm">
 							<tr>
-								<th width="20">記事の種別ID</th>
+								<th width="20">特集種別</th>
 								<td width="80%"><select name="type">
 										<option value="1"
-											<c:if test="${feature.type == 1}"><c:out value="selected"/></c:if>>1:温泉</option>
+											<c:if test="${feature.type == 1}"><c:out value="selected"/></c:if>>1:スイーツ特集</option>
 										<option value="2"
-											<c:if test="${feature.type == 2}"><c:out value="selected"/></c:if>>2:お土産</option>
+											<c:if test="${feature.type == 2}"><c:out value="selected"/></c:if>>2:お土産特集</option>
 										<option value="3"
-											<c:if test="${feature.type == 3}"><c:out value="selected"/></c:if>>3:スイーツ特集</option>
+											<c:if test="${feature.type == 3}"><c:out value="selected"/></c:if>>3:駅めし特集</option>
 										<option value="4"
-											<c:if test="${feature.type == 4}"><c:out value="selected"/></c:if>>4:くるくるなると</option>
+											<c:if test="${feature.type == 4}"><c:out value="selected"/></c:if>>4:滝特集</option>
 										<option value="5"
-											<c:if test="${feature.type == 5}"><c:out value="selected"/></c:if>>5:周辺グルメ</option>
-										<option value="6"
-											<c:if test="${feature.type == 6}"><c:out value="selected"/></c:if>>6:道の駅gourmet</option>
-										<option value="7"
-											<c:if test="${feature.type == 7}"><c:out value="selected"/></c:if>>7:観光名所</option>
-										<option value="8"
-											<c:if test="${feature.type == 8}"><c:out value="selected"/></c:if>>7:SDGs</option>
-
+											<c:if test="${feature.type == 5}"><c:out value="selected"/></c:if>>5:寺特集</option>
 								</select></td>
 							</tr>
 							<tr>
@@ -171,16 +164,13 @@
 						<input type="hidden" name="type_id" value="-1">
 						<table class="entryForm">
 							<tr>
-								<th width="20">記事の種別ID</th>
+								<th width="20">特集種別</th>
 								<td width="80%"><select name="type">
-										<option value="1" selected>1:温泉</option>
-										<option value="2">2:お土産</option>
-										<option value="3">3:スイーツ</option>
-										<option value="4">4:くるくるなると</option>
-										<option value="5">5:周辺グルメ</option>
-										<option value="6">6:道の駅gourmet</option>
-										<option value="7">7:観光名所</option>
-										<option value="8">8:SDGs</option>
+										<option value="1" selected>1:スイーツ特集</option>
+										<option value="2">2:お土産特集</option>
+										<option value="3">3:駅めし特集</option>
+										<option value="4">4:滝特集</option>
+										<option value="5">5:寺特集</option>
 								</select></td>
 							</tr>
 							<tr>

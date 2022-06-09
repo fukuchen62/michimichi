@@ -3,7 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
-<c:import url="../layout/template-back.jsp">
+<c:import url="../layout/template_back.jsp">
 
 	<c:param name="title" value="特集記事一覧" />
 	<c:param name="keywords" value="" />
@@ -24,7 +24,7 @@
 				<h2>記事一覧</h2>
 				<p class="btn">
 					<input class="btns btn-send" type="button" value="新規登録"
-						onClick="location.href='/michimichi/FeatureEdit?fnc=1'">
+						onClick="location.href='/michimichi/CtrlForCms?pge_id=16'">
 				</p>
 				<table class="entryForm">
 					<tr>
@@ -59,7 +59,7 @@
 			</section>
 
 			<div id="opbtns">
-				<a href="/WEB-INF/jsp/cms/adminpage.jsp">管理者ページ</a>
+				<a href="/michimichi/CtrlForCms?pge_id=13">管理者ページへ</a>
 			</div>
 		</div>
 
@@ -70,13 +70,13 @@
 			<!-- Modal content -->
 			<div class="modal-content">
 				<span class="close">&times;</span>
-				<h3 id="modal-title">title</h3>
+				 <h3 id="modal-title">title</h3>
 				<p id="modal-detail">modal-detailmodal-detailmodal-detail</p>
 
 				<div id="sendform">
 					<form id="modal-input" action="/michimichi/FeatureEdit"
 						method="get">
-						<input type="hidden" name="post_id" id="post_id"> <input
+						<input type="hidden" name="feature_id" id="feature_id"> <input
 							type="hidden" name="showflag" id="showflag"> <input
 							type="hidden" name="fnc" id="fnc"> <input type="submit"
 							id="modal-send" value="サーバーに送信">

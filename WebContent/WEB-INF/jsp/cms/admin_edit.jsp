@@ -80,7 +80,7 @@
 		%>
 
 		<!-- 編集 -->
-		<form name="inputForm" action="/michimichi/AccountEdit" method="post">
+		<form name="inputForm" action="michimichi/admin_edit" method="post">
 			<%
 				if (account != null) {
 			%>

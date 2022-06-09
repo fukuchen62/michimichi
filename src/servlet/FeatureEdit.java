@@ -100,8 +100,8 @@ public class FeatureEdit extends HttpServlet {
 			//					}else {
 			//		//編集or一覧表示
 			//		if (feature_type_id > 0) {
-			////			メニュー編集
-			////			指定したfeature_type_idで該当特集を読み込む
+			//			メニュー編集
+			//			指定したfeature_type_idで該当特集を読み込む
 			//			Feature feature = FeatureListLogic.getTopFeatureById(feature_type_id);
 			//
 			//			if (feature != null) {
@@ -184,44 +184,56 @@ public class FeatureEdit extends HttpServlet {
 		Feature feature;
 
 		//入力されたデータを取得してfeatureListに代入する
-		int type = Integer.parseInt(request.getParameter("type"));
-		String title = request.getParameter("title");
-		String summary = request.getParameter("summary");
-		String photo_path1 = request.getParameter("photo_path1");
-		String photo_path2 = request.getParameter("photo_path2");
-		String photo_path3 = request.getParameter("photo_path3");
+		String feature_name = request.getParameter("feature_name");
+		int feature_type_id = IntegerParseInt(request.getParameter("feature_type_id"));
+		String main_photo_path = request.getParameter("main_photo_path");
+		String alt = request.getParameter("alt");
+		String feature_list = request.getParameter("feature_list");
+		String content = request.getParameter("content");
+		String content_css = request.getParameter("content_css");
 		int show_flag = Integer.parseInt(request.getParameter("show_flag"));
+		int create_user_id =  Integer.parseInt(request.getParameter("create_user_id"));
+		int delete_user_id =  Integer.parseInt(request.getParameter("delete_user_id"));
+		int update_user_id =  Integer.parseInt(request.getParameter("update_user_id"));
+
+
 
 		//現時点のシステム日時を取得して、作成日時に代入
-		Date createtime = new Date();
+		Date update_time = new Date();
+		Date create_time = new Date();
+		Date delete_time = new Date();
 
 		//debugメッセージ
-		//						System.out.println("menu:menu_id "+menu.getMenu_id());
-		//						System.out.println("menu:type "+menu.getType());
-		//						System.out.println("menu:show_flag "+menu.getShow_flag());
+		//System.out.println("menu:menu_id "+menu.getMenu_id());
+		//System.out.println("menu:type "+menu.getType());
+		//System.out.println("menu:show_flag "+menu.getShow_flag());
 
 		//loginUserインスタンスから作成者の情報を取得して代入
 		int create_userid = loginUser.getUser_id();
 		String name = loginUser.getName();
 
-		feature = new Feature();
-		//		post = new Posts(
-		//				post_id,
-		//				type,
-		//				title,
-		//				content,
-		//				summary,
-		//				img_path1,
-		//				img_path2,
-		//				img_path3,
-		//				img_path4,
-		//				show_flag,
-		//				update_time,
-		//				create_userid,
-		//				name,
-		//				createtime);
-		//
-		//
+		feature = new Feature(
+				feature_id,
+				feature_name,
+				feature_type_id,
+				main_photo_path,
+				alt,
+				feature_list,
+				content,
+				content_css,
+				show_flag,
+				create_user_id,
+				create_time,
+				delete_user_id,
+				delete_time,
+				update_user_id,
+				update_time
+				);
+
+
+
+
+
 		//新規記事挿入
 		if (fnc == 1) {
 
@@ -250,7 +262,7 @@ public class FeatureEdit extends HttpServlet {
 				forward = "/WEB-INF/jsp/featureEdit.jsp";
 
 			} else {
-				//				データベースからすべての記事を読み込む
+				//データベースからすべての記事を読み込む
 				List<Feature> featureList = featureListLogic.getFeatureList(showflag);
 				request.setAttribute("featureList", featureList);
 				forward = "/WEB-INF/jsp/featureList.jsp";
@@ -281,6 +293,11 @@ public class FeatureEdit extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher(forward);
 		dispatcher.forward(request, response);
 
+	}
+
+	private int IntegerParseInt(String parameter) {
+		// TODO 自動生成されたメソッド・スタブ
+		return 0;
 	}
 
 	/**

@@ -3,7 +3,6 @@ package model;
 import java.util.List;
 
 import beans.Feature;
-import beans.FeatureList;
 import dao.T_featuresDAO;
 
 public class FeatureListLogic {
@@ -14,7 +13,7 @@ public class FeatureListLogic {
 	//	}
 
 	//記事作成時に失敗したときのメソッド（管理側）
-	public void execute(FeatureList feature) {
+	public void execute(Feature feature) {
 		T_featuresDAO dao = new T_featuresDAO();
 		if (dao.create(feature) == false) {
 

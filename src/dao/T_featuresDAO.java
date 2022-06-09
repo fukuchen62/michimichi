@@ -4,15 +4,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 import beans.Feature;
-import beans.FeatureList;
 import model.DbConnection;
 
 public class T_featuresDAO {
-
 
 	/*********
 	 * 特集一覧、出力用のメソッド
@@ -103,25 +102,24 @@ public class T_featuresDAO {
 			//show_flagで表示になっている指定されたIDのものを抽出する。
 			//ASは教科書p56
 			sql = "SELECT "
-					 + "a.feature_id,"
-					 + "a.feature_name,"
-					 + "a.main_photo_path,"
-					 + "a.alt,"
-					 + "a.feature_list,"
-					 + "a.content,"
-					 + "a.content_css,"
-					 + "b.feature_type_id,"
-					 + "b.feature_type_name,"
-					 + "b.photo_path1,"
-					 + "b.alt1,"
-					 + "b.photo_path2,"
-					 + "b.alt2,"
-					 + "b.photo_path3,"
-					 + "b.alt3 "
-					 + "FROM t_features as a INNER JOIN m_feature_types as b "
-					 + "ON a.feature_type_id = b.feature_type_id "
-					 + "WHERE a.feature_id = ?";
-
+					+ "a.feature_id,"
+					+ "a.feature_name,"
+					+ "a.main_photo_path,"
+					+ "a.alt,"
+					+ "a.feature_list,"
+					+ "a.content,"
+					+ "a.content_css,"
+					+ "b.feature_type_id,"
+					+ "b.feature_type_name,"
+					+ "b.photo_path1,"
+					+ "b.alt1,"
+					+ "b.photo_path2,"
+					+ "b.alt2,"
+					+ "b.photo_path3,"
+					+ "b.alt3 "
+					+ "FROM t_features as a INNER JOIN m_feature_types as b "
+					+ "ON a.feature_type_id = b.feature_type_id "
+					+ "WHERE a.feature_id = ?";
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
@@ -150,8 +148,9 @@ public class T_featuresDAO {
 				String photo_path3 = DAOConstant.UPLOADS_TOPIC + rs.getString("photo_path3");
 				String alt3 = rs.getString("alt3");
 
-				feature = new Feature(feature_id, feature_name, main_photo_path, alt,feature_list,content,content_css,
-						feature_type_id,feature_type_name,photo_path1,alt1,photo_path2,alt2,photo_path3,alt3);
+				feature = new Feature(feature_id, feature_name, main_photo_path, alt, feature_list, content,
+						content_css,
+						feature_type_id, feature_type_name, photo_path1, alt1, photo_path2, alt2, photo_path3, alt3);
 			}
 
 		} catch (SQLException e) {
@@ -183,28 +182,27 @@ public class T_featuresDAO {
 		if (conn == null)
 			return null;
 
-		//BDへ接続
+		//DBへ接続
 		try {
 
 			//SELECT文を準備
 			//show_flagで表示になっている指定されたIDのものを抽出する。
 			//ASは教科書p56
 			sql = "SELECT "
-					 + "a.feature_id,"
-					 + "a.feature_name,"
-					 + "b.feature_type_id,"
-					 + "b.feature_type_name,"
-					 + "b.photo_path1,"
-					 + "b.alt1,"
-					 + "b.photo_path2,"
-					 + "b.alt2,"
-					 + "b.photo_path3,"
-					 + "b.alt3 "
-					 + "FROM t_features as a INNER JOIN m_feature_types as b "
-					 + "ON a.feature_type_id = b.feature_type_id "
-					 + "WHERE a.show_flag = ? "
-					 + " ORDER BY RAND()";
-
+					+ "a.feature_id,"
+					+ "a.feature_name,"
+					+ "b.feature_type_id,"
+					+ "b.feature_type_name,"
+					+ "b.photo_path1,"
+					+ "b.alt1,"
+					+ "b.photo_path2,"
+					+ "b.alt2,"
+					+ "b.photo_path3,"
+					+ "b.alt3 "
+					+ "FROM t_features as a INNER JOIN m_feature_types as b "
+					+ "ON a.feature_type_id = b.feature_type_id "
+					+ "WHERE a.show_flag = ? "
+					+ " ORDER BY RAND()";
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
@@ -229,7 +227,7 @@ public class T_featuresDAO {
 				String alt3 = rs.getString("alt3");
 
 				Feature feature = new Feature(feature_id, feature_name,
-						feature_type_id,feature_type_name,photo_path1,alt1,photo_path2,alt2,photo_path3,alt3);
+						feature_type_id, feature_type_name, photo_path1, alt1, photo_path2, alt2, photo_path3, alt3);
 				TFList.add(feature);
 			}
 
@@ -311,21 +309,140 @@ public class T_featuresDAO {
 	}
 
 	/*********
-	 * 特集個別、追加のメソッド
+	 * 特集個別、追加、変更、削除のメソッド
 	 *********/
-	public boolean create(FeatureList feature) {
-		// TODO 自動生成されたメソッド・スタブ
-		return false;
+	//新規用
+	public boolean create(Feature feature) {
+		String sql = "";
+
+		//データベースに接続
+		Connection conn = null;
+		conn = DbConnection.conn;
+		if (conn == null)
+			return false;
+
+		try {
+			//SQL文
+			sql = "INSERT INTO"
+					+ " feature"
+					+ "(feature_id,"
+					+ "feature_name,"
+					+ "feature_type_id,"
+					+ "main_photo_path,alt,"
+					+ "content,"
+					+ "show_flag,"
+					+ "create_time,"
+					+ "create_user_id)"
+					+ " VALUES"
+					+ " (?,?,?,?,?,?,?,?,?,?)";
+
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+			pStmt.setInt(1, feature.getFeature_id());
+			pStmt.setString(2, feature.getFeature_name());
+			pStmt.setInt(3, feature.getFeature_type_id());
+			pStmt.setString(4, feature.getMain_photo_path());
+			pStmt.setString(5, feature.getAlt());
+			pStmt.setString(6, feature.getContent());
+			pStmt.setInt(7, feature.getshow_flag());
+
+			//新規作成日時を文字列に変換処理
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+			if (feature.getupdate_time() != null) {
+				pStmt.setString(8, sdf.format(feature.getcreate_time()));
+			} else {
+				pStmt.setString(8, null);
+			}
+			pStmt.setInt(9, feature.getcreate_user_id());
+
+			//SQL命令を発行する
+			int result = pStmt.executeUpdate();
+			//読み込んだ結果を処理する
+			if (result != 1) {
+				return false;
+			}
+		} catch (SQLException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+			return false;
+
+		} finally {
+			//データベース切断
+
+		}
+		return true;
 	}
 
 	public boolean insert(Feature feature) {
-		// TODO 自動生成されたメソッド・スタブ
 		return false;
 	}
 
+	//特集1つを呼び出す
 	public Feature findByFeatures(int id) {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
+		Feature feature = null;
+
+		//データベースに接続
+		Connection conn = null;
+		conn = DbConnection.conn;
+		if (conn == null)
+			return null;
+
+		try {
+			//SELECT文を準備
+			String sql = "";
+			sql += "SELECT * ";
+			sql += "FROM feature ";
+			sql += "WHERE ";
+			sql += "feature_id = ?";
+
+			//SQLを送信
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+			pStmt.setString(1, String.valueOf(feature));
+
+			//SELECTを実行し、結果を取得
+			ResultSet rs = pStmt.executeQuery();
+
+			//rs結果表に格納されたレコードをAccountインスタンスリストに代入
+			if (rs.next()) {
+				//Featureのデータを取得
+				int feature_id = rs.getInt("feature_id");
+				String feature_name = rs.getString("feature_name");
+				int feature_type_id = rs.getInt("feature_type_id");
+				String main_photo_path = rs.getString("main_photo_path");
+				String alt = rs.getString("alt");
+				String feature_list= rs.getString("feature_list");
+				String content = rs.getString("content");
+				String content_css = rs.getString("content_css");
+				int show_flag = rs.getInt("show_flag");
+
+				//accountインスタンスを生成
+				feature = new Feature(
+						feature_id,
+						feature_name,
+						feature_type_id,
+						main_photo_path,
+						alt,
+						feature_list,
+						content,
+						content_css,
+						show_flag);
+			}
+
+		} catch (SQLException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+			return null;
+
+		} finally {
+			//データベース切断
+			//			if(conn != null) {
+			//				if(DbConnection.dbDisconnection(conn)==false) {
+			//					return null;
+			//				}
+			//			}
+		}
+
+		return feature;
+
 	}
 
 	/**
@@ -335,23 +452,114 @@ public class T_featuresDAO {
 	 * @return
 	 */
 	public boolean update(int id, int showflag) {
-		// TODO 自動生成されたメソッド・スタブ
+
 		return false;
 	}
 
-	/**
-	 * 特集記事の変更処理
-	 * @param feature
-	 * @return
-	 */
+	//特集の編集処理
 	public boolean update(Feature feature) {
 		// TODO 自動生成されたメソッド・スタブ
-		return false;
+		String sql = "";
+
+		//データベースに接続
+		Connection conn = null;
+		conn = DbConnection.conn;
+		if (conn == null)
+			return false;
+
+		try {
+			//SQL文を定義する
+			sql = "UPDATE"
+					+ " feature_id"
+					+ " feature_name=?, "
+					+ " feature_type_id = ?, "
+					+ " main_photo_path = ?, "
+					+ " alt = ?, "
+					+ " feature_list = ?, "
+					+ " content = ?, "
+					+ " content_css = ?, "
+					+ " show_flag = ?, "
+					+ " update_user_id = ?, "
+					+ " update_time = ? ";
+
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+			pStmt.setInt(1, feature.getFeature_id());
+			pStmt.setString(2, feature.getFeature_name());
+			pStmt.setInt(3, feature.getFeature_type_id());
+			pStmt.setString(4, feature.getMain_photo_path());
+			pStmt.setString(5, feature.getAlt());
+			pStmt.setString(6, feature.getFeature_list());
+			pStmt.setString(7, feature.getContent());
+			pStmt.setString(8, feature.getContent_css());
+			pStmt.setInt(9, feature.getshow_flag());
+
+			//更新日時を文字列に変換処理
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+			if (feature.getupdate_time() != null) {
+				pStmt.setString(10, sdf.format(feature.getupdate_time()));
+			} else {
+				pStmt.setString(10, null);
+			}
+			pStmt.setInt(11, feature.getupdate_user_id());
+
+			//SQL命令を発行する
+			int result = pStmt.executeUpdate();
+
+			System.out.println(pStmt.getWarnings());
+
+			//読み込んだ結果を処理する
+			if (result != 1) {
+				return false;
+			}
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+			return false;
+
+		} finally {
+			//データベース切断
+
+		}
+		return true;
 	}
 
+	//特集削除処理
 	public boolean delete(int id) {
-		// TODO 自動生成されたメソッド・スタブ
-		return false;
+		String sql = "";
+
+		//データベースに接続
+		Connection conn = null;
+		conn = DbConnection.conn;
+		if (conn == null)
+			return false;
+
+		try {
+			//SQL文
+			sql = "DELETE"
+					+ " FROM feature "
+					+ " WHERE feature_id =?";
+
+			//SQL命令を準備する
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+			pStmt.setInt(1, id);
+
+			//SQL命令を発行する
+			int result = pStmt.executeUpdate();
+
+			if (result != 1) {
+				return false;
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+
+		} finally {
+			//データベース切断
+
+		}
+		//読み込んだ結果を返す
+		return true;
 	}
 
 }

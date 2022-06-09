@@ -40,13 +40,18 @@ public class CtrlForCms extends HttpServlet {
 		HttpSession session = request.getSession();
 		LoginUser loginUser = (LoginUser) session.getAttribute("loginUser");
 
+		//		//ログインではない状態の場合は、ログイン画面へ
+		//		if (loginUser == null) {
+		//			RequestDispatcher dispatcher = request.getRequestDispatcher("/login");
+		//			dispatcher.forward(request, response);
+		//			return;
+		//		}
 		//ログインではない状態の場合は、ログイン画面へ
 		if (loginUser == null) {
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/login");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
 			dispatcher.forward(request, response);
 			return;
 		}
-
 		//リクエストパラメータを取得する
 		//ページ番号
 		String para1 = request.getParameter("pge_id");
@@ -99,16 +104,7 @@ public class CtrlForCms extends HttpServlet {
 		}
 
 		else if (pge_id == 17) {
-			// 記事一覧を取得する
-//			FeatureLogic featurelogic = new FeatureLogic();
-//			List<Feature> FeatureList = featurelogic.getFeatureList(1);
-//
-//			//リクエストスコープに保存
-//			request.setAttribute("FeatureList", FeatureList);
-//			forward = "WEB-INF/jsp/cms/adminpage.jsp";
-			forward = movetoLogin(request);
-			//		String forward = "WEB-INF/jsp/cms/feature_list.jsp";
-//			forward = movetoFeatureList(request);
+			forward = movetoFeatureList(request);
 		}
 
 		else if (pge_id == 18) {
@@ -131,8 +127,9 @@ public class CtrlForCms extends HttpServlet {
 			forward = movetoAdminpage(request);
 		}
 
-		System.out.println("pge_id:" + pge_id);
-		System.out.println("forward:" + forward);
+//デバッグ用
+//		System.out.println("pge_id:" + pge_id);
+//		System.out.println("forward:" + forward);
 
 		//メイン画面にフォーワード
 		RequestDispatcher dispatcher = request.getRequestDispatcher(forward);
@@ -228,8 +225,8 @@ public class CtrlForCms extends HttpServlet {
 
 		//リクエストスコープに保存
 		request.setAttribute("FeatureList", FeatureList);
-		String forward = "WEB-INF/jsp/cms/adminpage.jsp";
-		//		String forward = "WEB-INF/jsp/cms/feature_list.jsp";
+		//		String forward = "WEB-INF/jsp/cms/adminpage.jsp";
+		String forward = "WEB-INF/jsp/cms/feature_list.jsp";
 
 		return forward;
 	}

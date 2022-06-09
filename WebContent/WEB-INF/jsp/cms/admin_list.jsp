@@ -40,7 +40,7 @@
 
 			<p class="btn">
 				<input class="btns btn-send" type="button" value="新規登録"
-					onClick="location.href='/michimichi/AccountEdit?fnc=1'">
+					onClick="location.href='/michimichi/admin_edit?fnc=1'">
 			</p>
 
 			<%
@@ -62,7 +62,7 @@
 				<tr>
 					<td align="center"><%=account.getUser_id()%></td>
 					<td><a
-						href="/michimichi/AccountEdit?user_id=<%=account.getUser_id()%>">
+						href="/michimichi/admin_edit?user_id=<%=account.getUser_id()%>">
 						<%=account.getName()%></a></td>
 					<td align="center"><%=account.genderlist[account.getGender()]%></td>
 					<td align="center"><%=account.getBirthday()%></td>
