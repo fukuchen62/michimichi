@@ -16,7 +16,49 @@
 
 	<c:param name="content">
 
-	<!-- <div class="container space"></div> -->
+	    <div id="keyVisual">
+        <h1 class="keyVisual">
+            <div class="pc">
+                <div class="keyVisual-wrap">
+                    <img class="keyVisual-bg" src="img/index/key_visual_pc_bg.jpg" alt="keyVisual_pc_bg">
+                    <img class="keyVisual-map" src="img/index/tokushima_map_pc.png" alt="keyVisual_pc">
+                </div>
+                <p class="catch-copy">道の駅で、<br>
+                    満ちる
+                    <span>HOUR</span>
+                    (アワー)
+                </p>
+                <div class="logo">
+                    <img src="img/logo/mainlogo.png" alt="logo_pc">
+                </div>
+            </div>
+
+            <div class="sp">
+                <div class="keyVisual-wrap">
+                    <img class="keyVisual-bg" src="img/index/key_visual_tabbg.jpg" alt="keyVisual_sp_bg">
+                    <img class="keyVisual-map" src="img/index/tokushima_map_tab.png" alt="keyVisual_sp">
+                </div>
+                <p class="catch-copy">道の駅で、<br>
+                    満ちる
+                    <span>HOUR</span>
+                    (アワー)
+                </p>
+            </div>
+        </h1>
+
+        <div class="search-links">
+            <form class="form" action="">
+                <input id="west-link" type="submit" name="west" value="東の駅はこちら">
+            </form>
+            <form class="form" action="">
+                <input id="east-link" type="submit" name="east" value="西の駅はこちら">
+            </form>
+            <form class="form" action="">
+                <input id="south-link" type="submit" name="south" value="南の駅はこちら">
+            </form>
+        </div>
+    </div>
+
     <section id="top-search">
         <h2 class="sp">
             <img src="img/temp/top_h2sp.svg" alt="">
@@ -30,7 +72,7 @@
             </h2>
 
             <div class="grid-search grid wrap">
-            	<c:forEach var="list" items="${TSList}" end="5">
+                <c:forEach var="list" items="${TSList}" end="5">
 	                <div class="items">
 	                	<a href="CtrlForFront?pge_id=9&con_id=${list.michinoeki_id}">
 	            	        <img src="${list.photo_thum_path1}" alt="${list.alt1}">
@@ -59,15 +101,14 @@
                 <img src="img/temp/top_h2pc.svg" alt="">
                 <span>特集</span>
             </h2>
-
             <div class="pc">
                 <div class="grid-pickup grid wrap">
                     <c:forEach var="list" items="${TLList}" end="2">
                         <div class="items">
-                            <c:set var="itemType" value="${featureImg_random}" />
+                            <!-- <c:set var="itemType" value="${featureImg_random}" /> -->
                             <a href="CtrlForFront?pge_id=4&con_id=${list.feature_id}">
-
-                                <%
+                               <!--
+                               <%
                                     //0,1,2の乱数を作成
                                     int select = (int) Math.random() * 3;
                                 %>
@@ -79,6 +120,8 @@
                                 <% }else {%>
                                     <img src="${list.photo_path3}" alt="${list.alt3}">
                                 <% }%>
+                                -->
+                                <img src="${list.photo_path1}" alt="${list.alt1}">
                             </a>
                             <p class="center">${list.feature_name}</p>
                         </div>
@@ -91,10 +134,10 @@
                 <div class="grid-pickup grid wrap">
                     <c:forEach var="list" items="${TLList}" end="3">
                         <div class="items">
-                            <c:set var="itemType" value="${featureImg_random}" />
+                            <!-- <c:set var="itemType" value="${featureImg_random}" /> -->
                             <a href="CtrlForFront?pge_id=4&con_id=${list.feature_id}">
 
-                                <%
+                                <!-- <%
                                     //0,1,2の乱数を作成
                                     int select = (int) Math.random() * 3;
                                 %>
@@ -105,7 +148,8 @@
                                     <img src="${list.photo_path2}" alt="${list.alt2}">
                                 <% }else {%>
                                     <img src="${list.photo_path3}" alt="${list.alt3}">
-                                <% }%>
+                                <% }%> -->
+                                <img src="${list.photo_path1}" alt="${list.alt1}">
                             </a>
                             <p class="center">${list.feature_name}</p>
                         </div>
@@ -204,7 +248,5 @@
             </a>
         </div>
     </section>
-    <a href="CtrlForFront?pge_id=10">管理者ログイン</a>
-
 	</c:param>
 </c:import>

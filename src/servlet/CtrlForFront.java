@@ -12,10 +12,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import beans.Facilities;
 import beans.Feature;
+import beans.GoodRecordsBs;
 import beans.Station;
 import model.FacilitiesLogic;
 import model.FeatureListLogic;
 import model.FeatureLogic;
+import model.GoodRecordsLogic;
 import model.StationListLogic;
 import model.StationLogic;
 
@@ -254,6 +256,9 @@ public class CtrlForFront extends HttpServlet {
 		StationLogic stationLogic = new StationLogic();
 		FacilitiesLogic facilitiesLogic = new FacilitiesLogic();
 		FeatureListLogic featureListLogic = new FeatureListLogic();
+		GoodRecordsLogic GoodRecordsLogic = new GoodRecordsLogic();
+
+
 
 		//道の駅IDで抽出した基本情報
 		Station station = stationLogic.getStationById(CONID);
@@ -270,12 +275,16 @@ public class CtrlForFront extends HttpServlet {
 		//特集記事一覧
 		List<Feature> SFList = featureListLogic.getStationFeature(SHOWFALG);
 
+		//イイネのカウント数情報
+		GoodRecordsBs goodRecordsCount = GoodRecordsLogic.getGoodRecordsCountById(CONID);
+
 			// リクエストスコープに保存
 			request.setAttribute("station", station);
 			request.setAttribute("RecommendsList", RecommendsList);
 			request.setAttribute("SpotList", SpotList);
 			request.setAttribute("FacilityList", FacilityList);
 			request.setAttribute("SFList", SFList);
+			request.setAttribute("goodRecordsCount", goodRecordsCount);
 
 
 		//道の駅の特集個別リンクのID取得

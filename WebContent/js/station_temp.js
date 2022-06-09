@@ -17,6 +17,7 @@ $(document).ready(function(){
         slideToShow: 1,
         autoplay: false,
         dots: true,
+        swipeToSlide: true,
     });
 
     $(".spot-box").click(function(){

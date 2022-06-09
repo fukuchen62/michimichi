@@ -9,24 +9,49 @@ a {
   margin-top: 20px;
 }
 
-.wrap .wrap-img {
+.wrap .feature-link-grid {
+  margin: 10px 0;
+}
+
+.wrap .feature-link-grid.pc {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
+  grid-column-gap: 5px;
+}
+
+.wrap .feature-link-grid.pc a {
+  width: 100%;
+}
+
+.wrap .feature-link-grid.sp {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.wrap-img {
   width: 100%;
   padding: 10px;
   border: 10px solid #e69c81;
   background-color: #c7e3ee;
 }
 
-.wrap .wrap-img .img {
+.wrap-img .row {
+  height: 600px;
+}
+
+.wrap-img .img {
   width: 100%;
   height: 181px;
-  margin: 0 auto 40px;
-  border: 1px solid #444;
+  margin: 0 auto;
   color: #707070;
   font-size: 80px;
   line-height: 2;
 }
 
-.wrap .wrap-img .box1 {
+.wrap-img .box1 {
   width: calc(100% - 135px);
   height: 487px;
   margin-bottom: 92px;
@@ -35,26 +60,30 @@ a {
   z-index: 1;
 }
 
-.wrap .wrap-img .box1.last {
+.wrap-img .box1.last {
   margin-bottom: 72px;
 }
 
-.wrap .wrap-img .box1 h2 {
+.wrap-img .box1 h2 {
   margin: 0 15px;
   padding: 15px 0 0;
   border-bottom: 5px solid #fafeff;
   color: #fafeff;
 }
 
-.wrap .wrap-img .box1 .box2 {
+.wrap-img .box1 .box2 {
   width: 100%;
-  height: 487px;
+  height: auto;
   border: 10px solid #88c1d8;
   background-color: #fafeff;
   position: absolute;
   top: 72px;
   left: 135px;
   z-index: 2;
+}
+
+.wrap-img .box1 .box2.tab {
+  display: none;
 }
 
 /*=====================================================
@@ -67,11 +96,20 @@ a {
   .wrap {
     border: 35px solid #fafeff;
   }
+  .wrap .feature-link-grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
   .wrap .wrap-img {
     padding: 10px;
   }
   .wrap .wrap-img .img {
-    margin: 0 auto 30px;
+    margin: 0 auto;
   }
   .wrap .wrap-img .box1 {
     width: calc(100% - 121px);
@@ -84,6 +122,12 @@ a {
     width: calc(100% + 14px);
     top: 56px;
     left: 107px;
+  }
+  .wrap .wrap-img .box1 .box2.pc {
+    display: none;
+  }
+  .wrap .wrap-img .box1 .box2.tab {
+    display: block;
   }
 }
 
@@ -115,7 +159,7 @@ a {
   }
   .wrap .wrap-img .box1 {
     width: calc(100% - 50px);
-    height: calc(90vw - 50px);
+    height: auto;
     margin: 20px;
     border: 10px solid #c7e3ee;
     background-color: #fafeff;

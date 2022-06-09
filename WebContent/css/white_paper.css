@@ -8,28 +8,20 @@ h2 {
  topView
 ===================================================*/
 #topView {
-  margin-top: 20px;
+  margin: 20px auto 0;
 }
 
-#topView .container60 {
-  border: 1px solid #444;
-  border-radius: 5px;
+#topView .container {
+  width: 750px;
 }
 
 #topView .topView {
   width: 100%;
   height: 250px;
-  line-height: 1.3rem;
-  position: relative;
 }
 
 #topView .topView .topView-img {
-  position: absolute;
-  right: 3%;
-  top: 50%;
-  -webkit-transform: translate(0, -45%);
-          transform: translate(0, -45%);
-  z-index: 1;
+  border-radius: 10px;
 }
 
 #topView .topView .hp {
@@ -70,10 +62,6 @@ h2 {
   z-index: 2;
 }
 
-.whitepaper {
-  height: 200px;
-}
-
 .whitepaper .whitepaper-text {
   color: #444;
   font-size: 20px;
@@ -81,9 +69,11 @@ h2 {
 }
 
 #disclaimer {
-  position: fixed;
-  bottom: 0;
-  left: 20%;
+  margin-top: 120px;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 #disclaimer .disclaimer {
@@ -126,13 +116,16 @@ h2 {
 
 .disclaimer-modal .modal-text,
 .sponsorship-modal .modal-text {
+  min-width: 500px;
   padding: 50px;
+  border-radius: 10px;
   background-color: #fafeff;
   position: fixed;
-  top: 50%;
+  top: 40%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  line-height: 2;
 }
 
 .disclaimer-modal .modal-text::before, .disclaimer-modal .modal-text::after,
@@ -161,14 +154,17 @@ h2 {
 }
 
 /***************************************************************
+ ～@1350px
+***************************************************************/
+/***************************************************************
  ～@1024px
 ***************************************************************/
 @media screen and (max-width: 1024px) {
+  #topView .container {
+    width: 540px;
+  }
   #topView .topView {
     height: 225px;
-  }
-  #topView .topView .topView-img {
-    height: 175px;
   }
   #topView .topView .hp {
     left: 5%;
@@ -184,11 +180,11 @@ h2 {
  ～@768px
 ***************************************************************/
 @media screen and (max-width: 768px) {
+  .container {
+    width: 460px;
+  }
   #topView .topView {
     height: 200px;
-  }
-  #topView .topView .topView-img {
-    height: 150px;
   }
   #topView .topView .hp {
     left: 5%;
@@ -197,6 +193,14 @@ h2 {
   #topView .topView .site {
     left: 7%;
     font-size: 30px;
+  }
+  #disclaimer {
+    margin-top: 80px;
+    position: relative;
+  }
+  .disclaimer-modal .modal-text,
+  .sponsorship-modal .modal-text {
+    top: 40%;
   }
 }
 /*# sourceMappingURL=white_paper.css.map */

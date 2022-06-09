@@ -138,11 +138,37 @@ h2 img {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  font-size: 20px;
+  font-size: 24px;
 }
 
 #introduction .wrap .account .good {
   margin: 0px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#introduction .wrap .account .good .btn-good {
+  background-color: transparent;
+  border: none;
+  border-radius: 50px;
+  outline: none;
+}
+
+#introduction .wrap .account .good .btn-good i {
+  margin: 0 5px;
+  color: #fff;
+  font-size: 28px;
+  text-stroke: 1px #444;
+  -webkit-text-stroke: 1px #444;
+  line-height: 1;
+}
+
+#introduction .wrap .account .good .btn-good .material-symbols-outlined {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 
 /*===================================================
@@ -159,7 +185,6 @@ h2 img {
 
 #pick-up .img:hover,
 #recommend .img:hover {
-  border-radius: 5px;
   -webkit-transform: scale(1.5) translateY(-10%);
           transform: scale(1.5) translateY(-10%);
 }
@@ -173,8 +198,9 @@ h2 img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 #pick-up .wrap .pc .flexC {
@@ -372,7 +398,7 @@ h2 img {
 
 #feature .wrap a {
   width: 250px;
-  height: 100px;
+  height: auto;
   border: 5px solid;
   border-color: rgba(230, 156, 129, 0.7);
 }
@@ -456,6 +482,10 @@ h2 img {
 #information .container .wrap .info td {
   padding: 10px;
   word-break: break-all;
+}
+
+#information .container .wrap .info th {
+  white-space: nowrap;
 }
 
 #information .container .wrap .info .flexR {
@@ -635,15 +665,6 @@ h2 img {
 }
 
 /*===================================================
- footer
-===================================================*/
-#footer {
-  width: 100%;
-  height: 300px;
-  background-color: #888;
-}
-
-/*===================================================
  ～@1351px
 ===================================================*/
 @media screen and (max-width: 1350px) {
@@ -731,7 +752,6 @@ h2 img {
   }
   #feature .wrap a {
     width: 200px;
-    height: 80px;
   }
 }
 
@@ -946,7 +966,7 @@ h2 img {
   }
   #feature .wrap a {
     width: 45%;
-    height: 150px;
+    height: auto;
   }
   #information .wrap {
     margin-top: 40px;

@@ -17,24 +17,28 @@
 		<c:param name="myjs" value="js/white_paper.js" />
 
 		<c:param name="content">
-			    <section id="topView">
-        <div class="container60">
+
+		    <section id="topView">
+        <div class="container">
             <div class="topView">
-                <p class="hp">このHPについて</p>
-                <p class="site">about this site</p>
-                <img class="topView-img" src="img/dammy/dammy.jpg" alt="">
+                <img class="topView-img" src="img/whitepaper/wp_top_pc.jpg" alt="wp_top_pc">
             </div>
         </div>
     </section>
 
-    <section class="container60">
+    <section class="container">
         <div class="whitepaper center mt80">
 
-            <p class="whitepaper-text mt60">
-                テキストテキストテキストテキストテキスト<br>
-                テキストテキストテキストテキストテキスト～を目的とした<br>
-                株式会社QLIP WEBシステム開発実践科第４期生による<br>
-                グループ制作による成果物です。
+            <p class="whitepaper-text">
+                このサイトは<br>
+                国の求職者支援制度に基づく
+                <br><br><br>
+                「株式会社QLIP WEBシステム開発実践科」<br>
+                第4期生
+                <br><br><br>
+                によって2022年に制作された、<br>
+                地域貢献を目的とした<br>
+                徳島県の道の駅を紹介するウェブサイトです。
             </p>
 
             <br>
@@ -42,10 +46,10 @@
         </div>
     </section>
 
-    <section id="disclaimer" class="container60">
+    <section id="disclaimer">
         <div class="disclaimer flexR around">
             <span class="disclaimer-link">免責事項</span>
-            <span class="sponsorship-link">協賛</span>
+            <span class="sponsorship-link">協賛</=>
         </div>
         <br><br>
         <p class="center">
@@ -63,11 +67,18 @@
         </div>
     </div>
     <div class="sponsorship-modal">
-        <div class="modal-text left">
+        <div class="modal-text center">
             <h2 class="center">協賛</h2>
-            当サイトのコンテンツ・情報について、可能な限り正確な情報を掲載するよう努めておりますが、正確性や安全性を保証するものではありません。<br><br>
-            当サイトに掲載された内容によって生じた損害等の一切の責任を負いかねますのでご了承ください。<br><br>
-            当サイトからリンクやバナーなどによって他のサイトに移動した場合、移動先サイトで提供される情報、サービス等について一切の責任を負いません。
+            美馬市役所<br>
+            三好市役所<br>
+            那賀町観光協会<br>
+            海陽町商工観光課<br>
+            美波町観光協会<br>
+            阿波市観光協会<br>
+            鳴門市うずしお観光協会<br>
+            阿南市観光協会<br>
+            神山町役場<br>
+            徳島県観光情報サイト阿波ナビ
         </div>
     </div>
 

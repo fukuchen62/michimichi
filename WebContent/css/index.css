@@ -36,31 +36,7 @@
 }
 
 body {
-  background-color: #fafeff;
-}
-
-h1 {
-  margin: 0;
-  position: relative;
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-  font-size: 30px;
-  font-weight: bold;
-}
-
-h1 p {
-  position: absolute;
-  left: 10px;
-  top: 20px;
-  -webkit-transform: rotate(-20deg);
-          transform: rotate(-20deg);
-}
-
-h1 p span {
-  color: #e69c81;
-  text-shadow: 2px 2px 2px #3d82ca, -2px -2px 2px #88c1d8;
-  font-family: 'Limelight', cursive;
-  font-size: 50px;
-  font-weight: bold;
+  background-color: rgba(199, 227, 238, 0.3);
 }
 
 .wrap {
@@ -72,7 +48,7 @@ h1 p span {
   width: 60%;
   min-width: 1200px;
   padding-bottom: 60px;
-  background-color: #c7e3ee;
+  background-color: #fafeff;
 }
 
 .space {
@@ -84,11 +60,12 @@ h1 p span {
  ～@1920px
 ******************************************************/
 h2 {
-  width: 90%;
+  width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   margin: 0px auto;
+  background-color: #c7e3ee;
   position: relative;
 }
 
@@ -110,8 +87,89 @@ h2 span {
 
 #keyVisual {
   width: 100%;
-  height: calc(100vh - 60px);
-  background-color: #c7e3ee;
+  height: auto;
+  position: relative;
+}
+
+#keyVisual .keyVisual {
+  background-color: rgba(255, 255, 255, 0.3);
+  position: relative;
+}
+
+#keyVisual .keyVisual .keyVisual-wrap {
+  position: relative;
+}
+
+#keyVisual .keyVisual .keyVisual-wrap .keyVisual-map {
+  width: 50%;
+  position: absolute;
+  bottom: 5%;
+  left: 25%;
+}
+
+#keyVisual .keyVisual .catch-copy {
+  position: absolute;
+  left: 10px;
+  top: 100px;
+  -webkit-transform: rotate(-20deg);
+          transform: rotate(-20deg);
+  font-size: 50px;
+}
+
+#keyVisual .keyVisual .catch-copy span {
+  color: #e69c81;
+  text-shadow: 2px 2px 2px #3d82ca, -2px -2px 2px #88c1d8;
+  font-family: 'Limelight', cursive;
+  font-size: 70px;
+  font-weight: bold;
+}
+
+#keyVisual .search-links {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 10px 20px;
+  border-radius: 20px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#keyVisual .search-links .form {
+  padding: 10px 0;
+}
+
+#keyVisual .search-links .form input {
+  margin: 5px;
+  padding: 5px 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 5px solid rgba(136, 193, 216, 0.65);
+  border-radius: 30px;
+  font-size: 2vw;
+}
+
+#keyVisual .logo {
+  width: 25%;
+  height: auto;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+#keyVisual .logo img {
+  width: 100%;
 }
 
 #top-search .grid-search {
@@ -129,10 +187,6 @@ h2 span {
   -ms-grid-rows: 1;
       grid-template-rows: 1;
   grid-column-gap: 50px;
-}
-
-#sns {
-  margin-bottom: 90px;
 }
 
 #sns .grid-sns {
@@ -183,8 +237,17 @@ h2 span {
 .grid-pickup .items img {
   width: 250px;
   height: auto;
-  border: 5px solid #e69c81;
+  border: 5px solid;
+  border-color: rgba(230, 156, 129, 0.7);
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
   border-radius: 50%;
+}
+
+.grid-search .items img:hover,
+.grid-pickup .items img:hover {
+  -webkit-transform: scale(1.5) translateY(-10%);
+          transform: scale(1.5) translateY(-10%);
 }
 
 .grid-search .items p,
@@ -242,6 +305,28 @@ h2 span {
     width: 200px;
     height: auto;
   }
+  #keyVisual .keyVisual .keyVisual-wrap {
+    position: relative;
+  }
+  #keyVisual .keyVisual .keyVisual-wrap .keyVisual-map {
+    width: 45%;
+    bottom: 5%;
+    left: 25%;
+  }
+  #keyVisual .keyVisual .catch-copy {
+    left: 10px;
+    top: 110px;
+    -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 3.43vw;
+    font-weight: bold;
+  }
+  #keyVisual .keyVisual .catch-copy span {
+    font-family: 'Limelight', cursive;
+    font-size: 4.3vw;
+    font-weight: bold;
+  }
 }
 
 /******************************************************
@@ -256,6 +341,25 @@ h2 span {
   .container .grid-pickup .flexR .items img {
     width: 150px;
   }
+  #keyVisual .keyVisual .keyVisual-wrap {
+    position: relative;
+  }
+  #keyVisual .keyVisual .keyVisual-wrap .keyVisual-map {
+    width: 45%;
+    bottom: 2%;
+    left: 25%;
+  }
+  #keyVisual .keyVisual .catch-copy {
+    top: 120px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 3.5vw;
+    font-weight: bold;
+  }
+  #keyVisual .keyVisual .catch-copy span {
+    font-family: 'Limelight', cursive;
+    font-size: 4vw;
+    font-weight: bold;
+  }
 }
 
 /******************************************************
@@ -264,7 +368,7 @@ h2 span {
 @media screen and (max-width: 768px) {
   h1 {
     width: 100%;
-    height: 800px;
+    height: auto;
     margin-top: 120px;
   }
   h1 span {
@@ -287,8 +391,63 @@ h2 span {
     padding-bottom: 80px;
     background-color: #c7e3ee;
   }
-  #keyVisual {
-    height: auto;
+  #keyVisual .keyVisual .sp {
+    position: relative;
+  }
+  #keyVisual .keyVisual .sp .keyVisual-wrap {
+    width: 100%;
+  }
+  #keyVisual .keyVisual .sp .keyVisual-wrap .keyVisual-map {
+    width: 65%;
+    bottom: 10%;
+    left: 30%;
+  }
+  #keyVisual .keyVisual .sp .catch-copy {
+    left: 10px;
+    top: 110px;
+    -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 4.3vw;
+    font-weight: bold;
+  }
+  #keyVisual .keyVisual .sp .catch-copy span {
+    font-family: 'Limelight', cursive;
+    font-size: 6.5vw;
+    font-weight: bold;
+  }
+  #keyVisual .search-links {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 10px 20px;
+    left: 0;
+    bottom: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  #keyVisual .search-links .form {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 0;
+  }
+  #keyVisual .search-links .form input {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    font-size: 2vw;
   }
   #top-search,
   #pickup,

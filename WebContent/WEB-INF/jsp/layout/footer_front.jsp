@@ -16,8 +16,8 @@
                             </div>
 
                             <div class="site-map flexC">
-                                <a href="/index.html">マップ検索</a>
-                                <a href="CtrlForFront?pge_id=2">カテゴリー検索</a>
+                                <a href="CtrlForFront?pge_id=1">マップ検索</a>
+                                <a href="CtrlForFront?pge_id=2">検索</a>
                                 <a href="CtrlForFront?pge_id=5">お問い合わせ</a>
                                 <a href="CtrlForFront?pge_id=8">このHPについて</a>
                             </div>
@@ -63,11 +63,10 @@
                                                 <div class="district-list flexC">
                                                     <p>東部の道の駅</p>
                                                     <div class="dist-west">
-                                                        <a href="
-                                                        ">どなり</a>
-                                                        <a href="">いたの</a>
-                                                        <a href="">第九の里</a>
-                                                        <a href="">くるくるなると</a>
+                                                        <a href="CtrlForFront?pge_id=9&con_id=8">どなり</a>
+                                                        <a href="CtrlForFront?pge_id=9&con_id=9">いたの</a>
+                                                        <a href="CtrlForFront?pge_id=9&con_id=10">第九の里</a>
+                                                        <a href="CtrlForFront?pge_id=9&con_id=11">くるくるなると</a>
                                                         <img src="img/temp/car01.svg" alt="">
                                                     </div>
                                                 </div>
@@ -81,13 +80,13 @@
                                                 <div class="district-list flexC">
                                                     <p>西部の道の駅</p>
                                                     <div>
-                                                        <a href="">大歩危</a>
-                                                        <a href="">にしいや</a>
-                                                        <a href="">三野</a>
-                                                        <a href="">みまの里</a>
-                                                        <a href="">貞光ゆうゆう館</a>
-                                                        <a href="">藍ランドうだつ</a>
-                                                        <a href="">温泉の里神山</a>
+                                                        <a href="CtrlForFront?pge_id=9&con_id=1">大歩危</a>
+                                                        <a href="CtrlForFront?pge_id=9&con_id=2">にしいや</a>
+                                                        <a href="CtrlForFront?pge_id=9&con_id=3">三野</a>
+                                                        <a href="CtrlForFront?pge_id=9&con_id=4">みまの里</a>
+                                                        <a href="CtrlForFront?pge_id=9&con_id=5">貞光ゆうゆう館</a>
+                                                        <a href="CtrlForFront?pge_id=9&con_id=6">藍ランドうだつ</a>
+                                                        <a href="CtrlForFront?pge_id=9&con_id=7">温泉の里神山</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -100,13 +99,13 @@
                                                 <div class="district-list flexC">
                                                     <p>南部の道の駅</p>
                                                     <div>
-                                                        <a href="">公方の郷なかがわ</a>
-                                                        <a href="">ひなの郷かつうら</a>
-                                                        <a href="">鷲の里</a>
-                                                        <a href="">わじき</a>
-                                                        <a href="">もみじ川温泉</a>
-                                                        <a href="">日和佐</a>
-                                                        <a href="">宍喰温泉</a>
+                                                        <a href="CtrlForFront?pge_id=9&con_id=12">公方の郷なかがわ</a>
+                                                        <a href="CtrlForFront?pge_id=9&con_id=13">ひなの郷かつうら</a>
+                                                        <a href="CtrlForFront?pge_id=9&con_id=14">鷲の里</a>
+                                                        <a href="CtrlForFront?pge_id=9&con_id=15">わじき</a>
+                                                        <a href="CtrlForFront?pge_id=9&con_id=16">もみじ川温泉</a>
+                                                        <a href="CtrlForFront?pge_id=9&con_id=17">日和佐</a>
+                                                        <a href="CtrlForFront?pge_id=9&con_id=18">宍喰温泉</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -156,5 +155,11 @@
 
             <img src="img/index/footer/foot_line1.svg" alt="footer_line">
         </div>
+
+        <!-- 管理者用ページリンク -->
+        <div class="admin">
+            <a href="CtrlForFront?pge_id=10">
+                <img src="img/temp/car01.svg" alt="admin">
+            </a>
+        </div>
     </footer>
-<!-- /#footer -->

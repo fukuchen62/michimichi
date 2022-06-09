@@ -35,6 +35,7 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/header_alt.css">
 <link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/scroll_top.css">
 
 <!-- 独自のCSS -->
 <c:if test="${!empty param.mycss}">
@@ -59,6 +60,7 @@
 <script src="<c:url value="js/script.js" />"></script>
 <script src="js/header.js"></script>
 <script src="js/footer.js"></script>
+<script src="js/scroll_top.js"></script>
 
 <!-- 独自のJS -->
 <c:if test="${!empty param.myjs}">
@@ -70,6 +72,9 @@
 <c:if test="${!empty param.myjs3}">
 	<script src="<c:url value="${param.myjs3}" />"></script>
 </c:if>
+<c:if test="${!empty param.myjs4}">
+	<script src="<c:url value="${param.myjs4}" />"></script>
+</c:if>
 
 
 <!-- icon -->
@@ -78,6 +83,7 @@
 
 </head>
 <body>
+	<jsp:include page="scroll_top.jsp" />
 	<jsp:include page="header_front.jsp" />
 	<div class="container">${param.content}</div>
 	<jsp:include page="footer_front.jsp" />

@@ -40,11 +40,6 @@ img {
   width: 100%;
 }
 
-.container90 {
-  width: 1250px;
-  background-color: #c7e3ee;
-}
-
 h1 {
   padding-top: 40px;
 }
@@ -54,6 +49,12 @@ h1 {
 ****************************************************************************/
 .topView {
   width: 100%;
+}
+
+.container90 {
+  width: 1250px;
+  padding-bottom: 60px;
+  background-color: #c7e3ee;
 }
 
 .container {
@@ -159,10 +160,10 @@ h1 {
 ****************************************************************************/
 @media screen and (max-width: 1024px) {
   .container90 {
-    width: 810px;
+    width: 100%;
   }
   .container {
-    width: 720px;
+    width: 90%;
   }
   .container .recommend {
     width: 100%;

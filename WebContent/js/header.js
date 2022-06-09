@@ -2,7 +2,7 @@ $(document).ready(function(){
     /********************************************************
      *標準拡大ボタンの位置を決める関数宣言
      *******************************************************/
-     function Button(){
+    function Button(){
         if(viewWidth >= 1300){
             $(".font-button").css("right","15%");
         }
@@ -29,40 +29,46 @@ $(document).ready(function(){
     /********************************************************
      *天井で張り付くヘッダー/ロゴサイズ変更
      *******************************************************/
-     window.addEventListener("scroll",function(){
-        // topで留まるheader
-        let header = $("#header");
-        let headTop = header.offset().top;
-        let logo = $("#logo-img");
-        let logoTop = logo.offset().top;
-        let scrollPos = $(window).height() + window.scrollY;
+    // window.addEventListener("scroll",function(){
+    //     // topで留まるheader
+    //     let header = $(".g-navi-wrap");
+    //     // let headTop = header.offset().top;
+    //     let key = $("#keyVisual");
+    //     let keyBtm = key.offset().top + key.height();
 
-        if(viewWidth > 767){
-            if(window.scrollY >= logoTop){
-                logo.css({"height": "60px"});
-            }
-            else{
-                logo.css({"height": "120px"});
-            }
+    //     if(viewWidth > 767){
+    //         if(window.scrollY >= keyBtm){
+    //             header.css({
+    //                 "position":"fixed","top": 0
+    //             });
+    //             Button();
+    //         }
+    //         else{
+    //             header.css({
+    //                 "position":"relative"
+    //             });
+    //             $(".font-button").css("right","30px");
+    //         }
+    //     }
+    // });
+    /********************************************************
+     *にょきっと出てくるナビマーク
+     *******************************************************/
+    // let logo = $("#logo-img");
+    // let logoTop = logo.offset().top;
 
-            if(window.scrollY >= headTop){
-                header.css({
-                    "position":"sticky","top": 0
-                });
-                Button();
-            }
-            else{
-                header.css({
-                    "position":"relative"
-                });
-                $(".font-button").css("right","30px");
-            }
-        }
-    });
+    // if(logoTop - window.scrollY - 200 < 0){
+        $(".g-navi-items").on("mouseover", function(){
+            $(this).addClass("active");
+        });
+        $(".g-navi-items").on("mouseleave", function(){
+            $(this).removeClass("active");
+        });
+    // }
 
     /********************************************************
-     *文字サイズ変更
-     *******************************************************/
+    *文字サイズ変更
+    *******************************************************/
     const NORMAL = "100%";      // フォントサイズ中(デフォルト)
     const BIG = "133.3%";       // フォントサイズ大
     const COLOR_1 = "#fafeff";  // ノンアクティブ時の背景色
@@ -84,6 +90,7 @@ $(document).ready(function(){
      *******************************************************/
     $(".hamburger").click(function(){
         $(".burger").toggleClass("active");
-        $("#container").slideToggle(300,"linear");
+        $(".site-map #container").slideToggle(300,"linear");
+        $("#header").toggleClass("active");
     });
 });

@@ -1,0 +1,12 @@
+body {
+  height: 4000px;
+}
+
+.back-top img {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  right: 50px;
+  bottom: 30px;
+}
+/*# sourceMappingURL=scroll_top.css.map */

@@ -11,20 +11,14 @@
 		<c:param name="description" value="徳島の18ヶ所の道の駅と周辺スポットの紹介サイトです。
 											徳島の大自然、グルメ、観光名所など一歩踏み込んだ、
 											知られざる未知のスポットをご紹介します。" />
-		<c:param name="mycss" value="" />
-		<c:param name="mycss2" value="" />
+		<c:param name="mycss" value="css/feature_temp.css" />
+		<c:param name="mycss2" value="${feature.content_css}" />
 		<c:param name="myjs" value="" />
 
 		<c:param name="content">
 
-			<section id="menu" class="section">
+				${feature.content}
 
-				<h2 class="list">
-					特集個別じゃよ～～～
-				</h2>
-				${feature.feature_name}
-
-			</section>
 		</c:param>
 
 

@@ -221,11 +221,11 @@ public class T_featuresDAO {
 
 				int feature_type_id = rs.getInt("feature_type_id");
 				String feature_type_name = rs.getString("feature_type_name");
-				String photo_path1 = rs.getString("photo_path1");
+				String photo_path1 = DAOConstant.UPLOADS_TOPIC + rs.getString("photo_path1");
 				String alt1 = rs.getString("alt1");
-				String photo_path2 = rs.getString("photo_path2");
+				String photo_path2 = DAOConstant.UPLOADS_TOPIC + rs.getString("photo_path2");
 				String alt2 = rs.getString("alt2");
-				String photo_path3 = rs.getString("photo_path3");
+				String photo_path3 = DAOConstant.UPLOADS_TOPIC + rs.getString("photo_path3");
 				String alt3 = rs.getString("alt3");
 
 				Feature feature = new Feature(feature_id, feature_name,
