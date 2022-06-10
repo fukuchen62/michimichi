@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    console.log(window.vh);
     $('#slider-v').sliderPro({
         width: "80.85%",
         height: 558.81,
@@ -48,6 +49,6 @@ $(document).ready(function(){
         $(".comment-modal").css({"bottom": "0"});
     });
     $(".btn-return, .btn-submit").click(function(){
-        $(".comment-modal").css({"bottom": "-200vh"});
+        $(".comment-modal").css({"bottom": "-2000px"});
     });
 });

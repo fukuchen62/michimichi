@@ -27,6 +27,7 @@
   padding: 20px;
   background-color: #c7e3ee;
   position: relative;
+  z-index: 1;
 }
 
 #footer .container {
