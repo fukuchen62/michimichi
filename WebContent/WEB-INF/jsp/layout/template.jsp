@@ -33,7 +33,7 @@
 <link href="<c:url value='css/reset.css'/>" rel="stylesheet">
 <link href="<c:url value='css/format.css'/>" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/header_alt.css">
+<link rel="stylesheet" href="css/header.css">
 <link rel="stylesheet" href="css/footer.css">
 <link rel="stylesheet" href="css/scroll_top.css">
 
@@ -71,9 +71,6 @@
 </c:if>
 <c:if test="${!empty param.myjs3}">
 	<script src="<c:url value="${param.myjs3}" />"></script>
-</c:if>
-<c:if test="${!empty param.myjs4}">
-	<script src="<c:url value="${param.myjs4}" />"></script>
 </c:if>
 
 

@@ -259,7 +259,7 @@
                                 <img src="${spo.spot_photo_path3}" alt="${spo.spot_alt3}">
 
                                 <figcaption class="station-desc spot-desc">
-                                	${spo.spot_name}<br>
+                                	<b>${spo.spot_name}</b><br>
                                     ${spo.spot_overview}
                                 </figcaption>
                             </div>

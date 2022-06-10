@@ -59,7 +59,7 @@ body {
 /******************************************************
  ～@1920px
 ******************************************************/
-#keyVisual h2 {
+ h2 {
   width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -69,7 +69,7 @@ body {
   position: relative;
 }
 
-#keyVisual h2 span {
+ h2 span {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -180,16 +180,16 @@ body {
 }
 
 #top-search .grid-search {
-  -ms-grid-columns: (1fr)[3];
+  -ms-grid-columns: (1fr);
       grid-template-columns: repeat(3, 1fr);
-  -ms-grid-rows: (1fr)[2];
+  -ms-grid-rows: (1fr);
       grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 20px;
   grid-row-gap: 60px;
 }
 
 #pickup .grid-pickup {
-  -ms-grid-columns: (1fr)[3];
+  -ms-grid-columns: (1fr);
       grid-template-columns: repeat(3, 1fr);
   -ms-grid-rows: 1;
       grid-template-rows: 1;
@@ -197,9 +197,9 @@ body {
 }
 
 #sns .grid-sns {
-  -ms-grid-columns: (1fr)[5];
+  -ms-grid-columns: (1fr);
       grid-template-columns: repeat(5, 1fr);
-  -ms-grid-rows: (1fr)[3];
+  -ms-grid-rows: (1fr);
       grid-template-rows: repeat(3, 1fr);
   grid-gap: 5px;
 }
@@ -318,7 +318,7 @@ body {
   }
   #keyVisual .keyVisual .keyVisual-wrap .keyVisual-map {
     width: 650px;
-    bottom: 7%;
+    bottom: 3%;
     left: 50%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
@@ -355,7 +355,7 @@ body {
     position: relative;
   }
   #keyVisual .keyVisual .keyVisual-wrap .keyVisual-map {
-    width: 640px;
+    width: 80%;
     bottom: 15%;
   }
   #keyVisual .keyVisual .catch-copy {
@@ -375,23 +375,22 @@ body {
  ～@768px
 ******************************************************/
 @media screen and (max-width: 768px) {
-  h1 {
+  #keyVisual h1 {
     width: 100%;
     height: auto;
-    margin-top: 120px;
   }
-  h1 span {
+  #keyVisual h1 span {
     top: 20px;
     left: 0;
     -webkit-transform: rotate(-20deg);
             transform: rotate(-20deg);
   }
-  h2 {
+  #keyVisual h2 {
     width: 100%;
     margin-top: 0;
     font-size: 3.43vw;
   }
-  h2 img {
+  #keyVisual h2 img {
     min-width: 486px;
   }
   .container {
@@ -413,7 +412,8 @@ body {
     height: auto;
   }
   #keyVisual .keyVisual .sp .keyVisual-wrap .keyVisual-map {
-    width: 80%;
+    width: 70%;
+    left: 50%;
     bottom: 10%;
   }
   #keyVisual .keyVisual .sp .catch-copy {

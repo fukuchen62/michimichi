@@ -61,13 +61,13 @@
 
     <section id="top-search">
         <h2 class="sp">
-            <img src="img/temp/top_h2sp.svg" alt="">
+            <img src="img/temp/top_h2sp.svg" alt="h2_sp">
             <span>検索</span>
         </h2>
 
         <div class="container">
             <h2 class="pc">
-                <img src="img/temp/top_h2pc.svg" alt="">
+                <img src="img/temp/h2_01.svg" alt="h2_pc">
                 <span>検索</span>
             </h2>
 
@@ -92,13 +92,13 @@
 
     <section id="pickup">
         <h2 class="sp">
-            <img src="img/temp/top_h2sp.svg" alt="">
+            <img src="img/temp/top_h2sp.svg" alt="h2_sp">
             <span>特集</span>
         </h2>
 
         <div class="container">
             <h2 class="pc">
-                <img src="img/temp/top_h2pc.svg" alt="">
+                <img src="img/temp/h2_01.svg" alt="h2_pc">
                 <span>特集</span>
             </h2>
             <div class="pc">
@@ -167,13 +167,13 @@
 
     <section id="sns">
         <h2 class="sp">
-            <img src="img/temp/top_h2sp.svg" alt="">
+            <img src="img/temp/top_h2sp.svg" alt="h2_sp">
             <span>SNS(instagram)</span>
         </h2>
 
         <div class="container">
             <h2 class="pc">
-                <img src="img/temp/top_h2pc.svg" alt="">
+                <img src="img/temp/h2_01.svg" alt="h2_pc">
                 <span>SNS(instagram)</span>
             </h2>
 

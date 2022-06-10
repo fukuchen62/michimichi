@@ -12,7 +12,9 @@
                     <div class="left-column">
                         <div class="left-column-wrap flexC between">
                             <div class="logo">
-                                <img class="img" src="img/logo/main_logo.svg" alt="footer-logo">
+                            	<a href="CtrlForFront?pge_id=1">
+                                	<img class="img" src="img/logo/main_logo.svg" alt="footer-logo">
+                                </a>
                             </div>
 
                             <div class="site-map flexC">

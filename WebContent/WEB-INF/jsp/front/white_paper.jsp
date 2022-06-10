@@ -5,7 +5,7 @@
 
 
 
-<c:import url="../layout/template_footerLess.jsp">
+<c:import url="../layout/template.jsp">
 
 
 		<c:param name="title" value="このサイトについて　―　みちのえき～未知のえき～" />
@@ -33,7 +33,7 @@
                 このサイトは<br>
                 国の求職者支援制度に基づく
                 <br><br><br>
-                「株式会社QLIP WEBシステム開発実践科」<br>
+                「株式会社QLIP WEBシステム開発実践科2」<br>
                 第4期生
                 <br><br><br>
                 によって2022年に制作された、<br>
@@ -49,7 +49,7 @@
     <section id="disclaimer">
         <div class="disclaimer flexR around">
             <span class="disclaimer-link">免責事項</span>
-            <span class="sponsorship-link">協賛</=>
+            <span class="sponsorship-link">協賛</span>
         </div>
         <br><br>
         <p class="center">

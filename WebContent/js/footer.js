@@ -22,4 +22,11 @@ $(document).ready(function(){
     $(".dist").click(function(){
         changeColors($(this).attr("id"));
     });
+
+    $("#logo").click(function () {
+        $("html,body").animate({
+            scrollTop: 0
+        }, 400, "linear");
+    });
+
 });

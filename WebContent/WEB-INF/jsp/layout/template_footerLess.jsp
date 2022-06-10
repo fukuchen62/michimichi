@@ -33,7 +33,7 @@
 <link href="<c:url value='css/reset.css'/>" rel="stylesheet">
 <link href="<c:url value='css/format.css'/>" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/header_alt.css">
+<link rel="stylesheet" href="css/header.css">
 <link rel="stylesheet" href="css/scroll_top.css">
 
 <!-- 独自のCSS -->

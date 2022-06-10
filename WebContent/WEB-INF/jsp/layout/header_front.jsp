@@ -64,17 +64,6 @@
                 </a>
             </div>
 
-            <!-- 標準拡大ボタン -->
-            <!-- <div class="font-button flexR">
-                <div id="normal">
-                    <span>中</span>
-                </div>
-
-                <div id="big">
-                    <span>大</span>
-                </div>
-            </div> -->
-
             <div class="site-map sp">
                 <div id="container" class="container">
                     <div class="site-map-title center">みちのえき<br>サイトマップ</div>
