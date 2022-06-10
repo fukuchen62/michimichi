@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
     window.addEventListener("scroll", function(){
         let wh = $(window).height();
         let scrollPos = window.scrollY + wh;
@@ -8,7 +7,7 @@ $(document).ready(function(){
             $(".back-top").css({"right": "-40px"});
         }
         else{
-            $(".back-top").css({"right": "-120px"});
+        	$(".back-top").css({"right": "-120px"});
         }
     });
 
