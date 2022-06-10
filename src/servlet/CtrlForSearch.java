@@ -98,10 +98,10 @@ public class CtrlForSearch extends HttpServlet {
 		}
 
 		//検索画面に表示
-		//forward = "/WEB-INF/jsp/front/search.jsp";
+		forward = "/WEB-INF/jsp/front/search.jsp";
 
 		//テスト画面に移動
-		forward = "/WEB-INF/jsp/front/sample.jsp";
+		//forward = "/WEB-INF/jsp/front/sample.jsp";
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher(forward);
 		dispatcher.forward(request, response);
