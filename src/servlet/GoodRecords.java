@@ -45,7 +45,7 @@ public class GoodRecords extends HttpServlet {
 
 		//リクエストパラメータの取得
 		//クライアントIPアドレス
-		String ip_id = request.getRemoteAddr();
+		String ip_id = request.getLocalAddr();
 
 		//道の駅ID
 		String para1 = request.getParameter("id");
@@ -89,9 +89,6 @@ public class GoodRecords extends HttpServlet {
 
 				response.sendRedirect("CtrlForFront?pge_id=9&con_id=" + con_id);
 		};
-
-		//**あったら、書き込まない**
-		//**最新のいいね数を取得して、**
 
 
 	}
