@@ -72,7 +72,9 @@
 <c:if test="${!empty param.myjs3}">
 	<script src="<c:url value="${param.myjs3}" />"></script>
 </c:if>
-
+<c:if test="${!empty param.myjs4}">
+	<script src="<c:url value="${param.myjs4}" />"></script>
+</c:if>
 
 <!-- icon -->
 <link rel="apple-touch-icon" href="apple-touch-icon.png">

@@ -20,7 +20,7 @@
 
         <div class="g-navi-wrap">
             <div class="g-navi pc">
-                <a class="g-navi-items" href="/index.html">
+                <a class="g-navi-items" href="CtrlForFront?pge_id=1">
                     <div style="position: relative;">
                         <div class="flexR">
                             <i class="material-symbols-outlined">map</i>
@@ -32,7 +32,7 @@
                     </div>
                 </a>
 
-                <a class="g-navi-items" href="/search.html">
+                <a class="g-navi-items" href="CtrlForFront?pge_id=2">
                     <div class="flexR">
                         <i class="material-symbols-outlined">search</i>
                         <p class="category">　検索</p>
@@ -40,7 +40,7 @@
                     </div>
                 </a>
 
-                <a class="g-navi-items" href="/feature_top.html">
+                <a class="g-navi-items" href="CtrlForFront?pge_id=3">
                     <div class="flexR">
                         <i class="material-symbols-outlined">topic</i>
                         <p class="recommend">　特集</p>
@@ -70,19 +70,19 @@
                     <br>
                     <hr>
                     <div class="wrap">
-                        <a class="item item1 flexR" href="/index.html">
+                        <a class="item item1 flexR" href="CtrlForFront?pge_id=1">
                             <div class="flexC">
                                 <i class="material-symbols-outlined icon">map</i>
                                 マップ検索
                             </div>
                         </a>
-                        <a class="item item2 flexR" href="/search.html">
+                        <a class="item item2 flexR" href="CtrlForFront?pge_id=2">
                             <div class="flexC">
                                 <i class="material-symbols-outlined icon">search</i>
                                 カテゴリー検索
                             </div>
                         </a>
-                        <a class="item item3 flexR" href="/feature_top.html">
+                        <a class="item item3 flexR" href="CtrlForFront?pge_id=4">
                             <div class="flexC">
                                 <i class="material-symbols-outlined icon">topic</i>
                                 特集
@@ -94,13 +94,13 @@
                                 インスタグラム
                             </div>
                         </div>
-                        <a class="item item5 flexR" href="/inquiry.html">
+                        <a class="item item5 flexR" href="CtrlForFront?pge_id=5">
                             <div class="flexC">
                                 <span class="material-symbols-rounded icon">outgoing_mail</span>
                                 お問い合わせ
                             </div>
                         </a>
-                        <a class="item item6 flexR" href="/white_paper.html">
+                        <a class="item item6 flexR" href="CtrlForFront?pge_id=8">
                             <div class="flexC">
                                 <span class="material-symbols-rounded icon">help</span>
                                 このHPについて
