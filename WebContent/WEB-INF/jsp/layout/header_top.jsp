@@ -3,7 +3,7 @@
     <!-- header -->
     <header id="header">
         <div class="g-navi sp">
-            <a class="sp" href="/index.html">
+            <a class="sp" href="CtrlForFront?pge_id=1">
                 <div class="logo">
                     <img class="logo-img" src="img/logo/mainlogo.png" alt="logo">
                 </div>

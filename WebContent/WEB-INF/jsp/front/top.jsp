@@ -48,7 +48,7 @@
 
         <div class="search-links">
             <form class="form" action="">
-                <input id="west-link" type="submit" name="area" value=1>
+                <input id="west-link" type="submit" name="area" value="1">
                 <label for="west-link">東の駅はこちら</label>
             </form>
             <form class="form" action="">

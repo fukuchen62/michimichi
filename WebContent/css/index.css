@@ -155,14 +155,13 @@ body {
 }
 
 #keyVisual .search-links .form {
-  padding: 10px 0;
+  padding: 20px 0;
 }
 
 #keyVisual .search-links .form input {
 	display: none;
 }
 #keyVisual .search-links .form label {
-  margin: 5px;
   padding: 5px 20px;
   background-color: rgba(255, 255, 255, 0.5);
   border: 5px solid rgba(136, 193, 216, 0.65);
@@ -340,6 +339,10 @@ body {
     font-size: 75px;
     font-weight: bold;
   }
+  #keyVisual .logo {
+  width: 35%;
+  }
+
 }
 
 /******************************************************
@@ -416,7 +419,7 @@ body {
   }
   #keyVisual .keyVisual .sp .keyVisual-wrap .keyVisual-map {
     width: 70%;
-    left: 50%;
+    left: 55%;
     bottom: 10%;
   }
   #keyVisual .keyVisual .sp .catch-copy {
@@ -457,15 +460,14 @@ body {
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
-    padding: 0;
+    padding: 15px 0;
   }
-  #keyVisual .search-links .form input {
-    margin: 5px;
-    padding: 10px 20px;
-    background-color: rgba(255, 255, 255, 0.5);
+  #keyVisual .search-links .form label {
+    padding: 5px 20px;
     border-radius: 20px;
-    font-size: 2vw;
+    font-weight: bold;
   }
+
   #top-search,
   #pickup,
   #sns {
