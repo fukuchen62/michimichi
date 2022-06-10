@@ -1,24 +1,4 @@
 @charset "UTF-8";
-.flexR {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.flexC {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
 .slick-dotted.slick-slider {
   margin-bottom: 10px;
 }
@@ -424,7 +404,7 @@ h2 img {
   position: relative;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[11];
+  -ms-grid-columns: (1fr);
       grid-template-columns: repeat(11, 1fr);
   grid-column-gap: 5px;
 }

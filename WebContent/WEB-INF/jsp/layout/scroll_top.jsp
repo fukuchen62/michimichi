@@ -2,5 +2,5 @@
 	pageEncoding="UTF-8"%>
 
     <a class="back-top" href="#">
-        <img src="img/temp/car01.svg" alt="back_top">
+        <img src="img/temp/suv01.svg" alt="back_top">
     </a>

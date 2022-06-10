@@ -40,7 +40,7 @@
 ****************************************/
 .h1-wrap {
   width: 100%;
-  margin-top: 60px;
+  margin-top: 140px;
   border: 10px solid #88c1d8;
   border-radius: 10px;
   -webkit-box-pack: center;
@@ -273,6 +273,9 @@
  ～@1024px
 ****************************************/
 @media screen and (max-width: 1024px) {
+  .h1-wrap{
+      margin-top: 100px;
+  }
   .container {
     width: 70%;
     min-width: 584px;
@@ -287,6 +290,9 @@
  ～@768px
 ****************************************/
 @media screen and (max-width: 768px) {
+  .h1-wrap{
+     margin-top: 110px;
+   }
   .border {
     margin: 40px 0;
   }
