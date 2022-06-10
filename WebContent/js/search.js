@@ -1,7 +1,7 @@
 $(document).ready(function(){
     let all = document.getElementById("all");
     let all_sp = document.getElementById("all-sp");
-    const district = document.getElementsByName("district");
+    const district = document.getElementsByName("area");
 
     function CheckAll(){
         if(this.checked == true){
