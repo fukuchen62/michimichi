@@ -130,7 +130,7 @@ public class Station {
 		this.address = address;
 		this.tel = tel;
 		this.parking = parking;
-		this.service_time = parking;
+		this.service_time = service_time;
 		this.closed = closed;
 		this.url = url;
 

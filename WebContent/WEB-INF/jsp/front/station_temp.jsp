@@ -259,6 +259,7 @@
                                 <img src="${spo.spot_photo_path3}" alt="${spo.spot_alt3}">
 
                                 <figcaption class="station-desc spot-desc">
+                                	${spo.spot_name}<br>
                                     ${spo.spot_overview}
                                 </figcaption>
                             </div>
@@ -305,7 +306,8 @@
                         <tr>
                             <th>所在地</th>
                             <td class="postal-code">
-                                ${station.post_code} ${station.address}
+                                〒${station.post_code} <Br>
+                                ${station.address}
                             </td>
                         </tr>
                         <tr>
@@ -424,13 +426,15 @@
 
         <div class="container">
             <div class="comment-wrap mt60">
-                <div>
-                    <p class="comment-name">お名前　2020-2-12 17:00</p>
-                    <hr>
+                <c:forEach var="com" items="${CommentList}" end="4">
+					<div>
+	                    <p class="comment-name">${com.name}　${com.post_time}</p>
+	                    <hr>
 
-                    <p class="comment-text">
-                        text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text </p>
-                </div>
+	                    <p class="comment-text">${com.comment}</p>
+        			</div>
+				</c:forEach>
+
 
                 <div class="flexC mt80">
                     <div class="flexR">

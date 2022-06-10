@@ -10,16 +10,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import beans.CommentBs;
 import beans.Facilities;
 import beans.Feature;
 import beans.GoodRecordsBs;
 import beans.Station;
+import beans.Tags;
+import model.CommentLogic;
 import model.FacilitiesLogic;
 import model.FeatureListLogic;
 import model.FeatureLogic;
 import model.GoodRecordsLogic;
 import model.StationListLogic;
 import model.StationLogic;
+import model.TagsLogic;
 
 /**
  * Servlet implementation class CtrlForFront
@@ -141,6 +145,14 @@ public class CtrlForFront extends HttpServlet {
 
 	//カテゴリー検索ページ
 	private String movetoSearch(HttpServletRequest request) {
+		final int SHOWFALG = 1;
+
+		// SP表示のタグ画像情報を取得する
+		TagsLogic tagsLogic = new TagsLogic();
+				List<Tags> SPSearchTagsList = tagsLogic.getSPSearchTags(SHOWFALG);
+
+					// リクエストスコープに保存
+					request.setAttribute("SPSearchTagsList", SPSearchTagsList);
 
 		// フォーワード先
 		String forward = "WEB-INF/jsp/front/search.jsp";
@@ -256,7 +268,8 @@ public class CtrlForFront extends HttpServlet {
 		StationLogic stationLogic = new StationLogic();
 		FacilitiesLogic facilitiesLogic = new FacilitiesLogic();
 		FeatureListLogic featureListLogic = new FeatureListLogic();
-		GoodRecordsLogic GoodRecordsLogic = new GoodRecordsLogic();
+		GoodRecordsLogic goodRecordsLogic = new GoodRecordsLogic();
+		CommentLogic commentLogic = new CommentLogic();
 
 
 
@@ -276,7 +289,10 @@ public class CtrlForFront extends HttpServlet {
 		List<Feature> SFList = featureListLogic.getStationFeature(SHOWFALG);
 
 		//イイネのカウント数情報
-		GoodRecordsBs goodRecordsCount = GoodRecordsLogic.getGoodRecordsCountById(CONID);
+		GoodRecordsBs goodRecordsCount = goodRecordsLogic.getGoodRecordsCountById(CONID);
+
+		//コメント情報
+		List<CommentBs> CommentList = commentLogic.getCommentsById(SHOWFALG, CONID);
 
 			// リクエストスコープに保存
 			request.setAttribute("station", station);
@@ -285,7 +301,7 @@ public class CtrlForFront extends HttpServlet {
 			request.setAttribute("FacilityList", FacilityList);
 			request.setAttribute("SFList", SFList);
 			request.setAttribute("goodRecordsCount", goodRecordsCount);
-
+			request.setAttribute("CommentList", CommentList);
 
 		//道の駅の特集個別リンクのID取得
 		Integer featureLink1 = station.getFeature_banner1();
