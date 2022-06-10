@@ -9,27 +9,84 @@
 	<c:param name="description" value="徳島の18ヶ所の道の駅と周辺スポットの紹介サイトです。
 徳島の大自然、グルメ、観光名所など一歩踏み込んだ、
 知られざる未知のスポットをご紹介します。" />
-	<c:param name="mycss" value="" />
+	<c:param name="mycss" value="css/feature_top.css" />
 	<c:param name="mycss2" value="" />
 	<c:param name="myjs" value="" />
 
 	<c:param name="content">
 
-		<section id="menu" class="section">
-			<h2 class="list">
-				特集一覧じゃよ～～～
-			</h2>
-			<ul class="pc-grid-col3 menu-list">
-				<c:forEach var="list" items="${FLList}" end="5">
-					<li class="col"><img src="${list.main_photo_path}" alt="${list.alt}">
-						<p class="menu-text">${list.feature_name}<br>
-						${list.feature_list}<br>
-						<a href="CtrlForFront?pge_id=4&con_id=1">こっちじゃよ</a>
-						</p></li>
-				</c:forEach>
+	    <section id="topView">
+        <div class="container">
+            <div class="wrap">
+                <div class="wrap-img">
+                    <div class="feature-link-wrap">
+                        <img class="pc" src="img/feature_top/feature_h1_pc1.svg" alt="feature_h1">
+                        <img class="sp" src="img/feature_top/feature_h1_tab.svg" alt="feature_h1">
+                        <div class="feature-link-grid pc">
+                            <a href="">
+                                <img src="img/feature_top/feature_link_sweets.jpg" alt="sweets">
+                            </a>
+                            <a href="">
+                                <img src="img/feature_top/feature_link_gift.jpg" alt="gift">
+                            </a>
+                            <a href="">
+                                <img src="img/feature_top/feature_link_attractions.jpg" alt="attractions">
+                            </a>
+                            <a href="">
+                                <img src="img/feature_top/feature_link_hotspring.jpg" alt="hotspring">
+                            </a>
+                            <a href="">
+                                <img src="img/feature_top/feature_link_naruto.jpg" alt="naruto">
+                            </a>
+                            <a href="">
+                                <img src="img/feature_top/feature_link_agourmet.jpg" alt="agourmet">
+                            </a>
+                            <a href="">
+                                <img src="img/feature_top/feature_link_gourmet.jpg" alt="gourmet">
+                            </a>
+                        </div>
 
-			</ul>
-		</section>
+                        <div class="feature-link-grid sp">
+                            <div class="col-01 flexR">
+                                <a href="">
+                                    <img src="img/feature_top/feature_link_sweets.jpg" alt="sweets">
+                                </a>
+                                <a href="">
+                                    <img src="img/feature_top/feature_link_gift.jpg" alt="gift">
+                                </a>
+                                <a href="">
+                                    <img src="img/feature_top/feature_link_attractions.jpg" alt="attractions">
+                                </a>
+                                <a href="">
+                                    <img src="img/feature_top/feature_link_hotspring.jpg" alt="hotspring">
+                                </a>
+                            </div>
+
+                            <div class="col-02 flexR">
+                                <a href="">
+                                    <img src="img/feature_top/feature_link_naruto.jpg" alt="naruto">
+                                </a>
+
+                                <a href="">
+                                    <img src="img/feature_top/feature_link_gourmet.jpg" alt="gourmet">
+                                </a>
+                                <a href="">
+                                    <img src="img/feature_top/feature_link_agourmet.jpg" alt="agourmet">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- row -->
+                    <c:forEach var="list" items="${FLList}">
+						${list.feature_list}
+				    </c:forEach>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
 
 	</c:param>
 </c:import>

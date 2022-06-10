@@ -38,7 +38,7 @@ public class T_featuresDAO {
 					+ " FROM t_features "
 					+ " WHERE show_flag = ?"
 					+ " ORDER BY"
-					+ " feature_id DESC";
+					+ " feature_id ASC";
 
 			//SQLを送信
 			PreparedStatement pStmt = conn.prepareStatement(sql);
