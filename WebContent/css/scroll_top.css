@@ -2,11 +2,15 @@ body {
   height: 4000px;
 }
 
-.back-top img {
+.back-top {
   width: 100px;
   height: 100px;
   position: fixed;
-  right: 50px;
+  right: -120px;
   bottom: 30px;
+  -webkit-transform: rotateY(180deg) rotateZ(90deg);
+          transform: rotateY(180deg) rotateZ(90deg);
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
 }
 /*# sourceMappingURL=scroll_top.css.map */

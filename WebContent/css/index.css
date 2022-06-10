@@ -65,7 +65,7 @@ h2 {
   height: -moz-fit-content;
   height: fit-content;
   margin: 0px auto;
-  background-color: #c7e3ee;
+  background-color: transparent;
   position: relative;
 }
 
@@ -87,7 +87,7 @@ h2 span {
 
 #keyVisual {
   width: 100%;
-  height: auto;
+  height: 100vh;
   position: relative;
 }
 
@@ -100,17 +100,23 @@ h2 span {
   position: relative;
 }
 
+#keyVisual .keyVisual .keyVisual-wrap .keyVisual-bg {
+  height: 100vh;
+}
+
 #keyVisual .keyVisual .keyVisual-wrap .keyVisual-map {
-  width: 50%;
+  width: 60%;
   position: absolute;
-  bottom: 5%;
-  left: 25%;
+  bottom: 3%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 #keyVisual .keyVisual .catch-copy {
   position: absolute;
   left: 10px;
-  top: 100px;
+  top: 120px;
   -webkit-transform: rotate(-20deg);
           transform: rotate(-20deg);
   font-size: 50px;
@@ -134,8 +140,8 @@ h2 span {
   padding: 10px 20px;
   border-radius: 20px;
   position: absolute;
-  right: 20px;
-  bottom: 20px;
+  right: 0;
+  bottom: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -309,22 +315,24 @@ h2 span {
     position: relative;
   }
   #keyVisual .keyVisual .keyVisual-wrap .keyVisual-map {
-    width: 45%;
-    bottom: 5%;
-    left: 25%;
+    width: 700px;
+    bottom: 7%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
   }
   #keyVisual .keyVisual .catch-copy {
     left: 10px;
-    top: 110px;
+    top: 120px;
     -webkit-transform: rotate(-20deg);
             transform: rotate(-20deg);
     font-family: 'M PLUS Rounded 1c', sans-serif;
-    font-size: 3.43vw;
+    font-size: 50px;
     font-weight: bold;
   }
   #keyVisual .keyVisual .catch-copy span {
     font-family: 'Limelight', cursive;
-    font-size: 4.3vw;
+    font-size: 75px;
     font-weight: bold;
   }
 }
@@ -345,19 +353,18 @@ h2 span {
     position: relative;
   }
   #keyVisual .keyVisual .keyVisual-wrap .keyVisual-map {
-    width: 45%;
-    bottom: 2%;
-    left: 25%;
+    width: 640px;
+    bottom: 15%;
   }
   #keyVisual .keyVisual .catch-copy {
     top: 120px;
     font-family: 'M PLUS Rounded 1c', sans-serif;
-    font-size: 3.5vw;
+    font-size: 40px;
     font-weight: bold;
   }
   #keyVisual .keyVisual .catch-copy span {
     font-family: 'Limelight', cursive;
-    font-size: 4vw;
+    font-size: 60px;
     font-weight: bold;
   }
 }
@@ -391,20 +398,25 @@ h2 span {
     padding-bottom: 80px;
     background-color: #c7e3ee;
   }
+  #keyVisual {
+    height: auto;
+  }
   #keyVisual .keyVisual .sp {
     position: relative;
   }
   #keyVisual .keyVisual .sp .keyVisual-wrap {
     width: 100%;
   }
+  #keyVisual .keyVisual .sp .keyVisual-wrap .keyVisual-bg {
+    height: auto;
+  }
   #keyVisual .keyVisual .sp .keyVisual-wrap .keyVisual-map {
-    width: 65%;
+    width: 80%;
     bottom: 10%;
-    left: 30%;
   }
   #keyVisual .keyVisual .sp .catch-copy {
     left: 10px;
-    top: 110px;
+    top: 130px;
     -webkit-transform: rotate(-20deg);
             transform: rotate(-20deg);
     font-family: 'M PLUS Rounded 1c', sans-serif;
@@ -425,7 +437,7 @@ h2 span {
     height: fit-content;
     padding: 10px 20px;
     left: 0;
-    bottom: 0px;
+    bottom: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -466,9 +478,6 @@ h2 span {
         grid-template-columns: repeat(2, 1fr);
     -ms-grid-rows: (1fr)[2];
         grid-template-rows: repeat(2, 1fr);
-  }
-  #sns {
-    margin-bottom: 90px;
   }
   #sns .grid-sns {
     -ms-grid-columns: (1fr)[3];

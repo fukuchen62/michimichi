@@ -127,7 +127,7 @@ a {
   font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 
-#header .g-navi .g-navi-items .flexR.active {
+#header .g-navi .g-navi-items .flexR:hover {
   border: 10px solid;
   border-image-width: 5px;
   -o-border-image: url(../img/index/gnav/pc/nav_btn01.svg) 15 stretch;
@@ -250,7 +250,7 @@ a {
   =====================================================*/
 @media screen and (max-width: 1024px) {
   #header {
-    height: auto;
+    height: 90px;
   }
   #header .g-navi-wrap {
     height: -webkit-fit-content;
@@ -310,8 +310,9 @@ a {
     margin: 0;
   }
   #header .g-navi.sp .logo img {
-    width: auto;
-    height: 100px;
+    width: 200px;
+    height: auto;
+    margin: 10px 0 0 10px;
   }
   #header .g-navi-wrap {
     width: 100%;

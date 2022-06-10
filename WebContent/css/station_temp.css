@@ -33,8 +33,12 @@ body {
   background-color: #c7e3ee;
 }
 
-.sp-grab {
-  cursor: url(../img/cursor/openhand.cur);
+.sp-right-thumbnails.sp-has-pointer .sp-selected-thumbnail:before {
+  border-color: #e69c81;
+}
+
+.sp-right-thumbnails.sp-has-pointer .sp-selected-thumbnail:after {
+  border-right: 13px solid #e69c81;
 }
 
 h1,
@@ -548,10 +552,9 @@ h2 img {
   height: 80vh;
   background-color: rgba(0, 0, 0, 0.75);
   border-radius: 10px;
-  display: none;
   position: fixed;
   top: 0;
-  bottom: -200vh;
+  bottom: -2000px;
   left: 0;
   right: 0;
   margin: auto;
@@ -869,11 +872,11 @@ h2 img {
     list-style: none;
   }
   #recommend .wrap .sp ul:last-child {
-    border-bottom: 2px solid #444;
+    border-bottom: 2px solid #e69c81;
   }
   #recommend .wrap .sp ul .commodity {
     padding: 20px 40px;
-    border: 2px solid #444;
+    border: 2px solid #e69c81;
     border-bottom: none;
     background-color: #c7e3ee;
     position: relative;
@@ -915,7 +918,7 @@ h2 img {
     height: 190px;
     padding: 10px 40px 40px 40px;
     background-color: #fafeff;
-    border: 2px solid #444;
+    border: 2px solid #e69c81;
     border-bottom: none;
     display: none;
   }
