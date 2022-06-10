@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
     function changeColors(dist){
         let color = "#fff";
         let bgColor = "#e69c81";
