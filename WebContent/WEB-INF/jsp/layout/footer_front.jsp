@@ -45,13 +45,13 @@
                                                 地域別検索
                                             </p>
                                         </span>
-                                        <span id="west" class="dist">
+                                        <span id="footer-west" class="dist">
                                             <p>東部</p>
                                         </span>
-                                        <span id="east" class="dist">
+                                        <span id="footer-east" class="dist">
                                             <p>西部</p>
                                         </span>
-                                        <span id="south" class="dist">
+                                        <span id="footer-south" class="dist">
                                             <p>南部</p>
                                         </span>
                                     </div>
@@ -170,20 +170,17 @@
     "use strict";
     $(document).ready(function(){
         function changeColors(dist){
-            let color = "#fff";
-            let bgColor = "#e69c81";
-
-            $("#west,#east,#south").css({"z-index":"1"});
-            if(dist == "west"){
-                $("#west").css({"z-index":"3"});
+            $("#footer-west,#footer-east,#footer-south").css({"z-index":"1"});
+            if(dist == "footer-west"){
+                $("#footer-west").css({"z-index":"3"});
                 $(".district").css("left",0);
             }
-            else if(dist == "east"){
-                $("#east").css({"z-index":"3"});
+            else if(dist == "footer-east"){
+                $("#footer-east").css({"z-index":"3"});
                 $(".district").css("left","-480px");
             }
-            else if(dist == "south"){
-                $("#south").css({"z-index":"3"});
+            else if(dist == "footer-south"){
+                $("#footer-south").css({"z-index":"3"});
                 $(".district").css("left","-960px");
             }
         }

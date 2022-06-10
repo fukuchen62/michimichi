@@ -1,19 +1,16 @@
 $(document).ready(function(){
     function changeColors(dist){
-        let color = "#fff";
-        let bgColor = "#e69c81";
-
-        $("#west,#east,#south").css({"z-index":"1"});
-        if(dist == "west"){
-            $("#west").css({"z-index":"3"});
+         $("#footer-west,#footer-east,#footer-south").css({"z-index":"1"});
+        if(dist == "footer-west"){
+            $("#footer-west").css({"z-index":"3"});
             $(".district").css("left",0);
         }
-        else if(dist == "east"){
-            $("#east").css({"z-index":"3"});
+        else if(dist == "footer-east"){
+            $("#footer-east").css({"z-index":"3"});
             $(".district").css("left","-480px");
         }
-        else if(dist == "south"){
-            $("#south").css({"z-index":"3"});
+        else if(dist == "footer-south"){
+            $("#footer-south").css({"z-index":"3"});
             $(".district").css("left","-960px");
         }
     }

@@ -48,13 +48,16 @@
 
         <div class="search-links">
             <form class="form" action="">
-                <input id="west-link" type="submit" name="west" value="東の駅はこちら">
+                <input id="west-link" type="submit" name="area" value=1>
+                <label for="west-link">東の駅はこちら</label>
             </form>
             <form class="form" action="">
-                <input id="east-link" type="submit" name="east" value="西の駅はこちら">
+                <input id="east-link" type="submit" name="area" value="2">
+                <label for="east-link">西の駅はこちら</label>
             </form>
             <form class="form" action="">
-                <input id="south-link" type="submit" name="south" value="南の駅はこちら">
+                <input id="south-link" type="submit" name="area" value="3">
+                <label for="south-link">南の駅はこちら</label>
             </form>
         </div>
     </div>
@@ -179,74 +182,105 @@
 
             <div class="grid-sns grid wrap">
                 <div class="items">
-                    <img src="img/dammy/donari.jpg" alt="sns_01">
+                    <a href="https://www.instagram.com/p/CenSJEnLLkW/?utm_source=ig_web_copy_link" target="_blank" rel="noopener noreferrer">
+                        <img src="img/sns/sns_01.jpg" alt="sns_01">
+                    </a>
                 </div>
 
                 <div class="items">
-                    <img src="img/dammy/hiwasa.jpg" alt="sns_02">
+                    <a href="https://www.instagram.com/p/CenSQHgLW3_/?utm_source=ig_web_copy_link" target="_blank" rel="noopener noreferrer">
+                        <img src="img/sns/sns_02.jpg" alt="sns_02">
+                    </a>
                 </div>
 
                 <div class="items">
-                    <img src="img/dammy/momijigawa.jpg" alt="sns_03">
+                    <a href="https://www.instagram.com/p/CenSj5Krdxn/?utm_source=ig_web_copy_link" target="_blank" rel="noopener noreferrer">
+                        <img src="img/sns/sns_03.jpg" alt="sns_03">
+                    </a>
                 </div>
 
                 <div class="items">
-                    <img src="img/dammy/sadamitsu.jpg" alt="sns_04">
+                    <a href="https://www.instagram.com/p/CenSw_VLgUs/?utm_source=ig_web_copy_link" target="_blank" rel="noopener noreferrer">
+                        <img src="img/sns/sns_04.jpg" alt="sns_04">
+                    </a>
                 </div>
 
                 <div class="items">
-                    <img src="img/dammy/shishikui.jpg" alt="sns_05">
+                    <a href="https://www.instagram.com/p/CenUijyLOv6/?utm_source=ig_web_copy_link" target="_blank" rel="noopener noreferrer">
+                        <img src="img/sns/sns_05.jpg" alt="sns_05">
+                    </a>
                 </div>
 
                 <div class="items">
-                    <img src="img/dammy/wajiki.jpg" alt="sns_06">
+                    <a href="https://www.instagram.com/p/CenUwfSLZbo/?utm_source=ig_web_copy_link" target="_blank" rel="noopener noreferrer">
+                        <img src="img/sns/sns_06.jpg" alt="sns_06">
+                    </a>
                 </div>
 
                 <div class="items">
-                    <img src="img/dammy/donari.jpg" alt="sns_07">
+                    <a href="https://www.instagram.com/p/CenU9DzLKZb/?utm_source=ig_web_copy_link" target="_blank" rel="noopener noreferrer">
+                        <img src="img/sns/sns_07.jpg" alt="sns_07">
+                    </a>
                 </div>
 
                 <div class="items">
-                    <img src="img/dammy/hiwasa.jpg" alt="sns_08">
+                    <a href="https://www.instagram.com/p/CenVLHYrE8g/?utm_source=ig_web_copy_link" target="_blank" rel="noopener noreferrer">
+                        <img src="img/sns/sns_08.jpg" alt="sns_08">
+                    </a>
                 </div>
 
                 <div class="items">
-                    <img src="img/dammy/momijigawa.jpg" alt="sns_09">
+                    <a href="https://www.instagram.com/p/CenVlr4L4oD/?utm_source=ig_web_copy_link" target="_blank" rel="noopener noreferrer">
+                        <img src="img/sns/sns_09.jpg" alt="sns_09">
+                    </a>
                 </div>
 
                 <div class="items">
-                    <img class="pc" src="img/dammy/sadamitsu.jpg" alt="sns_10">
+                    <a href="https://www.instagram.com/p/CenV1iFr2ge/?utm_source=ig_web_copy_link" target="_blank" rel="noopener noreferrer">
+                        <img class="pc" src="img/sns/sns_10.jpg" alt="sns_10">
+                    </a>
                 </div>
 
                 <div class="items">
-                    <img class="pc" src="img/dammy/shishikui.jpg" alt="sns_11">
+                    <a href="https://www.instagram.com/p/CenWKUKLABf/?utm_source=ig_web_copy_link" target="_blank" rel="noopener noreferrer">
+                        <img class="pc" src="img/sns/sns_11.jpg" alt="sns_11">
+                    </a>
                 </div>
 
                 <div class="items">
-                    <img class="pc" src="img/dammy/wajiki.jpg" alt="sns_12">
+                    <a href="https://www.instagram.com/p/CenWgWUrReD/?utm_source=ig_web_copy_link" target="_blank" rel="noopener noreferrer">
+                        <img class="pc" src="img/sns/sns_12.jpg" alt="sns_12">
+                    </a>
                 </div>
 
                 <div class="items">
-                    <img class="pc" src="img/dammy/donari.jpg" alt="sns_13">
+                    <a href="https://www.instagram.com/p/CenWv5_LEvn/?utm_source=ig_web_copy_link" target="_blank" rel="noopener noreferrer">
+                        <img class="pc" src="img/sns/sns_13.jpg" alt="sns_13">
+                    </a>
                 </div>
 
                 <div class="items">
-                    <img class="pc" src="img/dammy/hiwasa.jpg" alt="sns_14">
+                    <a href="https://www.instagram.com/p/CenXDV-LNaJ/?utm_source=ig_web_copy_link" target="_blank" rel="noopener noreferrer">
+                        <img class="pc" src="img/sns/sns_14.jpg" alt="sns_14">
+                    </a>
                 </div>
 
                 <div class="items">
-                    <img class="pc" src="img/dammy/momijigawa.jpg" alt="sns_15">
+                    <a href="https://www.instagram.com/p/CenXV2zrV_C/?utm_source=ig_web_copy_link" target="_blank" rel="noopener noreferrer">
+                        <img class="pc" src="img/sns/sns_15.jpg" alt="sns_15">
+                    </a>
                 </div>
 
 
                 <!-- grid-sns end -->
             </div>
 
-            <a class="btn btn-sns" href="">
+            <a class="btn btn-sns" href="https://www.instagram.com/team_tsunagu/" target="_blank" rel="noopener noreferrer">
                 <img src="img/temp/button02.svg" alt="btn-search">
                 <span>#徳島　#道の駅で検索しよう！</span>
             </a>
         </div>
     </section>
+
 	</c:param>
 </c:import>

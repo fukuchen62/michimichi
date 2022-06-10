@@ -92,12 +92,12 @@
                 </div>
 
                 <div class="wrap-02">
-                    <div class="item item4 flexR">
+                    <a class="item item4 flexR" href="CtrlForFront?pge_id=5">
                         <div class="flexC">
                             <img src="img/index/gnav/sp/menu_mail.svg" alt="sitemap-mail">
                         </div>
-                    </div>
-                    <a class="item item5 flexR" href="CtrlForFront?pge_id=5">
+                    </a>
+                    <a class="item item5 flexR" href="CtrlForFront?pge_id=8">
                         <div class="flexC">
                             <img src="img/index/gnav/sp/menu_wp.svg" alt="sitemap-wp">
                         </div>

@@ -99,7 +99,7 @@
 </head>
 <body>
 	<jsp:include page="scroll_top.jsp" />
-	<jsp:include page="header_front.jsp" />
+	<jsp:include page="header_top.jsp" />
 	<div>${param.content}</div>
 	<jsp:include page="footer_front.jsp" />
 </body>
