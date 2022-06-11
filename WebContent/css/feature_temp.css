@@ -95,6 +95,10 @@ h1 {
   border-radius: 5px;
 }
 
+.container .recommend .img-column .upper-img img,
+.container .recommend .img-column .lower-img img{
+  border-radius: 3px;
+}
 .container .recommend .img-column .upper-img + .lower-img {
   margin-top: 20px;
 }
