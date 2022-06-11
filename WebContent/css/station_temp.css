@@ -560,6 +560,10 @@ h2 img {
           justify-content: space-between;
 }
 
+#comment .comment-wrap .comment-modal .comment-modal-area #res-name:focus {
+	outline:none;
+}
+
 #comment .comment-wrap .comment-modal .comment-modal-area .comment-modal-text {
   margin-top: 20px;
   white-space: wrap;
@@ -573,6 +577,10 @@ h2 img {
   width: 100%;
   border: none;
   resize: none;
+}
+
+#comment .comment-wrap .comment-modal .comment-modal-area .comment-modal-text .res-comment-wrap #res-text:focus{
+  outline: none;
 }
 
 #comment .comment-wrap .comment-modal .comment-modal-area input {
