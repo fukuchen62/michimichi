@@ -47,8 +47,10 @@ $(document).ready(function(){
         res_text.value = comment.value;
 
         $(".comment-modal").css({"bottom": "0"});
+        $("#footer").css({"z-index": "-1"});
     });
     $(".btn-return, .btn-submit").click(function(){
         $(".comment-modal").css({"bottom": "-2000px"});
+        $("#footer").css({"z-index": "1"});
     });
 });

@@ -27,7 +27,7 @@
   padding: 20px;
   background-color: #c7e3ee;
   position: relative;
-  z-index: -1;
+  z-index: 1;
 }
 
 #footer .container {
@@ -138,6 +138,7 @@
 
 #footer .container .footer-wrap .right-column .right-column-wrap .right-column-inner .map-search span:first-child p {
   padding-top: 20px;
+  /* color: #c7e3ee; */
 }
 
 #footer .container .footer-wrap .right-column .right-column-wrap .right-column-inner .map-search span:first-child p .search {

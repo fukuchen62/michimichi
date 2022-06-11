@@ -1,43 +1,11 @@
 @charset "UTF-8";
-.flexR {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.flexC {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.between {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.around {
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-body * {
-  color: #444;
-}
 
 body {
   background-color: #fafeff;
 }
-
+#search {
+  color: #444;
+}
 
 #search h1 {
   width: 100%;
@@ -120,9 +88,6 @@ body {
   grid-row-gap: 20px;
 }
 
-/*************************************************************************
- @1351px～
-*************************************************************************/
 #search .district-wrap,
 #search .facility-wrap,
 #search .around-wrap {
