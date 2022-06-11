@@ -91,14 +91,10 @@ h1 {
 .container .recommend .img-column .lower-img {
   width: 100%;
   height: auto;
-  border: 2px solid #e69c81;
+  border: 5px solid #e69c81;
   border-radius: 5px;
 }
 
-.container .recommend .img-column .upper-img img,
-.container .recommend .img-column .lower-img img{
-  border-radius: 3px;
-}
 .container .recommend .img-column .upper-img + .lower-img {
   margin-top: 20px;
 }
