@@ -53,7 +53,7 @@
         </div>
         <br><br>
         <p class="center">
-            Created by Qlip WebSystemDevelopment [4th] Gen
+            Created by Qlip WebSystemDevelopment2 [4th] Gen
         </p>
         <br><br>
     </section>
