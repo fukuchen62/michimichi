@@ -48,6 +48,11 @@ $(document).ready(function(){
 
         $(".comment-modal").css({"bottom": "0"});
         $("#footer").css({"z-index": "-1"});
+
+        $(".btn-submit").click(function(){
+            res_text.value = res_text.value.replace(/\n/g, "<br>");
+        });
+
     });
     $(".btn-return, .btn-submit").click(function(){
         $(".comment-modal").css({"bottom": "-2000px"});

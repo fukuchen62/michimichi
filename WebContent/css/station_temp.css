@@ -546,7 +546,7 @@ h2 img {
 #comment .comment-wrap .comment-modal .comment-modal-area {
   width: 80%;
   height: 500px;
-  padding: 10%;
+  padding: 5%;
   background-color: #fff;
   border-radius: 10px;
   position: relative;
@@ -567,6 +567,12 @@ h2 img {
 
 #comment .comment-wrap .comment-modal .comment-modal-area .comment-modal-text .res-comment-wrap {
   width: 100%;
+}
+
+#comment .comment-wrap .comment-modal .comment-modal-area .comment-modal-text .res-comment-wrap #res-text{
+  width: 100%;
+  border: none;
+  resize: none;
 }
 
 #comment .comment-wrap .comment-modal .comment-modal-area input {
