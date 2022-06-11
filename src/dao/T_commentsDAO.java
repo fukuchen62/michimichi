@@ -4,7 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import beans.CommentBs;
@@ -49,7 +51,7 @@ public class T_commentsDAO {
 			//SELECTを実行し、結果表を取得
 			ResultSet rs = pStmt.executeQuery();
 
-			//結果表に格納されたレコードの内容をFeatureListインスタンスに設定し、ArrayListインスタンスに追加
+			//結果表に格納されたレコードの内容をCommentListインスタンスに設定し、ArrayListインスタンスに追加
 			while (rs.next()) {
 				int comment_id = rs.getInt("comment_id");
 				String name = rs.getString("name");
@@ -76,6 +78,64 @@ public class T_commentsDAO {
 
 		}
 		return CommentList;
+
+	}
+
+	/*********
+	 * 投稿されたコメント、入力用メソッド
+	 * (結果をTorFで返すよ)
+	 *********/
+	public boolean insertComment(int con_id,String name, String comment) {
+
+		String sql = "";
+
+		//データベースに接続
+		Connection conn = null;
+		conn = DbConnection.conn;
+		if (conn == null)
+			return false;
+
+		//BDへ接続
+		try {
+
+			//SELECT文を準備
+			//show_flagで表示になっている指定IDの一覧を取得する。
+			sql = "INSERT INTO"
+					+ " T_comments"
+					+ " (michinoeki_id,name,comment,post_time,SHOW_FLAG)"
+					+ " VALUES"
+					+ " (?,?,?,?,?)";
+
+			//SQLを送信
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			//pStmt.setInt(一番目の？,代入するもの)
+			pStmt.setInt(1, con_id);
+			pStmt.setString(2, name);
+			pStmt.setString(3, comment);
+
+			Date posttime = new Date();
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+			pStmt.setString(4, sdf.format(posttime));
+			pStmt.setInt(5, 1);
+
+
+			//SQLを実行し、結果表を取得
+			int result = pStmt.executeUpdate();
+
+			//読み込んだ結果を処理する
+			if(result != 1) {
+				return false;
+			}
+
+
+		} catch (SQLException e) {
+			// 自動生成された catch ブロック
+			e.printStackTrace();
+			return false;
+
+		}
+		return true;
 
 	}
 

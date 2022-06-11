@@ -5,7 +5,6 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 
-
 <c:import url="../layout/template.jsp">
 
 
@@ -424,66 +423,68 @@
             <span>コメント</span>
         </h2>
 
-        <div class="container">
-            <div class="comment-wrap mt60">
-                <c:forEach var="com" items="${CommentList}" end="4">
-					<div>
-	                    <p class="comment-name">${com.name}　${com.post_time}</p>
-	                    <hr>
+	<div class="container">
+    	<div class="comment-wrap mt60">
+	        <c:forEach var="com" items="${CommentList}" end="4">
+	            <div>
+	                <p class="comment-name">${com.name}　${com.post_time}</p>
+	                <hr>
 
-	                    <p class="comment-text">${com.comment}</p>
-        			</div>
-				</c:forEach>
+	                <p class="comment-text">${com.comment}</p>
+	            </div>
+	        </c:forEach>
+
+	        <div class="flexC mt80">
+	            <div class="flexR">
+	                <i class="material-symbols-outlined">
+	                    comment
+	                </i>
+	                <p class="comment-leave">コメントを残す</p>
+	            </div>
+
+	            <div class="name">
+	                お名前
+	                <input id="comment-name" type="text" name="name">
+	            </div>
+
+	            <textarea id="comment-text" name="textarea" id="" cols="30" rows="4"></textarea>
+
+	            <input class="btn-comment" type="button" value="投稿">
+
+	            <div class="comment-modal">
+	                <div class="comment-modal-area">
+	                    <div class="center mb60">
+	                        以下の内容で投稿します。<br>
+	                        よろしいですか？
+	                    </div>
 
 
-                <div class="flexC mt80">
-                    <div class="flexR">
-                        <i class="material-symbols-outlined">
-                            comment
-                        </i>
-                        <p class="comment-leave">コメントを残す</p>
-                    </div>
+	                    <form action="/michimichi/Comment" method="post">
+	                        <div class="comment-modal-name flexR">
+	                            <span>お名前　：</span>
+	                            <span>
+	                                <input id="res-name" type="text" name="name" readonly>
+	                            </span>
+	                        </div>
 
-                    <div class="name">
-                        お名前
-                        <input id="comment-name" type="text" name="name">
-                    </div>
+	                        <div class="comment-modal-text flexR">
+	                            <span>コメント：</span>
+	                            <span class="res-comment-wrap">
+	                                <input id="res-text" type="text" name="comment" readonly>
+	                            </span>
+	                        </div>
 
-                    <textarea id="comment-text" name="textarea" id="" cols="30" rows="4"></textarea>
-
-                    <input class="btn-comment" type="button" value="投稿">
-
-                    <div class="comment-modal">
-                        <div class="comment-modal-area">
-                            <div class="center mb60">
-                                以下の内容で投稿します。<br>
-                                よろしいですか？
-                            </div>
-
-
-                            <form action="" method="post">
-                                <div class="comment-modal-name flexR">
-                                    <span>お名前　：</span>
-                                    <span>
-                                        <input id="res-name" type="text" readonly>
-                                    </span>
-                                </div>
-
-                                <div class="comment-modal-text flexR">
-                                    <span>コメント：</span>
-                                    <span class="res-comment-wrap">
-                                        <input id="res-text" type="text" readonly>
-                                    </span>
-                                </div>
-
-                                <div class="btn flexR">
-                                    <input class="btn-return" type="button" value="戻る">
-                                    <input class="btn-submit" type="submit" value="確認">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+	                        <div class="btn flexR">
+	                            <input class="btn-return" type="button" value="戻る">
+	                            <input class="btn-submit" type="submit" value="送信">
+	                        </div>
+	                        <input type="hidden" name="id" value="${station.michinoeki_id}">
+	                    </form>
+                     </div>
+                  </div>
+            </div>
+		</div>
+	</div>
     </section>
 
 	</c:param>

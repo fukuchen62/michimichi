@@ -1,6 +1,8 @@
 package servlet;
 
 import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -45,7 +47,11 @@ public class GoodRecords extends HttpServlet {
 
 		//リクエストパラメータの取得
 		//クライアントIPアドレス
-		String ip_id = request.getLocalAddr();
+		String ip_id = getLocalIpAddress();
+		if (ip_id.length() == 0) {
+			ip_id = getRemoteIpAddress(request);
+		}
+		System.out.println("ip_id:" + ip_id);
 
 		//道の駅ID
 		String para1 = request.getParameter("id");
@@ -91,6 +97,29 @@ public class GoodRecords extends HttpServlet {
 		};
 
 
+	}
+
+	private String getRemoteIpAddress(HttpServletRequest request) {
+		String remoteIpAddress = "";
+		String xForwardedFor = request.getHeader("X-Forwarded-For");
+		if (xForwardedFor != null && !xForwardedFor.isEmpty()) {
+			remoteIpAddress = xForwardedFor.split(",")[0].trim();
+		} else {
+			remoteIpAddress = request.getRemoteAddr();
+		}
+		return remoteIpAddress;
+	}
+
+	private String getLocalIpAddress() {
+		// ローカルホスト名とIPアドレスを取得
+				String ip_id = "";
+				try {
+					InetAddress addr = InetAddress.getLocalHost();
+					ip_id = addr.getHostAddress();
+				} catch (UnknownHostException e) {
+					e.printStackTrace();
+				}
+				return ip_id;
 	}
 
 }

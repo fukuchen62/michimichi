@@ -17,13 +17,15 @@ public class CommentLogic {
 		return CommentList;
 	}
 
-//	//入力されたイイネ情報をDBに書き込む
-//	public boolean insertComment(int con_id) {
-//		//DAOオブジェクト生成
-//		T_commentsDAO dao = new T_commentsDAO();
-//		//DBから全レコードを取得する
-//		boolean insertComment = dao.insertComment(con_id);
-//		return insertComment;
-//	}
+	//入力されたイイネ情報をDBに書き込む
+	public boolean insertComment(int con_id,String name, String comment) {
+		//DAOオブジェクト生成
+		T_commentsDAO dao = new T_commentsDAO();
+		if(dao.insertComment(con_id, name, comment) != false) {
+			return true;
+		}else {
+			return false;
+		}
+	}
 
 }
