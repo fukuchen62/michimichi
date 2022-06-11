@@ -470,7 +470,7 @@
 	                        <div class="comment-modal-text flexR">
 	                            <span>コメント：</span>
 	                            <span class="res-comment-wrap">
-	                                <input id="res-text" type="text" name="comment" readonly>
+                                        <textarea id="res-text" name="comment" cols="60" rows="10" readonly></textarea>
 	                            </span>
 	                        </div>
 
