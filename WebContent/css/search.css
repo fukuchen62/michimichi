@@ -184,6 +184,12 @@ body {
   margin-top: 20px;
 }
 
+#search .search-result .search-result-area .search-tag div {
+  margin-top: 10px;
+  font-weight: 400;
+  white-space: wrap;
+}
+
 #search .search-result .search-result-area .grid {
   padding: 20px;
 }
