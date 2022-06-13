@@ -195,17 +195,17 @@
 
 								<div class="flexR">
 									<input id="east-sp" class="dist" type="checkbox"
-										name="district"> <label for="east-sp">東部</label>
+										name="area" value="1"> <label for="east-sp">東部</label>
 								</div>
 
 								<div class="flexR">
 									<input id="west-sp" class="dist" type="checkbox"
-										name="district"> <label for="west-sp">西部</label>
+										name="area" value="2"> <label for="west-sp">西部</label>
 								</div>
 
 								<div class="flexR">
 									<input id="south-sp" class="dist" type="checkbox"
-										name="district"> <label for="south-sp">南部</label>
+										name="area" value="3"> <label for="south-sp">南部</label>
 								</div>
 							</div>
 						</div>
@@ -218,75 +218,75 @@
 							<div class="facility-wrap">
 								<div class="flexR">
 									<input id="eat-sp" class="checkbox" type="checkbox"
-										name="facility"> <label for="eat-sp"> <img
+										name="facility" value="1"> <label for="eat-sp"> <img
 										class="img" src="img/pictgram/eat.svg" alt="eat"> 食事処
 									</label>
 								</div>
 
 								<div class="flexR">
-									<input id="shop-sp" type="checkbox" name="facility"> <label
+									<input id="shop-sp" type="checkbox" name="facility" value="2"> <label
 										for="shop-sp"> <img class="img"
 										src="img/pictgram/shop.svg" alt="shop"> ショップ
 									</label>
 								</div>
 
 								<div class="flexR">
-									<input id="dog-sp" type="checkbox" name="facility"> <label
+									<input id="dog-sp" type="checkbox" name="facility" value="3"> <label
 										for="dog-sp"> <img class="img"
 										src="img/pictgram/dog.svg" alt="dog"> 介助犬
 									</label>
 								</div>
 								<div class="flexR">
-									<input id="wi-fi-sp" type="checkbox" name="facility"> <label
+									<input id="wi-fi-sp" type="checkbox" name="facility" value="4"> <label
 										for="wi-fi-sp"> <img class="img"
 										src="img/pictgram/wifi.svg" alt="wifi"> Wi-Fi
 									</label>
 								</div>
 
 								<div class="flexR">
-									<input id="wc-sp" type="checkbox" name="facility"> <label
+									<input id="wc-sp" type="checkbox" name="facility" value="5"> <label
 										for="wc-sp"> <img class="img"
 										src="img/pictgram/wc.svg" alt="wc"> 障碍者用トイレ
 									</label>
 								</div>
 
 								<div class="flexR">
-									<input id="baby-sp" type="checkbox" name="facility"> <label
+									<input id="baby-sp" type="checkbox" name="facility" value="6"> <label
 										for="baby-sp"> <img class="img"
 										src="img/pictgram/baby.svg" alt="baby"> おむつ台
 									</label>
 								</div>
 
 								<div class="flexR">
-									<input id="parking-sp" type="checkbox" name="facility">
+									<input id="parking-sp" type="checkbox" name="facility" value="7">
 									<label for="parking-sp"> <img class="img"
 										src="img/pictgram/parking.svg" alt="parking"> 障碍者用駐車場
 									</label>
 								</div>
 
 								<div class="flexR">
-									<input id="gs-sp" type="checkbox" name="facility"> <label
+									<input id="gs-sp" type="checkbox" name="facility" value="8"> <label
 										for="gs-sp"> <img class="img"
 										src="img/pictgram/gas.svg" alt="gas"> ガソリンスタンド
 									</label>
 								</div>
 
 								<div class="flexR">
-									<input id="ev-sp" type="checkbox" name="facility"> <label
+									<input id="ev-sp" type="checkbox" name="facility" value="9"> <label
 										for="ev-sp"> <img class="img"
 										src="img/pictgram/ev.svg" alt="ev"> EVスタンド
 									</label>
 								</div>
 
 								<div class="flexR">
-									<input id="info-sp" type="checkbox" name="facility"> <label
+									<input id="info-sp" type="checkbox" name="facility" value="10"> <label
 										for="info-sp"> <img class="img"
 										src="img/pictgram/info.svg" alt="info"> 観光案内
 									</label>
 								</div>
 
 								<div class="flexR">
-									<input id="hotspring-sp" type="checkbox" name="facility">
+									<input id="hotspring-sp" type="checkbox" name="facility" value="11">
 									<label for="hotspring-sp"> <img class="img"
 										src="img/pictgram/hotspring.svg" alt="hotspring"> 温泉
 									</label>
@@ -302,35 +302,35 @@
 							<div class="wrap">
 								<div class="around-wrap">
 									<div class="flexR">
-										<input id="conveni-sp" type="checkbox" name="around">
+										<input id="conveni-sp" type="checkbox" name="facility" value="12">
 										<label for="conveni-sp"> <img class="img"
-											src="img/pictgram/conveni.svg" alt="conveni"> コンビニ
+											src="img/pictgram/conveni.Ssvg" alt="conveni"> コンビニ
 										</label>
 									</div>
 
 									<div class="flexR">
-										<input id="drug-sp" type="checkbox" name="around"> <label
+										<input id="drug-sp" type="checkbox" name="facility" value="13"> <label
 											for="drug-sp"> <img class="img"
 											src="img/pictgram/drug.svg" alt="drug"> ドラッグストア
 										</label>
 									</div>
 
 									<div class="flexR">
-										<input id="a-gs-sp" type="checkbox" name="around"> <label
+										<input id="a-gs-sp" type="checkbox" name="facility" value="14"> <label
 											for="a-gs-sp"> <img class="img"
 											src="img/pictgram/gas.svg" alt="gas"> ガソリンスタンド
 										</label>
 									</div>
 
 									<div class="flexR">
-										<input id="hospital-sp" type="checkbox" name="around">
+										<input id="hospital-sp" type="checkbox" name="facility" value="15">
 										<label for="hospital-sp"> <img class="img"
 											src="img/pictgram/hospital.svg" alt="hospital"> 病院
 										</label>
 									</div>
 
 									<div class="flexR">
-										<input id="station-sp" type="checkbox" name="around">
+										<input id="station-sp" type="checkbox" name="facility" value="16">
 										<label for="station-sp"> <img class="img"
 											src="img/pictgram/station.svg" alt="station"> 最寄り駅<br>
 											バス停
@@ -338,21 +338,21 @@
 									</div>
 
 									<div class="flexR">
-										<input id="exp-sp" type="checkbox" name="around"> <label
+										<input id="exp-sp" type="checkbox" name="facility" value="17"> <label
 											for="exp-sp"> <img class="img"
 											src="img/pictgram/exp.svg" alt="exp"> 体験施設
 										</label>
 									</div>
 
 									<div class="flexR">
-										<input id="a-hotspring-sp" type="checkbox" name="around">
+										<input id="a-hotspring-sp" type="checkbox" name="facility" value="18">
 										<label for="a-hotspring-sp"> <img class="img"
 											src="img/pictgram/hotspring.svg" alt="hotspring"> 温泉
 										</label>
 									</div>
 
 									<div class="flexR">
-										<input id="hotel-sp" type="checkbox" name="around"> <label
+										<input id="hotel-sp" type="checkbox" name="facility" value="19"> <label
 											for="hotel-sp"> <img class="img"
 											src="img/pictgram/hotel.svg" alt="hotel"> 宿泊施設
 										</label>
@@ -478,6 +478,12 @@
 													<img src="${searchresult.tag11_icon_path2}">
 												</c:otherwise>
 											</c:choose>
+										</div>
+									</div>
+									<div class="pict-around">
+										周辺施設
+										<hr class="hr-style">
+										<div class="pict-area">
 											<c:choose>
 												<c:when test="${searchresult.tag12}">
 													<img src="${searchresult.tag12_icon_path1}">
@@ -494,13 +500,6 @@
 													<img src="${searchresult.tag13_icon_path2}">
 												</c:otherwise>
 											</c:choose>
-										</div>
-									</div>
-
-									<div class="pict-around">
-										周辺施設
-										<hr class="hr-style">
-										<div class="pict-area">
 											<c:choose>
 												<c:when test="${searchresult.tag14}">
 													<img src="${searchresult.tag14_icon_path1}">
@@ -539,6 +538,14 @@
 												</c:when>
 												<c:otherwise>
 													<img src="${searchresult.tag18_icon_path2}">
+												</c:otherwise>
+											</c:choose>
+											<c:choose>
+												<c:when test="${searchresult.tag19}">
+													<img src="${searchresult.tag19_icon_path1}">
+												</c:when>
+												<c:otherwise>
+													<img src="${searchresult.tag19_icon_path2}">
 												</c:otherwise>
 											</c:choose>
 										</div>
