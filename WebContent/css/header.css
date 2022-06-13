@@ -387,8 +387,8 @@ a {
   .site-map .container .site-map-title {
     margin: 40px auto;
   }
-  .site-map .container #feature-top .wrap-01,
-  .site-map .container #feature-top .wrap-02 {
+  .site-map .container .wrap-01,
+  .site-map .container .wrap-02 {
     display: -ms-grid;
     display: grid;
     -ms-grid-rows: 1;
@@ -396,12 +396,12 @@ a {
         grid-template-areas: "item1 item2 item3", "item4 item5 item6";
     grid-gap: 5px;
   }
-  .site-map .container #feature-top .wrap-01 .material-symbols-rounded,
-  .site-map .container #feature-top .wrap-02 .material-symbols-rounded {
+  .site-map .container .wrap-01 .material-symbols-rounded,
+  .site-map .container .wrap-02 .material-symbols-rounded {
     font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
   }
-  .site-map .container #feature-top .wrap-01 .item,
-  .site-map .container #feature-top .wrap-02 .item {
+  .site-map .container .wrap-01 .item,
+  .site-map .container .wrap-02 .item {
     width: 100%;
     height: 150px;
     margin: 10px auto;
@@ -413,8 +413,8 @@ a {
     font-size: 20px;
     text-decoration: none;
   }
-  .site-map .container #feature-top .wrap-01 .item .flexC,
-  .site-map .container #feature-top .wrap-02 .item .flexC {
+  .site-map .container .wrap-01 .item .flexC,
+  .site-map .container .wrap-02 .item .flexC {
     width: 90%;
     word-break: normal;
     -webkit-box-pack: center;
@@ -424,53 +424,53 @@ a {
         -ms-flex-align: center;
             align-items: center;
   }
-  .site-map .container #feature-top .wrap-01 .item .flexC .icon,
-  .site-map .container #feature-top .wrap-02 .item .flexC .icon {
+  .site-map .container .wrap-01 .item .flexC .icon,
+  .site-map .container .wrap-02 .item .flexC .icon {
     width: 85px;
     height: 85px;
     margin-bottom: 10px;
     font-size: 84px;
   }
-  .site-map .container #feature-top .wrap-01 .item .flexC .item-desc,
-  .site-map .container #feature-top .wrap-02 .item .flexC .item-desc {
+  .site-map .container .wrap-01 .item .flexC .item-desc,
+  .site-map .container .wrap-02 .item .flexC .item-desc {
     word-break: break-all;
   }
-  .site-map .container #feature-top .wrap-01 .item::before, .site-map .container #feature-top .wrap-01 .item::after,
-  .site-map .container #feature-top .wrap-02 .item::before,
-  .site-map .container #feature-top .wrap-02 .item::after {
+  .site-map .container .wrap-01 .item::before, .site-map .container .wrap-01 .item::after,
+  .site-map .container .wrap-02 .item::before,
+  .site-map .container .wrap-02 .item::after {
     content: "";
     position: absolute;
   }
-  .site-map .container #feature-top .wrap-01 .item1::before,
-  .site-map .container #feature-top .wrap-01 .item2::before,
-  .site-map .container #feature-top .wrap-01 .item3::before,
-  .site-map .container #feature-top .wrap-02 .item1::before,
-  .site-map .container #feature-top .wrap-02 .item2::before,
-  .site-map .container #feature-top .wrap-02 .item3::before {
+  .site-map .container .wrap-01 .item1::before,
+  .site-map .container .wrap-01 .item2::before,
+  .site-map .container .wrap-01 .item3::before,
+  .site-map .container .wrap-02 .item1::before,
+  .site-map .container .wrap-02 .item2::before,
+  .site-map .container .wrap-02 .item3::before {
     width: 80%;
     bottom: -14px;
     border-bottom: 3px solid #fafeff;
   }
-  .site-map .container #feature-top .wrap-01 .item1::after,
-  .site-map .container #feature-top .wrap-01 .item2::after,
-  .site-map .container #feature-top .wrap-01 .item4::after,
-  .site-map .container #feature-top .wrap-02 .item1::after,
-  .site-map .container #feature-top .wrap-02 .item2::after,
-  .site-map .container #feature-top .wrap-02 .item4::after {
+  .site-map .container .wrap-01 .item1::after,
+  .site-map .container .wrap-01 .item2::after,
+  .site-map .container .wrap-01 .item4::after,
+  .site-map .container .wrap-02 .item1::after,
+  .site-map .container .wrap-02 .item2::after,
+  .site-map .container .wrap-02 .item4::after {
     height: 80%;
     top: 15px;
     right: -4px;
     border-right: 3px solid #fafeff;
   }
-  .site-map .container #feature-top .wrap-01 {
+  .site-map .container .wrap-01 {
     -ms-grid-columns: (1fr);
         grid-template-columns: repeat(3, 1fr);
   }
-  .site-map .container #feature-top .wrap-02 {
+  .site-map .container .wrap-02 {
     -ms-grid-columns: (1fr);
         grid-template-columns: repeat(2, 1fr);
   }
-  .site-map .container #feature-top .wrap-02 .item .flexC {
+  .site-map .container .wrap-02 .item .flexC {
     width: 60%;
   }
   .site-map .container .sns-wrap {

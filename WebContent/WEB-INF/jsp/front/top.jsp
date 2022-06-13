@@ -47,18 +47,9 @@
         </h1>
 
         <div class="search-links">
-            <form class="form" action="">
-                <input id="west-link" type="submit" name="area" value="1">
-                <label for="west-link">東の駅はこちら</label>
-            </form>
-            <form class="form" action="">
-                <input id="east-link" type="submit" name="area" value="2">
-                <label for="east-link">西の駅はこちら</label>
-            </form>
-            <form class="form" action="">
-                <input id="south-link" type="submit" name="area" value="3">
-                <label for="south-link">南の駅はこちら</label>
-            </form>
+            <a href="">東の駅はこちら</a>
+            <a href="">西の駅はこちら</a>
+            <a href="">南の駅はこちら</a>
         </div>
     </div>
 
