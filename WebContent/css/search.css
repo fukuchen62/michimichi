@@ -80,8 +80,6 @@ body {
   display: grid;
   -ms-grid-columns: (1fr);
       grid-template-columns: repeat(3, 1fr);
-  -ms-grid-rows: (1fr);
-      grid-template-rows: repeat(10, 1fr);
   grid-column-gap: 5%;
   grid-row-gap: 20px;
 }
