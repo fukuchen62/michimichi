@@ -224,14 +224,18 @@ a {
 #top-search .btn:hover,
 #pickup .btn:hover,
 #sns .btn:hover {
-  animation: btn-anime 0.3s 0.1s forwards;
+  animation: btn-anime 0.5s forwards;
 }
 
 @keyframes btn-anime{
 	0%{
+	 transform: translateY(0%) scale(1);
+	}
+
+	33%{
 	 transform: translateY(5%) scale(0.95);
 	}
-	50%{
+	66%{
 	 transform: translateY(0%) scale(1);
 	}
 	100%{

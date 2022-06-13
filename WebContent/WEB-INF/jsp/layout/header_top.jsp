@@ -52,7 +52,9 @@
             </div>
 
             <div class="g-navi tab">
-	            <div class="logo"></div>
+            	<a href="CtrlForFront?pge_id=1">
+	            	<div class="logo"></div>
+				</a>
 
                 <a href="CtrlForFront?pge_id=1">
                     <img class="navi-mark" src="img/index/gnav/tab/nav_top_tab.svg" alt="to_top">
@@ -76,17 +78,17 @@
                 </div>
 
                 <div class="wrap-01">
-                    <a class="item item1 flexR" href="CtrlForFront?pge_id=1">
+                    <a class="item item1 flexR" href="CtrlForFront?pge_id=3">
                         <div class="flexC">
                             <img src="img/index/gnav/sp/nav_pickup_sp.svg" alt="sitemap_pickup">
                         </div>
                     </a>
-                    <a class="item item2 flexR" href="CtrlForFront?pge_id=2">
+                    <a class="item item2 flexR" href="CtrlForFront?pge_id=1">
                         <div class="flexC">
                             <img src="img/index/gnav/sp/nav_top_sp.svg" alt="sitemap_to_top">
                         </div>
                     </a>
-                    <a class="item item3 flexR" href="CtrlForFront?pge_id=3">
+                    <a class="item item3 flexR" href="CtrlForFront?pge_id=2">
                         <div class="flexC">
                             <img src="img/index/gnav/sp/nav_search_sp.svg" alt="sitemap_search">
                         </div>

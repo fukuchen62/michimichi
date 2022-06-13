@@ -246,9 +246,8 @@ body {
     font-size: 4.29vw;
   }
 #search .container {
-    width: 90%;
     width: 100%;
-    padding: 60px 0;
+    padding: 120px 0 60px;
   }
 #search .container input {
     display: none;
