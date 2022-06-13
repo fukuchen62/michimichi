@@ -15,7 +15,7 @@
 
 	<c:param name="content">
 
-	    <section id="topView">
+	    <section id="feature-top">
         <div class="container">
             <div class="wrap">
                 <div class="wrap-img">

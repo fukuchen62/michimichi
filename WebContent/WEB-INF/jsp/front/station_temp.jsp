@@ -94,11 +94,11 @@
                     <a class="comment" href="#comment">コメント欄へ(10)</a>
                     <span class="good">
                     <form action="/michimichi/GoodRecords" method ="post">
-                        <button>
-                            <i class="thumb material-symbols-outlined">
+                        <button class="btn-good">
+                            <i id="thumb" class="thumb material-symbols-outlined">
                                 thumb_up
                             </i>
-                            <i class="heart material-symbols-outlined">
+                            <i id="heart" class="heart material-symbols-outlined">
                                 favorite
                             </i>
                         </button>

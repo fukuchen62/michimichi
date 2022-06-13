@@ -102,47 +102,47 @@ body {
 }
 
 #search .facility-wrap,
-#search .around-wrap {
+#search .wrap .around-wrap {
   -ms-grid-columns: (1fr);
       grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 20px;
   grid-row-gap: 20px;
 }
 
-#district,
-#district-sp {
+#search #district,
+#search #district-sp {
   margin-top: 20px;
 }
 
-#district .district-wrap,
-#district-sp .district-wrap {
+#search #district .district-wrap,
+#search #district-sp .district-wrap {
   -ms-grid-columns: (1fr);
       grid-template-columns: repeat(4, 1fr);
 }
 
-#facility,
-#facility-sp {
+#search #facility,
+#search #facility-sp {
   margin-top: 0px;
 }
 
-#facility .facility-wrap,
-#facility-sp .facility-wrap {
+#search #facility .facility-wrap,
+#search #facility-sp .facility-wrap {
   -ms-grid-rows: (1fr);
       grid-template-rows: repeat(3, 1fr);
 }
 
-#around,
-#around-sp {
+#search #around,
+#search #around-sp {
   margin-top: 0px;
 }
 
-#around .wrap,
-#around-sp .wrap {
+#search #around .wrap,
+#search #around-sp .wrap {
   background-color: #fafeff;
 }
 
-#around .wrap .around-wrap,
-#around-sp .wrap .around-wrap {
+#search #around .wrap .around-wrap,
+#search #around-sp .wrap .around-wrap {
   -ms-grid-rows: (1fr);
       grid-template-rows: repeat(2, 1fr);
 }
