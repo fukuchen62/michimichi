@@ -383,9 +383,8 @@
 							<div class="search-result-indi checked">
 								<img class="img" src="${searchresult.photo_path1}"
 									alt="${searchresult.alt1}">
-
 								<p class="title center">${searchresult.michinoeki_name}</p>
-
+								<!--
 								<div class="pictgram">
 									<div class="pict-facility">
 										設備
@@ -551,7 +550,7 @@
 											</c:choose>
 										</div>
 									</div>
-								</div>
+								</div>-->
 							</div>
 
 						</c:forEach>
