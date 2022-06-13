@@ -96,6 +96,7 @@ h1 {
 
 .station-desc {
   padding: 15px;
+  color: #444;
   font-size: 20px;
   line-height: 1.5;
   white-space: wrap;
@@ -255,7 +256,7 @@ h1 {
 
 #recommend .wrap .pc .upper-row .flexC .recommend-desc,
 #recommend .wrap .pc .lower-row .flexC .recommend-desc {
-  width: 220px;
+  width: 240px;
   margin-top: 10px;
   background-color: #fff;
   border: 2px solid #444;
@@ -487,6 +488,7 @@ h1 {
 
 #information .container .wrap .info {
   padding-bottom: 20px;
+  color: #444;
 }
 
 #information .container .wrap .info th,
@@ -524,6 +526,7 @@ h1 {
   border-color: #888;
   border-radius: 5px;
   background-color: #fafeff;
+  color: #444;
 }
 
 #information .container .wrap .info .info-more {
@@ -552,10 +555,32 @@ h1 {
   z-index: 1;
 }
 
+#comment .comment-wrap .comment-name {
+  color: #444;
+}
+
 #comment .comment-wrap .comment-text {
   width: 100%;
   margin: 1rem 0;
   padding-left: 3rem;
+  color: #444;
+}
+
+#comment .comment-wrap .comment-accordion {
+  display: none;
+}
+
+#comment .comment-wrap .comment-more p {
+  color: #444;
+}
+
+#comment .comment-wrap .comment-more .arrow {
+  color: #444;
+}
+
+#comment .comment-wrap .comment-more .arrow.active {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 #comment .comment-wrap .comment-modal {
@@ -662,12 +687,18 @@ h1 {
   border-radius: 3px;
 }
 
+#comment .flexC .material-symbols-outlined {
+  color: #444;
+}
+
 #comment .flexC .comment-leave {
   margin: 0 0 10px 5px;
+  color: #444;
 }
 
 #comment .flexC .name {
   margin: 0 0 5px 5px;
+  color: #444;
 }
 
 #comment .flexC .btn-comment {
@@ -684,6 +715,7 @@ h1 {
   -ms-flex-item-align: end;
       align-self: flex-end;
   -webkit-transition: 0.3s all;
+  color: #444;
   transition: 0.3s all;
 }
 

@@ -434,6 +434,28 @@
 	            </div>
 	        </c:forEach>
 
+			<!-- コメント折り畳みアコーディオン -->
+            <div class="comment-accordion">
+                <div>
+                    <p class="comment-name">お名前　2020-2-12 17:00</p>
+                    <hr>
+
+                    <p class="comment-text">
+                        text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text </p>
+                </div>
+            </div>
+
+			<!-- もっと見るボタン -->
+            <div class="comment-more">
+                <hr>
+                <p class="center">もっと見る</p>
+                <!-- <p class="arrow center">　</p> -->
+                <div class="arrow center">
+                    <i class="material-symbols-outlined">expand_more</i>
+                </div>
+                <hr>
+            </div>
+
 	        <div class="flexC mt80">
 	            <div class="flexR">
 	                <i class="material-symbols-outlined">

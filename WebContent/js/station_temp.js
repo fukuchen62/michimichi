@@ -37,6 +37,7 @@ $(document).ready(function(){
         $(this).toggleClass("active");
         $(this).next().slideToggle(300, "linear");
     });
+
     $(".btn-comment").click(function(){
         let name = document.getElementById("comment-name");
         let comment = document.getElementById("comment-text");
@@ -55,8 +56,15 @@ $(document).ready(function(){
             res_text.value = res_text.value.replace(/"/g, "”");
         });
     });
+
     $(".btn-return, .btn-submit").click(function(){
         $(".comment-modal").css({"bottom": "-2000px"});
         $("#footer").css({"z-index": "1"});
     });
+
+    $(".comment-more").click(function(){
+        $(".comment-accordion").toggle("slow");
+        $(".arrow").toggleClass("active");
+    });
+
 });
