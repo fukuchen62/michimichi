@@ -20,7 +20,6 @@
         <h1 class="keyVisual">
             <div class="pc">
                 <div class="keyVisual-wrap">
-                    <img class="keyVisual-bg" src="img/index/key_visual_pc_bg.jpg" alt="keyVisual_pc_bg">
                     <img class="keyVisual-map" src="img/index/tokushima_map_pc.png" alt="keyVisual_pc">
                 </div>
                 <p class="catch-copy">道の駅で、<br>
@@ -28,14 +27,11 @@
                     <span>HOUR</span>
                     (アワー)
                 </p>
-                <div class="logo">
-                    <img src="img/logo/mainlogo.png" alt="logo_pc">
-                </div>
+                <div class="logo"></div>
             </div>
 
             <div class="sp">
                 <div class="keyVisual-wrap">
-                    <img class="keyVisual-bg" src="img/index/key_visual_tabbg.jpg" alt="keyVisual_sp_bg">
                     <img class="keyVisual-map" src="img/index/tokushima_map_tab.png" alt="keyVisual_sp">
                 </div>
                 <p class="catch-copy">道の駅で、<br>

@@ -71,9 +71,7 @@ body {
 }
 
 #search hr {
-  width: 90%;
   position: relative;
-  left: 5%;
   opacity: 0.5;
 }
 
@@ -220,6 +218,15 @@ body {
 
 #search .search-result .search-result-area .grid .search-result-indi .pictgram {
   height: 160px;
+}
+#search .search-result .search-result-area .grid .search-result-indi .pictgram .pict-area {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 5px;
+}
+
+#search .search-result .search-result-area .grid .search-result-indi .pictgram .pict-area img{
+  border-radius: 3px;
 }
 
 #search .search-result .search-result-area .grid .search-result-indi .pictgram .pict-facility {

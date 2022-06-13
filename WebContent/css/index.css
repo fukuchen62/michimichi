@@ -97,16 +97,19 @@ body {
 }
 
 #keyVisual .keyVisual .keyVisual-wrap {
+  height: 100vh;
+  background: url(../img/index/key_visual_pc_bg.jpg) 0 0 no-repeat;
+  background-size: cover;
   position: relative;
 }
 
 #keyVisual .keyVisual .keyVisual-wrap .keyVisual-bg {
-	width: 100%;
-  height: 100vh;
+  width: 100%;
 }
 
 #keyVisual .keyVisual .keyVisual-wrap .keyVisual-map {
   width: 50%;
+  height:80vh;
   position: absolute;
   bottom: 3%;
   left: 50%;
@@ -154,27 +157,29 @@ body {
       justify-content: space-around;
 }
 
-#keyVisual .search-links .form {
-  padding: 20px 0;
-}
+
 
 #keyVisual .search-links .form input {
 	display: none;
 }
-#keyVisual .search-links .form label {
+#keyVisual .search-links a {
+  margin: 5px 0;
   padding: 5px 20px;
   background-color: rgba(255, 255, 255, 0.5);
   border: 5px solid rgba(136, 193, 216, 0.65);
   border-radius: 30px;
+  color: #444;
   font-size: 2vw;
 }
 
 #keyVisual .logo {
   width: 25%;
-  height: auto;
+  height: 20vh;
+  background: url(../img/logo/main_logo.svg) left bottom no-repeat;
   position: absolute;
   bottom: 20px;
   left: 20px;
+  vertical-align: bottom;
 }
 
 #keyVisual .logo img {
@@ -319,7 +324,6 @@ body {
     position: relative;
   }
   #keyVisual .keyVisual .keyVisual-wrap .keyVisual-map {
-    width: 650px;
     bottom: 3%;
     left: 50%;
     -webkit-transform: translateX(-50%);
@@ -340,7 +344,7 @@ body {
     font-weight: bold;
   }
   #keyVisual .logo {
-  width: 35%;
+  width: 30%;
   }
 
 }
@@ -358,11 +362,11 @@ body {
     width: 150px;
   }
   #keyVisual .keyVisual .keyVisual-wrap {
-    position: relative;
+	position: relative;
   }
   #keyVisual .keyVisual .keyVisual-wrap .keyVisual-map {
-    width: 80%;
-    bottom: 15%;
+    /* width: 80%;
+    bottom: 15%; */
   }
   #keyVisual .keyVisual .catch-copy {
     top: 120px;
@@ -420,7 +424,7 @@ body {
   #keyVisual .keyVisual .sp .keyVisual-wrap .keyVisual-map {
     width: 70%;
     left: 55%;
-    bottom: 10%;
+    bottom: 5%;
   }
   #keyVisual .keyVisual .sp .catch-copy {
     left: 10px;
