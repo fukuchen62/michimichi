@@ -44,7 +44,7 @@
 
                     <div class="text-box">
                         <span class="text"> お問い合わせ内容</span>
-                        <textarea class="text-area" name="text" id="" cols="30" rows="40" placeholder="お問い合わせ内容を入力してください"></textarea>
+                        <textarea id="inquiry-text" class="text-area" name="text" id="" cols="30" rows="40" placeholder="お問い合わせ内容を入力してください"></textarea>
                     </div>
 
                     <div class="accept-box">
