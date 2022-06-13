@@ -34,10 +34,19 @@
             </div>
         </h1>
 
-        <div class="search-links">
-            <a href="">東の駅はこちら</a>
-            <a href="">西の駅はこちら</a>
-            <a href="">南の駅はこちら</a>
+		<div class="pc">
+	        <div class="search-links">
+	            <a href="">東の駅はこちら</a>
+	            <a href="">西の駅はこちら</a>
+	            <a href="">南の駅はこちら</a>
+	        </div>
+        </div>
+		<div class="sp">
+	        <div class="search-links">
+	            <a href="">東の駅は<br>こちら</a>
+	            <a href="">西の駅は<br>こちら</a>
+	            <a href="">南の駅は<br>こちら</a>
+	        </div>
         </div>
     </div>
 
