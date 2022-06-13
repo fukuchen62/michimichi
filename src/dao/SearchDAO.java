@@ -462,7 +462,7 @@ public class SearchDAO {
 				}
 				//エリアIDが「3」の場合
 				if(search_area_id[i]==3) {
-					sql += "M_ROAD_STATIONS.AREA_ID=3 AND";
+					sql += "M_ROAD_STATIONS.AREA_ID=3 AND ";
 					//複数の施設IDが選択された場合
 					for(int j=0;j<search_facilities_id.length;j++) {
 						if(search_facilities_id[j]==1) {
