@@ -5,7 +5,7 @@
 
 
 
-<c:import url="../layout/template_footerLess.jsp">
+<c:import url="../layout/template.jsp">
 
 
 		<c:param name="title" value="お問い合わせ　―　みちのえき～未知のえき～" />
@@ -24,8 +24,7 @@
                 トップページへ戻ります。
             </h3>
             <br>
-
-            <input class="btn-toTop" type="button" value="確認">
+            <input class="btn-toTop" type="button" value="戻る" onclick="location.href='/michimichi/Form'">
         </div>
     	</section>
 

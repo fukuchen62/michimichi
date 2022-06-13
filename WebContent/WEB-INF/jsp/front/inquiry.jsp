@@ -31,7 +31,7 @@
         </p>
         <div class="border">
             <div class="form-wrap">
-                <form action="" method="post">
+                <form action="/michimichi/Form"  method="post">
                     <div class="name-box">
                         <span class="name">お名前</span>
                         <input class="name-input" type="text" name="name" maxlength="32" placeholder="お名前を入力してください" required>

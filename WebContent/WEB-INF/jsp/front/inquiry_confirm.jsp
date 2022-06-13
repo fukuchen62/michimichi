@@ -1,11 +1,15 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="beans.FormBs" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%
+//リクエストスコープから取得
+	FormBs form =(FormBs)session.getAttribute("form");
+%>
 
 
-
-<c:import url="../layout/template_footerLess.jsp">
+<c:import url="../layout/template.jsp">
 
 
 		<c:param name="title" value="お問い合わせ　―　みちのえき～未知のえき～" />
@@ -26,7 +30,6 @@
             </h3>
             <br>
             <p class="center">内容をご確認の上、<br>送信ボタンを押してください。</p>
-
             <div class="confirm-wrap">
                 <table>
                     <tr>
@@ -34,7 +37,7 @@
                             お名前
                         </th>
                         <td>
-                            クリップ太郎
+                            <%= form.getName() %>
                         </td>
                     </tr>
 
@@ -43,7 +46,7 @@
                             メールアドレス
                         </th>
                         <td>
-                            qlip@gmail.com
+                            <%= form.getEmail() %>
                         </td>
                     </tr>
 
@@ -52,8 +55,7 @@
                             お問い合わせ内容
                         </th>
                         <td>
-                            胃が激しく痛いです。<br>
-                            助けてください。
+							<%= form.getText() %>
                         </td>
                     </tr>
                 </table>
@@ -61,8 +63,9 @@
 
             <div class="btn flexR">
                 <input class="btn-return" type="button" value="戻る" onclick="history.back()">
-                <input class="btn-submit" type="submit" value="送信">
+                <input class="btn-submit" type="submit" value="送信"onclick="location.href='/michimichi/Form?action=done'">
             </div>
+
         </div>
     	</section>
 
