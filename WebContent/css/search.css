@@ -136,18 +136,18 @@ body {
   margin-top: 0px;
 }
 
-#around .wrap,
-#around-sp .wrap {
+#around #feature-top .wrap,
+#around-sp #feature-top #feature-top .wrap {
   background-color: #fafeff;
 }
 
-#around .wrap .around-wrap,
-#around-sp .wrap .around-wrap {
+#around #feature-top #feature-top .wrap .around-wrap,
+#around-sp #feature-top #feature-top .wrap .around-wrap {
   -ms-grid-rows: (1fr);
       grid-template-rows: repeat(2, 1fr);
 }
 
-#search #around .wrap .search-btn {
+#search #around #feature-top #feature-top .wrap .search-btn {
   width: 100%;
   padding: 20px 0;
   background-color: #fafeff;
@@ -159,20 +159,20 @@ body {
           justify-content: center;
 }
 
-#search #around .wrap .search-btn .btn-reset,
-#search #around .wrap .search-btn .btn-search {
+#search #around #feature-top #feature-top .wrap .search-btn .btn-reset,
+#search #around #feature-top #feature-top .wrap .search-btn .btn-search {
   width: 150px;
   height: 50px;
   border-color: #ccc;
   border-radius: 5px;
 }
 
-#search #around .wrap .search-btn .btn-reset:hover,
-#search #around .wrap .search-btn .btn-search:hover {
+#search #around #feature-top #feature-top .wrap .search-btn .btn-reset:hover,
+#search #around #feature-top #feature-top .wrap .search-btn .btn-search:hover {
   cursor: pointer;
 }
 
-#search #around .wrap .search-btn .btn-search {
+#search #around #feature-top #feature-top .wrap .search-btn .btn-search {
   margin-left: 80px;
 }
 
@@ -270,7 +270,7 @@ body {
     margin-bottom: 5px;
   }
 
-#search #around-sp .wrap .search-btn {
+#search #around-sp #feature-top #feature-top .wrap .search-btn {
 	width: 100%;
 	padding: 20px 0;
 	background-color: #fafeff;
@@ -282,14 +282,14 @@ body {
 	justify-content: space-around;
   }
 
-#search #around-sp .wrap .search-btn .btn-reset,
-#search #around-sp .wrap .search-btn .btn-search {
+#search #around-sp #feature-top #feature-top .wrap .search-btn .btn-reset,
+#search #around-sp #feature-top #feature-top .wrap .search-btn .btn-search {
     width: 150px;
     height: 50px;
     border-color: #ccc;
     border-radius: 5px;
 }
-#search #around-sp .wrap .search-btn .btn-search {
+#search #around-sp #feature-top #feature-top .wrap .search-btn .btn-search {
     margin-left: 0px;
   }
 

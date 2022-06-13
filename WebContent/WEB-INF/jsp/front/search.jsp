@@ -17,7 +17,6 @@
 
 	<c:param name="content">
 
-
 		<!-- pc -->
 		<section id="search">
 			<div class="container pc">

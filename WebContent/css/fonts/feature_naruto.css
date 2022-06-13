@@ -31,7 +31,7 @@
 }
 
 .desc {
-  padding: 10px 15px;
+  padding: 15px;
   font-size: 18px;
   line-height: 1.6;
 }
@@ -47,23 +47,27 @@ h1 {
 /****************************************************************************
  @1351px～
 ****************************************************************************/
-#feature-temp .container90 {
+.topView {
+  width: 100%;
+}
+
+.container90 {
   width: 1250px;
   padding-bottom: 60px;
   background-color: #c7e3ee;
 }
 
-#feature-temp .container {
+.container {
   width: 1152px;
   background-color: #c7e3ee;
 }
 
-#feature-temp .container h1 {
+.container h1 {
   width: 100%;
   height: auto;
 }
 
-#feature-temp .container .recommend {
+.container .recommend {
   width: 100%;
   margin-top: 60px;
   padding: 0 30px;
@@ -75,7 +79,7 @@ h1 {
           justify-content: space-between;
 }
 
-#feature-temp .container .recommend .img-column {
+.container .recommend .img-column {
   width: 440px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -83,21 +87,19 @@ h1 {
   margin: 30px 0;
 }
 
-#feature-temp .container .recommend .img-column .upper-img,
-#feature-temp .container .recommend .img-column .lower-img {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+.container .recommend .img-column .upper-img,
+.container .recommend .img-column .lower-img {
+  width: 100%;
   height: auto;
-  border: 5px solid #e69c81;
+  border: 2px solid #e69c81;
   border-radius: 5px;
 }
 
-#feature-temp .container .recommend .img-column .upper-img + .lower-img {
+.container .recommend .img-column .upper-img + .lower-img {
   margin-top: 20px;
 }
 
-#feature-temp .container .recommend h2 {
+.container .recommend h2 {
   width: 100%;
   height: auto;
   margin: 0 30px 15px 0;
@@ -109,7 +111,7 @@ h1 {
   font-size: 20px;
 }
 
-#feature-temp .container .recommend h2 span {
+.container .recommend h2 span {
   position: absolute;
   left: 50%;
   top: 53%;
@@ -119,12 +121,12 @@ h1 {
   white-space: nowrap;
 }
 
-#feature-temp .container .recommend .desc-column {
+.container .recommend .desc-column {
   width: 610px;
   margin: 15px 0 30px 30px;
 }
 
-#feature-temp .container .recommend .desc-column .recommend-desc {
+.container .recommend .desc-column .recommend-desc {
   width: 100%;
   height: 100%;
   border: 2px solid #444;
@@ -136,19 +138,19 @@ h1 {
  ～@1350px
 ****************************************************************************/
 @media screen and (max-width: 1920px) {
-  #feature-temp .container90 {
-    width: 1024px;
+  .container90 {
+    width: 1040px;
   }
-  #feature-temp .container {
+  .container {
     width: 960px;
   }
-  #feature-temp .container .recommend .img-column {
+  .container .recommend .img-column {
     width: 370px;
   }
-  #feature-temp .container .recommend h2 span {
+  .container .recommend h2 span {
     font-size: 22px;
   }
-  #feature-temp .container .recommend .desc-column {
+  .container .recommend .desc-column {
     width: 505px;
   }
 }
@@ -157,22 +159,22 @@ h1 {
  ～@1024px
 ****************************************************************************/
 @media screen and (max-width: 1024px) {
-  #feature-temp .container90 {
+  .container90 {
     width: 100%;
   }
-  #feature-temp .container {
+  .container {
     width: 90%;
   }
-  #feature-temp .container .recommend {
+  .container .recommend {
     width: 100%;
     margin-top: 60px;
     padding: 0 5% 30px;
     border: 5px solid #88c1d8;
   }
-  #feature-temp .container .recommend .sp {
+  .container .recommend .sp {
     display: block;
   }
-  #feature-temp .container .recommend.flexR {
+  .container .recommend.flexR {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -181,33 +183,33 @@ h1 {
         -ms-flex-align: center;
             align-items: center;
   }
-  #feature-temp .container .recommend h2 {
+  .container .recommend h2 {
     width: 100%;
     margin: 30px 0 0;
   }
-  #feature-temp .container .recommend h2 span {
+  .container .recommend h2 span {
     font-size: 30px;
   }
-  #feature-temp .container .recommend .img-column {
+  .container .recommend .img-column {
     width: 100%;
     margin: 20px auto;
   }
-  #feature-temp .container .recommend .img-column .upper-img,
-  #feature-temp .container .recommend .img-column .lower-img {
+  .container .recommend .img-column .upper-img,
+  .container .recommend .img-column .lower-img {
     width: 100%;
     height: auto;
   }
-  #feature-temp .container .recommend .img-column .upper-img + .lower-img {
+  .container .recommend .img-column .upper-img + .lower-img {
     margin-top: 20px;
   }
-  #feature-temp .container .recommend .desc-column {
+  .container .recommend .desc-column {
     width: 100%;
     margin: 0;
   }
-  #feature-temp .container .recommend .desc-column .pc {
+  .container .recommend .desc-column .pc {
     display: none;
   }
-  #feature-temp .container .recommend .desc-column .recommend-desc {
+  .container .recommend .desc-column .recommend-desc {
     width: 100%;
     height: -webkit-fit-content;
     height: -moz-fit-content;
@@ -223,9 +225,19 @@ h1 {
  ～@768px
 ****************************************************************************/
 @media screen and (max-width: 768px) {
-  #feature-temp .container {
+  .container {
     width: 90%;
     min-width: 540px;
   }
 }
-/*# sourceMappingURL=feature_temp.css.map */
+
+/****************************************************************************
+ ～@583px
+****************************************************************************/
+@media screen and (max-width: 583px) {
+  .container {
+    width: 90%;
+    min-width: 486px;
+  }
+}
+/*# sourceMappingURL=feature_naruto.css.map */

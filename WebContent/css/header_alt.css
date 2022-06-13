@@ -431,7 +431,7 @@ a {
     font-size: 40px;
     text-shadow: 2px 2px 2px #88c1d8, -2px 2px 2px #88c1d8, 2px -2px 2px #88c1d8, -2px -2px 2px #88c1d8;
   }
-  #header .site-map .container .wrap {
+  #header .site-map .container #feature-top #feature-top .wrap {
     display: -ms-grid;
     display: grid;
     -ms-grid-rows: (1fr)[2];
@@ -441,10 +441,10 @@ a {
         grid-template-areas: "item1 item2 item3", "item4 item5 item6";
     grid-gap: 5px;
   }
-  #header .site-map .container .wrap .material-symbols-rounded {
+  #header .site-map .container #feature-top #feature-top .wrap .material-symbols-rounded {
     font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
   }
-  #header .site-map .container .wrap .item {
+  #header .site-map .container #feature-top #feature-top .wrap .item {
     width: 100%;
     height: 150px;
     margin: 10px auto;
@@ -456,7 +456,7 @@ a {
     font-size: 20px;
     text-decoration: none;
   }
-  #header .site-map .container .wrap .item .flexC {
+  #header .site-map .container #feature-top #feature-top .wrap .item .flexC {
     word-break: normal;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -465,30 +465,30 @@ a {
         -ms-flex-align: center;
             align-items: center;
   }
-  #header .site-map .container .wrap .item .flexC .icon {
+  #header .site-map .container #feature-top #feature-top .wrap .item .flexC .icon {
     width: 85px;
     height: 85px;
     margin-bottom: 10px;
     font-size: 84px;
   }
-  #header .site-map .container .wrap .item .flexC .item-desc {
+  #header .site-map .container #feature-top #feature-top .wrap .item .flexC .item-desc {
     word-break: break-all;
   }
-  #header .site-map .container .wrap .item::before, #header .site-map .container .wrap .item::after {
+  #header .site-map .container #feature-top #feature-top .wrap .item::before, #header .site-map .container #feature-top #feature-top .wrap .item::after {
     content: "";
     position: absolute;
   }
-  #header .site-map .container .wrap .item1::before,
-  #header .site-map .container .wrap .item2::before,
-  #header .site-map .container .wrap .item3::before {
+  #header .site-map .container #feature-top #feature-top .wrap .item1::before,
+  #header .site-map .container #feature-top #feature-top .wrap .item2::before,
+  #header .site-map .container #feature-top #feature-top .wrap .item3::before {
     width: 80%;
     bottom: -14px;
     border-bottom: 2px solid #444;
   }
-  #header .site-map .container .wrap .item1::after,
-  #header .site-map .container .wrap .item2::after,
-  #header .site-map .container .wrap .item4::after,
-  #header .site-map .container .wrap .item5::after {
+  #header .site-map .container #feature-top #feature-top .wrap .item1::after,
+  #header .site-map .container #feature-top #feature-top .wrap .item2::after,
+  #header .site-map .container #feature-top #feature-top .wrap .item4::after,
+  #header .site-map .container #feature-top #feature-top .wrap .item5::after {
     height: 80%;
     top: 15px;
     right: -4px;
@@ -507,7 +507,7 @@ a {
     width: 100%;
     margin: 0;
   }
-  #header .site-map .container .wrap {
+  #header .site-map .container #feature-top #feature-top .wrap {
     display: -ms-grid;
     display: grid;
     -ms-grid-rows: (1fr)[3];
@@ -517,17 +517,17 @@ a {
         grid-template-areas: "item1 item2", "item3 item4", "item5 item6";
     grid-gap: 5px;
   }
-  #header .site-map .container .wrap .item1::before,
-  #header .site-map .container .wrap .item2::before,
-  #header .site-map .container .wrap .item3::before,
-  #header .site-map .container .wrap .item4::before {
+  #header .site-map .container #feature-top #feature-top .wrap .item1::before,
+  #header .site-map .container #feature-top #feature-top .wrap .item2::before,
+  #header .site-map .container #feature-top #feature-top .wrap .item3::before,
+  #header .site-map .container #feature-top #feature-top .wrap .item4::before {
     width: 80%;
     bottom: -14px;
     border-bottom: 2px solid #444;
   }
-  #header .site-map .container .wrap .item1::after,
-  #header .site-map .container .wrap .item3::after,
-  #header .site-map .container .wrap .item5::after {
+  #header .site-map .container #feature-top #feature-top .wrap .item1::after,
+  #header .site-map .container #feature-top #feature-top .wrap .item3::after,
+  #header .site-map .container #feature-top #feature-top .wrap .item5::after {
     height: 80%;
     top: 15px;
     right: -4px;

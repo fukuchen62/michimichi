@@ -39,7 +39,7 @@ body {
   background-color: rgba(199, 227, 238, 0.3);
 }
 
-.wrap {
+#feature-top #feature-top .wrap {
   width: 90%;
   margin: 0 auto;
 }
