@@ -3,7 +3,7 @@ $(document).ready(function(){
         $(".policy-modal").toggle(50);
     });
     $(".btn-submit").click(function(){
-        let comment = document.getElementById("inquiry-text").value;
+        let comment = document.getElementById("inquiry-text");
 
         comment.value = comment.value.replace(/\n/g, "<br>");
         comment.value = comment.value.replace(/'/g, "’");
