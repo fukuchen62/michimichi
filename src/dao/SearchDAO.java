@@ -392,7 +392,7 @@ public class SearchDAO {
 						if(search_facilities_id.length==j+1) {
 						}else {
 						//リストの終わりでは無い場合　後に続く検索条件
-							sql += " AND ";
+							sql += " OR ";
 						}
 					}
 					//複数のエリア検索をするときにORを追加
@@ -450,7 +450,7 @@ public class SearchDAO {
 						if(search_facilities_id.length==j+1) {
 						}else {
 						//リストの終わりでは無い場合　後に続く検索条件
-							sql += " AND ";
+							sql += " OR ";
 						}
 					}
 					//複数のエリア検索をするときにORを追加
@@ -508,7 +508,7 @@ public class SearchDAO {
 						if(search_facilities_id.length==j+1) {
 						}else {
 						//リストの終わりでは無い場合　後に続く検索条件
-							sql += " AND ";
+							sql += " OR ";
 						}
 					}
 					//単体でも複数でもエリアID=3は最後になるのでOR追加文なし
