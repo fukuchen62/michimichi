@@ -230,11 +230,12 @@ body {
 }
 
 #search .search-result .search-result-area .grid .search-result-indi .pictgram .pict-facility {
-  height: 80px;
+  height: fit-content;
 }
 
 #search .search-result .search-result-area .grid .search-result-indi .pictgram .pict-around {
-  height: 80px;
+  margin-top: 10px;
+  height: fit-content;
 }
 
 /*********************************************************************
