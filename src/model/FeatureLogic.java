@@ -26,11 +26,11 @@ public class FeatureLogic {
 	}
 
 	//feature_idによる特定記事を取得
-	public Feature getMenuById(int id) {
+	public Feature getFeatureById(int feature_id) {
 		//DAOオブジェクト生成
 		T_featuresDAO dao = new T_featuresDAO();
 		//DBから全レコードを取得する
-		Feature feature = dao.findByFeatures(id);
+		Feature feature = dao.getFeature(feature_id);
 		return feature;
 	}
 

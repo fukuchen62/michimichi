@@ -77,10 +77,15 @@ public class FeatureListLogic {
 		}
 	}
 
-	public Feature getFeatureById(int feature_id) {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
+//特集を１つ呼び出す。
+	public Feature findFeatureById(int feature_id){
+		//DAOオブジェクト生成
+		T_featuresDAO dao = new T_featuresDAO();
+		//DBから全レコードを取得する
+		Feature feature = dao.findFeatureById(feature_id);
+		return feature;
 	}
+
 
 	//特集内容の削除
 	public boolean deleteFeatureList(int id) {
@@ -90,5 +95,13 @@ public class FeatureListLogic {
 		} else {
 			return false;
 		}
+	}
+
+	public Feature getFeatureById(int feature_id) {
+		//DAOオブジェクト生成
+		T_featuresDAO dao = new T_featuresDAO();
+		//DBから全レコードを取得する
+		Feature feature = dao.findFeatureById(feature_id);
+		return feature;
 	}
 }

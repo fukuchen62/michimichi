@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import beans.Feature;
@@ -325,14 +326,14 @@ public class T_featuresDAO {
 			//SQL文
 			sql = "INSERT INTO"
 					+ " feature"
-					+ "(feature_id,"
-					+ "feature_name,"
-					+ "feature_type_id,"
-					+ "main_photo_path,alt,"
-					+ "content,"
-					+ "show_flag,"
-					+ "create_time,"
-					+ "create_user_id)"
+					+ " feature_id,"
+					+ " feature_name,"
+					+ " feature_type_id,"
+					+ " main_photo_path,alt,"
+					+ " content,"
+					+ " show_flag,"
+					+ " create_time,"
+					+ " create_user_id)"
 					+ " VALUES"
 					+ " (?,?,?,?,?,?,?,?,?,?)";
 
@@ -376,55 +377,83 @@ public class T_featuresDAO {
 		return false;
 	}
 
-	//特集1つを呼び出す
-	public Feature findByFeatures(int id) {
+
+
+	/**
+	 * feature_idで該当記事を取得
+	 * @param featureid
+	 * @return
+	 */
+	public Feature findFeatureById(int Feature_id){
+
 		Feature feature = null;
 
 		//データベースに接続
 		Connection conn = null;
 		conn = DbConnection.conn;
-		if (conn == null)
-			return null;
+		if(conn == null) return null;
 
 		try {
+
 			//SELECT文を準備
 			String sql = "";
-			sql += "SELECT * ";
+
+//			sql = "SELECT"
+//					+ " *"
+//					+ " FROM posts"
+//					+ " WHERE "
+//					+ " post_id = ?";
+
+			sql += "SELECT feature.*,M_Accounts.name ";
 			sql += "FROM feature ";
+			sql += "INNER JOIN M_Accounts ";
+			sql += "ON feature.create_user_id = M_Accounts.user_id ";
 			sql += "WHERE ";
 			sql += "feature_id = ?";
 
 			//SQLを送信
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-			pStmt.setString(1, String.valueOf(feature));
+			pStmt.setInt(1, Feature_id);
 
 			//SELECTを実行し、結果を取得
 			ResultSet rs = pStmt.executeQuery();
 
-			//rs結果表に格納されたレコードをAccountインスタンスリストに代入
+			//rs結果表に格納されたレコードをPostインスタンスリストに代入
 			if (rs.next()) {
-				//Featureのデータを取得
+				//Postのデータを取得
 				int feature_id = rs.getInt("feature_id");
 				String feature_name = rs.getString("feature_name");
 				int feature_type_id = rs.getInt("feature_type_id");
-				String main_photo_path = rs.getString("main_photo_path");
+				String main_photo_id = rs.getString("main_photo_id");
 				String alt = rs.getString("alt");
-				String feature_list= rs.getString("feature_list");
+				String feature_list = rs.getString("feature_list");
 				String content = rs.getString("content");
 				String content_css = rs.getString("content_css");
 				int show_flag = rs.getInt("show_flag");
+				int update_user_id = rs.getInt("update_user_id");
+				Date update_time = rs.getTimestamp("update_time");
+				int create_user_id = rs.getInt("create_user_id");
+				Date createtime = rs.getTimestamp("create_time");
 
-				//accountインスタンスを生成
+				//postインスタンスを生成
 				feature = new Feature(
 						feature_id,
 						feature_name,
 						feature_type_id,
-						main_photo_path,
+						main_photo_id,
 						alt,
 						feature_list,
 						content,
 						content_css,
-						show_flag);
+						show_flag,
+						show_flag,
+						update_time,
+						update_user_id,
+						update_time,
+						create_user_id,
+						createtime
+						);
+
 			}
 
 		} catch (SQLException e) {
@@ -434,16 +463,17 @@ public class T_featuresDAO {
 
 		} finally {
 			//データベース切断
-			//			if(conn != null) {
-			//				if(DbConnection.dbDisconnection(conn)==false) {
-			//					return null;
-			//				}
-			//			}
+//			if(conn != null) {
+//				if(DbConnection.dbDisconnection(conn)==false) {
+//					return null;
+//				}
+//			}
 		}
 
 		return feature;
 
 	}
+
 
 	/**
 	 * 表示と非表示のアップデータ
@@ -523,7 +553,9 @@ public class T_featuresDAO {
 		return true;
 	}
 
-	//特集削除処理
+
+
+	//特集を削除する処理
 	public boolean delete(int id) {
 		String sql = "";
 

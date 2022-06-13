@@ -51,9 +51,8 @@ public class FeatureEdit extends HttpServlet {
 		}
 
 		String forward = "";
-		int user_id = 0;
 		int feature_id = 0;
-		int showflag = 0; //1=表示項目のみ　0=全抽出
+		int show_flag = 0; //1=表示項目のみ　0=全抽出
 		int fnc = 0;
 
 		//リクエストパラメータを取得する
@@ -66,9 +65,9 @@ public class FeatureEdit extends HttpServlet {
 		if (str != null) {
 			fnc = Integer.parseInt(str);
 		}
-		str = request.getParameter("showflag");
+		str = request.getParameter("show_flag");
 		if (str != null) {
-			showflag = Integer.parseInt(str);
+			show_flag = Integer.parseInt(str);
 		}
 
 		//FeatureListLogicのオブジェクトを生成
@@ -131,9 +130,10 @@ public class FeatureEdit extends HttpServlet {
 				//全記事を読み込み
 				List<Feature> featureList = featureListLogic.getFeatureList(1);
 
-				//リクエストスコープにpostListを保存する
+				//リクエストスコープにfeatureListを保存する
 				if (featureList != null) {
 					request.setAttribute("featureList", featureList);
+
 				} else {
 					request.setAttribute("errorMsg", "記事一覧を読み込むにエラーが発生しました。");
 				}
@@ -165,7 +165,7 @@ public class FeatureEdit extends HttpServlet {
 		int fnc = 0; //操作キー　0=なし　1=新規　2=更新　3=削除
 		int feature_id = 0; //menu_id　0=指定なし　Null=新規　>0　更新
 		String forward = "";
-		int showflag = 0; //1=表示項目のみ　0=全抽出
+		int show_flag = 0; //1=表示項目のみ　0=全抽出
 
 		str = request.getParameter("fnc");
 		if (str != null) {
@@ -177,7 +177,7 @@ public class FeatureEdit extends HttpServlet {
 		}
 		str = request.getParameter("showflag");
 		if (str != null) {
-			showflag = Integer.parseInt(str);
+			show_flag = Integer.parseInt(str);
 		}
 
 		FeatureListLogic featureListLogic = new FeatureListLogic();
@@ -191,7 +191,7 @@ public class FeatureEdit extends HttpServlet {
 		String feature_list = request.getParameter("feature_list");
 		String content = request.getParameter("content");
 		String content_css = request.getParameter("content_css");
-		int show_flag = Integer.parseInt(request.getParameter("show_flag"));
+//		int show_flag = Integer.parseInt(request.getParameter("show_flag"));
 		int create_user_id =  Integer.parseInt(request.getParameter("create_user_id"));
 		int delete_user_id =  Integer.parseInt(request.getParameter("delete_user_id"));
 		int update_user_id =  Integer.parseInt(request.getParameter("update_user_id"));
@@ -207,6 +207,7 @@ public class FeatureEdit extends HttpServlet {
 		//System.out.println("menu:menu_id "+menu.getMenu_id());
 		//System.out.println("menu:type "+menu.getType());
 		//System.out.println("menu:show_flag "+menu.getShow_flag());
+
 
 		//loginUserインスタンスから作成者の情報を取得して代入
 		int create_userid = loginUser.getUser_id();
@@ -246,10 +247,12 @@ public class FeatureEdit extends HttpServlet {
 
 			} else {
 				//データベースからすべての記事を読み込む
-				List<Feature> featureList = featureListLogic.getFeatureList(showflag);
+				List<Feature> featureList = featureListLogic.getFeatureList(show_flag);
 				request.setAttribute("featureList", featureList);
 				forward = "/WEB-INF/jsp/featureList.jsp";
 			}
+
+
 
 			//更新用
 		} else if (fnc == 2){
@@ -263,7 +266,7 @@ public class FeatureEdit extends HttpServlet {
 
 			} else {
 				//データベースからすべての記事を読み込む
-				List<Feature> featureList = featureListLogic.getFeatureList(showflag);
+				List<Feature> featureList = featureListLogic.getFeatureList(show_flag);
 				request.setAttribute("featureList", featureList);
 				forward = "/WEB-INF/jsp/featureList.jsp";
 			}
@@ -281,9 +284,10 @@ public class FeatureEdit extends HttpServlet {
 					feature = featureListLogic.getFeatureById(feature_id);
 					request.setAttribute("feature", feature);
 					forward = "/WEB-INF/jsp/featureEdit.jsp";
+
 				} else {
 					//データベースからすべてのメニューを読み込む
-					List<Feature> featureList = featureListLogic.getFeatureList(showflag);
+					List<Feature> featureList = featureListLogic.getFeatureList(show_flag);
 					request.setAttribute("featureList", featureList);
 					forward = "/WEB-INF/jsp/featureList.jsp";
 				}

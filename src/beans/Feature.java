@@ -100,7 +100,7 @@ public class Feature implements Serializable {
 
 
 
-	//特集単体（show_Flagまで）
+	//特集単体（create_timeまで）
 		public Feature(
 				int feature_id,
 				String feature_name,
@@ -110,7 +110,11 @@ public class Feature implements Serializable {
 				String feature_list,
 				String content,
 				String content_css,
-				int show_flag
+				int show_flag,
+				int create_user_id,
+				Date create_time,
+				int update_user_id,
+				Date update_time
 				) {
 			this.feature_id = feature_id;
 			this.feature_name = feature_name;
@@ -120,10 +124,16 @@ public class Feature implements Serializable {
 			this.feature_list = feature_list;
 			this.content = content;
 			this.content_css = content_css;
-			this.show_flag = show_flag;}
+			this.show_flag = show_flag;
+			this.create_user_id = create_user_id;
+			this.create_time = create_time;
+			this.update_user_id = update_user_id;
+			this.update_time = update_time;
+			}
 
 
-	//特集追加（t_features全部のやつ）
+
+	//特集追加（t_features全部）
 	public Feature(
 			int feature_id,
 			String feature_name,

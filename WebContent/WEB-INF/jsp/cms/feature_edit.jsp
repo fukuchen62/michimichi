@@ -94,33 +94,38 @@
 							<tr>
 								<th width="20%">タイトル</th>
 								<td width="80%"><input type="text" name="title"
-									value="${feature.title}" size="60" required></td>
+									value="${feature.feature_name}" size="60" required></td>
 							</tr>
+
 							<tr>
 								<th width="20%">記事内容</th>
 								<td width="80%"><textarea rows="4" cols="85" name="content"
 										required>${feature.content}</textarea></td>
 							</tr>
-							<tr>
-								<th width="20%">概要</th>
+
+							<%-- <tr>
+	 							<th width="20%">概要</th>
 								<td width="80%"><textarea rows="2" cols="85" name="summary">
 								${feature.summary}</textarea></td>
-							</tr>
+							</tr>  --%>
+
 							<tr>
-								<th width="20%">画像のURL1</th>
-								<td width="80%"><input type="text" name="photo_path1"
-									value="${post.photo_path1}" size="50"></td>
+								<th width="20%">写真URL</th>
+								<td width="80%"><input type="text" name="main_photo_path"
+									value="${feature.main_photo_path}" size="50"></td>
 							</tr>
+
 							<tr>
-								<th width="20%">画像のURL2</th>
-								<td width="80%"><input type="text" name="photo_path2"
-									value="${post.photo_path2}" size="50"></td>
+								<th width="20%">写真説明</th>
+								<td width="80%"><input type="text" name="alt"
+									value="${feature.alt}" size="50"></td>
 							</tr>
-							<tr>
+
+							<%-- <tr>
 								<th width="20%">画像のURL3</th>
 								<td width="80%"><input type="text" name="photo_path3"
 									value="${post.photo_path3}" size="50"></td>
-							</tr>
+							</tr> --%>
 							<%-- 	<tr>
 								<th width="20%">画像のURL4</th>
 								<td width="80%"><input type="text" name="img_path4"
@@ -183,25 +188,25 @@
 								<td width="80%"><textarea rows="4" cols="85" name="content"
 										required></textarea></td>
 							</tr>
-							<tr>
+						<!-- 	<tr>
 								<th width="20%">概要</th>
 								<td width="80%"><textarea rows="2" cols="85" name="summary"></textarea></td>
-							</tr>
+							</tr> -->
 							<tr>
-								<th width="20%">画像のURL1</th>
-								<td width="80%"><input type="text" name="photo_path1"
+								<th width="20%">写真URL</th>
+								<td width="80%"><input type="text" name="main_photo_path"
 									value="" size="50"></td>
 							</tr>
 							<tr>
-								<th width="20%">画像のURL2</th>
-								<td width="80%"><input type="text" name="photo_path2"
+								<th width="20%">写真説明</th>
+								<td width="80%"><input type="text" name="alt"
 									value="" size="50"></td>
 							</tr>
-							<tr>
+							<!-- <tr>
 								<th width="20%">画像のURL3</th>
 								<td width="80%"><input type="text" name="photo_path3"
 									value="" size="50"></td>
-							</tr>
+							</tr> -->
 							<!-- <tr>
 								<th width="20%">画像のURL4</th>
 								<td width="80%"><input type="text" name="img_path4"
