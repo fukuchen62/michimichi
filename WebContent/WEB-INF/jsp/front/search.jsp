@@ -305,7 +305,7 @@
 									<div class="flexR">
 										<input id="conveni-sp" type="checkbox" name="facility" value="12">
 										<label for="conveni-sp"> <img class="img"
-											src="img/pictgram/conveni.Ssvg" alt="conveni"> コンビニ
+											src="img/pictgram/conveni.svg" alt="conveni"> コンビニ
 										</label>
 									</div>
 
@@ -381,8 +381,8 @@
 					<div class="grid">
 						<c:forEach var="searchresult" items="${searchList}">
 							<div class="search-result-indi checked">
-								<img class="img" src="${searchresult.photo_path1}"
-									alt="${searchresult.alt1}">
+								<a href="CtrlForFront?pge_id=9&con_id=${searchresult.michinoeki_id}"><img class="img" src="${searchresult.photo_path1}"
+									alt="${searchresult.alt1}"></a>
 								<p class="title center">${searchresult.michinoeki_name}</p>
 								<!--
 								<div class="pictgram">
