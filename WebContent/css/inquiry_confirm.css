@@ -63,6 +63,7 @@
 
 #inquiry-confirm .container .confirm-wrap td {
   width: 70%;
+  white-space: wrap;
 }
 
 #inquiry-confirm .container .btn {
