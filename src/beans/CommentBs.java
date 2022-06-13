@@ -31,7 +31,19 @@ public class CommentBs {
 			this.update_user_id = update_user_id;
 			this.delete_time = delete_time;
 			this.delete_user_id = delete_user_id;
+		}
 
+		//管理画面、コメント表示非表示用
+		public CommentBs(
+		int comment_id,int michinoeki_id,String name,String comment,String post_time,int show_flag,Date update_time,int update_user_id){
+			this.comment_id = comment_id;
+			this.michinoeki_id = michinoeki_id;
+			this.name = name;
+			this.comment = comment;
+			this.post_time = post_time;
+			this.show_flag = show_flag;
+			this.update_time = update_time;
+			this.update_user_id = update_user_id;
 		}
 
 		//道の駅個別ページ、一覧取得用

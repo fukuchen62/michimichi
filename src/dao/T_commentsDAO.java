@@ -139,5 +139,70 @@ public class T_commentsDAO {
 
 	}
 
+	/*********
+	 * コメント、表示非表示切り替え用メソッド
+	 *********/
+	public boolean updateComment(int post_id,int show_flag ) {
+
+		String sql = "";
+
+		//データベースに接続
+		Connection conn = null;
+		conn = DbConnection.conn;
+		if(conn == null) return false;
+
+		try {
+			//SQL文を定義する
+	        sql = "UPDATE"
+	        		+ " T_COMMENTS"
+	        		+ " SET "
+	        		+ " show_flag = case comment_id "
+	        		+ " WHEN '?' THEN '?'"
+	        		+ " WHEN '?' THEN '?'"
+	        		+ " WHEN '?' THEN '?'"
+	        		+ " WHEN '?' THEN '?'"
+	        		+ " WHEN '?' THEN '?'"
+	        		+ " WHEN '?' THEN '?'"
+	        		+ " WHEN '?' THEN '?'"
+	        		+ " WHEN '?' THEN '?'"
+	        		+ " WHEN '?' THEN '?'"
+	        		+ " END "
+	        		+ " WHERE comment_id IN ('1','2','3') ";
+
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+//			pStmt.setInt(1, );
+//			pStmt.setInt(2, );
+//			pStmt.setInt(3, );
+//			pStmt.setInt(4, );
+//			pStmt.setInt(5, );
+//			pStmt.setInt(6, );
+//			pStmt.setInt(7, );
+//			pStmt.setInt(8, );
+//			pStmt.setInt(9, );
+//			pStmt.setInt(10, );
+//			pStmt.setInt(11, );
+//			pStmt.setInt(12, );
+
+			//SQL命令を発行する
+			int result = pStmt.executeUpdate();
+
+			//読み込んだ結果を処理する
+			if(result != 1) {
+				return false;
+			}
+		} catch (SQLException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+			return false;
+
+		}finally {
+			//データベース切断
+
+		}
+		return true;
+	}
+
+
+
 
 }

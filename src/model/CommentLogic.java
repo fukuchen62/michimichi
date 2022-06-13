@@ -8,7 +8,8 @@ import dao.T_commentsDAO;
 
 public class CommentLogic {
 
-	//指定された道の駅IDのイイネのCount数を表示する
+
+	//指定された道の駅IDのコメント情報を取ってくる
 	public List<CommentBs> getCommentsById(int showflag,int con_id) {
 		//DAOオブジェクト生成
 		T_commentsDAO dao = new T_commentsDAO();
@@ -17,7 +18,7 @@ public class CommentLogic {
 		return CommentList;
 	}
 
-	//入力されたイイネ情報をDBに書き込む
+	//入力されたコメント情報をDBに書き込む
 	public boolean insertComment(int con_id,String name, String comment) {
 		//DAOオブジェクト生成
 		T_commentsDAO dao = new T_commentsDAO();
