@@ -20,14 +20,16 @@
 
         <div class="g-navi-wrap">
             <div class="g-navi pc">
+	            <a class="pc" href="CtrlForFront?pge_id=1">
+    	        	<div class="logo"></div>
+				</a>
+
                 <a class="g-navi-items" href="CtrlForFront?pge_id=1">
-                    <div style="position: relative;">
-                        <div class="flexR">
-                            <i class="material-symbols-outlined">map</i>
-                            <p class="map">マップ検索</p>
-                            <div class="navi-mark">
-                                <img src="img/index/gnav/pc/nav_map.png" alt="map-search">
-                            </div>
+                    <div class="flexR">
+                        <i class="material-symbols-outlined">home</i>
+                        <p class="map">トップへ</p>
+                        <div class="navi-mark">
+                            <img src="img/index/gnav/pc/nav_top.svg" alt="to_top">
                         </div>
                     </div>
                 </a>
@@ -50,17 +52,17 @@
             </div>
 
             <div class="g-navi tab">
-                <a href="/index.html">
-                    <div class="navi-mark">
-                        <img src="img/index/gnav/tab/nav_map_tab.png" alt="map-search">
-                    </div>
+	            <div class="logo"></div>
+
+                <a href="CtrlForFront?pge_id=1">
+                    <img class="navi-mark" src="img/index/gnav/tab/nav_top_tab.svg" alt="to_top">
                 </a>
 
-                <a href="/search.html">
+                <a href="CtrlForFront?pge_id=2">
                     <img class="navi-mark" src="img/index/gnav/tab/nav_search_tab.png" alt="search">
                 </a>
 
-                <a href="/feature_top.html">
+                <a href="CtrlForFront?pge_id=3">
                     <img class="navi-mark" src="img/index/gnav/tab/nav_pickup_tab.png" alt="recommend">
                 </a>
             </div>
@@ -76,17 +78,17 @@
                 <div class="wrap-01">
                     <a class="item item1 flexR" href="CtrlForFront?pge_id=1">
                         <div class="flexC">
-                            <img src="img/index/gnav/sp/nav_pickup_sp.svg" alt="sitemap-pickup">
+                            <img src="img/index/gnav/sp/nav_pickup_sp.svg" alt="sitemap_pickup">
                         </div>
                     </a>
                     <a class="item item2 flexR" href="CtrlForFront?pge_id=2">
                         <div class="flexC">
-                            <img src="img/index/gnav/sp/nav_map_sp.svg" alt="sitemap-map">
+                            <img src="img/index/gnav/sp/nav_top_sp.svg" alt="sitemap_to_top">
                         </div>
                     </a>
                     <a class="item item3 flexR" href="CtrlForFront?pge_id=3">
                         <div class="flexC">
-                            <img src="img/index/gnav/sp/nav_search_sp.svg" alt="sitemap-search">
+                            <img src="img/index/gnav/sp/nav_search_sp.svg" alt="sitemap_search">
                         </div>
                     </a>
                 </div>
@@ -94,12 +96,12 @@
                 <div class="wrap-02">
                     <a class="item item4 flexR" href="CtrlForFront?pge_id=5">
                         <div class="flexC">
-                            <img src="img/index/gnav/sp/menu_mail.svg" alt="sitemap-mail">
+                            <img src="img/index/gnav/sp/menu_mail.svg" alt="sitemap_mail">
                         </div>
                     </a>
                     <a class="item item5 flexR" href="CtrlForFront?pge_id=8">
                         <div class="flexC">
-                            <img src="img/index/gnav/sp/menu_wp.svg" alt="sitemap-wp">
+                            <img src="img/index/gnav/sp/menu_wp.svg" alt="sitemap_wp">
                         </div>
                     </a>
                 </div>
