@@ -385,9 +385,23 @@
 				<div class="search-result-area">
 					<h2>検索結果一覧</h2>
 					<div class="search-tag">
-						<div class="search-tag-district">地域：〇〇</div>
-						<div class="search-tag-facility">設備：〇〇</div>
-						<div class="search-tag-around">周辺施設：〇〇</div>
+						<div class="search-tag-district">
+							地域：
+							<c:forEach var="i" begin="0" end="${areasList_length}" step="1">
+							${areasList[i]}
+						</c:forEach>
+						</div>
+						<div class="search-tag-facility">
+							設備：
+							<c:forEach var="i" begin="0" end="${facilitiesList_length}" step="1">
+							${facilitiesList[i]}
+						</c:forEach>
+						</div>
+						<div class="search-tag-around">周辺施設：
+						<c:forEach var="i" begin="0" end="${aroundList_length}" step="1">
+							${aroundList[i]}
+						</c:forEach>
+						</div>
 					</div>
 					<div class="grid">
 						<c:forEach var="searchresult" items="${searchList}">
@@ -397,7 +411,6 @@
 									class="img" src="${searchresult.photo_path1}"
 									alt="${searchresult.alt1}"></a>
 								<p class="title center">${searchresult.michinoeki_name}</p>
-								<!--
 								<div class="pictgram">
 									<div class="pict-facility">
 										設備
@@ -563,7 +576,7 @@
 											</c:choose>
 										</div>
 									</div>
-								</div>-->
+								</div>
 							</div>
 
 						</c:forEach>
