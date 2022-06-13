@@ -20,34 +20,32 @@
         <h1 class="keyVisual">
             <div class="pc">
                 <div class="keyVisual-wrap">
-                    <img class="keyVisual-map" src="img/index/tokushima_map_pc.png" alt="keyVisual_pc">
+                	<div class="keyVisual-map">
+                		<div class="search-links">
+	                    	<img src="img/index/map.png" alt="keyVisual_pc">
+				            <a class="search-links-west" href="">東部</a>
+				            <a class="search-links-east" href="">西部</a>
+				            <a class="search-links-south" href="">南部</a>
+				        </div>
+                	</div>
                 </div>
                 <div class="catch-copy"></div>
-                <div class="logo"></div>
             </div>
 
             <div class="sp">
                 <div class="keyVisual-wrap">
-                    <img class="keyVisual-map" src="img/index/tokushima_map_tab.png" alt="keyVisual_sp">
+                	<div class="keyVisual-map">
+                		<div class="search-links">
+	                    	<img src="img/index/map.png" alt="keyVisual_sp">
+				            <a class="search-links-west" href="">東部</a>
+				            <a class="search-links-east" href="">西部</a>
+				            <a class="search-links-south" href="">南部</a>
+				        </div>
+                	</div>
                 </div>
                 <div class="catch-copy"></div>
             </div>
         </h1>
-
-		<div class="pc">
-	        <div class="search-links">
-	            <a href="">東の駅はこちら</a>
-	            <a href="">西の駅はこちら</a>
-	            <a href="">南の駅はこちら</a>
-	        </div>
-        </div>
-		<div class="sp">
-	        <div class="search-links">
-	            <a href="">東の駅は<br>こちら</a>
-	            <a href="">西の駅は<br>こちら</a>
-	            <a href="">南の駅は<br>こちら</a>
-	        </div>
-        </div>
     </div>
 
     <section id="top-search">

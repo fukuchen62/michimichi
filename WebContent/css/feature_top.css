@@ -11,14 +11,14 @@ a {
 
 .wrap .wrap-img {
   width: 100%;
-  padding: 10px;
+  padding: 10px 40px;
   border: 10px solid #e69c81;
   border-radius: 10px;
   background-color: #c7e3ee;
 }
 
 .wrap .wrap-img .feature-link-wrap {
-  margin-bottom: 10px;
+  margin-bottom: 60px;
   padding: 10px;
   border: 5px solid #e69c81;
   border-radius: 10px;
@@ -54,11 +54,11 @@ a {
 }
 
 .wrap .wrap-img .row {
-  height: 600px;
+  height: 650px;
 }
 
 .wrap .wrap-img .row:last-child {
-  height: 590px;
+  height: 560px;
 }
 
 .wrap .wrap-img .img {

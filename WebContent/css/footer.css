@@ -31,7 +31,7 @@
 }
 
 #footer .container {
-  padding-top: 30px;
+  padding: 30px 0 0;
   background-color: #c7e3ee;
 }
 
@@ -132,12 +132,13 @@
 
 #footer .container .footer-wrap .right-column .right-column-wrap .right-column-inner .map-search span:first-child {
   width: 200px;
-  color: #fafeff;
+  background-color: #e69c81;
   font-size: 25px;
 }
 
 #footer .container .footer-wrap .right-column .right-column-wrap .right-column-inner .map-search span:first-child p {
   padding-top: 20px;
+  color: rgba(244, 245, 247, 1);;
 }
 
 #footer .container .footer-wrap .right-column .right-column-wrap .right-column-inner .map-search span:first-child p .search {
@@ -157,7 +158,7 @@
   height: 80px;
   margin: 0 auto;
   padding: 25px 15px 0;
-  background-color: #fff;
+  background-color: rgba(244, 245, 247, 1);
   border-radius: 20px 20px 0 0;
   position: absolute;
   top: 10px;
@@ -190,7 +191,7 @@
   width: 500px;
   height: 400px;
   margin: 10px;
-  background-color: #fafeff;
+  background-color: rgba(244, 245, 247, 1);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -299,7 +300,7 @@
 }
 
 #footer .container .copyright {
-  padding: 30px 0;
+  padding: 60px 0;
   font-size: 16px;
 }
 

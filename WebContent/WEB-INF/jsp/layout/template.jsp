@@ -89,8 +89,6 @@
 </c:if>
 
 <!-- icon -->
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="icon" href="favicon.ico">
 <link rel="apple-touch-icon" sizes="152x152"
 	href="apple_touch_icon_152.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon_16.ico">

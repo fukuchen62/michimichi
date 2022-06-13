@@ -35,7 +35,7 @@
 ===================================================*/
 #header {
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(244, 245, 247, 1);
   position: fixed;
   top: 0;
   z-index: 100;
@@ -54,9 +54,7 @@
 }
 
 #header .g-navi {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 80%;
   margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -65,37 +63,49 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-around;
+      -ms-flex-pack: space-around;
+          justify-content: space-around;
 }
 
 #header .g-navi.tab {
   display: none;
 }
 
+#header .g-navi-wrap .logo {
+  width: 180px;
+  height: 70px;
+  margin-left: 20px;
+  background: url(../img/logo/main_logo.svg) left bottom no-repeat;
+}
+
+#header .g-navi-wrap .logo img {
+  width: 100%;
+}
+
 #header .g-navi .g-navi-items {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  width: 200px;
   color: #fafeff;
   white-space: nowrap;
   font-family: 'M PLUS Rounded 1c', sans-serif;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: bold;
   text-decoration: none;
   color: #e69c81;
 }
 
 #header .g-navi .g-navi-items .flexR {
-  width: 280px;
+  width: 100%;
   height: 60px;
-  margin: 0 20px;
+  margin: 5px 0 0 20px;
   border: 10px solid;
   border-image-width: 5px;
-  -o-border-image: url(../img/index/gnav/pc/nav_btn02.svg) 15 stretch;
-     border-image: url(../img/index/gnav/pc/nav_btn02.svg) 15 stretch;
-  background: url(../img/index/gnav/pc/nav_btnbg02.svg) 0 0 no-repeat;
+  -o-border-image: url(../img/index/gnav/pc/nav_btn01.svg) 15 stretch;
+     border-image: url(../img/index/gnav/pc/nav_btn01.svg) 15 stretch;
+  background: url(../img/index/gnav/pc/nav_btnbg01.svg) 0 0 no-repeat;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -119,16 +129,16 @@
 }
 
 #header .g-navi .g-navi-items .flexR .material-symbols-outlined {
-  font-size: 40px;
+  font-size: 32px;
   font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 
 #header .g-navi .g-navi-items .flexR:hover {
   border: 10px solid;
   border-image-width: 5px;
-  -o-border-image: url(../img/index/gnav/pc/nav_btn01.svg) 15 stretch;
-     border-image: url(../img/index/gnav/pc/nav_btn01.svg) 15 stretch;
-  background: url(../img/index/gnav/pc/nav_btnbg01.svg) 0 0 no-repeat;
+  -o-border-image: url(../img/index/gnav/pc/nav_btn02.svg) 15 stretch;
+     border-image: url(../img/index/gnav/pc/nav_btn02.svg) 15 stretch;
+  background: url(../img/index/gnav/pc/nav_btnbg02.svg) 0 0 no-repeat;
   color: #fff;
 }
 
@@ -228,16 +238,14 @@
 }
 
 /*=====================================================
- @ ～1351px
+ @ ～1350px
 =====================================================*/
-@media screen and (max-width: 1920px) {
-  #header .g-navi-wrap {
-    height: 80px;
-  }
-  #header .g-navi-wrap .g-navi {
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
+@media screen and (max-width: 1350px) {
+  #header .g-navi {
+  width: 90%;
+  -webkit-box-pack: space-around;
+      -ms-flex-pack: space-around;
+          justify-content: space-around;
   }
 }
 
@@ -258,7 +266,7 @@
     display: none;
   }
   #header .g-navi.tab {
-    width: 60%;
+    width: 90%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -293,12 +301,12 @@
   }
   #header {
     height: 100px;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(244, 245, 247, 1);
     position: fixed !important;
     top: 0;
   }
   #header.active {
-    background-color: rgba(232, 243, 248, 0.95);
+    background-color: rgba(244, 245, 247, 1);
   }
   #header .g-navi.sp {
     height: inherit;

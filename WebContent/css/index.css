@@ -48,7 +48,7 @@ body {
   width: 60%;
   min-width: 1200px;
   padding-bottom: 60px;
-  background-color: #fafeff;
+  background-color: rgba(244, 245, 247, 1);
 }
 
 .space {
@@ -111,80 +111,74 @@ a {
 }
 
 #keyVisual .keyVisual .keyVisual-wrap .keyVisual-map {
-  width: 60%;
-  height:80vh;
+  width: 800px;
+  height: 600px;
   position: absolute;
-  bottom: 3%;
+  top: 50%;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#keyVisual .keyVisual .keyVisual-wrap .keyVisual-map .search-links{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#keyVisual .keyVisual .keyVisual-wrap .keyVisual-map .search-links img{
+  width: 100%;
+}
+#keyVisual .keyVisual .keyVisual-wrap .keyVisual-map .search-links a {
+  margin: 0;
+  padding: 5px 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 5px solid rgba(136, 193, 216, 0.65);
+  border-radius: 30px;
+  position: absolute;
+  color: #e69c81;
+  text-shadow: 2px 2px 1px #fff, -2px -2px 1px #fff,
+  -2px 2px 1px #fff,2px -2px 1px #fff;
+  font-size: 60px;
+  transition: 0.3s all;
+}
+
+#keyVisual .keyVisual .keyVisual-wrap .keyVisual-map .search-links a:hover {
+  transform: scale(1.2);
+}
+
+#keyVisual .keyVisual .keyVisual-wrap .keyVisual-map .search-links .search-links-west {
+  top: 25%;
+  right: 0;
+}
+
+#keyVisual .keyVisual .keyVisual-wrap .keyVisual-map .search-links .search-links-east {
+  top: 20%;
+  left: 5%;
+}
+
+#keyVisual .keyVisual .keyVisual-wrap .keyVisual-map .search-links .search-links-south {
+  bottom: 0;
+  left: 65%;
 }
 
 #keyVisual .keyVisual .pc .catch-copy {
   width: 25%;
-  height: 20vh;
+  height: 10vh;
   background: url(../img/index/catchcopy.png) 0 0 no-repeat;
   background-size: contain;
   position: absolute;
-  left: 10px;
+  left: 20px;
   top: 150px;
   -webkit-transform: rotate(-20deg);
           transform: rotate(-20deg);
 }
-
-#keyVisual .search-links {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  padding: 10px 20px;
-  border-radius: 20px;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-
 
 #keyVisual .search-links .form input {
 	display: none;
 }
 #keyVisual .search-links .pc {
   height: fit-content;
-}
-#keyVisual .pc .search-links a {
-  margin: 5px 0;
-  padding: 5px 20px;
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 5px solid rgba(136, 193, 216, 0.65);
-  border-radius: 30px;
-  color: #444;
-  font-size: 2vw;
-}
-
-#keyVisual .logo {
-  width: 25%;
-  height: 20vh;
-  background: url(../img/logo/main_logo.svg) left bottom no-repeat;
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  vertical-align: bottom;
-}
-
-#keyVisual .logo img {
-  width: 100%;
 }
 
 #top-search .grid-search {
@@ -226,6 +220,25 @@ a {
   width: 400px;
 }
 
+
+#top-search .btn:hover,
+#pickup .btn:hover,
+#sns .btn:hover {
+  animation: btn-anime 0.3s 0.1s forwards;
+}
+
+@keyframes btn-anime{
+	0%{
+	 transform: translateY(5%) scale(0.95);
+	}
+	50%{
+	 transform: translateY(0%) scale(1);
+	}
+	100%{
+	 transform: translateY(5%) scale(0.95);
+	}
+}
+
 .grid-search,
 .grid-pickup,
 .grid-sns {
@@ -261,8 +274,8 @@ a {
 
 .grid-search .items img:hover,
 .grid-pickup .items img:hover {
-  -webkit-transform: scale(1.5) translateY(-10%);
-          transform: scale(1.5) translateY(-10%);
+  -webkit-transform: scale(1.2) translateY(-10%);
+          transform: scale(1.2) translateY(-10%);
 }
 
 .grid-search .items p,
@@ -321,21 +334,6 @@ a {
     width: 200px;
     height: auto;
   }
-  #keyVisual .keyVisual .keyVisual-wrap {
-    position: relative;
-  }
-
-  #keyVisual .keyVisual .keyVisual-wrap .keyVisual-map {
-    bottom: 3%;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-  }
-
-  #keyVisual .logo {
-  width: 30%;
-  }
-
 }
 
 /******************************************************
@@ -349,6 +347,32 @@ a {
   .container .grid-search .flexR .items img,
   .container .grid-pickup .flexR .items img {
     width: 150px;
+  }
+
+  #keyVisual .keyVisual .keyVisual-wrap .keyVisual-map {
+  width: 640px;
+  height: 480px;
+  }
+
+    #keyVisual .keyVisual .keyVisual-wrap .keyVisual-map .search-links a {
+    padding: 5px 10px;
+    border-radius: 30px;
+    font-size: 50px;
+  }
+
+  #keyVisual .keyVisual .keyVisual-wrap .keyVisual-map .search-links .search-links-west {
+    top: 25%;
+    right: 0;
+  }
+
+  #keyVisual .keyVisual .keyVisual-wrap .keyVisual-map .search-links .search-links-east {
+    top: 20%;
+    left: 5%;
+  }
+
+  #keyVisual .keyVisual .keyVisual-wrap .keyVisual-map .search-links .search-links-south {
+    bottom: 0;
+    left: 65%;
   }
 }
 
@@ -388,33 +412,51 @@ a {
     position: relative;
   }
 
-  #keyVisual .keyVisual .sp .keyVisual-wrap {
+  #keyVisual .keyVisual .keyVisual-wrap {
     width: 100%;
     height: 100vw;
   }
 
-  #keyVisual .keyVisual .sp .keyVisual-wrap .keyVisual-bg {
+  #keyVisual .keyVisual .keyVisual-wrap .keyVisual-bg {
     height: auto;
   }
 
-  #keyVisual .keyVisual .sp .keyVisual-wrap .keyVisual-map {
+  #keyVisual .keyVisual .keyVisual-wrap .keyVisual-map {
     width: 80%;
     height: auto;
-    left: 55%;
-    top: 52%;
-    transform: translate(-50%, -50%);
+  }
+
+  #keyVisual .keyVisual .keyVisual-wrap .keyVisual-map .search-links a {
+    padding: 5px 10px;
+    border-radius: 30px;
+    font-size: 4vw;
+  }
+
+  #keyVisual .keyVisual .keyVisual-wrap .keyVisual-map .search-links .search-links-west {
+    top: 25%;
+    right: -5%;
+  }
+
+  #keyVisual .keyVisual .keyVisual-wrap .keyVisual-map .search-links .search-links-east {
+    top: 20%;
+    left: 5%;
+  }
+
+  #keyVisual .keyVisual .keyVisual-wrap .keyVisual-map .search-links .search-links-south {
+    bottom: 10%;
+    left: 60%;
   }
 
   #keyVisual .keyVisual .sp .catch-copy {
 	width: 40%;
-    height: 20vh;
+    height:15vh;
     background: url(../img/index/catchcopy.png) 0 0 no-repeat;
     background-size: contain;
+    background-position: 0 100%;
     position: absolute;
-    -webkit-transform: rotate(-20deg);
-            transform: rotate(-20deg);
-    top: 140px;
-    left: 20px
+    bottom: 10px;
+    left: 10px;
+    vertical-align: bottom;
   }
 
   #keyVisual .search-links {
