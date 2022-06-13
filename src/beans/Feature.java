@@ -1,6 +1,7 @@
 package beans;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class Feature implements Serializable{
 
@@ -13,6 +14,13 @@ public class Feature implements Serializable{
 		private String feature_list;
 		private String content;
 		private String content_css;
+		private int show_flag;
+		private Date create_time;
+		private int create_user_id;
+		private Date delete_time;
+		private int delete_user_id;
+		private Date update_time;
+		private int update_user_id;
 
 		//m_feature_typesから
 		private int feature_type_id;
@@ -23,6 +31,10 @@ public class Feature implements Serializable{
 		private String alt2;
 		private String photo_path3;
 		private String alt3;
+
+		//m_account
+		private int account_user_id;
+		private String account_name;
 
 		//コンストラクタの定義
 		public Feature(){}
@@ -85,6 +97,90 @@ public class Feature implements Serializable{
 			this.main_photo_path = main_photo_path;
 			this.alt = alt;
 		}
+
+		//特集単体（create_timeまで）
+		public Feature(
+				int feature_id,
+				String feature_name,
+				int feature_type_id,
+				String main_photo_path,
+				String alt,
+				String feature_list,
+				String content,
+				String content_css,
+				int show_flag,
+				int create_user_id,
+				Date create_time,
+				int update_user_id,
+				Date update_time) {
+			this.feature_id = feature_id;
+			this.feature_name = feature_name;
+			this.feature_type_id = feature_type_id;
+			this.main_photo_path = main_photo_path;
+			this.alt = alt;
+			this.feature_list = feature_list;
+			this.content = content;
+			this.content_css = content_css;
+			this.show_flag = show_flag;
+			this.create_user_id = create_user_id;
+			this.create_time = create_time;
+			this.update_user_id = update_user_id;
+			this.update_time = update_time;
+		}
+
+		//特集追加（t_features全部）
+		public Feature(
+				int feature_id,
+				String feature_name,
+				int feature_type_id,
+				String main_photo_path,
+				String alt,
+				String feature_list,
+				String content,
+				String content_css,
+				int show_flag,
+				int create_user_id,
+				Date create_time,
+				int delete_user_id,
+				Date delete_time,
+				int update_user_id,
+				Date update_time) {
+			this.feature_id = feature_id;
+			this.feature_name = feature_name;
+			this.feature_type_id = feature_type_id;
+			this.main_photo_path = main_photo_path;
+			this.alt = alt;
+			this.feature_list = feature_list;
+			this.content = content;
+			this.content_css = content_css;
+			this.show_flag = show_flag;
+			this.create_time = create_time;
+			this.create_user_id = create_user_id;
+			this.delete_time = delete_time;
+			this.delete_user_id = delete_user_id;
+			this.update_user_id = update_user_id;
+			this.update_time = update_time;
+		}
+
+		//管理用特集一覧
+
+		public Feature(
+				int feature_id,
+				String feature_name,
+				int show_flag,
+				int create_user_id,
+				Date create_time,
+				String account_name
+				) {
+			this.feature_id = feature_id;
+			this.feature_name = feature_name;
+			this.show_flag = show_flag;
+			this.create_user_id = create_user_id;
+			this.create_time = create_time;
+			this.account_name = account_name;
+		}
+
+
 
 		public int getFeature_id() {
 			return feature_id;
@@ -206,6 +302,77 @@ public class Feature implements Serializable{
 			this.alt3 = alt3;
 		}
 
+		public int getShow_flag() {
+			return show_flag;
+		}
+
+		public void setShow_flag(int show_flag) {
+			this.show_flag = show_flag;
+		}
+
+		public Date getCreate_time() {
+			return create_time;
+		}
+
+		public void setCreate_time(Date create_time) {
+			this.create_time = create_time;
+		}
+
+		public int getCreate_user_id() {
+			return create_user_id;
+		}
+
+		public void setCreate_user_id(int create_user_id) {
+			this.create_user_id = create_user_id;
+		}
+
+		public Date getDelete_time() {
+			return delete_time;
+		}
+
+		public void setDelete_time(Date delete_time) {
+			this.delete_time = delete_time;
+		}
+
+		public int getDelete_user_id() {
+			return delete_user_id;
+		}
+
+		public void setDelete_user_id(int delete_user_id) {
+			this.delete_user_id = delete_user_id;
+		}
+
+		public Date getUpdate_time() {
+			return update_time;
+		}
+
+		public void setUpdate_time(Date update_time) {
+			this.update_time = update_time;
+		}
+
+		public int getUpdate_user_id() {
+			return update_user_id;
+		}
+
+		public void setUpdate_user_id(int update_user_id) {
+			this.update_user_id = update_user_id;
+		}
+
+		public int getAccount_user_id() {
+			return account_user_id;
+		}
+
+		public void setAccount_user_id(int account_user_id) {
+			this.account_user_id = account_user_id;
+		}
+
+		public String getAccount_name() {
+			return account_name;
+		}
+
+		public void setAccount_name(String account_name) {
+			this.account_name = account_name;
+		}
 
 
 }

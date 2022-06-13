@@ -29,26 +29,26 @@
 					<a href="/michimichi/CtrlForCms?pge_id=20">アカウント管理</a>
 				</div>
 			</section>
-			<%-- <section>
+
+			 <section>
 				<h2>お知らせ</h2>
 				<table class="entryForm">
 					<tr>
-						<th class="subtitle" width="18%">日時</th>
-						<th class="subtitle" width="12%">発信者</th>
-						<th class="subtitle" width="30%">タイトル</th>
-						<th class="subtitle" width="40%">概要</th>
+						<th class="subtitle" width="25%">日時</th>
+						<th class="subtitle" width="25%">発信者</th>
+						<th class="subtitle" width="50%">タイトル</th>
 					</tr>
-					<c:forEach var="post" items="${postList}" end="20">
+					<c:forEach var="post" items="${adminfeaturelist}" end="20">
 						<tr>
 							<td class="time"><fmt:formatDate type="time"
-									value="${post.createtime}" pattern="yyyy/MM/dd HH:mm" /></td>
-							<td class="name">${post.name}</td>
-							<td class="title">${post.title}</td>
-							<td class="mutter">${fn:escapeXml(post.summary)}</td>
+									value="${post.create_time}" pattern="yyyy/MM/dd HH:mm" /></td>
+							<td class="name">${post.account_name}</td>
+							<td class="title"><a
+								href="/michimichi/FeatureEdit?feature_id=${post.feature_id }">${post.feature_name}</a>
 						</tr>
 					</c:forEach>
 				</table>
-			</section> --%>
+			</section>
 		</div>
 
 	</c:param>

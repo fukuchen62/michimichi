@@ -60,7 +60,7 @@ public class Login extends HttpServlet {
 		String forward = "";
 		if (loginUser != null) {
 
-//			session.setAttribute("loginUser", loginUser);
+			session.setAttribute("loginUser", loginUser);
 //			response.sendRedirect("/michimichi/CtrlForCms?pge_id=13");
 
 			forward = "/WEB-INF/jsp/cms/adminpage.jsp";
