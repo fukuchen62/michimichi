@@ -22,11 +22,7 @@
                 <div class="keyVisual-wrap">
                     <img class="keyVisual-map" src="img/index/tokushima_map_pc.png" alt="keyVisual_pc">
                 </div>
-                <p class="catch-copy">道の駅で、<br>
-                    満ちる
-                    <span>HOUR</span>
-                    (アワー)
-                </p>
+                <div class="catch-copy"></div>
                 <div class="logo"></div>
             </div>
 
@@ -34,11 +30,7 @@
                 <div class="keyVisual-wrap">
                     <img class="keyVisual-map" src="img/index/tokushima_map_tab.png" alt="keyVisual_sp">
                 </div>
-                <p class="catch-copy">道の駅で、<br>
-                    満ちる
-                    <span>HOUR</span>
-                    (アワー)
-                </p>
+                <div class="catch-copy"></div>
             </div>
         </h1>
 
