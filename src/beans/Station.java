@@ -1,5 +1,7 @@
 package beans;
 
+import java.util.Date;
+
 public class Station {
 
 	//フィールドのカプセル化
@@ -45,6 +47,14 @@ public class Station {
 	private int feature_banner2;
 	private int feature_banner3;
 
+	private int show_flag;
+	private Date create_time;
+	private int create_user_id;
+	private Date update_time;
+	private int update_user_id;
+	private Date delete_time;
+	private int delete_user_id;
+
 	//m_recommendsから（おすすめマスター）
 	private int recommend_id;
 	private String recommend_name;
@@ -81,6 +91,10 @@ public class Station {
 	private int good_id;
 	private String user_ip_address;
 
+	//m_accountsから（管理者アカウントテーブル）
+	private int account_user_id;
+	private String account_name;
+
 
 	//コンストラクタの定義
 	public Station(){}
@@ -91,6 +105,17 @@ public class Station {
 		this.michinoeki_name = michinoeki_name;
 		this.photo_thum_path1 = photo_thum_path1;
 		this.alt1 = alt1;
+	}
+
+	//管理者画面　道の駅一覧用
+	public Station(int michinoeki_id, String michinoeki_name, int show_flag, Date create_time, int create_user_id, String account_name){
+		this.michinoeki_id = michinoeki_id;
+		this.michinoeki_name = michinoeki_name;
+		this.show_flag = show_flag;
+		this.create_time = create_time;
+		this.create_user_id = create_user_id;
+		this.account_name = account_name;
+
 	}
 
 	//道の駅個別　基本情報
@@ -484,6 +509,63 @@ public class Station {
 		this.feature_banner3 = feature_banner3;
 	}
 
+
+	public int getShow_flag() {
+		return show_flag;
+	}
+
+	public void setShow_flag(int show_flag) {
+		this.show_flag = show_flag;
+	}
+
+	public Date getCreate_time() {
+		return create_time;
+	}
+
+	public void setCreate_time(Date create_time) {
+		this.create_time = create_time;
+	}
+
+	public int getCreate_user_id() {
+		return create_user_id;
+	}
+
+	public void setCreate_user_id(int create_user_id) {
+		this.create_user_id = create_user_id;
+	}
+
+	public Date getUpdate_time() {
+		return update_time;
+	}
+
+	public void setUpdate_time(Date update_time) {
+		this.update_time = update_time;
+	}
+
+	public int getUpdate_user_id() {
+		return update_user_id;
+	}
+
+	public void setUpdate_user_id(int update_user_id) {
+		this.update_user_id = update_user_id;
+	}
+
+	public Date getDelete_time() {
+		return delete_time;
+	}
+
+	public void setDelete_time(Date delete_time) {
+		this.delete_time = delete_time;
+	}
+
+	public int getDelete_user_id() {
+		return delete_user_id;
+	}
+
+	public void setDelete_user_id(int delete_user_id) {
+		this.delete_user_id = delete_user_id;
+	}
+
 	public int getRecommend_id() {
 		return recommend_id;
 	}
@@ -691,5 +773,23 @@ public class Station {
 	public void setUser_ip_address(String user_ip_address) {
 		this.user_ip_address = user_ip_address;
 	}
+
+	public int getAccount_user_id() {
+		return account_user_id;
+	}
+
+	public void setAccount_user_id(int account_user_id) {
+		this.account_user_id = account_user_id;
+	}
+
+	public String getAccount_name() {
+		return account_name;
+	}
+
+	public void setAccount_name(String account_name) {
+		this.account_name = account_name;
+	}
+
+
 
 }

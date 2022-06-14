@@ -56,7 +56,7 @@ public class T_commentsDAO {
 				int comment_id = rs.getInt("comment_id");
 				String name = rs.getString("name");
 				String comment =  rs.getString("comment");
-				String post_time = rs.getString("post_time");
+				Date post_time = rs.getTimestamp("post_time");
 
 				CommentBs comments = new CommentBs(
 						comment_id,

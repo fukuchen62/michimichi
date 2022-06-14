@@ -4,23 +4,29 @@ import java.util.Date;
 
 public class CommentBs {
 
+	//
 	private int comment_id;
 	private int michinoeki_id;
 	private String name;
 	private String comment;
-	private String post_time;
+	private Date post_time;
 	private int show_flag;
 	private Date update_time;
 	private int update_user_id;
 	private Date delete_time;
 	private int delete_user_id;
 
+	//m_accountsテーブル
+	private int account_user_id;
+	private String account_name;
+
 	//コンストラクタの定義
 		public CommentBs(){}
 
 		//フルバージョン
 		public CommentBs(
-		int comment_id,int michinoeki_id,String name,String comment,String post_time,int show_flag,Date update_time,int update_user_id,Date delete_time, int delete_user_id){
+		int comment_id,int michinoeki_id,String name,String comment,Date post_time,int show_flag,Date update_time,int update_user_id,Date delete_time, int delete_user_id,
+		int account_user_id, String account_name){
 			this.comment_id = comment_id;
 			this.michinoeki_id = michinoeki_id;
 			this.name = name;
@@ -31,11 +37,15 @@ public class CommentBs {
 			this.update_user_id = update_user_id;
 			this.delete_time = delete_time;
 			this.delete_user_id = delete_user_id;
+
+			this.account_user_id = account_user_id;
+			this.account_name = account_name;
+
 		}
 
 		//管理画面、コメント表示非表示用
 		public CommentBs(
-		int comment_id,int michinoeki_id,String name,String comment,String post_time,int show_flag,Date update_time,int update_user_id){
+		int comment_id,int michinoeki_id,String name,String comment,Date post_time,int show_flag,Date update_time,int update_user_id){
 			this.comment_id = comment_id;
 			this.michinoeki_id = michinoeki_id;
 			this.name = name;
@@ -48,7 +58,7 @@ public class CommentBs {
 
 		//道の駅個別ページ、一覧取得用
 		public CommentBs
-		(int comment_id, String name, String comment, String post_time){
+		(int comment_id, String name, String comment, Date post_time){
 			this.comment_id = comment_id;
 			this.name = name;
 			this.comment = comment;
@@ -87,11 +97,11 @@ public class CommentBs {
 			this.comment = comment;
 		}
 
-		public String getPost_time() {
+		public Date getPost_time() {
 			return post_time;
 		}
 
-		public void setPost_time(String post_time) {
+		public void setPost_time(Date post_time) {
 			this.post_time = post_time;
 		}
 
@@ -133,6 +143,22 @@ public class CommentBs {
 
 		public void setDelete_user_id(int delete_user_id) {
 			this.delete_user_id = delete_user_id;
+		}
+
+		public int getAccount_user_id() {
+			return account_user_id;
+		}
+
+		public void setAccount_user_id(int account_user_id) {
+			this.account_user_id = account_user_id;
+		}
+
+		public String getAccount_name() {
+			return account_name;
+		}
+
+		public void setAccount_name(String account_name) {
+			this.account_name = account_name;
 		}
 
 
