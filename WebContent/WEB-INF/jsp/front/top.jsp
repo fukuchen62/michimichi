@@ -23,9 +23,9 @@
                 	<div class="keyVisual-map">
                 		<div class="search-links">
 	                    	<img src="img/index/map.png" alt="keyVisual_pc">
-				            <a class="search-links-west" href="">東部</a>
-				            <a class="search-links-east" href="">西部</a>
-				            <a class="search-links-south" href="">南部</a>
+				            <a class="search-links-west" href="CtrlForSearch?area=1">東部</a>
+				            <a class="search-links-east" href="CtrlForSearch?area=2">西部</a>
+				            <a class="search-links-south" href="CtrlForSearch?area=3">南部</a>
 				        </div>
                 	</div>
                 </div>
@@ -37,9 +37,9 @@
                 	<div class="keyVisual-map">
                 		<div class="search-links">
 	                    	<img src="img/index/map.png" alt="keyVisual_sp">
-				            <a class="search-links-west" href="">東部</a>
-				            <a class="search-links-east" href="">西部</a>
-				            <a class="search-links-south" href="">南部</a>
+				            <a class="search-links-west" href="CtrlForSearch?area=1">東部</a>
+				            <a class="search-links-east" href="CtrlForSearch?area=2">西部</a>
+				            <a class="search-links-south" href="CtrlForSearch?area=3">南部</a>
 				        </div>
                 	</div>
                 </div>
