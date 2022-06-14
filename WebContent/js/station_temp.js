@@ -53,6 +53,8 @@ $(document).ready(function(){
         let wComment = document.getElementById("warning-comment");
 
 		if(name.value == "" || comment.value == ""){
+
+			// 名前入力判定
 			if(name.value == ""){
 				// 名前未入力警告
 				wName.innerHTML = "※お名前が入力されていません";
@@ -61,6 +63,8 @@ $(document).ready(function(){
 				wName.innerHTML = "";
 				console.log(123);
 			}
+
+			// コメントの入力判定
 			if(comment.value == ""){
 				// コメント未入力警告
 				wComment.innerHTML = "※コメントが入力されていません";
@@ -69,6 +73,9 @@ $(document).ready(function(){
 				wComment.innerHTML = "";
 					console.log(456);
 			}
+
+			// 警告文を表示
+			$("#warning-wrap").show();
 		}
 		else{
 	        let res_name = document.getElementById("res-name");
@@ -80,7 +87,7 @@ $(document).ready(function(){
 	        $(".comment-modal").css({"bottom": "0"});
 
 	        // ヘッダーを表示
-	        $("#header").hide();
+	        $("#header").hide(300);
 
 	        // フッターのz-indexを-1に
 	        $("#footer").css({"z-index": "-1"});
@@ -106,6 +113,9 @@ $(document).ready(function(){
 
 	        // ヘッダーを表示
 	        $("#header").show();
+
+			// 警告文を非表示
+			$("#warning-wrap").hide(300);
 
 	        // 警告文を消去
 			wName.innerHTML = "";
