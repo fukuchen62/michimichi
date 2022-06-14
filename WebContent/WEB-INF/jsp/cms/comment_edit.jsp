@@ -40,12 +40,12 @@
 						<th class="subtitle" width="5%"></th>
 						<th class="subtitle" width="18%">日時</th>
 						<th class="subtitle" width="10%">発信者</th>
-						<th class="subtitle" width="25%">タイトル</th>
+						<th class="subtitle" width="25%">コメント</th>
 					</tr>
-					<c:forEach var="post" items="${postList}" end="20">
+					<c:forEach var="post" items="${AdminCommentList}" end="20">
 						<tr>
-							<td class="show"><c:choose>
-									<c:when test="${post.show_flag==1}">
+							<%-- <td class="show"><c:choose>
+									 <c:when test="${post.show_flag==1}">
 										<button class="btnshow btnRed"
 											onclick="postShowChange( ${post.comment_id },${post.show_flag},'${post.title }');">表</button>
 									</c:when>
@@ -53,7 +53,7 @@
 										<button class="btnshow btnBlue"
 											onclick="postShowChange( ${post.comment_id },${post.show_flag},'${post.title }');">非</button>
 									</c:otherwise>
-								</c:choose></td>
+								</c:choose></td> --%>
 
 							<td class="time"><fmt:formatDate type="time"
 									value="${post.post_time}" pattern="yyyy/MM/dd HH:mm" /></td>

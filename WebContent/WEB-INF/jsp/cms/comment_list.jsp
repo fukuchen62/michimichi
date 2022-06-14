@@ -33,7 +33,7 @@
 				<h2>お知らせ</h2>
 				<table class="entryForm">
 					<c:forEach var="post" items="${AdminStaionList}" end="20">
-						<a href="CtrlForCms?pge_id=19&con_id=${post.michinoeki_id}">
+						<a href="CtrlForCms?pge_id=18&con_id=${post.michinoeki_id}">
 							<div class="title" >${post.michinoeki_name}</div>
 						</a>
 					</c:forEach>

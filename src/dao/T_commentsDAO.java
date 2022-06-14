@@ -164,16 +164,7 @@ public class T_commentsDAO {
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 //			pStmt.setInt(1, );
 //			pStmt.setInt(2, );
-//			pStmt.setInt(3, );
-//			pStmt.setInt(4, );
-//			pStmt.setInt(5, );
-//			pStmt.setInt(6, );
-//			pStmt.setInt(7, );
-//			pStmt.setInt(8, );
-//			pStmt.setInt(9, );
-//			pStmt.setInt(10, );
-//			pStmt.setInt(11, );
-//			pStmt.setInt(12, );
+
 
 			//SQL命令を発行する
 			int result = pStmt.executeUpdate();
@@ -194,6 +185,7 @@ public class T_commentsDAO {
 		return true;
 	}
 
+	//管理画面　道の駅別コメント一覧
 	public List<CommentBs> getAdminCommentsById(int con_id) {
 
 		List<CommentBs> AdminCommentList = new ArrayList<>();
@@ -210,7 +202,6 @@ public class T_commentsDAO {
 		try {
 
 			//SELECT文を準備
-			//show_flagで表示になっているものを、降順で抽出する。
 			sql = "SELECT * "
 					+ " FROM T_comments "
 					+ " WHERE michinoeki_id = ?"
