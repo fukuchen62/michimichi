@@ -157,16 +157,8 @@ public class T_commentsDAO {
 	        		+ " T_COMMENTS"
 	        		+ " SET "
 	        		+ " show_flag = case comment_id "
-	        		+ " WHEN '?' THEN '?'"
-	        		+ " WHEN '?' THEN '?'"
-	        		+ " WHEN '?' THEN '?'"
-	        		+ " WHEN '?' THEN '?'"
-	        		+ " WHEN '?' THEN '?'"
-	        		+ " WHEN '?' THEN '?'"
-	        		+ " WHEN '?' THEN '?'"
-	        		+ " WHEN '?' THEN '?'"
-	        		+ " WHEN '?' THEN '?'"
-	        		+ " END "
+
+
 	        		+ " WHERE comment_id IN ('1','2','3') ";
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
