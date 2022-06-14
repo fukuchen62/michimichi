@@ -11,10 +11,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import beans.CommentBs;
 import beans.Feature;
 import beans.LoginUser;
 import beans.Station;
 import model.CommentListLogic;
+import model.CommentLogic;
 import model.FeatureListLogic;
 
 /**
@@ -104,7 +106,7 @@ public class CtrlForCms extends HttpServlet {
 		}
 
 		else if (pge_id == 18) {
-			forward = movetoCommentEdit();
+			forward = movetoCommentEdit(request);
 		}
 
 		else if (pge_id == 19) {
@@ -228,8 +230,29 @@ public class CtrlForCms extends HttpServlet {
 		return forward;
 	}
 
-	private String movetoCommentEdit() {
-		String forward = "WEB-INF/jsp/cms/comment_edit.jsp";
+	private String movetoCommentEdit(HttpServletRequest request) {
+		//リクエストパラメータを取得する
+		//コンテンツ番号
+		String para2 = request.getParameter("con_id");
+		String forward = "";
+		int con_id = 0;
+
+		//入力値チェック
+		if (para2 != null && para2.length() != 0) {
+			con_id = Integer.parseInt(para2);
+		}
+
+		// リクエストスコープに保存
+		request.setAttribute("con_id", con_id);
+
+		// 道の駅IDに対応したコメント一覧を取得
+		CommentLogic commentLogic = new CommentLogic();
+		List<CommentBs> AdminCommentList = commentLogic.getAdminCommentsById(con_id);
+
+		// リクエストスコープに保存
+		request.setAttribute("AdminCommentList", AdminCommentList);
+
+		forward = "WEB-INF/jsp/cms/comment_edit.jsp";
 		return forward;
 	}
 
