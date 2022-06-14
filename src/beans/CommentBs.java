@@ -65,6 +65,16 @@ public class CommentBs {
 			this.post_time = post_time;
 		}
 
+		//管理画面、コメント一覧取得用
+		public CommentBs
+		(int comment_id, String name, String comment, Date post_time, int show_flag){
+			this.comment_id = comment_id;
+			this.name = name;
+			this.comment = comment;
+			this.post_time = post_time;
+			this.show_flag = show_flag;
+		}
+
 		public int getComment_id() {
 			return comment_id;
 		}
