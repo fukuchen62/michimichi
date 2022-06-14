@@ -484,9 +484,13 @@ public class SearchDAO {
 						}
 					}
 					//複数のエリア検索をするときにORを追加
-					if(search_area_id.length==2 && search_area_id[i-1]==1) {
-
-					}else {
+					if(search_area_id.length==1) {
+						sql += " ";
+					}else if(search_area_id.length==2) {
+						if(search_area_id[0]==2) {
+							sql += " OR ";
+						}
+					}else if(search_area_id.length==3) {
 						sql += " OR ";
 					}
 				}
