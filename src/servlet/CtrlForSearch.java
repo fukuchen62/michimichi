@@ -74,16 +74,6 @@ public class CtrlForSearch extends HttpServlet {
 					areasList.add("南部 ");
 				}
 			}
-			//検索結果一覧に表示用の文字配列作成
-//			for(int i=0;i<checkedAreas.length;i++) {
-//				if(checkedAreas[i].equals("1")) {
-//					areasList.add("東部 ");
-//				}else if(checkedAreas[i].equals("2")) {
-//					areasList.add("西部 ");
-//				}else if(checkedAreas[i].equals("3")) {
-//					areasList.add("南部 ");
-//				}
-//			}
 			//検索結果を読み込み
 			searchList = searchLogic.getSearchList(areas);
 		}
@@ -115,19 +105,19 @@ public class CtrlForSearch extends HttpServlet {
 				}else if(checkedFacilities[i].equals("10")) {
 					facilitiesList.add("観光案内 ");
 				}else if(checkedFacilities[i].equals("11")) {
-					facilitiesList.add("温泉 ");
+					facilitiesList.add("体験施設 ");
 				}else if(checkedFacilities[i].equals("12")) {
-					aroundList.add("コンビニ ");
+					facilitiesList.add("温泉 ");
 				}else if(checkedFacilities[i].equals("13")) {
-					aroundList.add("ドラッグストア ");
+					aroundList.add("コンビニ ");
 				}else if(checkedFacilities[i].equals("14")) {
-					aroundList.add("ガソリンスタンド(周辺) ");
+					aroundList.add("ドラッグストア ");
 				}else if(checkedFacilities[i].equals("15")) {
-					aroundList.add("病院 ");
+					aroundList.add("ガソリンスタンド(周辺) ");
 				}else if(checkedFacilities[i].equals("16")) {
-					aroundList.add("最寄り駅/バス停 ");
+					aroundList.add("病院 ");
 				}else if(checkedFacilities[i].equals("17")) {
-					aroundList.add("体験施設 ");
+					aroundList.add("最寄り駅/バス停 ");
 				}else if(checkedFacilities[i].equals("18")) {
 					aroundList.add("温泉(周辺) ");
 				}else if(checkedFacilities[i].equals("19")) {
@@ -135,7 +125,7 @@ public class CtrlForSearch extends HttpServlet {
 				}
 			}
 			//検索結果を読み込み
-			searchList = searchLogic.getSearchList(facilities);
+			searchList = searchLogic.getSearchFacilityList(facilities);
 		}
 
 		//エリアIDと施設IDを使った検索の場合
@@ -178,19 +168,19 @@ public class CtrlForSearch extends HttpServlet {
 				}else if(checkedFacilities[i].equals("10")) {
 					facilitiesList.add("観光案内 ");
 				}else if(checkedFacilities[i].equals("11")) {
-					facilitiesList.add("温泉 ");
+					facilitiesList.add("体験施設 ");
 				}else if(checkedFacilities[i].equals("12")) {
-					aroundList.add("コンビニ ");
+					facilitiesList.add("温泉 ");
 				}else if(checkedFacilities[i].equals("13")) {
-					aroundList.add("ドラッグストア ");
+					aroundList.add("コンビニ ");
 				}else if(checkedFacilities[i].equals("14")) {
-					aroundList.add("ガソリンスタンド(周辺) ");
+					aroundList.add("ドラッグストア ");
 				}else if(checkedFacilities[i].equals("15")) {
-					aroundList.add("病院 ");
+					aroundList.add("ガソリンスタンド(周辺) ");
 				}else if(checkedFacilities[i].equals("16")) {
-					aroundList.add("最寄り駅/バス停 ");
+					aroundList.add("病院 ");
 				}else if(checkedFacilities[i].equals("17")) {
-					aroundList.add("体験施設 ");
+					aroundList.add("最寄り駅/バス停 ");
 				}else if(checkedFacilities[i].equals("18")) {
 					aroundList.add("温泉(周辺) ");
 				}else if(checkedFacilities[i].equals("19")) {
