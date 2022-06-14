@@ -21,7 +21,7 @@ public class SearchLogic {
 	}
 
 	/**
-	 * エリアIDから検索結果を取得する
+	 * 施設IDから検索結果を取得する
 	 *
 	 * @return searchList
  	 */

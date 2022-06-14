@@ -194,26 +194,56 @@ public class SearchDAO {
 					+ "ON "
 					+ "M_FACILITIES_INFORMATION.MICHINOEKI_ID = M_ROAD_STATIONS.MICHINOEKI_ID ";
 			sql += "WHERE ";
-			sql += "FACILITIES_ID=?";
 
-			//複数のエリアIDが選択された場合
-			if(search_facilities_id.length>=2) {
-				for(int i=1;i<search_facilities_id.length;i++) {
-					sql += " OR FACILITIES_ID=?";
+			for(int j=0;j<search_facilities_id.length;j++) {
+				if(search_facilities_id[j]==1) {
+					sql += "tag1=TRUE";
+				}else if(search_facilities_id[j]==2) {
+					sql += "tag2=TRUE";
+				}else if(search_facilities_id[j]==3) {
+					sql += "tag3=TRUE";
+				}else if(search_facilities_id[j]==4) {
+					sql += "tag4=TRUE";
+				}else if(search_facilities_id[j]==5) {
+					sql += "tag5=TRUE";
+				}else if(search_facilities_id[j]==6) {
+					sql += "tag6=TRUE";
+				}else if(search_facilities_id[j]==7) {
+					sql += "tag7=TRUE";
+				}else if(search_facilities_id[j]==8) {
+					sql += "tag8=TRUE";
+				}else if(search_facilities_id[j]==9) {
+					sql += "tag9=TRUE";
+				}else if(search_facilities_id[j]==10) {
+					sql += "tag10=TRUE";
+				}else if(search_facilities_id[j]==11) {
+					sql += "tag11=TRUE";
+				}else if(search_facilities_id[j]==12) {
+					sql += "tag12=TRUE";
+				}else if(search_facilities_id[j]==13) {
+					sql += "tag13=TRUE";
+				}else if(search_facilities_id[j]==14) {
+					sql += "tag14=TRUE";
+				}else if(search_facilities_id[j]==15) {
+					sql += "tag15=TRUE";
+				}else if(search_facilities_id[j]==16) {
+					sql += "tag16=TRUE";
+				}else if(search_facilities_id[j]==17) {
+					sql += "tag17=TRUE";
+				}else if(search_facilities_id[j]==18) {
+					sql += "tag18=TRUE";
+				}else if(search_facilities_id[j]==19) {
+					sql += "tag19=TRUE";
+				}
+				//リストの終わりの場合　後に続く要素はない
+				if(search_facilities_id.length==j+1) {
+				}else {
+				//リストの終わりでは無い場合　後に続く検索条件
+					sql += " OR ";
 				}
 			}
-
 			//SQL命令を準備する
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-			//ここで一個目
-			pStmt.setInt(1, search_facilities_id[0]);
-			//複数のエリアIDが選択された場合
-			if(search_facilities_id.length>=2) {
-				//二個目以降のエリアID
-				for(int i=1;i<search_facilities_id.length;i++) {
-					pStmt.setInt(i+1, search_facilities_id[i]);
-				}
-			}
 			//SQL命令を発行する
 			ResultSet rs = pStmt.executeQuery();
 			//読み込んだレコードを処理する

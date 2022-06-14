@@ -106,10 +106,13 @@
 									<input id="info" type="checkbox" name="facility" value="10">
 									<label for="info">観光案内</label>
 								</div>
-
+									<div class="flexR">
+										<input id="exp" type="checkbox" name="facility" value="11">
+										<label for="exp">体験施設</label>
+									</div>
 								<div class="flexR">
 									<input id="hotspring" type="checkbox" name="facility"
-										value="11"> <label for="hotspring">温泉</label>
+										value="12"> <label for="hotspring">温泉</label>
 								</div>
 							</div>
 						</div>
@@ -122,17 +125,17 @@
 							<div class="wrap">
 								<div class="around-wrap">
 									<div>
-										<input id="conveni" type="checkbox" name="facility" value="12">
+										<input id="conveni" type="checkbox" name="facility" value="13">
 										<label for="conveni">コンビニ</label>
 									</div>
 
 									<div class="flexR">
-										<input id="drug" type="checkbox" name="facility" value="13">
+										<input id="drug" type="checkbox" name="facility" value="14">
 										<label for="drug">ドラッグストア</label>
 									</div>
 
 									<div class="flexR">
-										<input id="a-gs" type="checkbox" name="facility" value="14">
+										<input id="a-gs" type="checkbox" name="facility" value="15">
 										<label for="a-gs">ガソリンスタンド</label>
 									</div>
 
@@ -142,15 +145,9 @@
 									</div>
 
 									<div class="flexR">
-										<input id="station" type="checkbox" name="facility" value="16">
+										<input id="station" type="checkbox" name="facility" value="17">
 										<label for="station">最寄り駅/バス停</label>
 									</div>
-
-									<div class="flexR">
-										<input id="exp" type="checkbox" name="facility" value="17">
-										<label for="exp">体験施設</label>
-									</div>
-
 									<div class="flexR">
 										<input id="a-hotspring" type="checkbox" name="facility"
 											value="18"> <label for="a-hotspring">温泉</label>
@@ -286,10 +283,15 @@
 										src="img/pictgram/info.svg" alt="info"> 観光案内
 									</label>
 								</div>
-
+									<div class="flexR">
+										<input id="exp-sp" type="checkbox" name="facility" value="11">
+										<label for="exp-sp"> <img class="img"
+											src="img/pictgram/exp.svg" alt="exp"> 体験施設
+										</label>
+									</div>
 								<div class="flexR">
 									<input id="hotspring-sp" type="checkbox" name="facility"
-										value="11"> <label for="hotspring-sp"> <img
+										value="12"> <label for="hotspring-sp"> <img
 										class="img" src="img/pictgram/hotspring.svg" alt="hotspring">
 										温泉
 									</label>
@@ -306,21 +308,21 @@
 								<div class="around-wrap">
 									<div class="flexR">
 										<input id="conveni-sp" type="checkbox" name="facility"
-											value="12"> <label for="conveni-sp"> <img
+											value="13"> <label for="conveni-sp"> <img
 											class="img" src="img/pictgram/conveni.svg" alt="conveni">
 											コンビニ
 										</label>
 									</div>
 
 									<div class="flexR">
-										<input id="drug-sp" type="checkbox" name="facility" value="13">
+										<input id="drug-sp" type="checkbox" name="facility" value="14">
 										<label for="drug-sp"> <img class="img"
 											src="img/pictgram/drug.svg" alt="drug"> ドラッグストア
 										</label>
 									</div>
 
 									<div class="flexR">
-										<input id="a-gs-sp" type="checkbox" name="facility" value="14">
+										<input id="a-gs-sp" type="checkbox" name="facility" value="15">
 										<label for="a-gs-sp"> <img class="img"
 											src="img/pictgram/gas.svg" alt="gas"> ガソリンスタンド
 										</label>
@@ -328,7 +330,7 @@
 
 									<div class="flexR">
 										<input id="hospital-sp" type="checkbox" name="facility"
-											value="15"> <label for="hospital-sp"> <img
+											value="16"> <label for="hospital-sp"> <img
 											class="img" src="img/pictgram/hospital.svg" alt="hospital">
 											病院
 										</label>
@@ -336,19 +338,11 @@
 
 									<div class="flexR">
 										<input id="station-sp" type="checkbox" name="facility"
-											value="16"> <label for="station-sp"> <img
+											value="17"> <label for="station-sp"> <img
 											class="img" src="img/pictgram/station.svg" alt="station">
 											最寄り駅<br> バス停
 										</label>
 									</div>
-
-									<div class="flexR">
-										<input id="exp-sp" type="checkbox" name="facility" value="17">
-										<label for="exp-sp"> <img class="img"
-											src="img/pictgram/exp.svg" alt="exp"> 体験施設
-										</label>
-									</div>
-
 									<div class="flexR">
 										<input id="a-hotspring-sp" type="checkbox" name="facility"
 											value="18"> <label for="a-hotspring-sp"> <img
@@ -504,12 +498,6 @@
 													<img src="${searchresult.tag11_icon_path2}">
 												</c:otherwise>
 											</c:choose>
-										</div>
-									</div>
-									<div class="pict-around">
-										周辺施設
-										<hr class="hr-style">
-										<div class="pict-area">
 											<c:choose>
 												<c:when test="${searchresult.tag12}">
 													<img src="${searchresult.tag12_icon_path1}">
@@ -518,6 +506,12 @@
 													<img src="${searchresult.tag12_icon_path2}">
 												</c:otherwise>
 											</c:choose>
+										</div>
+									</div>
+									<div class="pict-around">
+										周辺施設
+										<hr class="hr-style">
+										<div class="pict-area">
 											<c:choose>
 												<c:when test="${searchresult.tag13}">
 													<img src="${searchresult.tag13_icon_path1}">
