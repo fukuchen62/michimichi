@@ -67,9 +67,9 @@ public class CtrlForSearch extends HttpServlet {
 			for (int i = 0; i < checkedAreas.length; i++) {
 				areas[i] = Integer.parseInt(checkedAreas[i]);
 				if(checkedAreas[i].equals("1")) {
-					areasList.add("東部 ");
-				}else if(checkedAreas[i].equals("2")) {
 					areasList.add("西部 ");
+				}else if(checkedAreas[i].equals("2")) {
+					areasList.add("東部 ");
 				}else if(checkedAreas[i].equals("3")) {
 					areasList.add("南部 ");
 				}
@@ -135,9 +135,9 @@ public class CtrlForSearch extends HttpServlet {
 			for (int i = 0; i < checkedAreas.length; i++) {
 				areas[i] = Integer.parseInt(checkedAreas[i]);
 				if(checkedAreas[i].equals("1")) {
-					areasList.add("東部 ");
-				}else if(checkedAreas[i].equals("2")) {
 					areasList.add("西部 ");
+				}else if(checkedAreas[i].equals("2")) {
+					areasList.add("東部 ");
 				}else if(checkedAreas[i].equals("3")) {
 					areasList.add("南部 ");
 				}

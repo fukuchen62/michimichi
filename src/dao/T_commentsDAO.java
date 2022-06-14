@@ -202,7 +202,69 @@ public class T_commentsDAO {
 		return true;
 	}
 
+	public List<CommentBs> getAdminCommentsById(int con_id) {
 
+		List<CommentBs> AdminCommentList = new ArrayList<>();
+
+		String sql = "";
+
+		//データベースに接続
+		Connection conn = null;
+		conn = DbConnection.conn;
+		if (conn == null)
+			return null;
+
+		//BDへ接続
+		try {
+
+			//SELECT文を準備
+			//show_flagで表示になっているものを、降順で抽出する。
+			sql = "SELECT * "
+					+ " FROM T_comments "
+					+ " WHERE michinoeki_id = ?"
+					+ " ORDER BY"
+					+ " comment_id DESC";
+
+			//SQLを送信
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			//pStmt.setInt(一番目の？,代入するもの)
+			pStmt.setInt(1, con_id);
+
+			//SELECTを実行し、結果表を取得
+			ResultSet rs = pStmt.executeQuery();
+
+			//結果表に格納されたレコードの内容をCommentListインスタンスに設定し、ArrayListインスタンスに追加
+			while (rs.next()) {
+				int comment_id = rs.getInt("comment_id");
+				String name = rs.getString("name");
+				String comment =  rs.getString("comment");
+				Date post_time = rs.getTimestamp("post_time");
+				int show_flag = rs.getInt("show_flag");
+
+				CommentBs comments = new CommentBs(
+						comment_id,
+						name,
+						comment,
+						post_time,
+						show_flag
+						);
+
+				AdminCommentList.add(comments);
+			}
+
+		} catch (SQLException e) {
+			// 自動生成された catch ブロック
+			e.printStackTrace();
+			return null;
+
+		} finally {
+			//データベース切断
+
+		}
+		return AdminCommentList;
+
+	}
 
 
 }

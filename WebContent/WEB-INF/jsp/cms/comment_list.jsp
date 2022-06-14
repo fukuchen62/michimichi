@@ -23,7 +23,7 @@
 			<section>
 				<h1>管理者ページ</h1>
 				<div id="opbtns">
-					<a href="/michimichi/CtrlForCms?pge_id=18">コメント管理</a>
+					<a href="/michimichi/CtrlForCms?pge_id=19">コメント管理</a>
 					<a href="/michimichi/CtrlForCms?pge_id=14">道の駅管理</a>
 					<a href="/michimichi/CtrlForCms?pge_id=17">特集管理</a>
 					<a href="/michimichi/CtrlForCms?pge_id=20">アカウント管理</a>
@@ -32,8 +32,7 @@
 			<section>
 				<h2>お知らせ</h2>
 				<table class="entryForm">
-
-					<c:forEach var="post" items="${AdminStaionList }" end="20">
+					<c:forEach var="post" items="${AdminStaionList}" end="20">
 						<a href="CtrlForCms?pge_id=19&con_id=${post.michinoeki_id}">
 							<div class="title" >${post.michinoeki_name}</div>
 						</a>

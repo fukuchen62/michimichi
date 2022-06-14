@@ -29,4 +29,13 @@ public class CommentLogic {
 		}
 	}
 
+	//指定された道の駅IDのコメント情報を取ってくる(管理画面用)
+		public List<CommentBs> getAdminCommentsById(int con_id) {
+			//DAOオブジェクト生成
+			T_commentsDAO dao = new T_commentsDAO();
+			//DBから全レコードを取得する
+			List<CommentBs> AdminCommentList = dao.getAdminCommentsById(con_id);
+			return AdminCommentList;
+		}
+
 }

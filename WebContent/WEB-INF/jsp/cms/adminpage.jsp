@@ -23,7 +23,7 @@
 			<section>
 				<h1>管理者ページ</h1>
 				<div id="opbtns">
-					<a href="/michimichi/CtrlForCms?pge_id=18">コメント管理</a>
+					<a href="/michimichi/CtrlForCms?pge_id=19">コメント管理</a>
 					<a href="/michimichi/CtrlForCms?pge_id=14">道の駅管理</a>
 					<a href="/michimichi/CtrlForCms?pge_id=17">特集管理</a>
 					<a href="/michimichi/CtrlForCms?pge_id=20">アカウント管理</a>
@@ -38,7 +38,7 @@
 						<th class="subtitle" width="25%">発信者</th>
 						<th class="subtitle" width="50%">タイトル</th>
 					</tr>
-					<c:forEach var="post" items="${adminfeaturelist}" end="20">
+					<c:forEach var="post" items="${featureList}" end="20">
 						<tr>
 							<td class="time"><fmt:formatDate type="time"
 									value="${post.create_time}" pattern="yyyy/MM/dd HH:mm" /></td>

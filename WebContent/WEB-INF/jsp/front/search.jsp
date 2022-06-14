@@ -34,17 +34,14 @@
 									<input id="all" class="all" type="checkbox" name="district">
 									<label for="all"> 全域</label>
 								</div>
-
-								<div class="flexR">
-									<input id="east" class="dist" type="checkbox" name="area"
-										value="1"> <label for="east">東部</label>
-								</div>
-
 								<div class="flexR">
 									<input id="west" class="dist" type="checkbox" name="area"
-										value="2"> <label for="west">西部</label>
+										value="1"> <label for="west">西部</label>
 								</div>
-
+								<div class="flexR">
+									<input id="east" class="dist" type="checkbox" name="area"
+										value="2"> <label for="east">東部</label>
+								</div>
 								<div class="flexR">
 									<input id="south" class="dist" type="checkbox" name="area"
 										value="3"> <label for="south">南部</label>
@@ -189,15 +186,14 @@
 									<input id="all-sp" class="all" type="checkbox" name="district">
 									<label for="all-sp"> 全域</label>
 								</div>
-
 								<div class="flexR">
-									<input id="east-sp" class="dist" type="checkbox" name="area"
-										value="1"> <label for="east-sp">東部</label>
+									<input id="west-sp" class="dist" type="checkbox" name="area"
+										value="1"> <label for="west-sp">西部</label>
 								</div>
 
 								<div class="flexR">
-									<input id="west-sp" class="dist" type="checkbox" name="area"
-										value="2"> <label for="west-sp">西部</label>
+									<input id="east-sp" class="dist" type="checkbox" name="area"
+										value="2"> <label for="east-sp">東部</label>
 								</div>
 
 								<div class="flexR">

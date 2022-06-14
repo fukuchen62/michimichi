@@ -167,8 +167,15 @@ public class M_road_stationsDAO {
 
 			//SELECT文を準備
 			//show_flagで表示になっているものを、ランダム順で抽出する。
-			sql = "SELECT * "
-					+ " FROM M_road_stations "
+			sql = "SELECT "
+					+ " a.michinoeki_id,"
+					+ " a.michinoeki_name,"
+					+ " a.show_flag,"
+					+ " a.create_time,"
+					+ " a.create_user_id,"
+					+ " b.name"
+					+ " FROM M_road_stations as a INNER JOIN m_accounts as b"
+					+ " ON a.create_user_id = b.user_id "
 					+ " ORDER BY michinoeki_id ASC";
 
 			//SQLを送信
