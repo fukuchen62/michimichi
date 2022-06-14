@@ -491,13 +491,13 @@
 
 	            <div class="name">
 	                お名前
-	                <input id="comment-name" type="text" name="name" maxlength="30" placeholder="お名前を入力してください" required>
+	                <input id="comment-name" type="text" name="name" maxlength="30" required>
 	            </div>
 
 	            <textarea id="comment-text" name="textarea" id="" cols="30" rows="4" maxlength="1024" required></textarea>
 
 				<div class="btn-wrap">
-					<div>
+					<div id="warning-wrap">
 						<p id="warning-name"></p>
 						<p id="warning-comment"></p>
 					</div>
