@@ -254,6 +254,31 @@
                     <div class="slider">
                         <c:forEach var="spo" items="${SpotList}" end="2">
                             <div class="flexC">
+
+                                <%-- <!-- spot-01 -->
+		                        <figure class="spot-box spot-box-01 flexC">
+		                            <img src="${spo.spot_photo_path1}" alt="${spo.spot_alt1}">
+		                            <figcaption class="station-desc spot-desc center">
+		                                ${spo.spot_name}</figcaption>
+		                        </figure>
+								<!-- modal-01 -->
+		                        <div class="spot-modal">
+		                            <div class="spot-modal-info">
+		                                <div class="flexC">
+		                                    <div class="spot-modal-img flexR between">
+		                                        <img src="${spo.spot_photo_path2}" alt="${spo.spot_alt2}">
+		                                        <img src="${spo.spot_photo_path3}" alt="${spo.spot_alt3}">
+		                                    </div>
+		                                    <span class="spot-modal-text1"> 名称：${spo.spot_name} </span>
+		                                    <span class="spot-modal-text2"> 住所：${spo.spot_address} </span>
+		                                    <span class="spot-modal-text3"> URL: <a href="${spo.spot_url}" target="_blank"
+		                                        rel="noopener noreferrer"> ${spo.spot_url} </a>
+		                                    </span> <span class="spot-modal-text4"> ${spo.spot_overview} </span>
+		                                </div>
+		                            </div>
+		                        </div> --%>
+
+
                                 <img src="${spo.spot_photo_path1}" alt="${spo.spot_alt1}">
                                 <img src="${spo.spot_photo_path2}" alt="${spo.spot_alt2}">
                                 <img src="${spo.spot_photo_path3}" alt="${spo.spot_alt3}">
@@ -426,25 +451,24 @@
 
 	<div class="container">
     	<div class="comment-wrap mt60">
-	        <c:forEach var="com" items="${CommentList}" end="4">
-	            <div>
-	                <p class="comment-name">${com.name}　${com.post_time}</p>
-	                <hr>
-
-	                <p class="comment-text">${com.comment}</p>
-	            </div>
-	        </c:forEach>
+			<c:forEach var="com" items="${CommentList}" end="4">
+				<div>
+				    <%-- <p class="comment-name">${com.name}　<fmt:formatDate pattern = "yyyy年MM月dd日　HH：mm" value = "${com.post_time}"/></p> --%>
+				    <hr>
+				    <p class="comment-text">${com.comment}</p>
+				</div>
+			</c:forEach>
 
 			<!-- コメント折り畳みアコーディオン -->
-            <div class="comment-accordion">
-                <div>
-                    <p class="comment-name">お名前　2020-2-12 17:00</p>
-                    <hr>
-
-                    <p class="comment-text">
-                        text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text </p>
-                </div>
-            </div>
+			<div class="comment-accordion">
+				<c:forEach var="com" items="${CommentList}" begin="5" end="100">
+				    <div>
+			            <%-- <p class="comment-name">${com.name}　<fmt:formatDate pattern = "yyyy年MM月dd日　HH：mm" value = "${com.post_time}"/></p> --%>
+			            <hr>
+			            <p class="comment-text">${com.comment} </p>
+				    </div>
+				</c:forEach>
+			</div>
 
 			<!-- もっと見るボタン -->
             <div class="comment-more">
@@ -467,12 +491,18 @@
 
 	            <div class="name">
 	                お名前
-	                <input id="comment-name" type="text" name="name">
+	                <input id="comment-name" type="text" name="name" maxlength="30" placeholder="お名前を入力してください" required>
 	            </div>
 
-	            <textarea id="comment-text" name="textarea" id="" cols="30" rows="4"></textarea>
+	            <textarea id="comment-text" name="textarea" id="" cols="30" rows="4" maxlength="1024" required></textarea>
 
-	            <input class="btn-comment" type="button" value="投稿">
+				<div class="btn-wrap">
+					<div>
+						<p id="warning-name"></p>
+						<p id="warning-comment"></p>
+					</div>
+	            	<input class="btn-comment" type="button" value="投稿">
+				</div>
 
 	            <div class="comment-modal">
 	                <div class="comment-modal-area">
@@ -486,7 +516,7 @@
 	                        <div class="comment-modal-name flexR">
 	                            <span>お名前　：</span>
 	                            <span>
-	                                <input id="res-name" type="text" name="name" readonly>
+	                                <input id="res-name" type="text" name="name" readonly required>
 	                            </span>
 	                        </div>
 
