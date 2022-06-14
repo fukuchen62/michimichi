@@ -23,7 +23,7 @@
 			<section>
 				<h1>管理者ページ</h1>
 				<div id="opbtns">
-					<a href="/michimichi/CtrlForCms?pge_id=18">コメント管理</a>
+					<a href="/michimichi/CtrlForCms?pge_id=19">コメント管理</a>
 					<a href="/michimichi/CtrlForCms?pge_id=14">道の駅管理</a>
 					<a href="/michimichi/CtrlForCms?pge_id=17">特集管理</a>
 					<a href="/michimichi/CtrlForCms?pge_id=20">アカウント管理</a>

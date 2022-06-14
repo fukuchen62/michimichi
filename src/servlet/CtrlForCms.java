@@ -13,6 +13,8 @@ import javax.servlet.http.HttpSession;
 
 import beans.Feature;
 import beans.LoginUser;
+import beans.Station;
+import model.CommentListLogic;
 import model.FeatureListLogic;
 
 /**
@@ -106,7 +108,7 @@ public class CtrlForCms extends HttpServlet {
 		}
 
 		else if (pge_id == 19) {
-			forward = movetoCommentList();
+			forward = movetoCommentList(request);
 		}
 
 		else if (pge_id == 20) {
@@ -231,13 +233,13 @@ public class CtrlForCms extends HttpServlet {
 		return forward;
 	}
 
-	private String movetoCommentList() {
-		//		//コメントリストを取得
-		//		CommentListLogic getCommentListLogic = new CommentListLogic();
-		//		List<Comment> commentList = getCommentListLogic.execute();
-		//
-		//		//リクエストスコープに保存
-		//		request.setAttribute("commentList", commentList);
+	private String movetoCommentList(HttpServletRequest request) {
+		// 道の駅一覧を出す
+		CommentListLogic commentListLogic = new CommentListLogic();
+		List<Station> AdminStaionList = commentListLogic.getadminStaionList();
+
+		// リクエストスコープに保存
+		request.setAttribute("AdminStaionList", AdminStaionList);
 
 		String forward = "WEB-INF/jsp/cms/comment_list.jsp";
 		return forward;
