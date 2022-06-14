@@ -29,26 +29,17 @@
 					<a href="/michimichi/CtrlForCms?pge_id=20">アカウント管理</a>
 				</div>
 			</section>
-			<%-- <section>
+			<section>
 				<h2>お知らせ</h2>
 				<table class="entryForm">
-					<tr>
-						<th class="subtitle" width="18%">日時</th>
-						<th class="subtitle" width="12%">発信者</th>
-						<th class="subtitle" width="30%">タイトル</th>
-						<th class="subtitle" width="40%">概要</th>
-					</tr>
-					<c:forEach var="post" items="${postList}" end="20">
-						<tr>
-							<td class="time"><fmt:formatDate type="time"
-									value="${post.createtime}" pattern="yyyy/MM/dd HH:mm" /></td>
-							<td class="name">${post.name}</td>
-							<td class="title">${post.title}</td>
-							<td class="mutter">${fn:escapeXml(post.summary)}</td>
-						</tr>
+
+					<c:forEach var="post" items="${AdminStaionList }" end="20">
+						<a href="CtrlForCms?pge_id=19&con_id=${post.michinoeki_id}">
+							<div class="title" >${post.michinoeki_name}</div>
+						</a>
 					</c:forEach>
 				</table>
-			</section> --%>
+			</section>
 		</div>
 
 	</c:param>

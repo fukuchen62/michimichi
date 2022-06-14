@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import beans.Station;
@@ -146,11 +147,69 @@ public class M_road_stationsDAO {
 
 
 	/*********
-	 * 道の駅個別 タグ情報、出力用メソッド
+	 * 管理者画面　道の駅一覧、出力用メソッド
 	 *********/
-	public List<Station> getFacilities(int showflag, int con_id) {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
+	public List<Station> getadminStaionList() {
+
+
+		List<Station> AdminStaionList = new ArrayList<>();
+
+		String sql = "";
+
+		//データベースに接続
+		Connection conn = null;
+		conn = DbConnection.conn;
+		if (conn == null)
+			return null;
+
+		//BDへ接続
+		try {
+
+			//SELECT文を準備
+			//show_flagで表示になっているものを、ランダム順で抽出する。
+			sql = "SELECT * "
+					+ " FROM M_road_stations "
+					+ " ORDER BY michinoeki_id ASC";
+
+			//SQLを送信
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			//pStmt.setInt(一番目の？,代入するもの)
+
+			//SELECTを実行し、結果表を取得
+			ResultSet rs = pStmt.executeQuery();
+
+			//結果表に格納されたレコードの内容をFeatureListインスタンスに設定し、ArrayListインスタンスに追加
+			while (rs.next()) {
+				int michinoeki_id = rs.getInt("michinoeki_id");
+				String michinoeki_name = rs.getString("michinoeki_name");
+				int show_flag = rs.getInt("show_flag");
+				Date create_time = rs.getTimestamp("create_time");
+				int create_user_id = rs.getInt("create_user_id");
+				String account_name = rs.getString("name");
+
+				Station adminStaion = new Station(
+						michinoeki_id,
+						michinoeki_name,
+						show_flag,
+						create_time,
+						create_user_id,
+						account_name);
+
+				AdminStaionList.add(adminStaion);
+			}
+
+		} catch (SQLException e) {
+			// 自動生成された catch ブロック
+			e.printStackTrace();
+			return null;
+
+		} finally {
+			//データベース切断
+
+		}
+		return AdminStaionList;
+
 	}
 
 	/*********
