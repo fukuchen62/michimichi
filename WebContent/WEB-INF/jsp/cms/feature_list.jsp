@@ -32,9 +32,8 @@
 						<th class="subtitle" width="15%">日時</th>
 						<th class="subtitle" width="15%">発信者</th>
 						<th class="subtitle" width="65%">タイトル</th>
-						<!-- <th class="subtitle" width="40%">概要</th> -->
 					</tr>
-					<c:forEach var="post" items="${adminfeaturelist}" end="20">
+					<c:forEach var="post" items="${featureList}" >
 						<tr>
 							<td class="show"><c:choose>
 									<c:when test="${post.show_flag==1}">

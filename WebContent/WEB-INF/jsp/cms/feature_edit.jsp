@@ -53,7 +53,7 @@
 
 			<!--while文-->
 			<c:choose>
-				<c:when test="${!empty post}">
+				<c:when test="${!empty feature}">
 					<h2>記事の編集</h2>
 				</c:when>
 
@@ -72,51 +72,75 @@
 
 				<!-- 記事編集 -->
 				<c:choose>
-					<c:when test="${!empty post}">
-						<input type="hidden" name="feature_id" value="${post.feature_id}">
+					<c:when test="${!empty feature}">
+
 						<table class="entryForm">
+							<tr>
+								<th width="20">記事ID</th>
+								<td width="20%"><input type="text" name="feature_id"
+									value="${feature.feature_id}" readonly="readonly"></td>
+							</tr>
+
 							<tr>
 								<th width="20">記事の種別ID</th>
 								<td width="80%"><select name="type">
 										<option value="1"
-											<c:if test="${feature.type == 1}"><c:out value="selected"/></c:if>>1:スイーツ</option>
+											<c:if test="${feature.feature_id == 1}"><c:out value="selected"/></c:if>>1:スイーツ</option>
 										<option value="2"
-											<c:if test="${feature.type == 2}"><c:out value="selected"/></c:if>>2:お土産</option>
+											<c:if test="${feature.feature_id == 2}"><c:out value="selected"/></c:if>>2:お土産</option>
 										<option value="3"
-											<c:if test="${feature.type == 3}"><c:out value="selected"/></c:if>>3:観光名所</option>
+											<c:if test="${feature.feature_id == 3}"><c:out value="selected"/></c:if>>3:観光名所</option>
 										<option value="4"
-											<c:if test="${feature.type == 4}"><c:out value="selected"/></c:if>>4:温泉</option>
+											<c:if test="${feature.feature_id == 4}"><c:out value="selected"/></c:if>>4:温泉</option>
 										<option value="5"
-											<c:if test="${feature.type == 5}"><c:out value="selected"/></c:if>>5:くるくるなると</option>
+											<c:if test="${feature.feature_id == 5}"><c:out value="selected"/></c:if>>5:くるくるなると</option>
 										<option value="6"
-											<c:if test="${feature.type == 6}"><c:out value="selected"/></c:if>>6:周辺グルメ</option>
+											<c:if test="${feature.feature_id == 6}"><c:out value="selected"/></c:if>>6:周辺グルメ</option>
 										<option value="7"
-											<c:if test="${feature.type == 7}"><c:out value="selected"/></c:if>>7:道の駅グルメ</option>
-
+											<c:if test="${feature.feature_id == 7}"><c:out value="selected"/></c:if>>7:道の駅グルメ</option>
 								</select></td>
 							</tr>
-
+							<tr>
+								<th width="20%">特集ID</th>
+								<td width="80%"><input type="text" name="feature_id"
+									value="${feature.feature_id}" size="60" required></td>
+							</tr>
 							<tr>
 								<th width="20%">タイトル</th>
 								<td width="80%"><input type="text" name="feature_name"
-									value="${post.feature_name}" size="60" required></td>
+									value="${feature.feature_name}" size="60" required></td>
 							</tr>
 							<tr>
-								<th width="20%">記事内容</th>
-								<td width="80%"><textarea rows="4" cols="85" name="content"
-										required>${post.content}</textarea></td>
+								<th width="20%">特集種別ID</th>
+								<td width="80%"><input type="text" name="feature_type_id"
+									value="${feature.feature_type_id}" size="60" required></td>
 							</tr>
 
 							<tr>
 								<th width="20%">画像のURL</th>
 								<td width="80%"><input type="text" name="main_photo_path"
-									value="${post.main_photo_path}" size="50"></td>
+									value="${feature.main_photo_path}" size="50"></td>
 							</tr>
 
 							<tr>
 								<th width="20%">画像説明</th>
 								<td width="80%"><input type="text" name="alt"
-									value="${post.alt}" size="50"></td>
+									value="${feature.alt}" size="50"></td>
+							</tr>
+							<tr>
+								<th width="20%">記事一覧内容</th>
+								<td width="80%"><textarea rows="10" cols="85"
+										name="feature_list" required>${feature.feature_list}</textarea></td>
+							</tr>
+							<tr>
+								<th width="20%">記事内容</th>
+								<td width="80%"><textarea rows="10" cols="85"
+										name="content" required>${feature.content}</textarea></td>
+							</tr>
+							<tr>
+								<th width="20%">記事内容（CSS）</th>
+								<td width="80%"><textarea rows="10" cols="85"
+										name="content_css" required>${feature.content_css}</textarea></td>
 							</tr>
 
 							<tr>
@@ -128,8 +152,19 @@
 									<c:if test="${feature.show_flag == 0}"><c:out value="checked"/></c:if>>非表示
 								</td>
 							</tr>
+							<tr>
+								<th width="20%">作成日時</th>
+								<td width="80%"><input type="text" name="create_time"
+									value="${feature.create_time}" size="60" readonly="readonly"></td>
+							</tr>
+							<tr>
+								<th width="20%">作成者名</th>
+								<td width="80%"><input type="text" name="create_user_id"
+									value="${feature.create_user_id}" size="60" readonly="readonly"></td>
+							</tr>
 
 						</table>
+
 
 						<p class="btn">
 							<c:if test="${feature.feature_id != -1}">
@@ -155,50 +190,94 @@
 					<c:otherwise>
 						<input type="hidden" name="feature_id" value="-1">
 						<table class="entryForm">
+
+							<tr>
+								<th width="20">記事ID</th>
+								<td width="20%"><input type="text" name="feature_id"
+									value="${feature.feature_id}" readonly="readonly"></td>
+							</tr>
+
 							<tr>
 								<th width="20">記事の種別ID</th>
 								<td width="80%"><select name="type">
-										<option value="1" selected>1:スイーツ</option>
-										<option value="2">2:お土産</option>
-										<option value="3">3:観光名所</option>
-										<option value="4">4:温泉</option>
-										<option value="5">5:くるくるなると</option>
-										<option value="6">6:周辺グルメ</option>
-										<option value="7">7:道の駅グルメ</option>
+										<option value="1"
+											<c:if test="${feature.feature_id == 1}"><c:out value="selected"/></c:if>>1:スイーツ</option>
+										<option value="2"
+											<c:if test="${feature.feature_id == 2}"><c:out value="selected"/></c:if>>2:お土産</option>
+										<option value="3"
+											<c:if test="${feature.feature_id == 3}"><c:out value="selected"/></c:if>>3:観光名所</option>
+										<option value="4"
+											<c:if test="${feature.feature_id == 4}"><c:out value="selected"/></c:if>>4:温泉</option>
+										<option value="5"
+											<c:if test="${feature.feature_id == 5}"><c:out value="selected"/></c:if>>5:くるくるなると</option>
+										<option value="6"
+											<c:if test="${feature.feature_id == 6}"><c:out value="selected"/></c:if>>6:周辺グルメ</option>
+										<option value="7"
+											<c:if test="${feature.feature_id == 7}"><c:out value="selected"/></c:if>>7:道の駅グルメ</option>
 								</select></td>
-
+							</tr>
+							<tr>
+								<th width="20%">特集ID</th>
+								<td width="80%"><input type="text" name="feature_id"
+									value="${feature.feature_id}" size="60" required></td>
 							</tr>
 							<tr>
 								<th width="20%">タイトル</th>
 								<td width="80%"><input type="text" name="feature_name"
-									value="" size="30" required></td>
+									value="${feature.feature_name}" size="60" required></td>
 							</tr>
-
 							<tr>
-								<th width="20%">記事内容</th>
-								<td width="80%"><textarea rows="4" cols="85" name="content"
-										required></textarea></td>
+								<th width="20%">特集種別ID</th>
+								<td width="80%"><input type="text" name="feature_type_id"
+									value="${feature.feature_type_id}" size="60" required></td>
 							</tr>
 
 							<tr>
 								<th width="20%">画像のURL</th>
 								<td width="80%"><input type="text" name="main_photo_path"
-									value="" size="50"></td>
+									value="${feature.main_photo_path}" size="50"></td>
 							</tr>
 
 							<tr>
 								<th width="20%">画像説明</th>
-								<td width="80%"><input type="text" name="alt" value=""
-									size="50"></td>
+								<td width="80%"><input type="text" name="alt"
+									value="${feature.alt}" size="50"></td>
+							</tr>
+							<tr>
+								<th width="20%">記事一覧内容</th>
+								<td width="80%"><textarea rows="10" cols="85"
+										name="feature_list" required>${feature.feature_list}</textarea></td>
+							</tr>
+							<tr>
+								<th width="20%">記事内容</th>
+								<td width="80%"><textarea rows="10" cols="85"
+										name="content" required>${feature.content}</textarea></td>
+							</tr>
+							<tr>
+								<th width="20%">記事内容（CSS）</th>
+								<td width="80%"><textarea rows="10" cols="85"
+										name="content_css" required>${feature.content_css}</textarea></td>
 							</tr>
 
 							<tr>
 								<th width="20%">表示</th>
-								<td width="80%"><input type="radio" name="showflag"
-									value="1" checked>表示 <input type="radio"
-									name="show_flag" value="0">非表示</td>
+								<td width="80%"><input type="radio" name="show_flag"
+									value="1"
+									<c:if test="${feature.show_flag == 1}"><c:out value="checked"/></c:if>>表示
+									<input type="radio" name="show_flag" value="0"
+									<c:if test="${feature.show_flag == 0}"><c:out value="checked"/></c:if>>非表示
+								</td>
 							</tr>
-
+							<tr>
+								<th width="20%">作成日時</th>
+								<td width="80%"><input type="text" name="create_time"
+									value="${feature.create_time}" size="60" readonly="readonly"></td>
+							</tr>
+							<tr>
+								<th width="20%">作成者名</th>
+								<td width="80%"><input type="text" name="create_user_id"
+									value="${feature.create_user_id}" size="60" readonly="readonly"></td>
+							</tr>
 						</table>
 						<%-- 隠すデータ 自動採番のものをユーザーに入力させない --%>
 

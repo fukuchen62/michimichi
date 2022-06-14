@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,7 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import beans.Feature;
 import beans.LoginUser;
+import model.FeatureListLogic;
 import model.LoginLogic;
 
 /**
@@ -62,6 +65,12 @@ public class Login extends HttpServlet {
 
 			session.setAttribute("loginUser", loginUser);
 //			response.sendRedirect("/michimichi/CtrlForCms?pge_id=13");
+
+			//データベースからすべての記事を読み込む
+			FeatureListLogic featureListLogic = new FeatureListLogic();
+			List<Feature> featureList = featureListLogic.getAdminFeatureList();
+
+			request.setAttribute("featureList", featureList);
 
 			forward = "/WEB-INF/jsp/cms/adminpage.jsp";
 			RequestDispatcher dispatcher = request.getRequestDispatcher(forward);

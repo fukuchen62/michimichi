@@ -36,6 +36,7 @@ public class Feature implements Serializable{
 		private int account_user_id;
 		private String account_name;
 
+
 		//コンストラクタの定義
 		public Feature(){}
 
@@ -128,7 +129,7 @@ public class Feature implements Serializable{
 			this.update_time = update_time;
 		}
 
-		//特集追加（t_features全部）
+		//特集	新規追加（t_features全部）
 		public Feature(
 				int feature_id,
 				String feature_name,
@@ -138,13 +139,15 @@ public class Feature implements Serializable{
 				String feature_list,
 				String content,
 				String content_css,
+				String name,
 				int show_flag,
 				int create_user_id,
 				Date create_time,
 				int delete_user_id,
 				Date delete_time,
 				int update_user_id,
-				Date update_time) {
+				Date update_time
+				) {
 			this.feature_id = feature_id;
 			this.feature_name = feature_name;
 			this.feature_type_id = feature_type_id;
@@ -153,6 +156,7 @@ public class Feature implements Serializable{
 			this.feature_list = feature_list;
 			this.content = content;
 			this.content_css = content_css;
+			this.account_name = name;
 			this.show_flag = show_flag;
 			this.create_time = create_time;
 			this.create_user_id = create_user_id;
@@ -162,7 +166,33 @@ public class Feature implements Serializable{
 			this.update_time = update_time;
 		}
 
-		//管理用特集一覧
+		//特集	編集
+				public Feature(
+						int feature_id,
+						String feature_name,
+						int feature_type_id,
+						String main_photo_path,
+						String alt,
+						String feature_list,
+						String content,
+						String content_css,
+						int show_flag,
+						int update_user_id,
+						Date update_time
+						) {
+					this.feature_id = feature_id;
+					this.feature_name = feature_name;
+					this.feature_type_id = feature_type_id;
+					this.main_photo_path = main_photo_path;
+					this.alt = alt;
+					this.feature_list = feature_list;
+					this.content = content;
+					this.content_css = content_css;
+					this.show_flag = show_flag;
+					this.update_user_id = update_user_id;
+					this.update_time = update_time;
+				}
+		//(管理用)特集一覧
 
 		public Feature(
 				int feature_id,
