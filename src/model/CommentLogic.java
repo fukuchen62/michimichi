@@ -5,37 +5,35 @@ import java.util.List;
 import beans.CommentBs;
 import dao.T_commentsDAO;
 
-
 public class CommentLogic {
 
-
 	//指定された道の駅IDのコメント情報を取ってくる
-	public List<CommentBs> getCommentsById(int showflag,int con_id) {
+	public List<CommentBs> getCommentsById(int showflag, int con_id) {
 		//DAOオブジェクト生成
 		T_commentsDAO dao = new T_commentsDAO();
 		//DBから全レコードを取得する
-		List<CommentBs> CommentList = dao.getCommentsById(showflag,con_id);
+		List<CommentBs> CommentList = dao.getCommentsById(showflag, con_id);
 		return CommentList;
 	}
 
 	//入力されたコメント情報をDBに書き込む
-	public boolean insertComment(int con_id,String name, String comment) {
+	public boolean insertComment(int con_id, String name, String comment) {
 		//DAOオブジェクト生成
 		T_commentsDAO dao = new T_commentsDAO();
-		if(dao.insertComment(con_id, name, comment) != false) {
+		if (dao.insertComment(con_id, name, comment) != false) {
 			return true;
-		}else {
+		} else {
 			return false;
 		}
 	}
 
 	//指定された道の駅IDのコメント情報を取ってくる(管理画面用)
-		public List<CommentBs> getAdminCommentsById(int con_id) {
-			//DAOオブジェクト生成
-			T_commentsDAO dao = new T_commentsDAO();
-			//DBから全レコードを取得する
-			List<CommentBs> AdminCommentList = dao.getAdminCommentsById(con_id);
-			return AdminCommentList;
-		}
+	public List<CommentBs> getAdminCommentsById(int con_id) {
+		//DAOオブジェクト生成
+		T_commentsDAO dao = new T_commentsDAO();
+		//DBから全レコードを取得する
+		List<CommentBs> AdminCommentList = dao.getAdminCommentsById(con_id);
+		return AdminCommentList;
+	}
 
 }

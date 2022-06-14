@@ -33,7 +33,7 @@
 						<th class="subtitle" width="15%">発信者</th>
 						<th class="subtitle" width="65%">タイトル</th>
 					</tr>
-					<c:forEach var="post" items="${featureList}" >
+					<c:forEach var="post" items="${adminfeaturelist}" >
 						<tr>
 							<td class="show"><c:choose>
 									<c:when test="${post.show_flag==1}">
@@ -62,27 +62,6 @@
 			</div>
 		</div>
 
-		<!-- Trigger/Open The Modal -->
-		<!-- <button id="myBtn">Open Modal</button> -->
-		<!-- The Modal -->
-		 <div id="myModal" class="modal">
-			Modal content
-			<div class="modal-content">
-				<span class="close">&times;</span>
-				 <h3 id="modal-title">title</h3>
-				<p id="modal-detail">modal-detailmodal-detailmodal-detail</p>
-
-				<div id="sendform">
-					<form id="modal-input" action="/michimichi/FeatureEdit"
-						method="get">
-						<input type="hidden" name="feature_id" id="feature_id"> <input
-							type="hidden" name="showflag" id="showflag"> <input
-							type="hidden" name="fnc" id="fnc"> <input type="submit"
-							id="modal-send" value="サーバーに送信">
-					</form>
-				</div>
-			</div>
-		</div>
 
 	</c:param>
 </c:import>

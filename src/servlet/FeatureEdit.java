@@ -241,8 +241,8 @@ public class FeatureEdit extends HttpServlet {
 
 			} else {
 				//データベースからすべての記事を読み込む
-				List<Feature> featureList = featureListLogic.getFeatureList(showflag);
-				request.setAttribute("featureList", featureList);
+				List<Feature> adminfeaturelist = featureListLogic.getAdminFeatureList();
+				request.setAttribute("adminfeaturelist", adminfeaturelist);
 				forward = "/WEB-INF/jsp/cms/feature_list.jsp";
 			}
 
@@ -258,8 +258,8 @@ public class FeatureEdit extends HttpServlet {
 
 			} else {
 				//データベースからすべての記事を読み込む
-				List<Feature> featureList = featureListLogic.getFeatureList(showflag);
-				request.setAttribute("featureList", featureList);
+				List<Feature> adminfeaturelist = featureListLogic.getAdminFeatureList();
+				request.setAttribute("adminfeaturelist", adminfeaturelist);
 				forward = "/WEB-INF/jsp/cms/feature_list.jsp";
 			}
 

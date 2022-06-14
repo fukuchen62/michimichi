@@ -31,7 +31,7 @@
 			</section>
 
 			 <section>
-				<h2>お知らせ</h2>
+				<h2>特集一覧</h2>
 				<table class="entryForm">
 					<tr>
 						<th class="subtitle" width="25%">日時</th>
