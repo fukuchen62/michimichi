@@ -81,7 +81,7 @@ body {
   -ms-grid-columns: (1fr);
       grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 5%;
-  grid-row-gap: 20px;
+  grid-row-gap: 40px;
 }
 
 #search .district-wrap,
@@ -215,7 +215,7 @@ body {
 }
 
 #search .search-result .search-result-area .grid .search-result-indi .pictgram {
-  height: 160px;
+  height: fit-content;
 }
 #search .search-result .search-result-area .grid .search-result-indi .pictgram .pict-area {
   display: grid;

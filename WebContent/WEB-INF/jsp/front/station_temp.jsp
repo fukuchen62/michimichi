@@ -180,7 +180,8 @@
                             <figure class="flexC">
                                 <img class="img" src="${rec.recommend_photo_path }" alt="${rec.recommend_alt}">
                                 <figcaption class="station-desc recommend-desc">
-                                    ${rec.recommed_overview }</figcaption>
+                                    <span>${rec.recommed_overview }</span>
+                                </figcaption>
                             </figure>
                         </c:forEach>
                     </div>

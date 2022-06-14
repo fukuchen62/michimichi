@@ -29,7 +29,7 @@
 				        </div>
                 	</div>
                 </div>
-                <div class="catch-copy"></div>
+                <!-- <div class="catch-copy"></div> -->
             </div>
 
             <div class="sp">
@@ -43,7 +43,7 @@
 				        </div>
                 	</div>
                 </div>
-                <div class="catch-copy"></div>
+                <!-- <div class="catch-copy"></div> -->
             </div>
         </h1>
     </div>

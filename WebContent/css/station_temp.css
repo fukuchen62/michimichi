@@ -169,6 +169,7 @@ h1 {
   border: none;
   border-radius: 50px;
   outline: none;
+  cursor: pointer;
 }
 
 #introduction .wrap .account .good .btn-good i {
@@ -256,10 +257,14 @@ h1 {
 
 #recommend .wrap .pc .upper-row .flexC .recommend-desc,
 #recommend .wrap .pc .lower-row .flexC .recommend-desc {
-  width: 240px;
+  width: 220px;
+  height: 120px;
   margin-top: 10px;
   background-color: #fff;
   border: 2px solid #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
@@ -279,7 +284,7 @@ h1 {
 }
 
 #spot .container .spot-modal .spot-modal-info {
-  width: 90%;
+  width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -287,11 +292,12 @@ h1 {
   background-color: rgba(0, 0, 0, 0.75);
   border-radius: 5px;
   position: fixed;
-  top: 0;
+  top: 0px;
   bottom: 0;
   left: 0;
   right: 0;
   margin: auto;
+  z-index: 1000;
 }
 
 #spot .container .spot-modal .spot-modal-info .flexC {
@@ -300,12 +306,12 @@ h1 {
 
 #spot .container .spot-modal .spot-modal-info .flexC::before, #spot .container .spot-modal .spot-modal-info .flexC::after {
   content: "";
-  width: 20px;
-  height: 2px;
+  width: 40px;
+  height: 5px;
   background-color: #fff;
   position: absolute;
-  top: -15px;
-  right: -20px;
+  top: -30px;
+  right: -50px;
   z-index: 20;
 }
 

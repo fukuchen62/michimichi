@@ -23,10 +23,12 @@ $(document).ready(function(){
 
     $(".spot-box").click(function(){
         $(this).next().show(300);
+        $("#header").hide();
     });
 
     $(".spot-modal").click(function(){
         $(this).hide(300);
+        $("#header").show();
     });
 
     $(".btn-more").click(function(){

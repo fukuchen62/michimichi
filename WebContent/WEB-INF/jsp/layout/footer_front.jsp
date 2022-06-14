@@ -25,11 +25,21 @@
                             </div>
 
                             <div class="sns flexR">
-                                <i class="bi bi-twitter"></i>
-                                <i class="bi bi-facebook"></i>
-                                <i class="bi bi-instagram"></i>
-                                <i class="bi bi-youtube"></i>
-                                <i class="bi bi-tiktok"></i>
+                            	<a href="https://twitter.com/websys41" target="_blank" rel="noopener noreferrer">
+	                                <i class="bi bi-twitter"></i>
+	                            </a>
+                            	<a href="https://www.facebook.com/profile.php?id=100081959956254" target="_blank" rel="noopener noreferrer">
+	                                <i class="bi bi-facebook"></i>
+	                            </a>
+	                            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                                	<i class="bi bi-instagram"></i>
+                                </a>
+                                <a href="https://www.youtube.com/channel/UCEGVW46hPvYgrRTleTq9PXA" target="_blank" rel="noopener noreferrer">
+                                	<i class="bi bi-youtube"></i>
+                                </a>
+                                <a href="https://www.tiktok.com/ja-JP?lang=ja-JP" target="_blank" rel="noopener noreferrer">
+                                	<i class="bi bi-tiktok"></i>
+                                </a>
                             </div>
                         </div>
                     </div>

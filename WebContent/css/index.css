@@ -99,9 +99,9 @@ a {
   position: relative;
 }
 
-#keyVisual .keyVisual .keyVisual-wrap {
+#keyVisual .keyVisual .pc .keyVisual-wrap {
   height: 100vh;
-  background: url(../img/index/key_visual_pc_bg.jpg) 0 0 no-repeat;
+  background-image: url(../img/index/keyVisual_pc.png);
   background-size: cover;
   position: relative;
 }
@@ -111,8 +111,8 @@ a {
 }
 
 #keyVisual .keyVisual .keyVisual-wrap .keyVisual-map {
-  width: 800px;
-  height: 600px;
+  width: 720px;
+  height: 540px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -132,8 +132,8 @@ a {
 #keyVisual .keyVisual .keyVisual-wrap .keyVisual-map .search-links a {
   margin: 0;
   padding: 5px 20px;
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 5px solid rgba(136, 193, 216, 0.65);
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 5px solid rgba(255, 255, 255, 0.8);
   border-radius: 30px;
   position: absolute;
   color: #e69c81;
@@ -175,7 +175,7 @@ a {
 }
 
 #keyVisual .search-links .form input {
-	display: none;
+  display: none;
 }
 #keyVisual .search-links .pc {
   height: fit-content;
@@ -416,9 +416,12 @@ a {
     position: relative;
   }
 
-  #keyVisual .keyVisual .keyVisual-wrap {
+  #keyVisual .keyVisual .sp .keyVisual-wrap {
     width: 100%;
     height: 100vw;
+    background-image: url(../img/index/keyVisual_sp.png);
+    background-size: cover;
+    position: relative;
   }
 
   #keyVisual .keyVisual .keyVisual-wrap .keyVisual-bg {

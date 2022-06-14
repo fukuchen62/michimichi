@@ -38,7 +38,7 @@
   background-color: rgba(244, 245, 247, 1);
   position: fixed;
   top: 0;
-  z-index: 100;
+  z-index: 90;
 }
 
 #header .g-navi-wrap {
