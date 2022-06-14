@@ -40,7 +40,6 @@ public class CtrlForCms extends HttpServlet {
 		HttpSession session = request.getSession();
 		LoginUser loginUser = (LoginUser) session.getAttribute("loginUser");
 
-
 		//ログインではない状態の場合は、ログイン画面へ
 		if (loginUser == null) {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
@@ -95,7 +94,7 @@ public class CtrlForCms extends HttpServlet {
 		}
 
 		else if (pge_id == 16) {
-			forward = movetoFeatureEdit();
+			forward = movetoFeatureEdit(request);
 		}
 
 		else if (pge_id == 17) {
@@ -121,10 +120,6 @@ public class CtrlForCms extends HttpServlet {
 		else {
 			forward = movetoAdminpage(request);
 		}
-
-		//デバッグ用
-		//		System.out.println("pge_id:" + pge_id);
-		//		System.out.println("forward:" + forward);
 
 		//メイン画面にフォーワード
 		RequestDispatcher dispatcher = request.getRequestDispatcher(forward);
@@ -176,7 +171,12 @@ public class CtrlForCms extends HttpServlet {
 	}
 
 	private String movetoAdminpage(HttpServletRequest request) {
+		// 記事一覧を取得する
+		FeatureListLogic featurelistlogic = new FeatureListLogic();
+		List<Feature> adminfeaturelist = featurelistlogic.getAdminFeatureList();
 
+		//リクエストスコープに保存
+		request.setAttribute("adminfeaturelist", adminfeaturelist);
 		String forward = "WEB-INF/jsp/cms/adminpage.jsp";
 		return forward;
 	}
@@ -208,13 +208,14 @@ public class CtrlForCms extends HttpServlet {
 		return forward;
 	}
 
-	private String movetoFeatureEdit() {
+	private String movetoFeatureEdit(HttpServletRequest request) {
+
 		String forward = "WEB-INF/jsp/cms/feature_edit.jsp";
 		return forward;
 	}
 
 	private String movetoFeatureList(HttpServletRequest request) {
-//		// 記事一覧を取得する
+		// 記事一覧を取得する
 		FeatureListLogic featurelistlogic = new FeatureListLogic();
 		List<Feature> adminfeaturelist = featurelistlogic.getAdminFeatureList();
 
