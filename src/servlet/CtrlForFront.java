@@ -116,27 +116,26 @@ public class CtrlForFront extends HttpServlet {
 		StationListLogic stationListLogic = new StationListLogic();
 		List<Station> TSList = stationListLogic.getTopStaionList(SHOWFALG);
 
-			// リクエストスコープに保存
-			request.setAttribute("TSList", TSList);
+		// リクエストスコープに保存
+		request.setAttribute("TSList", TSList);
 
 		// 特集記事一覧を取得する
 		FeatureListLogic featureListLogic = new FeatureListLogic();
 		List<Feature> TLList = featureListLogic.getTopFeature(SHOWFALG);
 
-			// リクエストスコープに保存
-			request.setAttribute("TLList", TLList);
+		// リクエストスコープに保存
+		request.setAttribute("TLList", TLList);
 
 		//ランダム表記の制御
 		//特集一覧（PC3，SP4）表示画像
 		Integer[] featureImg_random = new Integer[2];
-		for(int i =0; i<2; i++) {
+		for (int i = 0; i < 2; i++) {
 			int num = (int) (Math.random() * 3) + 1;
 			featureImg_random[i] = num;
 		}
 
-			// リクエストスコープに保存
-			request.setAttribute("featureImg_random", featureImg_random);
-
+		// リクエストスコープに保存
+		request.setAttribute("featureImg_random", featureImg_random);
 
 		// フォーワード先
 		String forward = "WEB-INF/jsp/front/top.jsp";
@@ -149,10 +148,10 @@ public class CtrlForFront extends HttpServlet {
 
 		// SP表示のタグ画像情報を取得する
 		TagsLogic tagsLogic = new TagsLogic();
-				List<Tags> SPSearchTagsList = tagsLogic.getSPSearchTags(SHOWFALG);
+		List<Tags> SPSearchTagsList = tagsLogic.getSPSearchTags(SHOWFALG);
 
-					// リクエストスコープに保存
-					request.setAttribute("SPSearchTagsList", SPSearchTagsList);
+		// リクエストスコープに保存
+		request.setAttribute("SPSearchTagsList", SPSearchTagsList);
 
 		// フォーワード先
 		String forward = "WEB-INF/jsp/front/search.jsp";
@@ -257,8 +256,8 @@ public class CtrlForFront extends HttpServlet {
 			con_id = Integer.parseInt(para2);
 		}
 
-			// リクエストスコープに保存
-			request.setAttribute("con_id", con_id);
+		// リクエストスコープに保存
+		request.setAttribute("con_id", con_id);
 
 		//一覧に表示するものだけ（DAOへの命令の大元）
 		final int SHOWFALG = 1;
@@ -270,8 +269,6 @@ public class CtrlForFront extends HttpServlet {
 		FeatureListLogic featureListLogic = new FeatureListLogic();
 		GoodRecordsLogic goodRecordsLogic = new GoodRecordsLogic();
 		CommentLogic commentLogic = new CommentLogic();
-
-
 
 		//道の駅IDで抽出した基本情報
 		Station station = stationLogic.getStationById(CONID);
@@ -294,24 +291,62 @@ public class CtrlForFront extends HttpServlet {
 		//コメント情報
 		List<CommentBs> CommentList = commentLogic.getCommentsById(SHOWFALG, CONID);
 
-			// リクエストスコープに保存
-			request.setAttribute("station", station);
-			request.setAttribute("RecommendsList", RecommendsList);
-			request.setAttribute("SpotList", SpotList);
-			request.setAttribute("FacilityList", FacilityList);
-			request.setAttribute("SFList", SFList);
-			request.setAttribute("goodRecordsCount", goodRecordsCount);
-			request.setAttribute("CommentList", CommentList);
+		//特集リンク
+		int id1 = station.getFeature_banner1();
+		int id2 = station.getFeature_banner2();
+		int id3 = station.getFeature_banner3();
+
+		FeatureLogic logic = new FeatureLogic();
+		Feature feature = null;
+
+		String banner_img1 = "";
+		String banner_alt1 = "";
+		String banner_img2 = "";
+		String banner_alt2 = "";
+		String banner_img3 = "";
+		String banner_alt3 = "";
+
+		if (id1 != 0) {
+			feature = logic.getFeature(id1);
+			banner_img1 = feature.getMain_photo_path();
+			banner_alt1 = feature.getAlt();
+		}
+		if (id2 != 0) {
+			feature = logic.getFeature(id2);
+			banner_img2 = feature.getMain_photo_path();
+			banner_alt2 = feature.getAlt();
+		}
+		if (id3 != 0) {
+			feature = logic.getFeature(id3);
+			banner_img3 = feature.getMain_photo_path();
+			banner_alt3 = feature.getAlt();
+		}
+
+		// リクエストスコープに保存
+		request.setAttribute("station", station);
+		request.setAttribute("RecommendsList", RecommendsList);
+		request.setAttribute("SpotList", SpotList);
+		request.setAttribute("FacilityList", FacilityList);
+		request.setAttribute("SFList", SFList);
+		request.setAttribute("goodRecordsCount", goodRecordsCount);
+		request.setAttribute("CommentList", CommentList);
 
 		//道の駅の特集個別リンクのID取得
-		Integer featureLink1 = station.getFeature_banner1();
-		Integer featureLink2 = station.getFeature_banner2();
-		Integer featureLink3 = station.getFeature_banner3();
+//		Integer featureLink1 = station.getFeature_banner1();
+//		Integer featureLink2 = station.getFeature_banner2();
+//		Integer featureLink3 = station.getFeature_banner3();
 
-			// リクエストスコープに保存
-			request.setAttribute("featureLink1", featureLink1);
-			request.setAttribute("featureLink2", featureLink2);
-			request.setAttribute("featureLink3", featureLink3);
+		// リクエストスコープに保存
+//		request.setAttribute("featureLink1", featureLink1);
+//		request.setAttribute("featureLink2", featureLink2);
+//		request.setAttribute("featureLink3", featureLink3);
+
+		request.setAttribute("banner_img1", banner_img1);
+		request.setAttribute("banner_alt1", banner_alt1);
+		request.setAttribute("banner_img2", banner_img2);
+		request.setAttribute("banner_alt2", banner_alt2);
+		request.setAttribute("banner_img3", banner_img3);
+		request.setAttribute("banner_alt3", banner_alt3);
 
 		// フォーワード先
 		forward = "WEB-INF/jsp/front/station_temp.jsp";

@@ -41,27 +41,24 @@
 						<th class="subtitle" width="18%">日時</th>
 						<th class="subtitle" width="10%">発信者</th>
 						<th class="subtitle" width="25%">タイトル</th>
-						<th class="subtitle" width="40%">概要</th>
 					</tr>
 					<c:forEach var="post" items="${postList}" end="20">
 						<tr>
 							<td class="show"><c:choose>
 									<c:when test="${post.show_flag==1}">
 										<button class="btnshow btnRed"
-											onclick="postShowChange( ${post.post_id },${post.show_flag},'${post.title }');">表</button>
+											onclick="postShowChange( ${post.comment_id },${post.show_flag},'${post.title }');">表</button>
 									</c:when>
 									<c:otherwise>
 										<button class="btnshow btnBlue"
-											onclick="postShowChange( ${post.post_id },${post.show_flag},'${post.title }');">非</button>
+											onclick="postShowChange( ${post.comment_id },${post.show_flag},'${post.title }');">非</button>
 									</c:otherwise>
 								</c:choose></td>
 
 							<td class="time"><fmt:formatDate type="time"
-									value="${post.createtime}" pattern="yyyy/MM/dd HH:mm" /></td>
+									value="${post.post_time}" pattern="yyyy/MM/dd HH:mm" /></td>
 							<td class="name">${post.name}</td>
-							<td class="title"><a
-								href="/cafeshop/PostEdit?post_id=${post.post_id }">${post.title}</a>
-							<td class="post">${fn:escapeXml(post.summary)}</td>
+							<td class="title">${post.comment}</td>
 						</tr>
 					</c:forEach>
 				</table>
