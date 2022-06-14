@@ -99,7 +99,7 @@ $(document).ready(function(){
 		// 戻るボタン、送信ボタンを押した時の処理
 	    $(".btn-return, .btn-submit").click(function(){
 	    	// モーダルを画面外に
-	        $(".comment-modal").css({"bottom": "-2000px"});
+	        $(".comment-modal").css({"bottom": "-3000px"});
 
 	        // フッターのz-indexを1に戻す
 	        $("#footer").css({"z-index": "1"});
@@ -111,10 +111,10 @@ $(document).ready(function(){
 			wName.innerHTML = "";
 			wComment.innerHTML = "";
 	    });
-
-	    $(".comment-more").click(function(){
-	        $(".comment-accordion").toggle("slow");
-	        $(".arrow").toggleClass("active");
-	    });
     });
+
+    $(".comment-more").click(function(){
+	    $(".comment-accordion").toggle("slow");
+	    $(".arrow").toggleClass("active");
+	});
 });

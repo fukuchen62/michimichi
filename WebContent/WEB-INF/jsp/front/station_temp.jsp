@@ -280,8 +280,8 @@
 
 
                                 <img src="${spo.spot_photo_path1}" alt="${spo.spot_alt1}">
-                                <img src="${spo.spot_photo_path2}" alt="${spo.spot_alt2}">
-                                <img src="${spo.spot_photo_path3}" alt="${spo.spot_alt3}">
+                                <%-- <img src="${spo.spot_photo_path2}" alt="${spo.spot_alt2}">
+                                <img src="${spo.spot_photo_path3}" alt="${spo.spot_alt3}"> --%>
 
                                 <figcaption class="station-desc spot-desc">
                                 	<b>${spo.spot_name}</b><br>
@@ -453,7 +453,7 @@
     	<div class="comment-wrap mt60">
 			<c:forEach var="com" items="${CommentList}" end="4">
 				<div>
-				    <%-- <p class="comment-name">${com.name}　<fmt:formatDate pattern = "yyyy年MM月dd日　HH：mm" value = "${com.post_time}"/></p> --%>
+				    <p class="comment-name">${com.name}　<fmt:formatDate pattern = "yyyy年MM月dd日　HH：mm" value = "${com.post_time}"/></p>
 				    <hr>
 				    <p class="comment-text">${com.comment}</p>
 				</div>
@@ -463,7 +463,7 @@
 			<div class="comment-accordion">
 				<c:forEach var="com" items="${CommentList}" begin="5" end="100">
 				    <div>
-			            <%-- <p class="comment-name">${com.name}　<fmt:formatDate pattern = "yyyy年MM月dd日　HH：mm" value = "${com.post_time}"/></p> --%>
+			            <p class="comment-name">${com.name}　<fmt:formatDate pattern = "yyyy年MM月dd日　HH：mm" value = "${com.post_time}"/></p>
 			            <hr>
 			            <p class="comment-text">${com.comment} </p>
 				    </div>
