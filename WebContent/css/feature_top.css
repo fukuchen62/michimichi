@@ -1,5 +1,6 @@
 html{
-	scroll-padding-top: 40px;
+	scroll-behavior: smooth;
+	scroll-padding-top: 120px;
 }
 
 a {

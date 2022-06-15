@@ -255,33 +255,7 @@
                         <c:forEach var="spo" items="${SpotList}" end="2">
                             <div class="flexC">
 
-                                <%-- <!-- spot-01 -->
-		                        <figure class="spot-box spot-box-01 flexC">
-		                            <img src="${spo.spot_photo_path1}" alt="${spo.spot_alt1}">
-		                            <figcaption class="station-desc spot-desc center">
-		                                ${spo.spot_name}</figcaption>
-		                        </figure>
-								<!-- modal-01 -->
-		                        <div class="spot-modal">
-		                            <div class="spot-modal-info">
-		                                <div class="flexC">
-		                                    <div class="spot-modal-img flexR between">
-		                                        <img src="${spo.spot_photo_path2}" alt="${spo.spot_alt2}">
-		                                        <img src="${spo.spot_photo_path3}" alt="${spo.spot_alt3}">
-		                                    </div>
-		                                    <span class="spot-modal-text1"> 名称：${spo.spot_name} </span>
-		                                    <span class="spot-modal-text2"> 住所：${spo.spot_address} </span>
-		                                    <span class="spot-modal-text3"> URL: <a href="${spo.spot_url}" target="_blank"
-		                                        rel="noopener noreferrer"> ${spo.spot_url} </a>
-		                                    </span> <span class="spot-modal-text4"> ${spo.spot_overview} </span>
-		                                </div>
-		                            </div>
-		                        </div> --%>
-
-
                                 <img src="${spo.spot_photo_path1}" alt="${spo.spot_alt1}">
-                                <%-- <img src="${spo.spot_photo_path2}" alt="${spo.spot_alt2}">
-                                <img src="${spo.spot_photo_path3}" alt="${spo.spot_alt3}"> --%>
 
                                 <figcaption class="station-desc spot-desc">
                                 	<b>${spo.spot_name}</b><br>
@@ -292,6 +266,7 @@
                     </div>
                 </figure>
             </div>
+        </div>
     </section>
 
     <!-- feature -->
@@ -300,15 +275,22 @@
             <img srcset="img/temp/station_h2_sp.png 1024w,
             img/temp/station_h2_pc2.png 1024w,
             img/temp/station_h2_pc1.png 1350w" src="img/temp/station_h1_pc1.png" alt="feature_h2">
-            <span>特集リンク</span>
+			<span>特集リンク</span>
         </h2>
 
         <div class="container">
             <div class="wrap">
-                <a href="CtrlForFront?pge_id=4&con_id=${station.feature_banner1}"><img src="" alt="feature_01"></a>
-                <a href="CtrlForFront?pge_id=4&con_id=${station.feature_banner2}"><img src="" alt="feature_02"></a>
-                <a href="CtrlForFront?pge_id=4&con_id=${station.feature_banner3}"class="pc"><img src="" alt="feature_03"></a>
+                <c:if test="${station.feature_banner1 != 0}">
+                    <a href="CtrlForFront?pge_id=4&con_id=${station.feature_banner1}"><img src="${banner_img1} "alt="${banner_alt1}">
+                </c:if>
+                <c:if test="${station.feature_banner2 != 0}">
+                    <a href="CtrlForFront?pge_id=4&con_id=${station.feature_banner2}"><img src="${banner_img2} "alt="${banner_alt2}">
+                </c:if>
+                <c:if test="${station.feature_banner3 != 0}">
+                    <a href="CtrlForFront?pge_id=4&con_id=${station.feature_banner3}" class="pc"><img src="${banner_img3} "alt="${banner_alt3}">
+                </c:if>
             </div>
+        </div>
     </section>
 
     <!-- information -->
@@ -432,6 +414,7 @@
                     </div>
                 </div>
             </div>
+        </div>
     </section>
 
     <section id="map">
