@@ -552,14 +552,7 @@ public class SearchDAO {
 			//SQL命令を準備する
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
-//			//?に値を代入
-//			for(int i=0;i<search_area_id.length;i++) {
-//				int j=0;
-//				for(int k=0;k<search_facilities_id.length;k++) {
-//					pStmt.setInt(j+1,search_facilities_id[k]);
-//					j++;
-//				}
-//			}
+
 			//SQL命令を発行する
 			ResultSet rs = pStmt.executeQuery();
 
