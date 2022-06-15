@@ -18,6 +18,7 @@
 	<c:param name="myjs4" value="js/jquery.sliderPro.min.js" />
 
 	<c:param name="content">
+	<!-- <div id=""></div> -->
     <section id="introduction">
         <h1>
             <img src="img/temp/station_h1_pc1.svg" srcset="img/temp/station_h1_tab.svg 1024w,

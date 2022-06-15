@@ -1022,9 +1022,12 @@ h1 {
     border-bottom: none;
     display: none;
   }
+  #recommend .wrap .sp ul .commodity-box .flexR {
+    justify-content: space-around;
+  }
   #recommend .wrap .sp ul .commodity-box .img {
-    width: 120px;
-    height: 120px;
+    width: 33%;
+    height: auto;
     border-color: rgba(230, 156, 129, 0.7);
     border-radius: 50%;
   }
