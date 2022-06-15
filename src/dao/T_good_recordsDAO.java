@@ -146,7 +146,8 @@ public class T_good_recordsDAO {
 			//show_flagで表示になっている指定IDの一覧を取得する。
 			sql = "SELECT michinoeki_id , COUNT(michinoeki_id) AS good_count "
 					+ " FROM T_good_records "
-					+ " WHERE michinoeki_id = ?";
+					+ " WHERE michinoeki_id = ?"
+					+ " GROUP BY michinoeki_id";
 
 			//SQLを送信
 			PreparedStatement pStmt = conn.prepareStatement(sql);
