@@ -1068,7 +1068,7 @@ h1 {
     background-color: #c7e3ee;
   }
   #feature .wrap a {
-    width: 45%;
+    /* width: 45%; */
     height: auto;
   }
   #information .wrap {

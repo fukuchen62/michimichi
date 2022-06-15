@@ -281,13 +281,13 @@
         <div class="container">
             <div class="wrap">
                 <c:if test="${station.feature_banner1 != 0}">
-                    <a href="CtrlForFront?pge_id=4&con_id=${station.feature_banner1}"><img src="${banner_img1} "alt="${banner_alt1}">
+                    <a href="CtrlForFront?pge_id=4&con_id=${station.feature_banner1}"><img src="${banner_img1} "alt="${banner_alt1}"></a>
                 </c:if>
                 <c:if test="${station.feature_banner2 != 0}">
-                    <a href="CtrlForFront?pge_id=4&con_id=${station.feature_banner2}"><img src="${banner_img2} "alt="${banner_alt2}">
+                    <a href="CtrlForFront?pge_id=4&con_id=${station.feature_banner2}"><img src="${banner_img2} "alt="${banner_alt2}"></a>
                 </c:if>
                 <c:if test="${station.feature_banner3 != 0}">
-                    <a href="CtrlForFront?pge_id=4&con_id=${station.feature_banner3}" class="pc"><img src="${banner_img3} "alt="${banner_alt3}">
+                    <a href="CtrlForFront?pge_id=4&con_id=${station.feature_banner3}" class="pc"><img src="${banner_img3} "alt="${banner_alt3}"></a>
                 </c:if>
             </div>
         </div>
