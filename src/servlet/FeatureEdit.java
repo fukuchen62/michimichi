@@ -254,13 +254,13 @@ public class FeatureEdit extends HttpServlet {
 			if (bret == false) {
 				request.setAttribute("errorMsg", "更新エラーが発生しました");
 				request.setAttribute("feature", feature);
-				forward = "/WEB-INF/jsp/cms/feature_edit.jsp";
+				forward = "/WEB-INF/jsp/cms/feature_list.jsp";
 
 			} else {
 				//データベースからすべての記事を読み込む
 				List<Feature> adminfeaturelist = featureListLogic.getAdminFeatureList();
 				request.setAttribute("adminfeaturelist", adminfeaturelist);
-				forward = "/WEB-INF/jsp/cms/feature_list.jsp";
+				forward = "WEB-INF/jsp/cms/feature_list.jsp";
 			}
 
 			//削除

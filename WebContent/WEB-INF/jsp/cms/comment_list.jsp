@@ -23,22 +23,29 @@
 			<section>
 				<h1>管理者ページ</h1>
 				<div id="opbtns">
-					<a href="/michimichi/CtrlForCms?pge_id=19">コメント管理</a>
-					<a href="/michimichi/CtrlForCms?pge_id=14">道の駅管理</a>
-					<a href="/michimichi/CtrlForCms?pge_id=17">特集管理</a>
-					<a href="/michimichi/CtrlForCms?pge_id=20">アカウント管理</a>
+					<a href="/michimichi/CtrlForCms?pge_id=19">コメント管理</a> <a
+						href="/michimichi/CtrlForCms?pge_id=14">道の駅管理</a> <a
+						href="/michimichi/CtrlForCms?pge_id=17">特集管理</a> <a
+						href="/michimichi/CtrlForCms?pge_id=20">アカウント管理</a>
 				</div>
 			</section>
 			<section>
-				<h2>お知らせ</h2>
+				<h2>道の駅一覧</h2>
 				<table class="entryForm">
-					<c:forEach var="post" items="${AdminStaionList}" end="20">
-						<a href="CtrlForCms?pge_id=18&con_id=${post.michinoeki_id}">
-							<div class="title" >${post.michinoeki_name}</div>
-						</a>
+					<tr>
+						<th class="subtitle" width="100%">コメントを編集する駅を選んでください</th>
+					</tr>
+					<c:forEach var="post" items="${AdminStaionList}">
+						<tr>
+							<td class="title"><a
+								href="CtrlForCms?pge_id=18&con_id=${post.michinoeki_id}">${post.michinoeki_name}
+							</a>
+						</tr>
 					</c:forEach>
+
 				</table>
 			</section>
+
 		</div>
 
 	</c:param>

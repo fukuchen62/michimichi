@@ -5,6 +5,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+
 <!-- META -->
 <meta charset="utf-8">
 <meta name="keywords" content="${param.keywords}">
@@ -16,6 +18,7 @@
 
 <!-- TITLE -->
 <title>${param.title}</title>
+
 
 <!-- CSS -->
 <link href="<c:url value="./css/style-cms.css" />" rel="stylesheet">
@@ -65,8 +68,10 @@
 
 </head>
 <body>
+
 	<jsp:include page="header_back.jsp" />
-	<div class="container">${param.content}</div>
+	<div class="container">${param.content}
+	</div>
 	<jsp:include page="footer_back.jsp" />
 
 </body>

@@ -27,7 +27,8 @@ public class CommentLogic {
 		}
 	}
 
-	//指定された道の駅IDのコメント情報を取ってくる(管理画面用)
+
+	//(管理画面用)指定された道の駅IDのコメント情報を取ってくる
 	public List<CommentBs> getAdminCommentsById(int con_id) {
 		//DAOオブジェクト生成
 		T_commentsDAO dao = new T_commentsDAO();
