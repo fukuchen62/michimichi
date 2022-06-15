@@ -23,25 +23,25 @@
                         <img class="pc" src="img/feature_top/feature_h1_pc1.svg" alt="feature_h1">
                         <img class="sp" src="img/feature_top/feature_h1_tab.svg" alt="feature_h1">
                         <div class="feature-link-grid pc">
-                            <a href="">
+                            <a href="#sweets">
                                 <img src="img/feature_top/feature_link_sweets.jpg" alt="sweets">
                             </a>
-                            <a href="">
+                            <a href="#gift">
                                 <img src="img/feature_top/feature_link_gift.jpg" alt="gift">
                             </a>
-                            <a href="">
+                            <a href="#attractions">
                                 <img src="img/feature_top/feature_link_attractions.jpg" alt="attractions">
                             </a>
-                            <a href="">
+                            <a href="#hotspring">
                                 <img src="img/feature_top/feature_link_hotspring.jpg" alt="hotspring">
                             </a>
-                            <a href="">
+                            <a href="#naruto">
                                 <img src="img/feature_top/feature_link_naruto.jpg" alt="naruto">
                             </a>
-                            <a href="">
+                            <a href="#agourmet">
                                 <img src="img/feature_top/feature_link_agourmet.jpg" alt="agourmet">
                             </a>
-                            <a href="">
+                            <a href="#gourmet">
                                 <img src="img/feature_top/feature_link_gourmet.jpg" alt="gourmet">
                             </a>
                         </div>
