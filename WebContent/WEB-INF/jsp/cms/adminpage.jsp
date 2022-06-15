@@ -38,7 +38,7 @@
 						<th class="subtitle" width="25%">発信者</th>
 						<th class="subtitle" width="50%">タイトル</th>
 					</tr>
-					<c:forEach var="post" items="${featureList}" end="20">
+					<c:forEach var="post" items="${adminfeaturelist}" end="20">
 						<tr>
 							<td class="time"><fmt:formatDate type="time"
 									value="${post.create_time}" pattern="yyyy/MM/dd HH:mm" /></td>

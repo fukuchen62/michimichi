@@ -57,7 +57,7 @@
 			<a href="/michimichi/Logout">ログアウト</a>
 		</p>
 
-		<jsp:include page="../layout/header_back.jsp" />
+		<jsp:include page="../layout/template_back.jsp" />
 
 		<%
 			if (account != null) {

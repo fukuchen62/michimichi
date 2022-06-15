@@ -292,8 +292,8 @@
 			</form>
 
 			<div id="opbtns">
-				<a href="/michimichi/CtrlForCms?pge_id=13">管理者ページ</a> <a
-					href="/michimichi/CtrlForCms?pge_id=17">特集記事一覧</a>
+				<a href="/michimichi/CtrlForCms?pge_id=13">管理者ページ</a>
+				<a href="/michimichi/CtrlForCms?pge_id=17">特集記事一覧</a>
 			</div>
 		</div>
 		<!-- #wrap end -->

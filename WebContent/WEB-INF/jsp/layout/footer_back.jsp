@@ -4,6 +4,6 @@
 
 <footer id="footer" class="footer">
 	<p id="copyright">
-		<small>Copyright Cafe Leaf All Rights Reserved. </small>
+		<small>Copyright All Rights Reserved Team 繋 </small>
 	</p>
 </footer>

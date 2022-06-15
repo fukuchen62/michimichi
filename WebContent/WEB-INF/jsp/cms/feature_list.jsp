@@ -19,7 +19,15 @@
 				<c:out value="${loginUser.login_id }" />
 				さまオンライン中 <a href="/michimichi/Logout">ログアウト</a>
 			</p>
-
+			<section>
+				<h1>管理者ページ</h1>
+				<div id="opbtns">
+					<a href="/michimichi/CtrlForCms?pge_id=19">コメント管理</a> <a
+						href="/michimichi/CtrlForCms?pge_id=14">道の駅管理</a> <a
+						href="/michimichi/CtrlForCms?pge_id=17">特集管理</a> <a
+						href="/michimichi/CtrlForCms?pge_id=20">アカウント管理</a>
+				</div>
+			</section>
 			<section>
 				<h2>記事一覧</h2>
 				<p class="btn">
@@ -33,7 +41,7 @@
 						<th class="subtitle" width="15%">発信者</th>
 						<th class="subtitle" width="65%">タイトル</th>
 					</tr>
-					<c:forEach var="post" items="${adminfeaturelist}" >
+					<c:forEach var="post" items="${adminfeaturelist}">
 						<tr>
 							<td class="show"><c:choose>
 									<c:when test="${post.show_flag==1}">
@@ -51,7 +59,7 @@
 							<td class="name">${post.account_name}</td>
 							<td class="title"><a
 								href="/michimichi/FeatureEdit?feature_id=${post.feature_id }">${post.feature_name}</a>
-							<%-- <td class="post">${fn:escapeXml(feature.summary)}</td> --%>
+								<%-- <td class="post">${fn:escapeXml(feature.summary)}</td> --%>
 						</tr>
 					</c:forEach>
 				</table>

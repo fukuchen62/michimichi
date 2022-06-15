@@ -15,9 +15,9 @@ import model.DbConnection;
 public class T_commentsDAO {
 
 	/*********
-	 * コメント、出力用のメソッド
+	 * 道の駅のIDから関連コメントを取得、出力用のメソッド
 	 *********/
-	public List<CommentBs> getCommentsById (int showflag,int con_id) {
+	public List<CommentBs> getCommentsById(int showflag, int con_id) {
 
 		List<CommentBs> CommentList = new ArrayList<>();
 
@@ -29,7 +29,7 @@ public class T_commentsDAO {
 		if (conn == null)
 			return null;
 
-		//BDへ接続
+		//DBへ接続
 		try {
 
 			//SELECT文を準備
@@ -55,15 +55,14 @@ public class T_commentsDAO {
 			while (rs.next()) {
 				int comment_id = rs.getInt("comment_id");
 				String name = rs.getString("name");
-				String comment =  rs.getString("comment");
+				String comment = rs.getString("comment");
 				Date post_time = rs.getTimestamp("post_time");
 
 				CommentBs comments = new CommentBs(
 						comment_id,
 						name,
 						comment,
-						post_time
-						);
+						post_time);
 
 				CommentList.add(comments);
 			}
@@ -85,7 +84,7 @@ public class T_commentsDAO {
 	 * 投稿されたコメント、入力用メソッド
 	 * (結果をTorFで返すよ)
 	 *********/
-	public boolean insertComment(int con_id,String name, String comment) {
+	public boolean insertComment(int con_id, String name, String comment) {
 
 		String sql = "";
 
@@ -115,19 +114,17 @@ public class T_commentsDAO {
 			pStmt.setString(3, comment);
 
 			Date posttime = new Date();
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			pStmt.setString(4, sdf.format(posttime));
 			pStmt.setInt(5, 1);
-
 
 			//SQLを実行し、結果表を取得
 			int result = pStmt.executeUpdate();
 
 			//読み込んだ結果を処理する
-			if(result != 1) {
+			if (result != 1) {
 				return false;
 			}
-
 
 		} catch (SQLException e) {
 			// 自動生成された catch ブロック
@@ -140,37 +137,37 @@ public class T_commentsDAO {
 	}
 
 	/*********
-	 * コメント、表示非表示切り替え用メソッド
+	 * コメント、表示/非表示切り替え用メソッド
 	 *********/
-	public boolean updateComment(int post_id,int show_flag ) {
+	public boolean updateComment(int comment_id, int show_flag) {
 
 		String sql = "";
 
 		//データベースに接続
 		Connection conn = null;
 		conn = DbConnection.conn;
-		if(conn == null) return false;
+		if (conn == null)
+			return false;
 
 		try {
 			//SQL文を定義する
-	        sql = "UPDATE"
-	        		+ " T_COMMENTS"
-	        		+ " SET "
-	        		+ " show_flag = case comment_id "
-
-
-	        		+ " WHERE comment_id IN ('1','2','3') ";
+			sql = "UPDATE"
+					+ " T_COMMENTS"
+					+ " SET "
+					+ " show_flag = ? "
+					+ " WHERE "
+					+ " comment_id= ?";
+			//	        		+ " WHERE comment_id IN ('1','2','3') ";
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-//			pStmt.setInt(1, );
-//			pStmt.setInt(2, );
-
+			pStmt.setInt(1, show_flag);
+			pStmt.setInt(2, comment_id);
 
 			//SQL命令を発行する
 			int result = pStmt.executeUpdate();
 
 			//読み込んだ結果を処理する
-			if(result != 1) {
+			if (result != 1) {
 				return false;
 			}
 		} catch (SQLException e) {
@@ -178,14 +175,14 @@ public class T_commentsDAO {
 			e.printStackTrace();
 			return false;
 
-		}finally {
+		} finally {
 			//データベース切断
 
 		}
 		return true;
 	}
 
-	//管理画面　道の駅別コメント一覧
+	//管理画面  道の駅別コメント一覧
 	public List<CommentBs> getAdminCommentsById(int con_id) {
 
 		List<CommentBs> AdminCommentList = new ArrayList<>();
@@ -198,7 +195,7 @@ public class T_commentsDAO {
 		if (conn == null)
 			return null;
 
-		//BDへ接続
+		//DBへ接続
 		try {
 
 			//SELECT文を準備
@@ -217,21 +214,23 @@ public class T_commentsDAO {
 			//SELECTを実行し、結果表を取得
 			ResultSet rs = pStmt.executeQuery();
 
-			//結果表に格納されたレコードの内容をCommentListインスタンスに設定し、ArrayListインスタンスに追加
+			//結果表に格納されたレコードの内容をCommentListインスタンスに設定し、
+			//ArrayListインスタンスに追加
 			while (rs.next()) {
 				int comment_id = rs.getInt("comment_id");
+				int michinoeki_id = rs.getInt("michinoeki_id");
 				String name = rs.getString("name");
-				String comment =  rs.getString("comment");
+				String comment = rs.getString("comment");
 				Date post_time = rs.getTimestamp("post_time");
 				int show_flag = rs.getInt("show_flag");
 
 				CommentBs comments = new CommentBs(
 						comment_id,
+						michinoeki_id,
 						name,
 						comment,
 						post_time,
-						show_flag
-						);
+						show_flag);
 
 				AdminCommentList.add(comments);
 			}
@@ -247,6 +246,147 @@ public class T_commentsDAO {
 		}
 		return AdminCommentList;
 
+	}
+
+	//(管理用)コメント一覧
+	public List<CommentBs> getAdminCommentList() {
+
+		List<CommentBs> admincommentlist = new ArrayList<>();
+
+		String sql = "";
+
+		//データベースに接続
+		Connection conn = null;
+		conn = DbConnection.conn;
+		if (conn == null)
+			return null;
+
+		//BDへ接続
+		try {
+
+			//SELECT文を準備
+			//show_flagで表示になっているものを、降順で抽出する。
+			sql = "SELECT * "
+					+ " FROM T_comments "
+					+ " WHERE comment_id = ?"
+					+ " ORDER BY"
+					+ " comment_id DESC";
+
+
+
+			//SQLを送信
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			//SELECTを実行し、結果表を取得
+			ResultSet rs = pStmt.executeQuery();
+
+			//結果表に格納されたレコードの内容をFeatureListインスタンスに設定し、ArrayListインスタンスに追加
+			while (rs.next()) {
+				int comment_id = rs.getInt("comment_id");
+				int michinoeki_id = rs.getInt("michinoeki_id");
+				String name = rs.getString("name");
+				String comment = rs.getString("comment");
+				Date post_time = rs.getTimestamp("post_time");
+				int show_flag = rs.getInt("show_flag");
+
+				CommentBs comments = new CommentBs(
+						comment_id,
+						michinoeki_id,
+						name,
+						comment,
+						post_time,
+						show_flag
+						);
+
+				admincommentlist.add(comments);
+			}
+
+		} catch (SQLException e) {
+			// 自動生成された catch ブロック
+			e.printStackTrace();
+			return null;
+
+		} finally {
+			//データベース切断
+
+		}
+		return admincommentlist;
+
+}
+
+	/**
+	 * コメントIDによるコメントの詳細を取得
+	 * @param commentId
+	 * @return
+	 */
+	public CommentBs getCommentById(int commentId) {
+
+		CommentBs commentbs = null;
+
+		String sql = "";
+
+		//データベースに接続
+		Connection conn = null;
+		conn = DbConnection.conn;
+		if (conn == null)
+			return null;
+
+		//BDへ接続
+		try {
+
+			//SELECT文を準備
+			//show_flagで表示になっているものを、降順で抽出する。
+			sql = "SELECT * "
+					+ " FROM T_comments "
+					+ " WHERE comment_id = ?";
+
+			//SQLを送信
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			//pStmt.setInt(一番目の？,代入するもの)
+			pStmt.setInt(1, commentId);
+
+			//SELECTを実行し、結果表を取得
+			ResultSet rs = pStmt.executeQuery();
+
+			//結果表に格納されたレコードの内容をFeatureListインスタンスに設定し、ArrayListインスタンスに追加
+			if (rs.next()) {
+				int comment_id = rs.getInt("comment_id");
+				int michinoeki_id = rs.getInt("michinoeki_id");
+				String name = rs.getString("name");
+				String comment = rs.getString("comment");
+				Date post_time = rs.getTimestamp("post_time");
+				int show_flag = rs.getInt("show_flag");
+
+				commentbs = new CommentBs(
+						comment_id,
+						michinoeki_id,
+						name,
+						comment,
+						post_time,
+						show_flag
+						);
+			}
+
+		} catch (SQLException e) {
+			// 自動生成された catch ブロック
+			e.printStackTrace();
+			return null;
+
+		} finally {
+			//データベース切断
+
+		}
+		return commentbs;
+
+}
+
+
+
+
+	public boolean update(int comment_id, int showflag) {
+		// TODO 自動生成されたメソッド・スタブ
+		return false;
 	}
 
 
