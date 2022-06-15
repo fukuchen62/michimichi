@@ -91,7 +91,7 @@
 
                 <!-- コメント、いいね -->
                 <div class="account flexR">
-                    <a class="comment" href="#comment">コメント欄へ(10)</a>
+                    <a class="comment" href="#comment">コメント欄へ</a>
                     <span class="good">
                     <form action="/michimichi/GoodRecords" method ="post">
                         <button class="btn-good">
