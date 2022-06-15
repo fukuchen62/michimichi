@@ -1053,6 +1053,7 @@ h1 {
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
+    padding: 6px 15px;
     border: 5px solid;
     border-color: rgba(230, 156, 129, 0.5);
     border-top: none;
@@ -1061,6 +1062,7 @@ h1 {
     position: absolute;
     bottom: 0;
     color: #002b50;
+    line-height:1.15;
   }
   #feature .wrap {
     margin-top: 40px;
@@ -1068,8 +1070,8 @@ h1 {
     background-color: #c7e3ee;
   }
   #feature .wrap a {
-    width: 45%;
-    height: auto;
+    /* width: 45%;
+    height: auto; */
   }
   #information .wrap {
     margin-top: 40px;
