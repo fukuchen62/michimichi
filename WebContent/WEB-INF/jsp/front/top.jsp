@@ -7,9 +7,8 @@
 <c:import url="../layout/template.jsp">
 
 	<c:param name="title" value="みちのえき～未知のえき～" />
-	<c:param name="description" value="徳島の18ヶ所の道の駅と周辺スポットの紹介サイトです。
-										徳島の大自然、グルメ、観光名所など一歩踏み込んだ、
-										知られざる未知のスポットをご紹介します。" />
+	<c:param name="description" value="徳島（とくしま）の道の駅、観光名所、ご当地を紹介するサイトです。
+話題のくるくるなると、インスタ映え、お出かけスポット、地域の特産物など、まだまだ知らない「未知」の情報が盛りだくさん！" />
 	<c:param name="mycss" value="css/index.css" />
 	<c:param name="mycss2" value="" />
 	<c:param name="myjs" value="js/index.js" />
@@ -23,8 +22,8 @@
                 	<div class="keyVisual-map">
                 		<div class="search-links">
 	                    	<img src="img/index/map.png" alt="keyVisual_pc">
-				            <a class="search-links-west" href="CtrlForSearch?area=1">東部</a>
-				            <a class="search-links-east" href="CtrlForSearch?area=2">西部</a>
+				            <a class="search-links-west" href="CtrlForSearch?area=2">東部</a>
+				            <a class="search-links-east" href="CtrlForSearch?area=1">西部</a>
 				            <a class="search-links-south" href="CtrlForSearch?area=3">南部</a>
 				        </div>
                 	</div>
