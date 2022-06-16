@@ -4,12 +4,8 @@
 
 <header>
 	<!-- <h1>${param.title}</h1> -->
-
 	<div>
-		<div class="container">
-
-		</div>
+		<div class="container"></div>
 	</div>
 	<!-- /#header -->
-
 </header>

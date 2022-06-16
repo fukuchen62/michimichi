@@ -68,9 +68,9 @@ public class Login extends HttpServlet {
 
 			//データベースからすべての記事を読み込む
 			FeatureListLogic featureListLogic = new FeatureListLogic();
-			List<Feature> featureList = featureListLogic.getAdminFeatureList();
+			List<Feature> adminfeaturelist = featureListLogic.getAdminFeatureList();
 
-			request.setAttribute("featureList", featureList);
+			request.setAttribute("adminfeaturelist", adminfeaturelist);
 
 			forward = "/WEB-INF/jsp/cms/adminpage.jsp";
 			RequestDispatcher dispatcher = request.getRequestDispatcher(forward);

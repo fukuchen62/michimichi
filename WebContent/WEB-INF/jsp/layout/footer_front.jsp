@@ -170,7 +170,7 @@
 
         <!-- 管理者用ページリンク -->
         <div class="admin">
-            <a href="CtrlForFront?pge_id=10">
+            <a href="CtrlForFront?pge_id=10" target="_blank">
                 <img src="img/temp/car01.svg" alt="admin">
             </a>
         </div>
