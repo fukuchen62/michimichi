@@ -26,6 +26,7 @@ $(document).ready(function(){
     console.log("ok");
         $(this).next().show(300);
         $("#header").hide();
+        $(".back-top").hide();
     });
 
 	// モーダルをクリックで消してヘッダーを表示
