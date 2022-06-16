@@ -26,13 +26,14 @@ $(document).ready(function(){
     console.log("ok");
         $(this).next().show(300);
         $("#header").hide();
-        $(".back-top").hide();
+        $(".back-top").css({"opacity": "0"});
     });
 
 	// モーダルをクリックで消してヘッダーを表示
     $(".spot-modal").click(function(){
         $(this).hide(300);
         $("#header").show();
+        $(".back-top").css({"opacity": "1"});
     });
 
 	// informationの周辺施設ボタン
