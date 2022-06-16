@@ -9,9 +9,8 @@
 
 
 		<c:param name="title" value="お問い合わせ　―　みちのえき～未知のえき～" />
-		<c:param name="description" value="徳島の18ヶ所の道の駅と周辺スポットの紹介サイトです。
-徳島の大自然、グルメ、観光名所など一歩踏み込んだ、
-知られざる未知のスポットをご紹介します。" />
+		<c:param name="description" value="徳島（とくしま）の道の駅、観光名所、ご当地を紹介するサイトです。
+話題のくるくるなると、インスタ映え、お出かけスポット、地域の特産物など、まだまだ知らない「未知」の情報が盛りだくさん！" />
 		<c:param name="mycss" value="css/inquiry.css" />
 		<c:param name="mycss2" value="" />
 		<c:param name="myjs" value="js/inquiry.js" />
