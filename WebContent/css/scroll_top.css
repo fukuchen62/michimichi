@@ -10,23 +10,4 @@
   -webkit-transition: 0.5s all;
   transition: 0.5s all;
 }
-.back-top:hover {
-	transform: scale(2);
-	animation: car-start 0.3s;
-}
-
-@keyframes car-start{
-	0%{
-	  transform: translateY(-10%);
-	}
-	33%{
-	  transform: translateY(0);
-	}
-	66%{
-	  transform: translateY(-10%);
-	}
-	100%{
-	  transform: translateY(0);
-	}
-}
 /*# sourceMappingURL=scroll_top.css.map */

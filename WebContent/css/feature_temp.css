@@ -193,9 +193,12 @@ h1 {
  ～@768px
 ****************************************************************************/
 @media screen and (max-width: 768px) {
+  #feature-temp .container90{
+    width: 100vw;
+  }
   #feature-temp .container {
     width: 90%;
-    min-width: 540px;
+    min-width: 350px;
   }
 }
 /*# sourceMappingURL=feature_temp.css.map */

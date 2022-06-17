@@ -308,7 +308,8 @@
     background-color: rgba(244, 245, 247, 1);
   }
   #header .g-navi.sp {
-    height: inherit;
+    width: 100%;
+	height: inherit;
     display: block;
     margin: 0;
   }
@@ -336,7 +337,7 @@
   #header .hamburger {
     position: absolute;
     top: 50%;
-    right: 40px;
+    right: 5%;
     -webkit-transform: translate(0, -50%);
             transform: translate(0, -50%);
   }
@@ -382,7 +383,7 @@
   }
   .site-map .container {
     height: 100vh;
-    margin: 0;
+    margin: 0 auto;
     background-color: transparent;
     display: none;
   }
