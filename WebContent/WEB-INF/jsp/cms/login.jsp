@@ -13,7 +13,7 @@
 		<div id="wrap">
 			<div id="main">
 				<h1>管理者ログイン</h1>
-
+				<div id=login>
 					<form action="Login" method="post">
 						<p>
 							ユーザー名：<input type="text" name="login_id">
