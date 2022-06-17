@@ -38,7 +38,6 @@ public class FeatureEdit extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-//		System.out.println("FeatureEdit doGet");
 
 		//ログインの状態をチェックする
 		HttpSession session = request.getSession();
@@ -68,8 +67,6 @@ public class FeatureEdit extends HttpServlet {
 		if (str != null) {
 			show_flag = Integer.parseInt(str);
 		}
-
-		System.out.println("feature_id:" + feature_id);
 
 		//FeatureListLogicのオブジェクトを生成
 		FeatureListLogic featureListLogic = new FeatureListLogic();
@@ -101,8 +98,6 @@ public class FeatureEdit extends HttpServlet {
 		} else {
 			//	編集or一覧表示
 			if (feature_id > 0) {
-
-				System.out.println("FeatureEdit feature_id:"+feature_id);
 
 				//メニュー編集
 				//指定したfeature_idで該当特集を読み込む

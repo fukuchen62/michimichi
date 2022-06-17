@@ -261,8 +261,20 @@ public class CtrlForCms extends HttpServlet {
 		CommentListLogic commentListLogic = new CommentListLogic();
 		List<Station> AdminStaionList = commentListLogic.getadminStaionList();
 
+		//道の駅ごとのコメント数を取得
+		//		List<Integer> comment_counts = new ArrayList<Integer>();
+//		Integer[] comment_counts = new Integer[18];
+//		int num = 0;
+//		for (Station station : AdminStaionList) {
+//			int station_id = station.getMichinoeki_id();
+//			int count = T_commentsDAO.getCommentCount(station_id);
+//			comment_counts[num] = count;
+//			num++;
+//		}
+
 		// リクエストスコープに保存
 		request.setAttribute("AdminStaionList", AdminStaionList);
+//		request.setAttribute("comment_counts", comment_counts);
 
 		String forward = "WEB-INF/jsp/cms/comment_list.jsp";
 		return forward;

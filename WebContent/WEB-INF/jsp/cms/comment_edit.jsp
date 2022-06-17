@@ -7,7 +7,7 @@
 
 	<c:param name="title" value="ユーザーコメント一覧" />
 	<c:param name="keywords" value="" />
-	<c:param name="description" value="description。description" />
+	<c:param name="description" value="" />
 	<c:param name="mycss" value="" />
 	<c:param name="mycss2" value="" />
 	<c:param name="myjs" value="js/vendor/lightbox_plus.js" />
@@ -23,10 +23,8 @@
 			<section>
 				<h1>管理者ページ</h1>
 				<div id="opbtns">
-					<a href="/michimichi/CtrlForCms?pge_id=19">コメント管理</a> <a
-						href="/michimichi/CtrlForCms?pge_id=14">道の駅管理</a> <a
-						href="/michimichi/CtrlForCms?pge_id=17">特集管理</a> <a
-						href="/michimichi/CtrlForCms?pge_id=20">アカウント管理</a>
+					<a href="/michimichi/CtrlForCms?pge_id=19">コメント管理</a>  <a
+						href="/michimichi/CtrlForCms?pge_id=17">特集管理</a>
 				</div>
 			</section>
 			<section>

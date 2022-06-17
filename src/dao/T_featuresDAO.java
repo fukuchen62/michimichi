@@ -486,7 +486,7 @@ public class T_featuresDAO {
 			sql = "UPDATE"
 					+ " t_features"
 					+ " SET "
-					//						+ " feature_id= ?,"
+					//+ " feature_id= ?,"
 					+ " feature_name= ?, "
 					+ " feature_type_id=?, "
 					+ " main_photo_path = ?, "
@@ -594,13 +594,13 @@ public class T_featuresDAO {
 		if (conn == null)
 			return null;
 
-		//BDへ接続
+		//DBSへ接続
 		try {
 
 			//SELECT文を準備
 			//show_flagで表示になっているものを、降順で抽出する。
 			sql = "SELECT * "
-					+ " FROM t_features AS a"
+					+ " FROM T_FEATURES AS a"
 					+ " INNER JOIN M_Accounts AS b"
 					+ " ON a.create_user_id = b.user_id "
 					+ " ORDER BY"

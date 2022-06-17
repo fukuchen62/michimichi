@@ -248,6 +248,54 @@ public class T_commentsDAO {
 
 	}
 
+	//管理画面  道の駅別コメント一覧
+	public static int getCommentCount(int station_id) {
+
+		int count = 0;
+
+		String sql = "";
+
+		//データベースに接続
+		Connection conn = null;
+		conn = DbConnection.conn;
+		if (conn == null)
+			return 0;
+
+		//DBへ接続
+		try {
+
+			//SELECT文を準備
+			sql = "SELECT count(*) as count "
+					+ " FROM T_comments "
+					+ " WHERE michinoeki_id = ?";
+
+			//SQLを送信
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			//pStmt.setInt(一番目の？,代入するもの)
+			pStmt.setInt(1, station_id);
+
+			//SELECTを実行し、結果表を取得
+			ResultSet rs = pStmt.executeQuery();
+
+			//結果表に格納されたレコードの内容をCommentListインスタンスに設定し、
+
+			if (rs.next()) {
+				count = rs.getInt("count");
+			}
+
+		} catch (SQLException e) {
+			// 自動生成された catch ブロック
+			e.printStackTrace();
+			return 0;
+
+		} finally {
+			//データベース切断
+		}
+		return count;
+
+	}
+
 	//(管理用)コメント一覧
 	public List<CommentBs> getAdminCommentList() {
 
@@ -272,8 +320,6 @@ public class T_commentsDAO {
 					+ " ORDER BY"
 					+ " comment_id DESC";
 
-
-
 			//SQLを送信
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
@@ -295,8 +341,7 @@ public class T_commentsDAO {
 						name,
 						comment,
 						post_time,
-						show_flag
-						);
+						show_flag);
 
 				admincommentlist.add(comments);
 			}
@@ -312,7 +357,7 @@ public class T_commentsDAO {
 		}
 		return admincommentlist;
 
-}
+	}
 
 	/**
 	 * コメントIDによるコメントの詳細を取得
@@ -364,8 +409,7 @@ public class T_commentsDAO {
 						name,
 						comment,
 						post_time,
-						show_flag
-						);
+						show_flag);
 			}
 
 		} catch (SQLException e) {
@@ -379,15 +423,11 @@ public class T_commentsDAO {
 		}
 		return commentbs;
 
-}
-
-
-
+	}
 
 	public boolean update(int comment_id, int showflag) {
 		// TODO 自動生成されたメソッド・スタブ
 		return false;
 	}
-
 
 }

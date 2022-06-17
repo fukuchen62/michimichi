@@ -23,27 +23,26 @@
 				<h1>管理者ページ</h1>
 				<div id="opbtns">
 					<a href="/michimichi/CtrlForCms?pge_id=19">コメント管理</a> <a
-						href="/michimichi/CtrlForCms?pge_id=14">道の駅管理</a> <a
-						href="/michimichi/CtrlForCms?pge_id=17">特集管理</a> <a
-						href="/michimichi/CtrlForCms?pge_id=20">アカウント管理</a>
+						href="/michimichi/CtrlForCms?pge_id=17">特集管理</a>
+
 				</div>
 			</section>
 			<section>
 				<h2>記事一覧</h2>
-				<p class="btn">
+				<!-- <p class="btn">
 					<input class="btns btn-send" type="button" value="新規登録"
 						onClick="location.href='/michimichi/CtrlForCms?pge_id=16'">
-				</p>
+				</p> -->
 				<table class="entryForm">
 					<tr>
-						<th class="subtitle" width="5%"></th>
-						<th class="subtitle" width="15%">日時</th>
+						<!-- <th class="subtitle" width="5%"></th> -->
+						<th class="subtitle" width="15%">作成日時</th>
 						<th class="subtitle" width="15%">発信者</th>
 						<th class="subtitle" width="65%">タイトル</th>
 					</tr>
 					<c:forEach var="post" items="${adminfeaturelist}">
 						<tr>
-							<td class="show"><c:choose>
+							<%-- <td class="show"><c:choose>
 									<c:when test="${post.show_flag==1}">
 										<button class="btnshow btnRed"
 											onclick="featureShowChange( ${post.feature_id },${post.show_flag},'${post.feature_name }');">表</button>
@@ -52,14 +51,13 @@
 										<button class="btnshow btnBlue"
 											onclick="featureShowChange( ${post.feature_id },${post.show_flag},'${post.feature_name }');">非</button>
 									</c:otherwise>
-								</c:choose></td>
+								</c:choose></td> --%>
 
 							<td class="time"><fmt:formatDate type="time"
 									value="${post.create_time}" pattern="yyyy/MM/dd HH:mm" /></td>
 							<td class="name">${post.account_name}</td>
 							<td class="title"><a
 								href="/michimichi/FeatureEdit?feature_id=${post.feature_id }">${post.feature_name}</a>
-								<%-- <td class="post">${fn:escapeXml(feature.summary)}</td> --%>
 						</tr>
 					</c:forEach>
 				</table>
