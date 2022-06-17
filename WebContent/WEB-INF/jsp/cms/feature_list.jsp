@@ -63,9 +63,9 @@
 				</table>
 			</section>
 
-			<div id="opbtns">
+			<!-- <div id="opbtns">
 				<a href="/michimichi/CtrlForCms?pge_id=13">管理者ページへ</a>
-			</div>
+			</div> -->
 		</div>
 
 

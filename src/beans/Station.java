@@ -95,6 +95,8 @@ public class Station {
 	private int account_user_id;
 	private String account_name;
 
+//コメント数
+	private int comment_count;
 
 	//コンストラクタの定義
 	public Station(){}
@@ -788,6 +790,14 @@ public class Station {
 
 	public void setAccount_name(String account_name) {
 		this.account_name = account_name;
+	}
+
+	public int getComment_count() {
+		return comment_count;
+	}
+
+	public void setComment_count(int comment_count) {
+		this.comment_count = comment_count;
 	}
 
 

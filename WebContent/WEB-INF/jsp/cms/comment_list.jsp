@@ -36,21 +36,20 @@
 					</tr>
 					<%
 					int num = 1;
-					//Integer[] commnet_count = (Integer[])request.getAttribute("comment_counts");
 					%>
 					<c:forEach var="post" items="${AdminStaionList}">
-						<% int count = 1;  %>
 						<tr>
 							<td class="no" width="10%" style="text-align: center"><%=num%></td>
 							<td class="title" width="90%">
-							<% if(count>0){  %>
-							<a
-								href="CtrlForCms?pge_id=18&con_id=${post.michinoeki_id}">${post.michinoeki_name}
-							</a>
-							<% }else{  %>
-								${post.michinoeki_name}(0)
-							<% }  %>
-							</td>
+							<c:choose>
+								<c:when test="${post.comment_count>0}">
+									<a href="CtrlForCms?pge_id=18&con_id=${post.michinoeki_id}">${post.michinoeki_name}
+									(${post.comment_count})</a>
+								</c:when>
+								<c:otherwise>
+									${post.michinoeki_name}(0)
+								</c:otherwise>
+							</c:choose></td>
 						</tr>
 						<%
 						num++;
