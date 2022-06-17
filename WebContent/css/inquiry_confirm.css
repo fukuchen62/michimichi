@@ -100,26 +100,14 @@
 /***********************************************************
  ～@768px
 ***********************************************************/
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   #inquiry-confirm .container {
     width: 70%;
-    min-width: 400px;
+    min-width: 350px;
   }
   #inquiry-confirm .container .confirm-wrap {
     margin-top: 60px;
   }
 }
 
-/***********************************************************
- ～@540px
-***********************************************************/
-@media screen and (max-width: 540px) {
-  #inquiry-confirm .container {
-    width: 90%;
-    min-width: 400px;
-  }
-  #inquiry-confirm .container .confirm-wrap {
-    margin-top: 40px;
-  }
-}
 /*# sourceMappingURL=inquiry_confirm.css.map */
