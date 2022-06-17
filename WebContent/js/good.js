@@ -11,6 +11,6 @@ $(document).ready(function(){
     }
 
      $(".thumb, .heart").click(function(){
-         good();
+         /*good();*/
     })
 });
