@@ -175,7 +175,7 @@
 			</h1>
 
 			<div class="container sp">
-				<form action="" method="">
+				<form action="/michimichi/CtrlForSearch" method="get">
 					<div id="district-sp">
 						<div class="container90">
 							<h2>地域</h2>
