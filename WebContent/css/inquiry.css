@@ -31,7 +31,7 @@
 }
 
 .container {
-  width: 40%;
+  width: 60%;
   min-width: 768px;
 }
 
@@ -260,16 +260,6 @@
 }
 
 /****************************************
- ～@1351px
-****************************************/
-@media screen and (max-width: 1350px) {
-  .container {
-    width: 60%;
-    min-width: 768px;
-  }
-}
-
-/****************************************
  ～@1024px
 ****************************************/
 @media screen and (max-width: 1024px) {
@@ -293,8 +283,18 @@
   .h1-wrap{
      margin-top: 110px;
    }
+
+   .container{
+     min-width: 350px;
+   }
   .border {
     margin: 40px 0;
+    padding: 10px;
+  }
+  .border .form-wrap .flexR .btn-reset,
+  .border .form-wrap .flexR .btn-submit {
+    min-width: 40%;
+    font-size: 4.29vw;
   }
   .border .form-wrap .name-box,
   .border .form-wrap .email-box,
@@ -319,7 +319,7 @@
   }
   .border .form-wrap .name-input,
   .border .form-wrap .email-input {
-    width: calc(100% -20px);
+    width: calc(100% - 20px);
   }
   .border .form-wrap .accept-box {
     display: -webkit-box;
