@@ -3,10 +3,8 @@
   height: 100px;
   position: fixed;
   right: -120px;
-  bottom: 30px;
+  bottom: 50px;
   z-index: 50;
-  -webkit-transform: rotateY(180deg) rotateZ(90deg);
-          transform: rotateY(180deg) rotateZ(90deg);
   -webkit-transition: 0.5s all;
   transition: 0.5s all;
 }

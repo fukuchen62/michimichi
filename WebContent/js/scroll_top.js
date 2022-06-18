@@ -3,9 +3,9 @@ $(document).ready(function(){
         let wh = $(window).height();
         let scrollPos = window.scrollY + wh;
 
-		if(document.width() > 767){
+		if(document.body.offsetWidth > 767){
 	        if(scrollPos > 1500){
-	            $(".back-top").css({"right": "-40px"});
+	            $(".back-top").css({"right": "5px"});
 	        }
 	        else{
 	        	$(".back-top").css({"right": "-120px"});

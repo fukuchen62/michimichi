@@ -299,6 +299,7 @@
     margin: 0;
   }
   #header {
+    width: 100vw;
     height: 100px;
     background-color: rgba(244, 245, 247, 1);
     position: fixed !important;
