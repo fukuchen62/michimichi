@@ -393,7 +393,7 @@ a {
 /******************************************************
  ～@768px
 ******************************************************/
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   #keyVisual h1 {
     width: 100%;
     height: auto;
