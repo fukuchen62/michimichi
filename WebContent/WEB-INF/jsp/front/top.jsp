@@ -36,8 +36,8 @@
                 	<div class="keyVisual-map">
                 		<div class="search-links">
 	                    	<img src="img/index/map.png" alt="keyVisual_sp">
-				            <a class="search-links-west" href="CtrlForSearch?area=1">東部</a>
-				            <a class="search-links-east" href="CtrlForSearch?area=2">西部</a>
+				            <a class="search-links-west" href="CtrlForSearch?area=2">東部</a>
+				            <a class="search-links-east" href="CtrlForSearch?area=1">西部</a>
 				            <a class="search-links-south" href="CtrlForSearch?area=3">南部</a>
 				        </div>
                 	</div>
