@@ -271,7 +271,7 @@ img {
   =====================================================*/
 @media screen and (max-width: 768px) {
   .container {
-    width: 486px;
+    width: 100vw;
   }
   .pc {
     display: none;

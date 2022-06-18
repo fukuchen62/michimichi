@@ -10,4 +10,10 @@
   -webkit-transition: 0.5s all;
   transition: 0.5s all;
 }
+
+@media screen and (max-width: 768px){
+	.back-top{
+	  right: -200px;
+	}
+}
 /*# sourceMappingURL=scroll_top.css.map */
