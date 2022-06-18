@@ -110,8 +110,8 @@
                                 <% }%>
                                 -->
                                 <img src="${list.photo_path1}" alt="${list.alt1}">
+	                            <p class="center">${list.feature_name}</p>
                             </a>
-                            <p class="center">${list.feature_name}</p>
                         </div>
                     </c:forEach>
                 </div>
@@ -138,8 +138,8 @@
                                     <img src="${list.photo_path3}" alt="${list.alt3}">
                                 <% }%> -->
                                 <img src="${list.photo_path1}" alt="${list.alt1}">
+	                            <p class="center">${list.feature_name}</p>
                             </a>
-                            <p class="center">${list.feature_name}</p>
                         </div>
                     </c:forEach>
                 </div>
