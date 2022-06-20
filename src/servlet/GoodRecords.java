@@ -79,6 +79,11 @@ public class GoodRecords extends HttpServlet {
 
 		GoodRecordsLogic goodRecordsLogic = new GoodRecordsLogic();
 
+		//2022/06-19 fukushima add
+		//とりあえず同じIPでいいね押す記録があっても無視する
+		num=0;
+		//end
+
 		if(num > 0) {
 			//IPアドレスが被れば、何もせずに元のページにリダイレクトする
 			response.sendRedirect("CtrlForFront?pge_id=9&con_id=" + con_id);
