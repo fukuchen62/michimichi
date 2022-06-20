@@ -161,7 +161,7 @@ h2 {
 ***************************************************************/
 @media screen and (max-width: 1024px) {
   #topView .container {
-    width: 540px;
+    min-width: 350px;
   }
   #topView .topView {
     height: 225px;
@@ -181,9 +181,10 @@ h2 {
 ***************************************************************/
 @media screen and (max-width: 768px) {
   .container {
-    width: 460px;
+    min-width: 350px;
   }
   #topView .topView {
+    width: 100vw;
     height: 200px;
   }
   #topView .topView .hp {

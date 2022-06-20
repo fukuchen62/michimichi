@@ -5,10 +5,10 @@ $(document).ready(function(){
 
 		if(document.body.offsetWidth > 767){
 	        if(scrollPos > 1500){
-	            $(".back-top").css({"right": "5px"});
+	            $(".back-top").css({"bottom": "50px"});
 	        }
 	        else{
-	        	$(".back-top").css({"right": "-120px"});
+	        	$(".back-top").css({"bottom": "-250px"});
 	        }
 	    }
     });
